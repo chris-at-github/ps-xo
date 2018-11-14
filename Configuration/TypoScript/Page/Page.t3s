@@ -1,0 +1,27 @@
+page = PAGE
+page {
+#	includeCSS {
+#		application = fileadmin/Resources/Public/Css/psgo.css
+#	}
+#
+#	includeJSFooter {
+#		application = fileadmin/Resources/Public/Js/psgo.js
+#	}
+
+	10 = FLUIDTEMPLATE
+	10 {
+		templateName = Default
+
+		templateRootPaths {
+			10 = {$plugin.tx_psgo.view.templateRootPath}
+		}
+
+		layoutRootPaths {
+			10 = {$plugin.tx_psgo.view.layoutRootPath}
+		}
+
+		partialRootPaths {
+			10 = {$plugin.tx_psgo.view.partialRootPath}
+		}
+	}
+}

@@ -1,0 +1,66 @@
+config {
+	// Administrator settings
+	debug = {$config.debug}
+	no_cache = {$config.no_cache}
+	admPanel = {$config.adminPanel}
+
+	doctype = html5
+	noPageTitle = 2
+	htmlTag_setParams = none
+
+	// Character sets
+	renderCharset = utf-8
+	metaCharset = utf-8
+
+	// Cache settings
+	cache_period = 43200
+	sendCacheHeaders = 1
+
+	// Language Settings
+	uniqueLinkVars = 1
+	linkVars = L(1)
+	sys_language_uid = 0
+	sys_language_overlay = 1
+	sys_language_mode = content_fallback
+	language = de
+	locale_all = de_DE.UTF-8
+	htmlTag_setParams = lang="de"
+
+	// Link settings
+	absRefPrefix = {$config.absRefPrefix}
+	prefixLocalAnchors = 0
+
+	// Targets for links
+	intTarget =
+	extTarget = _blank
+	fileTarget = _blank
+
+	// Indexed Search
+	index_enable = 1
+	index_externals = 1
+
+	// Code cleaning
+	disablePrefixComment = 1
+
+	// Compression
+	compressJs = 0
+	compressCss = 0
+
+	// Move default CSS and JS to external file
+	removeDefaultJS = 0
+	inlineStyle2TempFile = 0
+
+	// Protect mail addresses from spamming
+	spamProtectEmailAddresses = ascii
+	spamProtectEmailAddresses_atSubst = @<span style="display:none;">&#65279;</span>
+}
+
+// Condition to set language according to L POST/GET variable
+[globalVar = GP:L = 1]
+config {
+	sys_language_uid = 1
+	language = en
+	locale_all = en_US.UTF-8
+	htmlTag_setParams = lang="en"
+}
+[global]

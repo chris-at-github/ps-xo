@@ -1,0 +1,46 @@
+#// ---------------------------------------------------------------------------------------------------------------------
+#// Ueberschreiben des Standard Content Elements
+#lib.contentElement {
+#	layoutRootPaths {
+#  	100 = EXT:play/Resources/Private/Extensions/FluidStyledContent/Layouts/
+#  }
+#
+#	templateRootPaths {
+#  	100 = EXT:play/Resources/Private/Extensions/FluidStyledContent/Templates/
+#  }
+#
+#	partialRootPaths {
+#  	100 = EXT:play/Resources/Private/Extensions/FluidStyledContent/Partials/
+#  }
+#
+#	dataProcessing {
+#
+#		90 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+#		90 {
+#			references.fieldName = tx_play_background
+#			as = background
+#		}
+#
+#		100 = Cext\Play\DataProcessing\ContentElementProcessor
+#		100 {
+#
+#// stdWrap auf frameTypeClass anwenden
+#//			frameTypeClass {
+#//				wrap = wr|ap
+#//			}
+#		}
+#	}
+#}
+#
+#// ---------------------------------------------------------------------------------------------------------------------
+#// Bestehende Content Elemente mit dem Element Processor verknuepfen
+#tt_content {
+#	header.dataProcessing < lib.contentElement.dataProcessing
+#	text.dataProcessing < lib.contentElement.dataProcessing
+#	textmedia.dataProcessing < lib.contentElement.dataProcessing
+#	html.dataProcessing < lib.contentElement.dataProcessing
+#
+#	image.dataProcessing.100 < lib.contentElement.dataProcessing.100
+#}
+#
+## <INCLUDE_TYPOSCRIPT: source="FILE:EXT:datamints_play/Configuration/TypoScript/ContentElement/PageHeader.t3s">

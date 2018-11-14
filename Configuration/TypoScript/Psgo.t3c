@@ -1,0 +1,86 @@
+plugin.tx_psgo {
+	view {
+		# cat=plugin.psgo/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:psgo/Resources/Private/Templates/
+
+		# cat=plugin.psgo/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:psgo/Resources/Private/Partials/
+
+		# cat=plugin.psgo/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:psgo/Resources/Private/Layouts/
+	}
+
+	persistence {
+		# cat=plugin.psgo//a; type=string; label=Default storage PID
+		storagePid = 3
+	}
+
+	settings {
+		svg {
+			# cat=plugin.psgo/settings; type=string; label=Default path for svg files
+			path = EXT:psgo/Resources/Public/Svg/
+		}
+	}
+}
+
+// Default paths for resources.
+folders {
+	private = typo3conf/ext/psgo/Resources/Private
+	public = typo3conf/ext/psgo/Resources/Public
+
+	images = fileadmin/Resources/Public/Images
+	css = fileadmin/Resources/Public/Css
+	js = fileadmin/Resources/Public/Js
+}
+
+meta {
+	# cat=meta; type=string; label=Keywords: Enter a comma separated list of keywords.
+	keywords =
+
+	# cat=meta; type=string; label=Description: Write a short abstract for your website.
+	description =
+
+	# cat=meta; type=string; label=Author: Enter name of author.
+	author =
+
+	# cat=meta; type=string; label=Robots: Use for instance these codes: Index all pages: "all".  Index no pages: "none". Only this page: "index,nofollow".  Only subpages: "noindex,follow"
+	robots = NOODP
+
+	# cat=meta; type=string; label=Viewport
+	viewport = width=device-width, initial-scale=1
+}
+
+config {
+	# cat=config; type=boolean; label=Debug: Activate the debug mode.
+	debug = 0
+
+	# cat=config; type=boolean; label=Cache: Deactivate the cache.
+	no_cache = 1
+
+	# cat=config; type=boolean; label=AdminPanel: Activate the admin panel.
+	adminPanel = 0
+
+	# cat=config; type=string; label=AbsRefPrefix: Set the AbsRefPrefix.
+	absRefPrefix = /
+}
+
+navigation {
+	# cat=navigation; type=int+; label=Main-Navigation folder page: Page id of the folder which contains the main-navigation.
+	main = 4
+
+	# cat=navigation; type=int+; label=Footer-Navigation folder page: Page id of the folder which contains the footer-navigation.
+	footer = 5
+}
+
+pages {
+	# cat=pages; type=int+; label=Page id of home
+	home = 1
+}
+
+googleAnalytics {
+	# cat=googleAnalytics; type=boolean; label=Activate Google Analytics Snippet
+	enabled = 0
+
+	# cat=googleAnalytics; type=string; label=Tracking-ID
+	trackingId = UA-123-4
+}

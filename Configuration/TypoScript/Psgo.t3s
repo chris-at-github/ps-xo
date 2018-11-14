@@ -1,0 +1,3 @@
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:psgo/Configuration/TypoScript/System/" extensions="t3s">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:psgo/Configuration/TypoScript/Block/" extensions="t3s">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:psgo/Configuration/TypoScript/Page/" extensions="t3s">
