@@ -5,7 +5,6 @@ config {
 	admPanel = {$config.adminPanel}
 
 	doctype = html5
-	noPageTitle = 2
 	htmlTag_setParams = none
 
 	// Character sets
@@ -22,9 +21,9 @@ config {
 	sys_language_uid = 0
 	sys_language_overlay = 1
 	sys_language_mode = content_fallback
-	language = de
-	locale_all = de_DE.UTF-8
-	htmlTag_setParams = lang="de"
+#	language = de
+#	locale_all = de_DE.UTF-8
+#	htmlTag_setParams = lang="de"
 
 	// Link settings
 	absRefPrefix = {$config.absRefPrefix}
@@ -56,11 +55,11 @@ config {
 }
 
 // Condition to set language according to L POST/GET variable
-[globalVar = GP:L = 1]
-config {
-	sys_language_uid = 1
-	language = en
-	locale_all = en_US.UTF-8
-	htmlTag_setParams = lang="en"
-}
-[global]
+#[globalVar = GP:L = 1]
+#config {
+#	sys_language_uid = 1
+#	language = en
+#	locale_all = en_US.UTF-8
+#	htmlTag_setParams = lang="en"
+#}
+#[global]
