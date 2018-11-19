@@ -1,8 +1,8 @@
 page = PAGE
 page {
-#	includeCSS {
-#		application = fileadmin/Resources/Public/Css/psgo.css
-#	}
+	includeCSS {
+		application = fileadmin/Resources/Public/Css/application.css
+	}
 #
 #	includeJSFooter {
 #		application = fileadmin/Resources/Public/Js/psgo.js

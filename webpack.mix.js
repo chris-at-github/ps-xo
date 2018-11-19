@@ -42,12 +42,12 @@ mix.autoload({
 // 		]
 // 	});;
 
-mix.js('typo3conf/ext/play/Resources/Public/Js/application.js', 'fileadmin/Resources/Public/Js/play.js')
- 	.sass('typo3conf/ext/play/Resources/Public/Sass/application.scss', 'fileadmin/Resources/Public/Css/play.css')
+mix.js('typo3conf/ext/psgo/Resources/Public/Js/application.js', 'fileadmin/Resources/Public/Js/application.js')
+ 	.sass('typo3conf/ext/psgo/Resources/Public/Sass/application.scss', 'fileadmin/Resources/Public/Css/application.css')
 	.webpackConfig({
 		plugins: [
 			new spritemap({
-				src: 'typo3conf/ext/play/Resources/Public/Svg/Sprite/*.svg',
+				src: 'typo3conf/ext/psgo/Resources/Public/Svg/Sprite/*.svg',
 				filename: 'fileadmin/Resources/Public/Svg/spritemap.svg',
 				svgo: false
 			})
