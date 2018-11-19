@@ -1,12 +1,20 @@
-.container-fluid {
-	width: 1200px;
-	max-width: 100%;
-	margin: 0 auto;
-	padding: 0 30px;
-}
-
-// ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 // Content Elemente
+
+// Aussenabstaende
+.ce-frame--outer {
+	& {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	& > .ce-frame--inner {
+		width: $page-width;
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
 
 // Abstaende
 .ce-frame--space-before-none,
@@ -23,10 +31,10 @@
 
 .ce-frame--space-before-small > .ce-frame--inner,
 .ce-frame--space-before-medium > .ce-frame--inner {
-	margin-top: 20px;
+	margin-top: 2rem;
 }
 
 .ce-frame--space-after-small > .ce-frame--inner,
 .ce-frame--space-after-medium > .ce-frame--inner {
-	margin-bottom: 20px;
+	margin-bottom: 2rem;
 }
