@@ -1,0 +1,57 @@
+.notification {
+	& {
+		max-width: 350px;
+		margin: 2rem 0 0 0;
+		border: 1px solid $gray-300;
+	}
+
+	.notification--listing {
+		ul {
+			& {
+				@include list-unstyled();
+			}
+
+			li {
+				& {
+					padding: 0.5rem 1rem;
+					border-top: 1px solid $gray-300;
+				}
+	
+				&:first-child {
+					border: 0;
+				}
+			}	
+		}
+
+		.notification--listing-item-seen {
+			color: $gray-600;
+		}
+	}
+}
+
+.notification--trigger {
+	& {
+		position: relative;
+		max-width: 350px;
+		margin: 2rem 0 0 0;
+		padding: 0.5rem 1rem;
+		border: 1px solid $gray-300;	
+	}
+
+	& + .notification {
+		margin-top: 0;
+	}
+
+	.notification--trigger-title {
+		display: inline-block;
+	}
+
+	.notification--trigger-count {
+		display: inline-block;
+		margin: 0 0 0 0.5rem;
+	}
+}
+
+.notification--update {
+	margin: 2rem 0 0 0;
+}

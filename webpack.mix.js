@@ -3,7 +3,7 @@ var mix = require('laravel-mix');
 
 // var argv = require('yargs').argv;
 
-// var spritemap = require('svg-spritemap-webpack-plugin');
+var spritemap = require('svg-spritemap-webpack-plugin');
 
 // const spriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
@@ -43,13 +43,13 @@ mix.autoload({
 // 	});;
 
 mix.js('typo3conf/ext/play/Resources/Public/Js/application.js', 'fileadmin/Resources/Public/Js/play.js')
- 	.sass('typo3conf/ext/play/Resources/Public/Sass/application.scss', 'fileadmin/Resources/Public/Css/play.css');
-	// .webpackConfig({
-	// 	plugins: [
-	// 		new spritemap({
-	// 			src: 'typo3conf/ext/play/Resources/Public/Svg/Sprite/*.svg',
-	// 			filename: 'fileadmin/Resources/Public/Svg/spritemap.svg',
-	// 			svgo: false
-	// 		})
-	// 	]
-	// });
+ 	.sass('typo3conf/ext/play/Resources/Public/Sass/application.scss', 'fileadmin/Resources/Public/Css/play.css')
+	.webpackConfig({
+		plugins: [
+			new spritemap({
+				src: 'typo3conf/ext/play/Resources/Public/Svg/Sprite/*.svg',
+				filename: 'fileadmin/Resources/Public/Svg/spritemap.svg',
+				svgo: false
+			})
+		]
+	});

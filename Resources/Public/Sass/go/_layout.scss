@@ -1,0 +1,32 @@
+.container-fluid {
+	width: 1200px;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 0 30px;
+}
+
+// ---------------------------------------------------------------------------
+// Content Elemente
+
+// Abstaende
+.ce-frame--space-before-none,
+.ce-frame--space-before-small,
+.ce-frame--space-before-medium {
+	padding-top: 0.1px;
+}
+
+.ce-frame--space-after-none,
+.ce-frame--space-after-small,
+.ce-frame--space-after-medium {
+	padding-bottom: 0.1px;
+}
+
+.ce-frame--space-before-small > .ce-frame--inner,
+.ce-frame--space-before-medium > .ce-frame--inner {
+	margin-top: 20px;
+}
+
+.ce-frame--space-after-small > .ce-frame--inner,
+.ce-frame--space-after-medium > .ce-frame--inner {
+	margin-bottom: 20px;
+}

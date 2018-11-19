@@ -1,37 +1,37 @@
-#// ---------------------------------------------------------------------------------------------------------------------
-#// Ueberschreiben des Standard Content Elements
-#lib.contentElement {
-#	layoutRootPaths {
-#  	100 = EXT:play/Resources/Private/Extensions/FluidStyledContent/Layouts/
-#  }
-#
-#	templateRootPaths {
-#  	100 = EXT:play/Resources/Private/Extensions/FluidStyledContent/Templates/
-#  }
-#
-#	partialRootPaths {
-#  	100 = EXT:play/Resources/Private/Extensions/FluidStyledContent/Partials/
-#  }
-#
-#	dataProcessing {
-#
+// ---------------------------------------------------------------------------------------------------------------------
+// Ueberschreiben des Standard Content Elements
+lib.contentElement {
+	layoutRootPaths {
+  	100 = EXT:psgo/Resources/Private/Extensions/FluidStyledContent/Layouts/
+  }
+
+	templateRootPaths {
+  	100 = EXT:psgo/Resources/Private/Extensions/FluidStyledContent/Templates/
+  }
+
+	partialRootPaths {
+  	100 = EXT:psgo/Resources/Private/Extensions/FluidStyledContent/Partials/
+  }
+
+	dataProcessing {
+
 #		90 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
 #		90 {
 #			references.fieldName = tx_play_background
 #			as = background
 #		}
-#
-#		100 = Cext\Play\DataProcessing\ContentElementProcessor
-#		100 {
-#
-#// stdWrap auf frameTypeClass anwenden
-#//			frameTypeClass {
-#//				wrap = wr|ap
-#//			}
-#		}
-#	}
-#}
-#
+
+		100 = Ps\Go\DataProcessing\ContentElementProcessor
+		100 {
+
+// stdWrap auf frameTypeClass anwenden
+//			frameTypeClass {
+//				wrap = wr|ap
+//			}
+		}
+	}
+}
+
 #// ---------------------------------------------------------------------------------------------------------------------
 #// Bestehende Content Elemente mit dem Element Processor verknuepfen
 #tt_content {

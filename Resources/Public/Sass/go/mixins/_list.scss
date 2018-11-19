@@ -1,0 +1,24 @@
+// Lists
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+@mixin list-unstyled {
+	& {
+		margin: 0;
+		list-style: none;
+	}
+
+	li {
+		& {
+			position: static;
+			padding: 0;
+		}
+
+		&:before {
+			display: none;
+		}
+
+		& + li {
+			margin-top: 0;
+		}
+	}
+}
