@@ -1,0 +1,25 @@
+TCEFORM.tt_content {
+	layout {
+		removeItems = 1,2,3
+	}
+
+	frame_class {
+		removeItems = default, ruler-before, ruler-after, indent, indent-left, indent-right, none
+		addItems.0 = Default
+	}
+
+	space_before_class {
+		removeItems = extra-small, large, extra-large
+		addItems.auto = Auto
+	}
+
+	space_after_class {
+		removeItems = extra-small, large, extra-large
+		addItems.auto = Auto
+	}
+}
+
+TCAdefaults.tt_content {
+	space_before_class = auto
+	space_after_class = auto
+}
