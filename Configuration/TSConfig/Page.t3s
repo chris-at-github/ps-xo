@@ -9,13 +9,19 @@ TCEFORM.tt_content {
 	}
 
 	space_before_class {
-		removeItems = extra-small, large, extra-large
-		addItems.auto = Auto
+		addItems {
+			auto = Auto
+			small = Small
+			medium = Medium
+		}
 	}
 
 	space_after_class {
-		removeItems = extra-small, large, extra-large
-		addItems.auto = Auto
+		addItems {
+			auto = Auto
+			small = Small
+			medium = Medium
+		}
 	}
 }
 
