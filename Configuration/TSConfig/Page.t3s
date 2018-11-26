@@ -10,17 +10,17 @@ TCEFORM.tt_content {
 
 	space_before_class {
 		addItems {
-			auto = Auto
-			small = Small
-			medium = Medium
+			auto = LLL:EXT:psgo/Resources/Private/Language/locallang_tca.xlf:tx_psgo_tt_content.space.auto
+			small = LLL:EXT:psgo/Resources/Private/Language/locallang_tca.xlf:tx_psgo_tt_content.space.small
+			medium = LLL:EXT:psgo/Resources/Private/Language/locallang_tca.xlf:tx_psgo_tt_content.space.medium
 		}
 	}
 
 	space_after_class {
 		addItems {
-			auto = Auto
-			small = Small
-			medium = Medium
+			auto = LLL:EXT:psgo/Resources/Private/Language/locallang_tca.xlf:tx_psgo_tt_content.space.auto
+			small = LLL:EXT:psgo/Resources/Private/Language/locallang_tca.xlf:tx_psgo_tt_content.space.small
+			medium = LLL:EXT:psgo/Resources/Private/Language/locallang_tca.xlf:tx_psgo_tt_content.space.medium
 		}
 	}
 }
