@@ -3,10 +3,10 @@ page {
 	includeCSS {
 		application = fileadmin/Resources/Public/Css/application.css
 	}
-#
-#	includeJSFooter {
-#		application = fileadmin/Resources/Public/Js/psgo.js
-#	}
+
+	includeJSFooter {
+		application = fileadmin/Resources/Public/Js/application.js
+	}
 
 	10 = FLUIDTEMPLATE
 	10 {
