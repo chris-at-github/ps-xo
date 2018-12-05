@@ -23,9 +23,9 @@
 		let container = table.closest('.table--container');
 
 		// Tabelle vorbereiten
-		table.wrap('<div class="table--scroll"></div>');
+		table.wrap('<div class="table--scroll-container"><div class="table--scroll"></div></div>');
 
-		// Breiten und Hoehen auslesen
+		// Breiten auslesen und zwischenspeichern (fuer Wechsel zwischen Mobil und Desktop)
 		let oTh = $('tbody th', table);
 		oTh.each(function(i, v) {
 			let th = $(this);
@@ -45,9 +45,21 @@
 
 		$('td', fixed).remove('td');
 
+		// Hoehen der Zeilen angleichen
+		$('tr', table).each(function(i, v) {
+			let oTr = $(v);
+
+			$('tr', fixed).eq(i).css('height', oTr.outerHeight());
+		});
+
 		// Clone hinzufuegen
 		// (zur korrekten Breitenberechnung hier schon hinzufuegen)
 		container.append(fixed);
+
+		// Tabellenbreite auslesen und nach Abzug des Cellspacing (Rechts / Links) auf das umschließende Div setzen
+		// -> damit Scrollbar nicht weiter geht als die Tabelle
+		table.css('min-width', table.width());
+		$('.table--scroll', container).css('width', table.width() - 40);
 
 		// Desktop
 		// Breite auslesen und setzen
@@ -58,20 +70,25 @@
 			});
 
 			fixed.css('width', fixedWidth);
-		}
 
 		// Mobile
-		// Nacheinander durchfuehren -> damit alle Breiten schon auf Auto stehen
-		$('th', fixed).css('width', 'auto');
-		$('th', fixed).each(function(i, th) {
-			let cTh = $(th);
+		} else {
+			// Nacheinander durchfuehren -> damit alle Breiten schon auf Auto stehen
+			$('th', fixed).css('width', 'auto');
+			$('th', fixed).each(function(i, th) {
+				let cTh = $(th);
 
-			//console.log(oTh.eq(i).data('oWidth'), i);
+				//console.log(oTh.eq(i).data('oWidth'), i);
 
-			oTh.eq(i).css({
-				'width': 'auto',
-				'min-width': cTh.outerWidth()
+				// oTh.eq(i).css({
+				// 	'width': 'auto',
+				// 	'min-width': cTh.outerWidth()
+				// });
+				oTh.eq(i).css({
+					'width': cTh.outerWidth(),
+					'min-width': cTh.outerWidth()
+				});
 			});
-		});
+		}
 	});
 }));

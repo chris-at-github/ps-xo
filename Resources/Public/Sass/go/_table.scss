@@ -9,19 +9,38 @@ th, td {
 }
 
 .table--container {
+	position: relative;
 	margin: 0 -20px;
 }
 
-.table--scroll {
-	overflow: auto;
-	-webkit-overflow-scrolling: touch;
-
-	table {
-		min-width: 100%;
+.table--scroll-container {
+	& {
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+		margin: 0 0 0 20px;
 	}
 }
 
-// Mobile
+.table--scroll {
+	& {
+		overflow: hidden;
+	}
+
+	table {
+		margin: 1rem 0 0 -20px;
+	}
+}
+
 .table--fixed {
-	width: 66.66%;
+	position: absolute;
+	top: 0; left: 0;
+	max-width: 60%;
+	background: #fff;
+}
+
+// Mobile
+@media (min-width: 700px) {
+	.table--fixed {
+		max-width: inherit;
+	}
 }
