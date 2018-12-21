@@ -1,8 +1,7 @@
 <?php
 
-namespace Ps\Go\DataProcessing;
+namespace Ps\Xo\DataProcessing;
 
-use Doctrine\Common\Util\Debug;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;

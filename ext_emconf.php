@@ -4,7 +4,7 @@
  * Extension Manager/Repository config file for ext: "play"
  ***************************************************************/
 $EM_CONF[$_EXTKEY] = [
-	'title' => 'PS Go',
+	'title' => 'PS Xo',
 	'description' => '',
 	'category' => 'plugin',
 	'author' => 'Christian Pschorr',
@@ -24,7 +24,7 @@ $EM_CONF[$_EXTKEY] = [
 	],
 	'autoload' => [
 		'psr-4' => [
-			'Ps\\Go\\' => 'Classes',
+			'Ps\\Xo\\' => 'Classes',
 		],
 	],
 ];

@@ -1,10 +1,10 @@
-@import 'go/reboot';
-@import 'go/type';
+@import 'xo/reboot';
+@import 'xo/type';
 //@import 'go/navigation';
 //@import 'play/logo';
-@import 'go/layout';
+@import 'xo/layout';
 //@import 'play/header';
-@import 'go/_table.scss';
+@import 'xo/_table.scss';
 //
 //@import 'go/form';
 //@import 'go/button';
@@ -14,5 +14,5 @@
 //@import 'go/notification';
 //@import 'go/draggable';
 
-@import 'go/extensions/fluid-styled-content';
+@import 'xo/extensions/fluid-styled-content';
 //@import 'play/extensions/play-pages';

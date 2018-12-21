@@ -1,32 +1,32 @@
-plugin.tx_psgo {
+plugin.tx_xo {
 	view {
-		# cat=plugin.psgo/file; type=string; label=Path to template root (FE)
-		templateRootPath = EXT:psgo/Resources/Private/Templates/
+		# cat=plugin.xo/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:xo/Resources/Private/Templates/
 
-		# cat=plugin.psgo/file; type=string; label=Path to template partials (FE)
-		partialRootPath = EXT:psgo/Resources/Private/Partials/
+		# cat=plugin.xo/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:xo/Resources/Private/Partials/
 
-		# cat=plugin.psgo/file; type=string; label=Path to template layouts (FE)
-		layoutRootPath = EXT:psgo/Resources/Private/Layouts/
+		# cat=plugin.xo/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:xo/Resources/Private/Layouts/
 	}
 
 	persistence {
-		# cat=plugin.psgo//a; type=string; label=Default storage PID
+		# cat=plugin.xo//a; type=string; label=Default storage PID
 		storagePid = 3
 	}
 
 	settings {
 		svg {
-			# cat=plugin.psgo/settings; type=string; label=Default path for svg files
-			path = EXT:psgo/Resources/Public/Svg/
+			# cat=plugin.xo/settings; type=string; label=Default path for svg files
+			path = EXT:xo/Resources/Public/Svg/
 		}
 	}
 }
 
 // Default paths for resources.
 folders {
-	private = typo3conf/ext/psgo/Resources/Private
-	public = typo3conf/ext/psgo/Resources/Public
+	private = typo3conf/ext/xo/Resources/Private
+	public = typo3conf/ext/xo/Resources/Public
 
 	images = fileadmin/Resources/Public/Images
 	css = fileadmin/Resources/Public/Css

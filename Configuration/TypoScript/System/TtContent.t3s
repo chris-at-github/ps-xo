@@ -2,15 +2,15 @@
 // Ueberschreiben des Standard Content Elements
 lib.contentElement {
 	layoutRootPaths {
-  	100 = EXT:psgo/Resources/Private/Extensions/FluidStyledContent/Layouts/
+  	100 = EXT:xo/Resources/Private/Extensions/FluidStyledContent/Layouts/
   }
 
 	templateRootPaths {
-  	100 = EXT:psgo/Resources/Private/Extensions/FluidStyledContent/Templates/
+  	100 = EXT:xo/Resources/Private/Extensions/FluidStyledContent/Templates/
   }
 
 	partialRootPaths {
-  	100 = EXT:psgo/Resources/Private/Extensions/FluidStyledContent/Partials/
+  	100 = EXT:xo/Resources/Private/Extensions/FluidStyledContent/Partials/
   }
 
 	dataProcessing {
@@ -21,7 +21,7 @@ lib.contentElement {
 #			as = background
 #		}
 
-		100 = Ps\Go\DataProcessing\ContentElementProcessor
+		100 = Ps\Xo\DataProcessing\ContentElementProcessor
 		100 {
 
 // stdWrap auf frameTypeClass anwenden

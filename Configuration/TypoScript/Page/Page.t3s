@@ -13,15 +13,15 @@ page {
 		templateName = Default
 
 		templateRootPaths {
-			10 = {$plugin.tx_psgo.view.templateRootPath}
+			10 = {$plugin.tx_xo.view.templateRootPath}
 		}
 
 		layoutRootPaths {
-			10 = {$plugin.tx_psgo.view.layoutRootPath}
+			10 = {$plugin.tx_xo.view.layoutRootPath}
 		}
 
 		partialRootPaths {
-			10 = {$plugin.tx_psgo.view.partialRootPath}
+			10 = {$plugin.tx_xo.view.partialRootPath}
 		}
 	}
 }

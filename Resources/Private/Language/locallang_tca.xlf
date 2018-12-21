@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2018-11-27T06:25:54Z" product-name="psgo">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-11-27T06:25:54Z" product-name="xo">
 		<header/>
 		<body>
-			<trans-unit id="tx_psgo_tt_content.space.auto">
+			<trans-unit id="tx_xo_tt_content.space.auto">
 				<source>Auto</source>
 			</trans-unit>
-			<trans-unit id="tx_psgo_tt_content.space.small">
+			<trans-unit id="tx_xo_tt_content.space.small">
 				<source>Small</source>
 			</trans-unit>
-			<trans-unit id="tx_psgo_tt_content.space.medium">
+			<trans-unit id="tx_xo_tt_content.space.medium">
 				<source>Medium</source>
 			</trans-unit>
 		</body>
