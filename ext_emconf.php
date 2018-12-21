@@ -1,7 +1,7 @@
 <?php
 
 /***************************************************************
- * Extension Manager/Repository config file for ext: "play"
+ * Extension Manager/Repository config file for ext: "Xo"
  ***************************************************************/
 $EM_CONF[$_EXTKEY] = [
 	'title' => 'PS Xo',
@@ -14,7 +14,7 @@ $EM_CONF[$_EXTKEY] = [
 	'uploadfolder' => '0',
 	'createDirs' => '',
 	'clearCacheOnLoad' => 0,
-	'version' => '0.0.1',
+	'version' => '0.1.0',
 	'constraints' => [
 		'depends' => [
 			'typo3' => '9.5.0-9.5.99',
