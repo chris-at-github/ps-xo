@@ -4,8 +4,8 @@
 // Aussenabstaende
 .ce-frame--outer {
 	& {
-		padding-left: 2rem;
-		padding-right: 2rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 
 	& > .ce-frame--inner {
@@ -29,12 +29,18 @@
 	padding-bottom: 0.1px;
 }
 
-.ce-frame--space-before-small > .ce-frame--inner,
-.ce-frame--space-before-medium > .ce-frame--inner {
-	margin-top: 2rem;
+.ce-frame--space-before-small > .ce-frame--inner {
+	margin-top: 1rem;
 }
 
-.ce-frame--space-after-small > .ce-frame--inner,
+.ce-frame--space-after-small > .ce-frame--inner {
+	margin-bottom: 1rem;
+}
+
+.ce-frame--space-before-medium > .ce-frame--inner {
+	margin-top: 3rem;
+}
+
 .ce-frame--space-after-medium > .ce-frame--inner {
-	margin-bottom: 2rem;
+	margin-bottom: 3rem;
 }
