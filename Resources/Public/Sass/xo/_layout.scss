@@ -9,11 +9,15 @@
 	}
 
 	& > .ce-frame--inner {
-		width: $page-width;
 		max-width: 100%;
 		margin-left: auto;
 		margin-right: auto;
 	}
+}
+
+// Laufweite
+.ce-frame--class-0 > .ce-frame--inner {
+	width: $page-width;
 }
 
 // Abstaende
