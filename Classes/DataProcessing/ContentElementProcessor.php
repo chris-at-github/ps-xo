@@ -107,23 +107,21 @@ class ContentElementProcessor implements DataProcessorInterface {
 		return $processedData;
 	}
 
-//	/**
-//	 *  Get the header and or header-style class  and add class to <header> accordingly
-//	 * @param array
-//	 * @return  string
-//	 */
-//	protected function getHeaderClasses($processedData) {
-////		only header [1-5] available
-//		$headerAvailable = array(1, 2, 3, 4, 5);
-//		$headerClasses = '';
-//		if($processedData["data"]["tx_datamints_mll_header_style"]) {
-//			$headerClasses .= 'header-layout-' . $processedData["data"]["tx_datamints_mll_header_style"];
-//		} elseif(in_array($processedData["data"]["header_layout"], $headerAvailable)) {
-//			$headerClasses .= 'header-layout-' . $processedData["data"]["header_layout"];
-//		}
-//
-//		return $headerClasses;
-//	}
+	/**
+	 * Auswertung der gesetzten Ueberschrift entweder direkt aus Header Type (Layout) als Darstellung im Style von ...
+	 *
+	 * @param array
+	 * @return int
+	 */
+	protected function getHeaderClass($processedData) {
+		$headerClass = (int) $processedData['data']['header_layout'];
+
+		if(empty($processedData['data']['tx_xo_header_class']) === false) {
+			$headerClass = (int) $processedData['data']['tx_xo_header_class'];
+		}
+
+		return $headerClass;
+	}
 
 	/**
 	 * Parst die Inhalte aller verknupeften Inhaltselemente
@@ -144,8 +142,10 @@ class ContentElementProcessor implements DataProcessorInterface {
 		// Abstandsklassen zu einem einheitlichen Zustand normalisieren
 		$processedData = $this->normalizeSpaceClasses($processedData);
 
-//		// Header Klasse
-//		$processedData['data']['header_class'] = $this->getHeaderClasses($processedData);
+		// Header Klasse
+		$processedData['data']['header_class'] = $this->getHeaderClass($processedData);
+
+		DebuggerUtility::var_dump($processedData);
 
 		return $processedData;
 	}

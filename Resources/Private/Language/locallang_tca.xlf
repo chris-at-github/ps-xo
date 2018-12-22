@@ -15,6 +15,9 @@
 			<trans-unit id="tx_xo_tt_content.variant">
 				<source>Variant</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.header_class">
+				<source>Class</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
