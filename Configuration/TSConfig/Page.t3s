@@ -36,3 +36,7 @@ TCAdefaults.tt_content {
 	space_before_class = auto
 	space_after_class = auto
 }
+
+RTE {
+	default.preset = xo
+}
