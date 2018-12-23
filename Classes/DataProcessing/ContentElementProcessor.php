@@ -133,8 +133,6 @@ class ContentElementProcessor implements DataProcessorInterface {
 	 * @return array the processed data as key/value store
 	 */
 	public function process(ContentObjectRenderer $cObject, array $contentObjectConfiguration, array $processorConfiguration, array $processedData) {
-//
-//		DebuggerUtility::var_dump($processedData['data']);
 
 		// Fuege alle Klassen zusammen -> wird nur als String im Layout ausgegeben
 		$processedData['data']['frame_classes'] = implode(' ', $this->getFrameClasses($processedData, $processorConfiguration, $cObject));
@@ -144,8 +142,6 @@ class ContentElementProcessor implements DataProcessorInterface {
 
 		// Header Klasse
 		$processedData['data']['header_class'] = $this->getHeaderClass($processedData);
-
-		DebuggerUtility::var_dump($processedData);
 
 		return $processedData;
 	}
