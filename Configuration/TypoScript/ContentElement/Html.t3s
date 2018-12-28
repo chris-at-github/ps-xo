@@ -1,0 +1,14 @@
+tt_content {
+	xo_html =< lib.contentElement
+	xo_html {
+		templateName = Html.html
+
+		dataProcessing {
+			10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+			10 {
+				as = files
+				references.fieldName = tx_xo_file
+			}
+		}
+	}
+}
