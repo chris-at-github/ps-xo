@@ -53,8 +53,6 @@ $tmpXoTtContentColumns = [
 
 // ---------------------------------------------------------------------------------------------------------------------
 // HTML-Erweiterungen von TT-Content
-// ---------------------------------------------------------------------------------------------------------------------
-// Auslesen von HTML-Dateien und Ausgabe auf der Webseite
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
 	array(
 		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_html.title',
