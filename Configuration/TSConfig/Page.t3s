@@ -40,3 +40,18 @@ TCAdefaults.tt_content {
 RTE {
 	default.preset = xo
 }
+
+mod.wizards.newContentElement.wizardItems.common {
+	elements {
+		xo_html {
+			iconIdentifier = content-special-html
+			title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_html.title
+			description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_html.description
+			tt_content_defValues {
+				CType = xo_html
+			}
+		}
+	}
+
+	show := addToList(xo_html)
+}

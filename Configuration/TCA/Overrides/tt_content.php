@@ -30,11 +30,53 @@ $tmpXoTtContentColumns = [
 			],
 		]
 	],
+	'tx_xo_file' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.file',
+		'config' =>
+			\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+				'tx_xo_file',
+				[
+					'appearance' => [
+						'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference'
+					],
+					'maxitems' => 1
+				],
+				'html'
+			),
+	]
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tmpXoTtContentColumns);
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'frames', 'tx_xo_variant', 'after:frame_class');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'headers', 'tx_xo_header_class', 'after:header_layout');
+
+// ---------------------------------------------------------------------------------------------------------------------
+// HTML-Erweiterungen von TT-Content
+// ---------------------------------------------------------------------------------------------------------------------
+// Auslesen von HTML-Dateien und Ausgabe auf der Webseite
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+	array(
+		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_html.title',
+		'xo_html',
+		'content-special-html'
+	),
+	'CType',
+	'xo_html'
+);
+
+$GLOBALS['TCA']['tt_content']['types']['xo_html'] = [
+	'showitem' => '
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,tx_xo_file,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
+	'
+];
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Zuruecksetzen der Werte Space Before / After, damit diese komplett ueber PageTs befuellt werden koennen

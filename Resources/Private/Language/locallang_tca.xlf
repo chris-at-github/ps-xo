@@ -18,6 +18,16 @@
 			<trans-unit id="tx_xo_tt_content.header_class">
 				<source>Class</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.file">
+				<source>File</source>
+			</trans-unit>
+
+			<trans-unit id="tx_xo_html.title">
+				<source>HTML File</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_html.description">
+				<source>Include and parse a static HTML file.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
