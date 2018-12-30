@@ -1,6 +1,6 @@
 <?php
 
-namespace Cext\Play\ViewHelpers\Svg;
+namespace Ps\Xo\ViewHelpers\Svg;
 
 /***************************************************************
  *  Copyright notice
@@ -43,6 +43,7 @@ class UseViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBasedVie
 	 */
 	public function initializeArguments() {
 		$this->registerUniversalTagAttributes();
+		$this->registerArgument('name', 'string', 'Name of SVG symbol reference', true, null);
 		$this->registerArgument('preserveAspectRatio', 'string', 'Alignment and scaling options from the SVG standard', false, null);
 	}
 
@@ -50,10 +51,17 @@ class UseViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBasedVie
 	 * Erstellt end SVG Tag mit einem Use-Tag referenziert auf das Icon-Quelle
 	 * @see: https://css-tricks.com/svg-use-with-external-reference-take-2/
 	 *
-	 * @param string $name Name used for use tag and for class name
 	 * @return string
 	 */
-	protected function render($name) {
+	public function render() {
+		$this->tag->addAttribute('class', 'svg-sprite svg-sprite--' . $this->arguments['name']);
+
+		if(empty($this->arguments['preserveAspectRatio']) === false) {
+			$this->tag->addAttribute('preserveAspectRatio', $this->arguments['preserveAspectRatio']);
+		}
+
+		$this->tag->setContent($this->renderUseTag($this->arguments['name']));
+
 		return $this->tag->render();
 	}
 
