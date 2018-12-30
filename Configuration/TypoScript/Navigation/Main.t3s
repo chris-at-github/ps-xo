@@ -1,0 +1,7 @@
+// Start with copying our default menu configuration so we don't have to repeat our selves (except in the explanation, didn't I already mention this?) ;-)
+navigation.main < navigation.default
+navigation.main {
+	// Create a menu out of the pages specifically listed under special.value
+	special = directory
+	special.value = {$navigation.main}
+}
