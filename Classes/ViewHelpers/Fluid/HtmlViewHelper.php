@@ -1,6 +1,6 @@
 <?php
 
-namespace Ps\Xo\ViewHelpers;
+namespace Ps\Xo\ViewHelpers\Fluid;
 
 /***************************************************************
  *  Copyright notice
@@ -28,7 +28,7 @@ namespace Ps\Xo\ViewHelpers;
 
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
-class FluidViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
+class HtmlViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
 	 * @var \TYPO3\CMS\Extbase\Object\ObjectManagerInterface
