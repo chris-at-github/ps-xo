@@ -18,7 +18,7 @@ plugin.tx_xo {
 	settings {
 		svg {
 			# cat=plugin.xo/settings; type=string; label=Default path for svg files
-			path = EXT:xo/Resources/Public/Svg/
+			path = fileadmin/Resources/Public/Svg/
 		}
 	}
 }
