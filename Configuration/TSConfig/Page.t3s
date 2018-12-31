@@ -51,7 +51,16 @@ mod.wizards.newContentElement.wizardItems.common {
 				CType = xo_html
 			}
 		}
+
+		xo_gallery {
+			iconIdentifier = content-image
+			title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_gallery.title
+			description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_gallery.description
+			tt_content_defValues {
+				CType = xo_gallery
+			}
+		}
 	}
 
-	show := addToList(xo_html)
+	show := addToList(xo_html, xo_gallery)
 }

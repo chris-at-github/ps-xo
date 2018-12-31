@@ -77,6 +77,31 @@ $GLOBALS['TCA']['tt_content']['types']['xo_html'] = [
 ];
 
 // ---------------------------------------------------------------------------------------------------------------------
+// Einfache Bildgalerie ueber TT-Content
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+	array(
+		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_gallery.title',
+		'xo_gallery',
+		'content-image'
+	),
+	'CType',
+	'xo_gallery'
+);
+
+$GLOBALS['TCA']['tt_content']['types']['xo_gallery'] = [
+	'showitem' => '
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,tx_xo_file,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
+	'
+];
+
+// ---------------------------------------------------------------------------------------------------------------------
 // Zuruecksetzen der Werte Space Before / After, damit diese komplett ueber PageTs befuellt werden koennen
 $GLOBALS['TCA']['tt_content']['columns']['space_before_class']['config']['items'] = [];
 $GLOBALS['TCA']['tt_content']['columns']['space_after_class']['config']['items'] = [];

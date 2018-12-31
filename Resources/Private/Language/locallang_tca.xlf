@@ -28,6 +28,13 @@
 			<trans-unit id="tx_xo_html.description">
 				<source>Include and parse a static HTML file.</source>
 			</trans-unit>
+
+			<trans-unit id="tx_xo_gallery.title">
+				<source>Gallery</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_gallery.description">
+				<source>Simple image gallery.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
