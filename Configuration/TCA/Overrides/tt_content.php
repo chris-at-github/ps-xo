@@ -40,9 +40,8 @@ $tmpXoTtContentColumns = [
 					'appearance' => [
 						'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference'
 					],
-					'maxitems' => 1
-				],
-				'html'
+					'maxitems' => 9999
+				]
 			),
 	]
 ];
@@ -98,7 +97,53 @@ $GLOBALS['TCA']['tt_content']['types']['xo_gallery'] = [
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
 		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
-	'
+	',
+	'columnsOverrides' => [
+		'tx_xo_file' => [
+			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+				'tx_xo_file',
+				[
+					'appearance' => [
+						'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference'
+					],
+					'foreign_types' => [
+						'0' => [
+							'showitem' => '
+                        --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                        --palette--;;filePalette'
+						],
+						\TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+							'showitem' => '
+                        --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                        --palette--;;filePalette'
+						],
+						\TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+							'showitem' => '
+                        --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                        --palette--;;filePalette'
+						],
+						\TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+							'showitem' => '
+                        --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                        --palette--;;filePalette'
+						],
+						\TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+							'showitem' => '
+                        --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                        --palette--;;filePalette'
+						],
+						\TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+							'showitem' => '
+                        --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                        --palette--;;filePalette'
+						]
+					],
+					'maxitems' => 999
+				],
+				$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+			),
+		]
+	]
 ];
 
 // ---------------------------------------------------------------------------------------------------------------------
