@@ -72,7 +72,21 @@ $GLOBALS['TCA']['tt_content']['types']['xo_html'] = [
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
 		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
-	'
+	',
+	'columnsOverrides' => [
+		'tx_xo_file' => [
+			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+				'tx_xo_file',
+				[
+					'appearance' => [
+						'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference'
+					],
+					'maxitems' => 1
+				],
+				'html'
+			),
+		]
+	]
 ];
 
 // ---------------------------------------------------------------------------------------------------------------------
