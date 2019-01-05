@@ -35,6 +35,13 @@
 			<trans-unit id="tx_xo_gallery.description">
 				<source>Simple image gallery.</source>
 			</trans-unit>
+
+			<trans-unit id="ratio.fullsize">
+				<source>Fullsize</source>
+			</trans-unit>
+			<trans-unit id="ratio.thumbnail">
+				<source>Thumbnail</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
