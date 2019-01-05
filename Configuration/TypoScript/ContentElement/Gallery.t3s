@@ -6,7 +6,7 @@ tt_content {
 		dataProcessing {
 			10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
 			10 {
-				as = files
+				as = images
 				references.fieldName = tx_xo_file
 			}
 		}

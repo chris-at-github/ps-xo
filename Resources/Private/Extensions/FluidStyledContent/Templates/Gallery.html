@@ -4,9 +4,19 @@
 <f:layout name="Default" />
 <f:section name="Main">
 
-	<f:for each="{files}" as="file">
-		<f:debug>{file}</f:debug>
-	</f:for>
+	<f:if condition="{images}">
+		<div class="gallery--image-container">
+			<f:for each="{images}" as="image">
+				<f:render section="Image" arguments="{_all}" />
+			</f:for>
+		</div>
+	</f:if>
 
+</f:section>
+
+<f:section name="Image">
+	<div class="gallery--image" data-image-fullscreen="{f:uri.image(src: image.uid, treatIdAsReference: 1, maxWidth: 1280, height: 1024, cropVariant: 'fullscreen')}">
+		<f:image src="{image.uid}" treatIdAsReference="1" maxWidth="800" height="600" cropVariant="thumbnail" />
+	</div>
 </f:section>
 </html>
