@@ -1,0 +1,10 @@
+block.logo = TEXT
+block.logo {
+	value < sitetitle
+
+	typolink {
+		ATagBeforeWrap = 1
+		wrap = <img src="{$folders.images}/logo.png" alt="|" />
+		parameter = {$pages.home}
+	}
+}
