@@ -1,0 +1,36 @@
+#content = PAGE
+#content {
+#	typeNum = 1548191072
+#
+#	10 = CONTENT
+#	10 {
+#		table = tt_content
+#		select {
+#			pidInList = 12
+#			uidInList = 13
+#		}
+#	}
+#}
+content = PAGE
+content {
+	typeNum = 1548191072
+
+	config {
+		disableAllHeaderCode = 1
+		additionalHeaders = Content-type:text/html
+		xhtml_cleaning = 0
+		admPanel = 0
+		debug = 0
+		no_cache = 1
+	}
+
+	10 = RECORDS
+	10 {
+		tables = tt_content
+		source{
+			data = GP:uid
+			intval = 1
+		}
+		dontCheckPid = 1
+	}
+}
