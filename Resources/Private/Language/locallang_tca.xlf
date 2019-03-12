@@ -36,10 +36,10 @@
 				<source>Simple image gallery.</source>
 			</trans-unit>
 
-			<trans-unit id="ratio.fullsize">
+			<trans-unit id="tx_xo_crop_variant.fullsize">
 				<source>Fullsize</source>
 			</trans-unit>
-			<trans-unit id="ratio.thumbnail">
+			<trans-unit id="tx_xo_crop_variant.thumbnail">
 				<source>Thumbnail</source>
 			</trans-unit>
 		</body>

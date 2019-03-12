@@ -164,7 +164,7 @@ $GLOBALS['TCA']['tt_content']['types']['xo_gallery']['columnsOverrides']['tx_xo_
 // @see: https://www.clickstorm.de/blog/crop-funktion-fuer-bilder-in-typo3-8-7/
 $GLOBALS['TCA']['tt_content']['types']['xo_gallery']['columnsOverrides']['tx_xo_file']['config']['overrideChildTca']['columns']['crop']['config']['cropVariants'] = [
 	'fullsize' => [
-		'title' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:ratio.fullsize',
+		'title' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_crop_variant.fullsize',
 		'allowedAspectRatios' => [
 			'NaN' => [
 				'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
@@ -174,7 +174,7 @@ $GLOBALS['TCA']['tt_content']['types']['xo_gallery']['columnsOverrides']['tx_xo_
 		'selectedRatio' => 'NaN',
 	],
 	'thumbnail' => [
-		'title' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:ratio.thumbnail',
+		'title' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_crop_variant.thumbnail',
 		'allowedAspectRatios' => [
 			'NaN' => [
 				'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
