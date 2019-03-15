@@ -1,5 +1,5 @@
-block.logo = TEXT
-block.logo {
+block.logo.file = TEXT
+block.logo.file {
 	value < sitetitle
 
 	typolink {
