@@ -1,0 +1,10 @@
+.c-address {
+	& {
+		font-style: normal;
+	}
+
+	.c-link--phone {
+		color: $font-color-base;
+		text-decoration: none;
+	}
+}
