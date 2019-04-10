@@ -43,6 +43,26 @@ $tmpXoTtContentColumns = [
 					'maxitems' => 9999
 				]
 			),
+	],
+	'tx_xo_address' => [
+		'exclude' => true,
+		'label' => '',
+		'config' => [
+			'type' => 'inline',
+			'foreign_table' => 'tt_address',
+			'foreign_field' => 'tx_xo_content',
+			'foreign_sortby' => 'sorting',
+			'foreign_label' => 'name',
+			'maxitems' => 999,
+			'appearance' => [
+				'collapseAll' => 1,
+				'expandSingle' => 1,
+				'showAllLocalizationLink' => 1,
+				'showSynchronizationLink' => 1,
+				'showPossibleLocalizationRecords' => 1,
+				'showRemovedLocalizationRecords' => 1,
+			],
+		]
 	]
 ];
 
@@ -200,7 +220,7 @@ $GLOBALS['TCA']['tt_content']['types']['xo_gallery']['columnsOverrides']['tx_xo_
 $GLOBALS['TCA']['tt_content']['types']['xo_address'] = [
 	'showitem' => '
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,tx_xo_address,
 		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
 		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
