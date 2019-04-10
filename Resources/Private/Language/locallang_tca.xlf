@@ -36,6 +36,13 @@
 				<source>Simple image gallery.</source>
 			</trans-unit>
 
+			<trans-unit id="tx_xo_address.title">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_address.description">
+				<source>Inline address element with Google Maps und JSON LD support.</source>
+			</trans-unit>
+
 			<trans-unit id="tx_xo_crop_variant.fullsize">
 				<source>Fullsize</source>
 			</trans-unit>

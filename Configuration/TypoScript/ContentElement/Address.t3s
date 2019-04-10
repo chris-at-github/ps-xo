@@ -1,0 +1,6 @@
+tt_content {
+	xo_address =< lib.contentElement
+	xo_address {
+		templateName = Address.html
+	}
+}
