@@ -21,6 +21,9 @@
 			<trans-unit id="tx_xo_tt_content.file">
 				<source>File</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.address">
+				<source>Address</source>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_html.title">
 				<source>HTML File</source>

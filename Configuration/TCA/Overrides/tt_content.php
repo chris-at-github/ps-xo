@@ -46,7 +46,7 @@ $tmpXoTtContentColumns = [
 	],
 	'tx_xo_address' => [
 		'exclude' => true,
-		'label' => '',
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.address',
 		'config' => [
 			'type' => 'inline',
 			'foreign_table' => 'tt_address',
@@ -61,6 +61,7 @@ $tmpXoTtContentColumns = [
 				'showSynchronizationLink' => 1,
 				'showPossibleLocalizationRecords' => 1,
 				'showRemovedLocalizationRecords' => 1,
+				'newRecordLinkAddTitle' => 1
 			],
 		]
 	]
