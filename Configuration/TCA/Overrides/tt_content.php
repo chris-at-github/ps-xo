@@ -212,7 +212,7 @@ $GLOBALS['TCA']['tt_content']['types']['xo_gallery']['columnsOverrides']['tx_xo_
 	array(
 		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_address.title',
 		'xo_address',
-		'tt-address-plugin'
+		'xo-content-address'
 	),
 	'CType',
 	'xo_address'

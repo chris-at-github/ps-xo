@@ -62,7 +62,7 @@ mod.wizards.newContentElement.wizardItems.common {
 		}
 
 		xo_address {
-			iconIdentifier = tt-address-plugin
+			iconIdentifier = xo-content-address
 			title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_address.title
 			description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_address.description
 			tt_content_defValues {

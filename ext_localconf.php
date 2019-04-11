@@ -12,3 +12,14 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['contentPo
 
 // Konfiguration fuer den (CKE) Editor im Backend
 $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['xo'] = 'EXT:xo/Configuration/RTE/Xo.yaml';
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Registrierung Icons
+// @see: https://www.typo3lexikon.de/typo3-tutorials/core/systemextensions/core/imaging.html
+$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+
+$iconRegistry->registerIcon(
+	'xo-content-address',
+	\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+	['source' => 'EXT:xo/Resources/Public/Icons/xo-content-address.svg']
+);
