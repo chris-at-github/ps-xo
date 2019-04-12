@@ -4,7 +4,11 @@
 <f:layout name="Default" />
 <f:section name="Main">
 
-	<f:debug>{data}</f:debug>
+	<f:if condition="{data.addresses}">
+		<f:for each="{data.addresses}" as="address">
+			<f:render partial="Components/Address" section="LocalBusiness" arguments="{address: address}" />
+		</f:for>
+	</f:if>
 
 </f:section>
 </html>

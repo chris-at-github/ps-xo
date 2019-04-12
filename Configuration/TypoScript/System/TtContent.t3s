@@ -11,6 +11,7 @@ lib.contentElement {
 
 	partialRootPaths {
   	100 = EXT:xo/Resources/Private/Extensions/FluidStyledContent/Partials/
+		105 = EXT:xo/Resources/Private/Extensions/Xo/Partials/
   }
 
 	dataProcessing {
