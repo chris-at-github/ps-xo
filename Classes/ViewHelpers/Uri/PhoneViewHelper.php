@@ -44,6 +44,7 @@ class PhoneViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelpe
 	public function initializeArguments() {
 		parent::initializeArguments();
 		$this->registerArgument('phone', 'string', 'phone number', true);
+		$this->registerArgument('protocol', 'string', 'tel:', false, 'tel:');
 	}
 
 	/**
@@ -52,6 +53,6 @@ class PhoneViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelpe
 	 * @return string
 	 */
 	protected function render() {
-		return 'tel:' . preg_replace('/[^\d\+]/', '', trim($this->arguments['phone']));
+		return trim($this->arguments['protocol']) . preg_replace('/[^\d\+]/', '', trim($this->arguments['phone']));
 	}
 }
