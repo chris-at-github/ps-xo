@@ -24,7 +24,6 @@
 			<div class="c-address--item c-address--street">{address.address}</div>
 		</f:if>
 
-		<!-- @todo: funktioniert der AND Operator? -->
 		<f:if condition="{address.zip} && {address.city}">
 			<div class="c-address--item">
 				<span class="c-address--item c-address-zip">{address.zip}</span>
@@ -34,10 +33,11 @@
 	</f:section>
 
 	<f:section name="Contact">
-		<f:if condition="{address.phone}">
 
-			<!-- @todo: Erstellung xo:uri.phone ViewHelper -->
-			<div class="c-address--item c-address--phone">Telefon: <a class="c-link--phone" href="{xo:uri.phone(phone: address.phone)}">{address.phone}</a></div>
+		<f:if condition="{address.phone}">
+			<div class="c-address--item c-address--phone">Telefon:
+				<a class="c-link--phone" href="{xo:uri.phone(phone: address.phone)}">{address.phone}</a>
+			</div>
 		</f:if>
 
 		<f:if condition="{address.email}">
