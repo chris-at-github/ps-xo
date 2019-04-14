@@ -35,6 +35,7 @@
 	<f:section name="Contact">
 
 		<f:if condition="{address.phone}">
+			<!-- @todo: Language ViewHelper verwenden -->
 			<div class="c-address--item c-address--phone">Telefon: <a class="c-link--phone" href="{xo:uri.phone(phone: address.phone)}">{address.phone}</a></div>
 		</f:if>
 

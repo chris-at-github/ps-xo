@@ -6,6 +6,8 @@
 
 	<f:if condition="{data.addresses}">
 		<f:for each="{data.addresses}" as="address">
+
+			<!-- @todo: Abfrage des Types -->
 			<f:render partial="Components/Address" section="LocalBusiness" arguments="{address: address}" />
 		</f:for>
 	</f:if>
