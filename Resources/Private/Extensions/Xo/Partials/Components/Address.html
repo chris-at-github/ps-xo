@@ -9,7 +9,7 @@
 
 			<f:render section="Contact" arguments="{_all}" />
 
-			<!-- @todo: Einbindung JsonLd ViewHelper fuer Schema.org Auszeichnung -->
+			<xo:jsonLd.localBusiness address="{address}" />
 		</address>
 	</f:section>
 
@@ -35,9 +35,7 @@
 	<f:section name="Contact">
 
 		<f:if condition="{address.phone}">
-			<div class="c-address--item c-address--phone">Telefon:
-				<a class="c-link--phone" href="{xo:uri.phone(phone: address.phone)}">{address.phone}</a>
-			</div>
+			<div class="c-address--item c-address--phone">Telefon: <a class="c-link--phone" href="{xo:uri.phone(phone: address.phone)}">{address.phone}</a></div>
 		</f:if>
 
 		<f:if condition="{address.email}">
