@@ -40,6 +40,27 @@ $GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class] = $GL
 	'xo-ttaddress-address'
 ]);
 
-// @todo: neue Palette fuer RecordType, hidden, Language hinzufuegen
-// @todo: Feldefinitionen (Felder, Palette, Tabs)
-$GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['showitem'] = 'record_type, name, hidden';
+// Neue Palette General hinzufuegen
+$GLOBALS['TCA']['tt_address']['palettes']['xoGeneral'] = [
+	'showitem' => 'record_type,'
+];
+
+$GLOBALS['TCA']['tt_address']['palettes']['xoAddress'] = [
+	'showitem' => 'address, --linebreak--, city, zip, country,'
+];
+
+$GLOBALS['TCA']['tt_address']['palettes']['xoContact'] = [
+	'showitem' => 'email, --linebreak--, phone, mobile, fax, --linebreak--, www,'
+];
+
+$GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['showitem'] = '
+	--palette--;xoGeneral, record_type, name, description, image,
+	--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.address;xoAddress,
+	--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.contact;xoContact,
+	--div--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.div.map,
+	--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.coordinates;coordinates,
+	,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+	--palette--;;language,
+	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,hidden
+	,--div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories
+';
