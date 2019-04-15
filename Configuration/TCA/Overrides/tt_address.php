@@ -36,11 +36,11 @@ $tmpXoTtAddressColumns = [
 $GLOBALS['TCA']['tt_address']['ctrl']['type'] = 'record_type';
 
 // Neuen Typ Adresse hinzufuegen
-// @todo: FontAwesome Icon hinzufuegen
 $GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class] = $GLOBALS['TCA']['tx_news_domain_model_news']['types']['0'];
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem('tt_address', 'record_type', [
 	'Address XYZ',
-	\Ps\Xo\Domain\Model\Address::class
+	\Ps\Xo\Domain\Model\Address::class,
+	'xo-ttaddress-address'
 ]);
 
 // @todo: neue Palette fuer RecordType, hidden, Language hinzufuegen

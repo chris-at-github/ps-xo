@@ -23,3 +23,9 @@ $iconRegistry->registerIcon(
 	\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
 	['source' => 'EXT:xo/Resources/Public/Icons/xo-content-address.svg']
 );
+
+$iconRegistry->registerIcon(
+	'xo-ttaddress-address',
+	\TYPO3\CMS\Core\Imaging\IconProvider\FontawesomeIconProvider::class,
+	['name' => 'map-marker']
+);
