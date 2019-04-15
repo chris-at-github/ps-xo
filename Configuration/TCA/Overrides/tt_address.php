@@ -5,14 +5,12 @@
 $tmpXoTtAddressColumns = [
 	'record_type' => [
 		'exclude' => 0,
-
-		// @todo: saubere Benennung hinterlegen
-		'label' => 'LLL:EXT:examples/Resources/Private/Language/locallang_db.xlf:tx_examples_dummy.record_type',
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.record_type',
 		'config' => [
 			'type' => 'select',
 			'renderType' => 'selectSingle',
 			'items' => [
-				['', 0]
+				['LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value', 0]
 			]
 		]
 	],
@@ -28,8 +26,7 @@ $tmpXoTtAddressColumns = [
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_address', $tmpXoTtAddressColumns);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_address', 'name', 'record_type', 'after:gender');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_address', 'paletteHidden', 'tx_xo_content', 'after:hidden');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_address', 'name', 'record_type', 'before:gender');
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Tabelle um Typen erweitern
@@ -38,7 +35,7 @@ $GLOBALS['TCA']['tt_address']['ctrl']['type'] = 'record_type';
 // Neuen Typ Adresse hinzufuegen
 $GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class] = $GLOBALS['TCA']['tx_news_domain_model_news']['types']['0'];
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem('tt_address', 'record_type', [
-	'Address XYZ',
+	'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.record_type.address',
 	\Ps\Xo\Domain\Model\Address::class,
 	'xo-ttaddress-address'
 ]);

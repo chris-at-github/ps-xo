@@ -25,6 +25,16 @@
 				<source>Address</source>
 			</trans-unit>
 
+			<trans-unit id="tx_xo_tt_address.address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.record_type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.record_type.address">
+				<source>Address</source>
+			</trans-unit>
+
 			<trans-unit id="tx_xo_html.title">
 				<source>HTML File</source>
 			</trans-unit>
