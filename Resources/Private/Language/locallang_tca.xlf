@@ -31,11 +31,23 @@
 			<trans-unit id="tx_xo_tt_address.record_type">
 				<source>Type</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.schemaorg.type">
+				<source>Schema.org type</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.schemaorg.type.local_business">
+				<source>Local business</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.schemaorg.media">
+				<source>Schema.org image</source>
+			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.record_type.address">
 				<source>Address</source>
 			</trans-unit>
-			<trans-unit id="tx_xo_tt_address.div.map">
+			<trans-unit id="tx_xo_tt_address.tab.map">
 				<source>Map</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.tab.seo">
+				<source>Seo</source>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_html.title">

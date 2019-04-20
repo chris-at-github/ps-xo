@@ -13,5 +13,7 @@ CREATE TABLE tt_content (
 #
 CREATE TABLE tt_address (
 	record_type varchar(100) NOT NULL DEFAULT '0',
-	tx_xo_content int(11) unsigned DEFAULT '0' NOT NULL
+	tx_xo_content int(11) unsigned DEFAULT '0' NOT NULL,
+	tx_xo_schemaorg_type int(11) DEFAULT '0' NOT NULL,
+	tx_xo_schemaorg_media int(11) unsigned DEFAULT '0' NOT NULL
 );

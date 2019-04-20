@@ -22,7 +22,35 @@ $tmpXoTtAddressColumns = [
 			'size' => 4,
 			'eval' => 'int'
 		]
-	]
+	],
+	'tx_xo_schemaorg_type' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.schemaorg.type',
+		'config' => [
+			'type' => 'select',
+			'renderType' => 'selectSingle',
+			'items' => [
+				['', 0],
+			],
+			'size' => 1,
+			'maxitems' => 1,
+			'eval' => ''
+		],
+	],
+	'tx_xo_schemaorg_media' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.schemaorg.media',
+		'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+			'tx_xo_schemaorg_media',
+			[
+				'appearance' => [
+					'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference'
+				],
+				'maxitems' => 1
+			],
+			$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+		),
+	],
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_address', $tmpXoTtAddressColumns);
@@ -53,12 +81,18 @@ $GLOBALS['TCA']['tt_address']['palettes']['xoContact'] = [
 	'showitem' => 'email, --linebreak--, phone, mobile, fax, --linebreak--, www,'
 ];
 
+$GLOBALS['TCA']['tt_address']['palettes']['xoSeo'] = [
+	'showitem' => 'tx_xo_schemaorg_type, --linebreak--, tx_xo_schemaorg_media,'
+];
+
 $GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['showitem'] = '
 	--palette--;xoGeneral, record_type, name, description, image,
 	--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.address;xoAddress,
 	--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.contact;xoContact,
-	--div--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.div.map,
+	--div--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tab.map,
 	--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.coordinates;coordinates,
+	--div--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tab.seo,
+	--palette--;;xoSeo,
 	,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
 	--palette--;;language,
 	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,hidden
