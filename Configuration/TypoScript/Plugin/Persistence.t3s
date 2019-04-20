@@ -3,6 +3,10 @@ config.tx_extbase.persistence {
 		Ps\Xo\Domain\Model\Address {
 			mapping {
 				tableName = tt_address
+				columns {
+					tx_xo_schemaorg_type.mapOnProperty = schemaOrgType
+					tx_xo_schemaorg_media.mapOnProperty = schemaOrgMedia
+				}
 			}
 		}
 	}
