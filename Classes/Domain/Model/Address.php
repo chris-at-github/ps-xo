@@ -2,6 +2,9 @@
 
 namespace Ps\Xo\Domain\Model;
 
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+use Ps\Xo\Enumeration\SchemaOrgType;
+
 /**
  * The domain model of a Address
  *
@@ -45,5 +48,19 @@ class Address extends \FriendsOfTYPO3\TtAddress\Domain\Model\Address {
 	 */
 	public function setSchemaOrgMedia(\TYPO3\CMS\Extbase\Domain\Model\FileReference $schemaOrgMedia) {
 		$this->schemaOrgMedia = $schemaOrgMedia;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getSchemaOrgTypeSectionName() {
+		$enumeration = SchemaOrgType::cast($this->getSchemaOrgType());
+		$name = SchemaOrgType::getHumanReadableName($this->getSchemaOrgType());
+
+		if($enumeration->equals(SchemaOrgType::NONE) === true) {
+			$name = 'Default';
+		}
+
+		return str_replace(' ', '', $name);
 	}
 }
