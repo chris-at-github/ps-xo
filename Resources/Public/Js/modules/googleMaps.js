@@ -13,11 +13,15 @@
 	var GoogleMaps = function(selector, options) {
 		var _ = this;
 
+		_.maps = [];
+
 		_.selector = selector;
+
+		_.markerTypes = {};
 
 		_.defaults = {
 			zoom: 10,
-			center: {
+			coordinates: {
 				latitude: 0.0,
 				longitude: 0.0
 			},
@@ -36,15 +40,17 @@
 		_.initialize();
 	};
 
+	GoogleMaps.prototype.MARKER_TYPE_SIMPLE = 'simple';
+
 	GoogleMaps.prototype.initialize = function() {
 		var _ = this;
 		var nodes = document.querySelectorAll(this.selector);
 
-		nodes.forEach(function(node) {
+		nodes.forEach(function(node, index) {
 			var map = new google.maps.Map(node, {
 				center: {
-					lat: _.options.center.latitude,
-					lng: _.options.center.longitude
+					lat: _.options.coordinates.latitude,
+					lng: _.options.coordinates.longitude
 				},
 				zoom: _.options.zoom,
 				zoomControl: _.options.controls.zoom,
@@ -54,8 +60,45 @@
 				rotateControl: _.options.controls.rotate,
 				fullscreenControl: _.options.controls.fullscreen
 			});
+
+			_.maps[index] = map;
 		});
-	}
+	};
+
+	GoogleMaps.prototype.addMarkerType = function(name, type, options) {
+		if(type === this.MARKER_TYPE_SIMPLE) {
+			this.markerTypes[name] = {
+				type: this.MARKER_TYPE_SIMPLE,
+				url: options.url
+			};
+		}
+	};
+
+	/**
+	 * Fuegt einen Marker an angebener Position auf den Karten ein. Der Marker-Typ muss zuvor ueber addMarkerType
+	 * hinzugefuegt worden sein
+	 *
+	 * @see: https://developers.google.com/maps/documentation/javascript/examples/icon-simple
+	 * @see: https://developers.google.com/maps/documentation/javascript/examples/icon-complex
+	 * @param {string} type
+	 * @param {object} position
+	 */
+	GoogleMaps.prototype.addMarker = function(type, position) {
+		var _ = this;
+
+		_.maps.forEach(function(map) {
+			if(_.markerTypes[type].type === _.MARKER_TYPE_SIMPLE) {
+				var marker = new google.maps.Marker({
+					position: {
+						lat: position.latitude,
+						lng: position.longitude
+					},
+					map: map,
+					icon: _.markerTypes[type].url
+				});
+			}
+		});
+	};
 
 	return GoogleMaps;
 }));
