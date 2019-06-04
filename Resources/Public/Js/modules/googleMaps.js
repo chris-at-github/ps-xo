@@ -75,12 +75,24 @@
 		});
 	};
 
+	/**
+	 * Fuegt einen neuen Marker-Typ hinzu, der spaeter durch addMarker genutzt werden kann
+	 *
+	 * @see: https://stackoverflow.com/questions/20414387/google-maps-svg-marker-doesnt-display-on-ie-11#answer-40770331
+	 * @param {string} name
+	 * @param {string} type
+	 * @param {object} options
+	 */
 	GoogleMaps.prototype.addMarkerType = function(name, type, options) {
 		if(type === this.MARKER_TYPE_SIMPLE) {
 			this.markerTypes[name] = {
 				type: this.MARKER_TYPE_SIMPLE,
 				url: options.url
 			};
+
+			if(typeof(options.scaledSize) !== 'undefined') {
+				this.markerTypes[name].scaledSize = new google.maps.Size(options.scaledSize[0], options.scaledSize[1]);
+			}
 		}
 	};
 
@@ -90,6 +102,7 @@
 	 *
 	 * @see: https://developers.google.com/maps/documentation/javascript/examples/icon-simple
 	 * @see: https://developers.google.com/maps/documentation/javascript/examples/icon-complex
+	 * @see: https://stackoverflow.com/questions/20414387/google-maps-svg-marker-doesnt-display-on-ie-11#answer-40770331
 	 * @param {string} type
 	 * @param {object} position
 	 */
@@ -98,14 +111,17 @@
 
 		_.maps.forEach(function(map) {
 			if(_.markerTypes[type].type === _.MARKER_TYPE_SIMPLE) {
-				var marker = new google.maps.Marker({
+				var options = {
 					position: {
 						lat: position.latitude,
 						lng: position.longitude
 					},
 					map: map,
-					icon: _.markerTypes[type].url
-				});
+					optimized: false,
+					icon: _.markerTypes[type]
+				};
+
+				var marker = new google.maps.Marker(options);
 			}
 		});
 	};
