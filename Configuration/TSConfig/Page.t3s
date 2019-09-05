@@ -11,7 +11,10 @@ TCEFORM {
 
 		frame_class {
 			removeItems = default, ruler-before, ruler-after, indent, indent-left, indent-right, none
-			addItems.0 = Default
+			addItems {
+				0 = Default
+				1 = None
+			}
 		}
 
 		space_before_class {
