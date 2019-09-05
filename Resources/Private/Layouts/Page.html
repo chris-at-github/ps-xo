@@ -1,9 +1,18 @@
 {namespace xo=Ps\Xo\ViewHelpers}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<div id="content--main">
+		<f:render section="Main" />
+	</div>
 
-<div id="content--main">
-	<f:render section="Main" />
-</div>
+	<div id="footer">
+		<f:if condition="{navigationFooter}">
+			<nav class="navigation navigation-horizontal">
+				<f:render partial="Navigation/Listing" section="Main" arguments="{navigation: navigationFooter}" />
+			</nav>
+		</f:if>
+	</div>
 
-<div class="svg-sprite--container">
-	<xo:svg.inline source="assets/svg/sprite.svg" />
-</div>
+	<div class="svg-sprite--container">
+		<xo:svg.inline source="assets/svg/sprite.svg" />
+	</div>
+</html>

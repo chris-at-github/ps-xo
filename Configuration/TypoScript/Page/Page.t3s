@@ -23,5 +23,9 @@ page {
 		partialRootPaths {
 			10 = {$plugin.tx_xo.view.partialRootPath}
 		}
+
+		dataProcessing {
+			10 < navigation.footer
+		}
 	}
 }
