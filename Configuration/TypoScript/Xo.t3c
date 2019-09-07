@@ -33,6 +33,11 @@ folders {
 	js = fileadmin/Resources/Public/Js
 }
 
+url {
+	# cat=url; type=string; label=Assets absolute URL
+	assets = /assets/
+}
+
 meta {
 	# cat=meta; type=string; label=Keywords: Enter a comma separated list of keywords.
 	keywords =
