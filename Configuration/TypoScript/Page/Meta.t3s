@@ -1,0 +1,6 @@
+page {
+	meta {
+		viewport = width=device-width, initial-scale=1
+		format-detection = telephone=no
+	}
+}
