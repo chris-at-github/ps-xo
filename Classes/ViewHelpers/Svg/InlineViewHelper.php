@@ -52,6 +52,8 @@ class InlineViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelp
 	public function initializeArguments() {
 		parent::initializeArguments();
 		$this->registerArgument('source', 'string', 'Filename / -path for the svg file', true, null);
+		$this->registerArgument('attributes', 'array', 'Additional attributes for svg tag', false, null);
+		$this->registerArgument('title', 'string', 'Optional title tag', false, null);
 		$this->registerArgument('preserveAspectRatio', 'string', 'Alignment and scaling options from the SVG standard', false, null);
 	}
 
@@ -69,6 +71,41 @@ class InlineViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelp
 			return '<!-- SVG: ' . $this->arguments['source'] . ' could not be found -->';
 		}
 
+		// Remove xml declaration
+		$output = preg_replace('/<\?xml.*\?>/', null, $output);
+
+		// Remove DOCTYPE
+		$output = preg_replace('/<!DOCTYPE((.|\n|\r)*?)\">/i', null, $output);
+
+		
+		// Split and rebuild svg tag
+		if(empty(preg_match('/(<svg)([^<]*|[^>]*)(.*)(<\/svg>)/', $output, $matches)) === false) {
+
+			// Tag name
+			$output = $matches[1];
+
+			// Extra attributes
+			if(empty($this->arguments['attributes']) === false) {
+				foreach($this->arguments['attributes'] as $name => $value) {
+					$output .= ' ' . $name . '="' . $value . '"';
+				}
+			}
+
+			// Existing attributes
+			$output .= $matches[2];
+
+			// Add title tag for accessibility
+			// @see: https://css-tricks.com/accessible-svgs/
+			if(empty($this->arguments['title']) === false) {
+				$output .= '<title id="accessibility-title">' . $this->arguments['title'] . '</title>';
+			}
+
+			// Existing svg content and closing tag
+			$output .= $matches[3];
+			$output .= $matches[4];
+		}
+
+		/*
 		// Add additional classes to the SVG.
 		$preserveAspectRatio = trim($this->arguments['preserveAspectRatio']);
 		$output = preg_replace_callback('/<svg.*?>/s', function(array $matches) use ($preserveAspectRatio) {
@@ -85,6 +122,7 @@ class InlineViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelp
 
 			return $content;
 		}, $output);
+		*/
 
 		return $output;
 	}
