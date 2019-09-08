@@ -27,5 +27,11 @@ page {
 		dataProcessing {
 			10 < navigation.footer
 		}
+
+		settings {
+			pages {
+				home = {$pages.home}
+			}
+		}
 	}
 }
