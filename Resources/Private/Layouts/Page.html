@@ -10,6 +10,8 @@
 		</div>
 
 		<div id="footer">
+			<f:render partial="Layout/Copyright" section="Main" />
+
 			<f:if condition="{navigationFooter}">
 				<nav class="navigation navigation-horizontal">
 					<f:render partial="Navigation/Listing" section="Main" arguments="{navigation: navigationFooter}" />
