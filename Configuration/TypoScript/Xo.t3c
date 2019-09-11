@@ -89,3 +89,11 @@ googleAnalytics {
 	# cat=googleAnalytics; type=string; label=Tracking-ID
 	trackingId = UA-123-4
 }
+
+googleMaps {
+	# cat=googleMaps; type=string; label=Uri for Google Maps API
+	uri = https://maps.googleapis.com/maps/api/js?key=
+
+	# cat=googleMaps; type=string; label=Google Maps API Key
+	apiKey = AIzaSyCOkLaiTykKBxj4oCyaRzuYZp0k2XCBLtc
+}

@@ -1,0 +1,6 @@
+plugin.tx_xo.settings {
+	googleMaps {
+		uri = {$googleMaps.uri}
+		apiKey = {$googleMaps.apiKey}
+	}
+}
