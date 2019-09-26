@@ -23,6 +23,8 @@
 			<xo:svg.inline source="assets/svg/sprite.svg" />
 		</div>
 
-		<xo:google.maps.script />
+		<f:if condition="{settings.googleMaps.apiKey}">
+			<xo:js.file file="{settings.googleMaps.uri}{settings.googleMaps.apiKey}" compress="0" excludeFromConcatenation="1" />
+		</f:if>	
 	</f:spaceless>
 </html>

@@ -1,4 +1,8 @@
 plugin.tx_xo.settings {
+	pages {
+		home = {$pages.home}
+	}
+
 	googleMaps {
 		uri = {$googleMaps.uri}
 		apiKey = {$googleMaps.apiKey}

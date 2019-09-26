@@ -1,6 +1,6 @@
 <?php
 
-namespace Ps\Xo\ViewHelpers\Google\Maps;
+namespace Ps\Xo\ViewHelpers\Js;
 
 /***************************************************************
  *  Copyright notice
@@ -31,7 +31,7 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 /**
  * Bindet den Script-Tag fuer die Google Maps Karte ein
  */
-class ScriptViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class FileViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
 	 * TYPO3's configuration manager
@@ -46,6 +46,13 @@ class ScriptViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelp
 	 */
 	public function initializeArguments() {
 		parent::initializeArguments();
+
+		$this->registerArgument('file', 'string', 'URI for JavaScript Resource', true);
+		$this->registerArgument('compress', 'boolean', 'Compress', true);
+		$this->registerArgument('forceOnTop', 'boolean', 'Force on top', false);
+		$this->registerArgument('excludeFromConcatenation', 'boolean', 'Exclude from concatenation', false);
+		$this->registerArgument('async', 'boolean', 'Async', false);
+		$this->registerArgument('integrity', 'string', 'Integrity', '');
 	}
 
 	/**
@@ -54,15 +61,17 @@ class ScriptViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelp
 	 * @return string
 	 */
 	protected function render() {
-		$settings = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'xo');
 
-		if(empty($settings['googleMaps']['apiKey']) === false) {
-
-			/** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
-			$pageRenderer = $GLOBALS['TSFE']->pageRenderer;
-			$file = $settings['googleMaps']['uri'] . $settings['googleMaps']['apiKey'];
-
-			$pageRenderer->addJsFooterFile($file, 'text/javascript', false, false, '', true);
-		}
+		/** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
+		$pageRenderer = $GLOBALS['TSFE']->pageRenderer;
+		$pageRenderer->addJsFooterFile(
+			$this->arguments['file'], 
+			'text/javascript',
+			$this->arguments['compress'],
+			$this->arguments['forceOnTop'], 
+			'',
+			$this->arguments['excludeFromConcatenation'],
+			$this->arguments['async'],
+			$this->arguments['integrity']);
 	}
 }

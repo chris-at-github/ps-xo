@@ -26,12 +26,13 @@ page {
 
 		dataProcessing {
 			10 < navigation.footer
+			100 =  Ps\Xo\DataProcessing\SettingsProcessor
 		}
 
-		settings {
-			pages {
-				home = {$pages.home}
-			}
-		}
+		# settings {
+		# 	pages {
+		# 		home = {$pages.home}
+		# 	}
+		# }
 	}
 }
