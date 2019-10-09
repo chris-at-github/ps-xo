@@ -2,7 +2,7 @@
 	<f:spaceless>
 
 		<div id="header">
-			<f:render partial="Layout/Logo" section="Main" />
+			<f:render partial="Page/Logo" section="Main" />
 		</div>
 
 		<div id="content--main">
@@ -10,7 +10,7 @@
 		</div>
 
 		<div id="footer">
-			<f:render partial="Layout/Copyright" section="Main" />
+			<f:render partial="Page/Copyright" section="Main" />
 
 			<f:if condition="{navigationFooter}">
 				<nav class="navigation navigation-horizontal">
@@ -23,8 +23,6 @@
 			<xo:svg.inline source="assets/svg/sprite.svg" />
 		</div>
 
-		<f:if condition="{settings.googleMaps.apiKey}">
-			<xo:js.file file="{settings.googleMaps.uri}{settings.googleMaps.apiKey}" compress="0" excludeFromConcatenation="1" />
-		</f:if>	
+		<f:render partial="Page/FooterScript" section="Main" />
 	</f:spaceless>
 </html>
