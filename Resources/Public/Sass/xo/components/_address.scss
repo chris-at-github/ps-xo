@@ -1,10 +1,19 @@
-.c-address {
+.address {
 	& {
 		font-style: normal;
 	}
 
-	.c-link--phone {
-		color: $font-color-base;
-		text-decoration: none;
+	.address--name {
+		font-weight: $font-weight-bold;
+	}
+
+	.address--location {
+		&, & + .address--item {
+			margin: 5px 0 0 0;
+		}
+	}
+
+	.address--zip + .address--city {
+		margin-left: 5px;
 	}
 }

@@ -1,0 +1,12 @@
+.list--check {
+	li {
+		@include iconfont(check);
+		padding: rem(0 0 0 20px);
+	}
+
+	li:before {
+		border: 0;
+		top: 6px;
+		font-size: rem(9px);
+	}
+}
