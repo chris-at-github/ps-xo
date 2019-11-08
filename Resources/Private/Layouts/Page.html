@@ -3,6 +3,12 @@
 
 		<div id="header">
 			<f:render partial="Page/Logo" section="Main" />
+
+			<f:if condition="{navigationMain}">
+				<nav class="navigation">
+					<f:render partial="Navigation/Listing" section="Main" arguments="{navigation: navigationMain}" />
+				</nav>
+			</f:if>
 		</div>
 
 		<div id="content--main">
