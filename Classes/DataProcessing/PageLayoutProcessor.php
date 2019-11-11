@@ -38,6 +38,9 @@ class PageLayoutProcessor implements DataProcessorInterface {
 	public function process(ContentObjectRenderer $cObject, array $contentObjectConfiguration, array $processorConfiguration, array $processedData)	{
 		if(isset($processorConfiguration['mapping.'][$processedData['data']['layout']]) === true) {
 			$processedData[$processorConfiguration['as']] = $processorConfiguration['mapping.'][$processedData['data']['layout']];
+	
+		} else {
+			$processedData[$processorConfiguration['as']] = $processorConfiguration['default'];
 		}
  
 		return $processedData;
