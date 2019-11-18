@@ -1,4 +1,17 @@
 // ---------------------------------------------------------------------------------------------------------------------
+// Container
+%container-outer {
+	padding: 0 rem(20px);
+}
+
+%container-inner {
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*
+// ---------------------------------------------------------------------------------------------------------------------
 // Content Elemente
 
 // Aussenabstaende
@@ -48,3 +61,4 @@
 .ce-frame--space-after-medium > .ce-frame--inner {
 	margin-bottom: 3rem;
 }
+*/
