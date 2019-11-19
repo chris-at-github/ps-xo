@@ -2,7 +2,8 @@
 	<f:section name="Main">
 		<ul>
 			<f:for each="{navigation}" as="item">
-				<f:render partial="Navigation/Item" section="Main" arguments="{item: item}"/>
+				<f:render partial="Navigation/Item" section="Main" arguments="{item: item}" />
+
 				<f:if condition="{item.children}">
 					<f:render section="Main" arguments="{navigation: item.children}"/>
 				</f:if>

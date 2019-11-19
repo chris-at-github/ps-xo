@@ -25,7 +25,10 @@ page {
 		}
 
 		dataProcessing {
-			10 < navigation.footer
+
+			// Navigationen
+			10 < navigation.main
+			20 < navigation.footer
 
 			100 =  Ps\Xo\DataProcessing\SettingsProcessor
 			110 =  Ps\Xo\DataProcessing\PageLayoutProcessor
