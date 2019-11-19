@@ -2,13 +2,19 @@
 	<f:spaceless>
 		<div id="page">
 			<div id="header">
-				<f:render partial="Page/Logo" section="Main" />
+				<div class="row">
+					<div class="col-4">
+						<f:render partial="Page/Logo" section="Main" />
+					</div>
 
-				<f:if condition="{navigationMain}">
-					<nav class="navigation">
-						<f:render partial="Navigation/Listing" section="Main" arguments="{navigation: navigationMain}" />
-					</nav>
-				</f:if>
+					<f:if condition="{navigationMain}">
+						<div class="col-8">
+							<nav class="navigation">
+								<f:render partial="Navigation/Listing" section="Main" arguments="{navigation: navigationMain}" />
+							</nav>
+						</div>
+					</f:if>
+				</div>
 			</div>
 
 			<div id="content--main">
