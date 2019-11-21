@@ -35,6 +35,7 @@ page {
 			110 {
 				as = pageLayout
 				default = PageLayout-0
+				recursive = 1
 				mapping {
 					0 = PageLayout-0
 					1 = PageLayout-1
