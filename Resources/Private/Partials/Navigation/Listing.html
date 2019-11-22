@@ -3,11 +3,6 @@
 		<ul>
 			<f:for each="{navigation}" as="item">
 				<f:render partial="Navigation/Item" section="Main" arguments="{item: item}" />
-
-				<f:if condition="{item.children}">
-					<f:render section="Main" arguments="{navigation: item.children}"/>
-				</f:if>
-				</li>
 			</f:for>
 		</ul>
 	</f:section>

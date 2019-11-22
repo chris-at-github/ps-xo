@@ -1,0 +1,19 @@
+.navigation--layout-1 {
+	& {
+		@extend %navigation;
+	}
+
+	a, .current > span {
+		@extend %navigation-item;
+	}
+
+	li > ul {
+		& {
+			margin: 0 0 10px 0;
+		}
+
+		a {
+			padding: 3px 10px 3px 30px;
+		}
+	}
+}

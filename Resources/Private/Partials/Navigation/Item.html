@@ -2,18 +2,30 @@
 	<f:section name="Main">
 		<f:if condition="{item.spacer} || {item.current}">
 			<f:then>
-				<li class="{f:if(condition:item.current, then:' current')}{f:if(condition:item.spacer, then:' spacer')}">
+				<li class="{f:if(condition:item.current, then:'current')}{f:if(condition:item.spacer, then:' spacer')}">
 					<span>{item.title}</span>
+
+					<f:if condition="{item.children}">
+						<f:render partial="Navigation/Listing" section="Main" arguments="{navigation: item.children}" />
+					</f:if>
 				</li>
 			</f:then>
 			<f:else if="{item.active}">
-				<li class="{f:if(condition:item.active, then:' active')}">
+				<li class="{f:if(condition:item.active, then:'active')}">
 					<f:render partial="Navigation/Link" section="Main" arguments="{item: item}"/>
+
+					<f:if condition="{item.children}">
+						<f:render partial="Navigation/Listing" section="Main" arguments="{navigation: item.children}" />
+					</f:if>
 				</li>	
 			</f:else>
 			<f:else>
 				<li>
 					<f:render partial="Navigation/Link" section="Main" arguments="{item: item}"/>
+
+					<f:if condition="{item.children}">
+						<f:render partial="Navigation/Listing" section="Main" arguments="{navigation: item.children}" />
+					</f:if>
 				</li>	
 			</f:else>
 		</f:if>

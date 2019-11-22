@@ -1,9 +1,11 @@
 // ---------------------------------------------------------------------------------------------------------------------
-// Hauptbereiche
-#page {
-	width: $page-max-width;
+// Container
+%container-outer {
+	padding: 0 rem(20px);
+}
+
+%container-inner {
 	max-width: 100%;
-	min-height: 100vh;
-	margin: 0 auto;
-	padding: 15px;
+	margin-left: auto;
+	margin-right: auto;
 }
