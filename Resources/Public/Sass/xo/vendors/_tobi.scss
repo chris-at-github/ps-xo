@@ -1,0 +1,336 @@
+/* Link */
+.tobi-zoom {
+  border: 0;
+  box-shadow: none;
+  display: block;
+  position: relative;
+  text-decoration: none;
+
+
+  & img {
+    display: block;
+  }
+
+  &__icon {
+    align-items: center;
+    background-color: $tobi-zoom-icon-background;
+    bottom: 0;
+    color: $tobi-zoom-icon-color;
+    display: flex;
+    justify-content: center;
+    line-height: 1;
+    position: absolute;
+    right: 0;
+
+
+    & svg {
+      color: $tobi-zoom-icon-color;
+      fill: none;
+      height: rem(20px);
+      padding-bottom: rem(4px);
+      padding-left: rem(4px);
+      padding-right: rem(4px);
+      padding-top: rem(4px);
+      pointer-events: none;
+      stroke-linecap: square;
+      stroke-linejoin: miter;
+      stroke-width: 2;
+      stroke: $tobi-zoom-icon-color;
+      width: rem(20px);
+    }
+  }
+}
+
+/* Hide scrollbar if lightbox is displayed */
+.tobi-is-open {
+  overflow-y: hidden;
+}
+
+/* Lightbox */
+.tobi {
+  background-color: $tobi-lightbox-background;
+  bottom: 0;
+  box-sizing: border-box;
+  contain: strict;
+  font-size: #{$font-size-base-px}px;
+  left: 0;
+  line-height: 1.5555555555555556;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1337;
+
+
+  &[aria-hidden="true"] {
+    display: none;
+  }
+
+  & *,
+  & *::before,
+  & *::after {
+    box-sizing: inherit;
+  }
+}
+
+/* Slider */
+.tobi__slider {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  will-change: transform;
+
+
+  &:not(&--is-dragging) {
+    transition-duration: $transition-duration;
+    transition-property: transform;
+    transition-timing-function: $transition-timing-function;
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+
+  &--is-draggable &__slide__content {
+    cursor: grab;
+  }
+
+  &--is-dragging &__slide__content {
+    cursor: grabbing;
+  }
+}
+
+/* Slide */
+.tobi__slider__slide {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Slide content */
+.tobi__slider__slide__content {
+
+
+
+  > figure {
+    margin: 0;
+    position: relative;
+
+
+    > img {
+      display: block;
+      height: auto;
+      max-height: $tobi-slide-max-height;
+      max-width: $tobi-slide-max-width;
+      width: auto;
+    }
+
+    > figcaption {
+      background-color: $tobi-caption-background;
+      bottom: 0;
+      color: $tobi-caption-color;
+      display: block;
+      left: 0;
+      padding-bottom: rem(4px);
+      padding-left: rem(8px);
+      padding-right: rem(8px);
+      padding-top: rem(4px);
+      position: absolute;
+      white-space: pre-wrap;
+      width: 100%;
+    }
+  }
+
+  &[data-type="html"] {
+    max-height: $tobi-slide-max-height;
+    max-width: $tobi-slide-max-width;
+    overflow: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+
+    & video {
+      cursor: auto;
+      display: block !important;
+      max-height: $tobi-slide-max-height;
+      max-width: $tobi-slide-max-width;
+    }
+  }
+
+  &[data-type="iframe"] {
+    max-height: $tobi-slide-max-height;
+    max-width: $tobi-slide-max-width;
+    overflow: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    /* Fix iframe scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+    transform: translate3d(0, 0, 0);
+
+
+    & iframe {
+      display: block !important;
+      height: $tobi-slide-max-height;
+      width: $tobi-slide-max-width;
+    }
+  }
+
+  &[data-type="youtube"] {
+    max-height: $tobi-slide-max-height;
+    max-width: $tobi-slide-max-width;
+    overflow: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+
+    & iframe {
+      display: block !important;
+    }
+  }
+}
+
+/* Buttons */
+.tobi > button {
+  align-items: center;
+  appearance: none;
+  background-color: $tobi-button-background;
+  border: rem(1) solid transparent;
+  color: $tobi-button-color;
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  opacity: 0.5;
+  padding-bottom: rem(4px);
+  padding-left: rem(4px);
+  padding-right: rem(4px);
+  padding-top: rem(4px);
+  position: absolute;
+  touch-action: manipulation;
+  transition-duration: $transition-duration;
+  transition-property: opacity, transform;
+  transition-timing-function: $transition-timing-function;
+  will-change: opacity, transform;
+  z-index: 1;
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    transition: none;
+    will-change: opacity;
+  }
+
+
+  & svg {
+    pointer-events: none;
+    stroke: #fff;
+    stroke-width: 1;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+    fill: none;
+    color: #fff;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    opacity: 1;
+    transform: scale(.84);
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      transform: none;
+    }
+  }
+
+  &.tobi__prev,
+  &.tobi__next {
+    top: 50%;
+    top: calc(50% - #{rem(40px)});
+
+
+    & svg {
+      height: rem(70px);
+      width: rem(70px);
+    }
+  }
+
+  &.tobi__prev {
+    left: 0;
+  }
+
+  &.tobi__next {
+    right: 0;
+  }
+
+  &.tobi__close {
+    right: rem(5px);
+    top: rem(18px);
+
+
+    & svg {
+      height: rem(60px);
+      width: rem(60px);
+    }
+  }
+
+  &:disabled,
+  &[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+/* Counter */
+.tobi__counter {
+  align-items: center;
+  background-color: $tobi-counter-background;
+  color: $tobi-counter-color;
+  display: flex;
+  font-size: rem(20px);
+  justify-content: center;
+  left: rem(18px);
+  line-height: 1;
+  position: absolute;
+  top: rem(40px);
+  z-index: 1;
+
+
+  &[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+/* Loader */
+.tobi-loader {
+  display: inline-block;
+  height: rem(100);
+  left: calc(50% - #{rem(50px)});
+  position: absolute;
+  top: calc(50% - #{rem(50px)});
+  width: rem(100px);
+
+
+  &::before {
+    animation: spin 1s infinite;
+    border-radius: 100%;
+    border: rem(4px) solid #949ba3;
+    border-top-color: $tobi-loader-color;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

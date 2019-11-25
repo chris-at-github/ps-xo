@@ -15,8 +15,8 @@
 </f:section>
 
 <f:section name="Image">
-	<div class="gallery--image" data-image-fullscreen="{f:uri.image(src: image.uid, treatIdAsReference: 1, maxWidth: 1280, height: 1024, cropVariant: 'fullscreen')}">
+	<a class="gallery--image" data-group="gallery-{data.uid}" href="{f:uri.image(src: image.uid, treatIdAsReference: 1, maxWidth: 1280, height: 1024, cropVariant: 'fullscreen')}">
 		<f:image src="{image.uid}" treatIdAsReference="1" maxWidth="800" height="600" cropVariant="thumbnail" />
-	</div>
+	</a>
 </f:section>
 </html>
