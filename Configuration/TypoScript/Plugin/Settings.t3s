@@ -1,4 +1,8 @@
 plugin.tx_xo.settings {
+	environment {
+		sitename = XO
+	}
+	
 	pages {
 		home = {$pages.home}
 	}

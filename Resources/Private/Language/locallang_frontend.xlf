@@ -4,10 +4,10 @@
 		<header/>
 		<body>
 				<trans-unit id="tx_xo_logo.title">
-				<source>xo</source>
+				<source>%s</source>
 			</trans-unit>
-			<trans-unit id="tx_xo_logo.ariaTitle">
-				<source>Logo xo</source>
+			<trans-unit id="tx_xo_logo.alt">
+				<source>Logo %s</source>
 			</trans-unit>
 		</body>
 	</file>
