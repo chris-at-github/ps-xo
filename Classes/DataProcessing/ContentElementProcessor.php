@@ -60,14 +60,13 @@ class ContentElementProcessor implements DataProcessorInterface {
 			strtolower(trim($frameType))
 		);
 
+		// mit einheitlichen Prefix versehen
+		$frameType = 'ce-' . $frameType;
+
 		// StdWrap auf $frameType anwenden
 		if(isset($processorConfiguration['frameTypeClass.']) === true) {
 			$frameType = $cObject->stdWrap($frameType, $processorConfiguration['frameTypeClass.']);
 		}
-
-
-		// mit einheitlichen Prefix versehen
-		$frameType = 'ce-frame--type-' . $frameType;
 
 		return $frameType;
 	}

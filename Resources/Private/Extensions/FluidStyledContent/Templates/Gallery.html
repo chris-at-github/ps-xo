@@ -1,22 +1,8 @@
-{namespace xo=Ps\Xo\ViewHelpers}
-
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
 <f:section name="Main">
-
 	<f:if condition="{images}">
-		<div class="gallery--image-container">
-			<f:for each="{images}" as="image">
-				<f:render section="Image" arguments="{_all}" />
-			</f:for>
-		</div>
+		<f:render partial="Elements/Gallery/Listing" section="Main" arguments="{_all}" />
 	</f:if>
-
-</f:section>
-
-<f:section name="Image">
-	<a class="gallery--image" data-group="gallery-{data.uid}" href="{f:uri.image(src: image.uid, treatIdAsReference: 1, maxWidth: 1280, height: 1024, cropVariant: 'fullscreen')}">
-		<f:image src="{image.uid}" treatIdAsReference="1" maxWidth="800" height="600" cropVariant="thumbnail" />
-	</a>
 </f:section>
 </html>

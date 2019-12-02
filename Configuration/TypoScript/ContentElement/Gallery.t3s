@@ -9,6 +9,13 @@ tt_content {
 				as = images
 				references.fieldName = tx_xo_file
 			}
+
+			100 {
+				frameTypeClass.replacement.10 {
+					search = ce-xo-gallery
+					replace = ce-gallery
+				}
+			}
 		}
 	}
 }
