@@ -52,7 +52,7 @@
   bottom: 0;
   box-sizing: border-box;
   contain: strict;
-  font-size: #{$font-size-base-px}px;
+  font-size: rem($font-size-base-px);
   left: 0;
   line-height: 1.5555555555555556;
   overflow: hidden;
