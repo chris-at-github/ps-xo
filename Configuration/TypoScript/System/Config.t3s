@@ -5,7 +5,6 @@ config {
 	admPanel = {$config.adminPanel}
 
 	doctype = html5
-	htmlTag_setParams = none
 
 	// Character sets
 	renderCharset = utf-8
