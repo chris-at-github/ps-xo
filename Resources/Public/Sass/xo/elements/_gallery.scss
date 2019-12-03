@@ -20,11 +20,11 @@
 @include media-breakpoint-up(sm) {
 	.ce-gallery {
 		.gallery--image-container {
-			margin-top: -30px;
+			margin-top: -$grid-gutter-width;
 		}
 
 		.gallery--image {
-			margin-top: 30px;
+			margin-top: $grid-gutter-width;
 		}
 	}
 }
