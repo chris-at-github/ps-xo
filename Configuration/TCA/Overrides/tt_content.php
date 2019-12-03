@@ -135,6 +135,7 @@ $GLOBALS['TCA']['tt_content']['types']['xo_gallery'] = [
 	',
 	'columnsOverrides' => [
 		'tx_xo_file' => [
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_gallery.tx_xo_file',
 			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
 				'tx_xo_file',
 				[

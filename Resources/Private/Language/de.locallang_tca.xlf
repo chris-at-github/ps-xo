@@ -1,84 +1,84 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2018-11-27T06:25:54Z" product-name="xo">
+	<file target-language="de" datatype="plaintext" original="messages" date="2018-11-27T06:25:54Z" product-name="xo">
 		<header/>
 		<body>
 			<trans-unit id="tx_xo_tt_content.space.auto">
-				<source>Auto</source>
+				<target>Auto</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_content.space.small">
-				<source>Small</source>
+				<target>Small</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_content.space.medium">
-				<source>Medium</source>
+				<target>Medium</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_content.variant">
-				<source>Variant</source>
+				<target>Variant</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_content.header_class">
-				<source>Class</source>
+				<target>Class</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_content.file">
-				<source>File</source>
+				<target>Dateien</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_content.address">
-				<source>Address</source>
+				<target>Adresse</target>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_tt_address.address">
-				<source>Address</source>
+				<target>Adresse</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.record_type">
-				<source>Type</source>
+				<target>Typ</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.schemaorg.type">
-				<source>Schema.org type</source>
+				<target>Schema.org type</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.schemaorg.type.local_business">
-				<source>Local business</source>
+				<target>Local business</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.schemaorg.media">
-				<source>Schema.org image</source>
+				<target>Schema.org image</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.record_type.address">
-				<source>Address</source>
+				<target>Adresse</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.tab.map">
-				<source>Map</source>
+				<target>Karte</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.tab.seo">
-				<source>Seo</source>
+				<target>Seo</target>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_html.title">
-				<source>HTML File</source>
+				<target>HTML Datei</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_html.description">
-				<source>Include and parse a static HTML file.</source>
+				<target>Include and parse a static HTML file.</target>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_gallery.title">
-				<source>Gallery</source>
+				<target>Galerie</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_gallery.description">
-				<source>Simple image gallery.</source>
+				<target>Einfache Bildergalerie</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_gallery.tx_xo_file">
-				<source>Images</source>
+				<target>Bilder</target>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_address.title">
-				<source>Address</source>
+				<target>Address</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.description">
-				<source>Inline address element with Google Maps und JSON LD support.</source>
+				<target>Inline address element with Google Maps und JSON LD support.</target>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_crop_variant.fullsize">
-				<source>Fullsize</source>
+				<target>Vollbild</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_crop_variant.thumbnail">
-				<source>Thumbnail</source>
+				<target>Vorschaubild</target>
 			</trans-unit>
 		</body>
 	</file>
