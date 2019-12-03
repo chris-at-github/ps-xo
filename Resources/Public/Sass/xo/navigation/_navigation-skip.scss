@@ -1,0 +1,4 @@
+.skip-navigation {
+	@extend %screenreader-hidden;
+	@extend %screenreader-hidden-focusable;
+}

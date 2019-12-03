@@ -9,6 +9,9 @@
 			<trans-unit id="tx_xo_logo.alt">
 				<source>Logo %s</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_skipnavigation.contentMain">
+				<source>Zum Inhalt springen</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
