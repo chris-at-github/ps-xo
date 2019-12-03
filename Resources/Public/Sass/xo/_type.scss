@@ -1,7 +1,5 @@
 // ---------------------------------------------------------------------------------------------------------------------
 // HTML
-
-
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
 	margin-top: 3rem;
@@ -59,7 +57,7 @@ ul {
 			content: '';
 			position: absolute;
 			top: 10px; left: 0;
-			border: 2px solid #000;
+			border: 2px solid $font-color-base;
 		}
 	}
 }
@@ -79,7 +77,15 @@ table {
 }
 
 th, td {
-	border-bottom: 1px solid #ccc;
-	text-align: left;
-	vertical-align: top;
+	& {
+		border-bottom: 1px solid #ccc;
+		text-align: left;
+		vertical-align: top;
+	}
+
+	p, ul {
+		&:first-child {
+			margin-top: 0;
+		}
+	}
 }

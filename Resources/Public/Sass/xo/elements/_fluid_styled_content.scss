@@ -1,0 +1,14 @@
+.ce-textpic {
+	& {
+		margin-top: rem(20px);
+	}
+
+	.ce-gallery {
+		margin-top: 0;
+	}
+}
+
+.image-embed-item {
+	max-width: 100%;
+	height: auto;
+}
