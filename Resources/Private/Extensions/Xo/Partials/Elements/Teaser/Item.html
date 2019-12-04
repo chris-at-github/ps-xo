@@ -4,6 +4,7 @@
 			<f:then>
 				<a href="{f:uri.typolink(parameter: element.data.link)}" class="teaser--item">
 					<f:render section="Title" arguments="{_all}" />
+					<f:render section="Media" arguments="{_all}" />
 				</a>
 			</f:then>
 			<f:else>
@@ -12,16 +13,17 @@
 				</span>
 			</f:else>
 		</f:if>
-		<!--
-		<f:comment>
-			<a class="teaser--item" href="{f:uri.image(src: image.uid, treatIdAsReference: 1, maxWidth: 1280, height: 1024, cropVariant: 'fullscreen')}">
-				<f:image src="{image.uid}" treatIdAsReference="1" maxWidth="800" height="600" cropVariant="thumbnail" />
-			</a>
-		</f:comment>
-		-->
 	</f:section>
 
 	<f:section name="Title">
 		<span class="teaser--item-title">{element.data.title}</span>
+	</f:section>
+
+	<f:section name="Media">
+		<f:if condition="{element.media.0}">
+			<f:if condition="{element.media.0.properties.extension} == 'jpg' || {element.media.0.properties.extension} == 'png'">
+				<f:render partial="Elements/Teaser/Image" section="Main" arguments="{image: element.media.0, element: element}" />
+			</f:if>
+		</f:if>
 	</f:section>
 </div>
