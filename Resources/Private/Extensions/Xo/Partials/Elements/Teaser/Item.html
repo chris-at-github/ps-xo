@@ -1,0 +1,27 @@
+<div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:section name="Main">
+		<f:if condition="{element.data.link}">
+			<f:then>
+				<a href="{f:uri.typolink(parameter: element.data.link)}" class="teaser--item">
+					<f:render section="Title" arguments="{_all}" />
+				</a>
+			</f:then>
+			<f:else>
+				<span class="teaser--item">
+					<f:render section="Title" arguments="{_all}" />
+				</span>
+			</f:else>
+		</f:if>
+		<!--
+		<f:comment>
+			<a class="teaser--item" href="{f:uri.image(src: image.uid, treatIdAsReference: 1, maxWidth: 1280, height: 1024, cropVariant: 'fullscreen')}">
+				<f:image src="{image.uid}" treatIdAsReference="1" maxWidth="800" height="600" cropVariant="thumbnail" />
+			</a>
+		</f:comment>
+		-->
+	</f:section>
+
+	<f:section name="Title">
+		<span class="teaser--item-title">{element.data.title}</span>
+	</f:section>
+</div>

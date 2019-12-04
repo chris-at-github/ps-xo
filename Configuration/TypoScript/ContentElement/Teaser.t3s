@@ -18,6 +18,7 @@ tt_content {
 				dataProcessing {
 					10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
 					10 {
+						as = media
 						references.fieldName = media
 					}
 				}
