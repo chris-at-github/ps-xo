@@ -31,10 +31,10 @@ class SettingsProcessor implements DataProcessorInterface {
 	 *
 	 * @return array
 	 */
-	public function getSettings() {
+	public function getSettings($extension) {
 		return $this->objectManager->get(\TYPO3\CMS\Extbase\Configuration\ConfigurationManager::class)->getConfiguration(
 			\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS,
-			'xo'
+			$extension
 		);
 	}
 
@@ -57,7 +57,17 @@ class SettingsProcessor implements DataProcessorInterface {
 			$processorConfiguration['as'] = 'settings';
 		}
 
-		$processedData[$processorConfiguration['as']] = $this->getSettings($processorConfiguration['extension']);
+		$settings = $this->getSettings($processorConfiguration['extension']);
+
+		if(isset($processorConfiguration['settings.']) === true) {
+			$default = $this->objectManager->get(\TYPO3\CMS\Core\TypoScript\TypoScriptService::class)->convertTypoScriptArrayToPlainArray($processorConfiguration['settings.']);
+
+			if(is_array($default) === true) {
+				$settings = array_merge_recursive($settings, $default);
+			}
+		}
+
+		$processedData[$processorConfiguration['as']] = $settings;
 
 		return $processedData;
 	}

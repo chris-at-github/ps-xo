@@ -23,6 +23,16 @@ tt_content {
 					}
 				}
 			}
+
+			35 = Ps\Xo\DataProcessing\SettingsProcessor
+			35 {
+				settings.teaser {
+					media {
+						width = 480
+						height = 480
+					}
+				}
+			}
 		}
 	}
 }
