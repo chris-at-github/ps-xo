@@ -5,6 +5,10 @@ TCEFORM {
 		date.disabled = 1
 		rowDescription.disabled = 1
 
+		header_layout {
+			removeItems = 0
+		}
+
 		layout {
 			removeItems = 1,2,3
 		}
@@ -72,7 +76,16 @@ mod.wizards.newContentElement.wizardItems.common {
 				CType = xo_address
 			}
 		}
+
+		xo_teaser {
+			iconIdentifier = content-menu-section
+			title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_teaser.title
+			description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_teaser.description
+			tt_content_defValues {
+				CType = xo_teaser
+			}
+		}
 	}
 
-	show := addToList(xo_html, xo_gallery, xo_address)
+	show := addToList(xo_html, xo_gallery, xo_address, xo_teaser)
 }

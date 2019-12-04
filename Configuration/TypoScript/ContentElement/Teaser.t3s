@@ -1,0 +1,6 @@
+tt_content {
+	xo_teaser =< lib.contentElement
+	xo_teaser {
+		templateName = Teaser.html
+	}
+}
