@@ -64,6 +64,27 @@ $tmpXoTtContentColumns = [
 				'newRecordLinkAddTitle' => 1
 			],
 		]
+	],
+	'tx_xo_elements' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.tx_xo_elements',
+		'config' => [
+			'type' => 'inline',
+			'foreign_table' => 'tx_xo_domain_model_elements',
+			'foreign_field' => 'tx_xo_content',
+			'foreign_sortby' => 'sorting',
+			'foreign_label' => 'title',
+			'maxitems' => 999,
+			'appearance' => [
+				'collapseAll' => 1,
+				'expandSingle' => 1,
+				'showAllLocalizationLink' => 1,
+				'showSynchronizationLink' => 1,
+				'showPossibleLocalizationRecords' => 1,
+				'showRemovedLocalizationRecords' => 1,
+				'newRecordLinkAddTitle' => 1
+			],
+		]
 	]
 ];
 
@@ -247,7 +268,7 @@ $GLOBALS['TCA']['tt_content']['types']['xo_address'] = [
 $GLOBALS['TCA']['tt_content']['types']['xo_teaser'] = [
 	'showitem' => '
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,description,tx_xo_elements,
 		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
 		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
