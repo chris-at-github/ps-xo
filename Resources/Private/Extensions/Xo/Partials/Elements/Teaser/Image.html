@@ -1,7 +1,20 @@
 <div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
 	<f:section name="Main">
-		<span class="teaser--item-media teaser--item-media-image">
-			<f:image src="{image.uid}" treatIdAsReference="1" maxWidth="{settings.teaser.media.width}" height="{settings.teaser.media.height}" cropVariant="default" />
-		</span>
+		<f:if condition="{element.data.link}">
+			<f:then>
+				<a href="{f:uri.typolink(parameter: element.data.link)}" class="teaser--item-media teaser--item-media-image">
+					<f:render section="Image" arguments="{_all}" />
+				</a>
+			</f:then>
+			<f:else>
+				<div class="teaser--item-media teaser--item-media-image">
+					<f:render section="Image" arguments="{_all}" />
+				</div>
+			</f:else>
+		</f:if>
+	</f:section>
+
+	<f:section name="Image">
+		<f:image src="{image.uid}" treatIdAsReference="1" maxWidth="{settings.teaser.media.width}" height="{settings.teaser.media.height}" cropVariant="default" />
 	</f:section>
 </div>
