@@ -80,6 +80,9 @@
 			<trans-unit id="tx_xo_crop_variant.thumbnail">
 				<target>Vorschaubild</target>
 			</trans-unit>
+			<trans-unit id="tx_xo_crop_variant.default">
+				<target>Standard</target>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_teaser.title">
 				<source>Teaser</source>
