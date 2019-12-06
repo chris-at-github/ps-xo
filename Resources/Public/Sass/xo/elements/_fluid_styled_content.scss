@@ -1,7 +1,48 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Element Container Abstaende
+.ce-frame--outer {
+}
+
+.ce-frame--inner {
+	@extend %container-inner;
+}
+
+.ce-frame--space-before-small {
+	@extend %container-space-before-small;
+}
+
+.ce-frame--space-before-medium {
+	@extend %container-space-before-medium;
+}
+
+.ce-frame--space-after-small {
+	@extend %container-space-after-small;
+}
+
+.ce-frame--space-after-medium {
+	@extend %container-space-after-medium;
+}
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Standard-Elemente
+.ce-header--layout-1 {
+	@extend %ce-header-1;
+}
+
+.ce-bodytext  {
+	@extend %ce-bodytext;
+}
+
+.ce-container {
+	@extend %ce-container;
+}
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+// TYPO3 Bildelement
 .ce-textpic {
-	& {
-		margin-top: rem(20px);
-	}
+	@extend %ce-container;
 
 	.ce-gallery {
 		margin-top: 0;

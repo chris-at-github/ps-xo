@@ -52,3 +52,9 @@ $fsc-textmedia-border-width: 1px !default;
 $fsc-textmedia-border-color: $font-color-base !default;
 $fsc-textmedia-margin: rem(20px) !default;
 $fsc-row-spacing: rem(20px) !default;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Spacing
+$spacing-default: rem(20px) !default;
+$spacing-small: $spacing-default !default;
+$spacing-medium: rem(45px) !default;
