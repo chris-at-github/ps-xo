@@ -1,11 +1,13 @@
 <div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
 	<f:section name="Main">
-		<div class="gallery--image-container row">
-			<f:for each="{images}" as="image">
-				<div class="col-12 col-sm-6 col-md-4">
-					<f:render partial="Elements/Gallery/Image" section="Main" arguments="{_all}" />
-				</div>
-			</f:for>
+		<div class="ce-container">
+			<div class="gallery--image-container row">
+				<f:for each="{images}" as="image">
+					<div class="col-12 col-sm-6 col-md-4">
+						<f:render partial="Elements/Gallery/Image" section="Main" arguments="{_all}" />
+					</div>
+				</f:for>
+			</div>
 		</div>
 	</f:section>
 </div>
