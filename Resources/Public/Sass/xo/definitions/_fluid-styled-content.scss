@@ -1,5 +1,5 @@
 %ce-header-1 {
-	& + %ce-bodytext, & + %ce-container {
+	& + %ce-bodytext, & + %ce-container, & + %ce-header-sibling {
 		margin-top: $spacing-medium;
 	}
 }
