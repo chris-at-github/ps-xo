@@ -39,6 +39,7 @@ page {
 				mapping {
 					0 = PageLayout-0
 					1 = PageLayout-1
+					2 = PageLayout-2
 				}
 			}
 		}

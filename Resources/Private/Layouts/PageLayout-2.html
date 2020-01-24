@@ -1,0 +1,13 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:spaceless>
+		<div id="content--main" role="main">
+			<f:render section="Main" />
+		</div>
+
+		<div class="svg-sprite--container">
+			<xo:svg.inline source="assets/svg/sprite.svg" />
+		</div>
+
+		<f:render partial="Page/FooterScript" section="Main" />
+	</f:spaceless>
+</html>
