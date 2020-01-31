@@ -1,0 +1,11 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Grundelemente
+.container-outer {
+	& {
+		@extend %container-outer;
+	}
+
+	& > .container-inner {
+		@extend %container-inner;
+	}
+}
