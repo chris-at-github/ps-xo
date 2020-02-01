@@ -73,19 +73,10 @@ ol {
 }
 
 table {
-	border-collapse: collapse;
+	@extend %table--default;
 }
 
 th, td {
-	& {
-		border-bottom: 1px solid #ccc;
-		text-align: left;
-		vertical-align: top;
-	}
-
-	p, ul {
-		&:first-child {
-			margin-top: 0;
-		}
-	}
+	@extend %th-default;
+	@extend %td-default;
 }
