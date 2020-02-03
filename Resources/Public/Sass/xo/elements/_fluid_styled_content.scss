@@ -1,6 +1,7 @@
 // ---------------------------------------------------------------------------------------------------------------------
 // Element Container Abstaende
 .ce-frame--outer {
+	@extend %container-outer;
 }
 
 .ce-frame--inner {

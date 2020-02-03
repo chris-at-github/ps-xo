@@ -11,6 +11,19 @@
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
+// Laufweiten
+%container-width-full {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+%container-width-normal {
+	%container-inner {
+		width: $page-max-width;
+	}
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
 // Abstaende
 %container-space-before-small,
 %container-space-before-medium {
