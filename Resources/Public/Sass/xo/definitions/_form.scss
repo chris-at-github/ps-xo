@@ -1,7 +1,26 @@
 // ---------------------------------------------------------------------------------------------------------------------
-// Basic
+// Form Elements
 %form-item {
 	position: relative;
+}
+
+%form-field {
+	padding: rem(2px);
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Buttons
+%button {
+	& {
+		padding: $spacing-tiny $spacing-small;
+		border: 0;
+		background: #ccc;
+		cursor: pointer;
+	}
+
+	&:hover {
+		background: #bbb;
+	}
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -11,5 +30,15 @@
 		& + %form-item, & + %form-action {
 			margin: $spacing-small 0 0 0;
 		}
+	}
+
+	%form-label {
+		& + %form-field {
+			margin: $spacing-tiny 0 0 0;
+		}
+	}
+
+	%form-field {
+		width: 100%;
 	}
 }
