@@ -55,6 +55,8 @@ $fsc-row-spacing: rem(20px) !default;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Spacing
-$spacing-default: rem(20px) !default;
-$spacing-small: $spacing-default !default;
-$spacing-medium: rem(45px) !default;
+$spacing-default: rem(24px) !default;
+$spacing-tiny: rem(4px) !default;
+$spacing-small: rem(12px) !default;
+$spacing-medium: $spacing-default !default;
+$spacing-large: rem(48px) !default;
