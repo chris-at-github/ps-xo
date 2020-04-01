@@ -1,52 +1,61 @@
 // ---------------------------------------------------------------------------------------------------------------------
 // Container
 %container-outer {
-	padding: 0 rem(20px);
+  padding-left: $spacing-medium;
+  padding-right: $spacing-medium;
 }
 
 %container-inner {
-	max-width: 100%;
-	//margin-left: auto;
-	//margin-right: auto;
+  max-width: 100%;
+
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Laufweiten
 %container-width-full {
-	padding-left: 0;
-	padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 %container-width-normal {
-	%container-inner {
-		width: $page-max-width;
-	}
+  %container-inner {
+    width: $page-max-width;
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Ausrichtung
+%container-align-center {
+  %container-inner {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Abstaende
 %container-space-before-small,
 %container-space-before-medium {
-	padding-top: 0.1px;
+  padding-top: 0.1px;
 }
 
 %container-space-after-small,
 %container-space-after-medium {
-	padding-bottom: 0.1px;
+  padding-bottom: 0.1px;
 }
 
 %container-space-before-small > %container-inner {
-	margin-top: $spacing-small;
+  margin-top: $spacing-small;
 }
 
 %container-space-before-medium > %container-inner {
-	margin-top: $spacing-medium;
+  margin-top: $spacing-medium;
 }
 
 %container-space-after-small > %container-inner {
-	margin-bottom: $spacing-small;
+  margin-bottom: $spacing-small;
 }
 
 %container-space-after-medium > %container-inner {
-	margin-bottom: $spacing-medium;
+  margin-bottom: $spacing-medium;
 }
