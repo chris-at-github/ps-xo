@@ -17,12 +17,20 @@
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
-// Horizontal
-%navigation-horizontal {
+// Layout-0
+%navigation--layout-0 {
+	& {
+		@extend %navigation;
+	}
+
 	ul {
 		display: flex;
 		flex-wrap: wrap;
 		margin-left: -10px;
 		margin-right: -10px;
+	}
+
+	a, .current > span {
+		@extend %navigation-item;
 	}
 }
