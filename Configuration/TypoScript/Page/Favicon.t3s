@@ -17,7 +17,7 @@ page {
 		1567860044.value = {$url.assets}
 
 		1567860045 = TEXT
-		1567860045.wrap = <link rel="mask-icon" href="|icons/safari-pinned-tab.svg" color="#7f7f7f">
+		1567860045.wrap = <link rel="mask-icon" href="|icons/safari-pinned-tab.svg" color="#000000">
 		1567860045.value = {$url.assets}
 
 		1567860046 = TEXT
