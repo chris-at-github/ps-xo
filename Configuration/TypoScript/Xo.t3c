@@ -80,6 +80,9 @@ navigation {
 pages {
 	# cat=pages; type=int+; label=Page id of home
 	home = 1
+
+	# cat=pages; type=int+; label=Page id for search results
+	search = 38
 }
 
 googleAnalytics {
