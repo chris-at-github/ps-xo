@@ -45,6 +45,7 @@ class UseViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBasedVie
 		$this->registerUniversalTagAttributes();
 		$this->registerArgument('name', 'string', 'Name of SVG symbol reference', true, null);
 		$this->registerArgument('preserveAspectRatio', 'string', 'Alignment and scaling options from the SVG standard', false, null);
+		$this->registerArgument('viewBox', 'string', 'SVG viewBox attribute', false, null);
 	}
 
 	/**
@@ -58,6 +59,10 @@ class UseViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBasedVie
 
 		if(empty($this->arguments['preserveAspectRatio']) === false) {
 			$this->tag->addAttribute('preserveAspectRatio', $this->arguments['preserveAspectRatio']);
+		}
+
+		if(empty($this->arguments['viewBox']) === false) {
+			$this->tag->addAttribute('viewBox', $this->arguments['viewBox']);
 		}
 
 		$this->tag->setContent($this->renderUseTag($this->arguments['name']));
