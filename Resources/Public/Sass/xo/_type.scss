@@ -30,15 +30,7 @@ b, strong {
 }
 
 a {
-	& {
-		font-weight: $font-weight-bold;
-		color: $link-color;
-		text-decoration: none;
-	}
-
-	&:hover, &:focus {
-		color: $link-color-hover;
-	}
+	@extend %link--default;
 }
 
 ul {
