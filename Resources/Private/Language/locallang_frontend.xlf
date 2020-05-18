@@ -12,6 +12,9 @@
 			<trans-unit id="tx_xo_skipnavigation.contentMain">
 				<source>Zum Inhalt springen</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_search.link">
+				<source>Zur Suche</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

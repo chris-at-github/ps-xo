@@ -1,6 +1,6 @@
 <div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
 	<f:section name="Icon">
-		<f:link.page pageUid="{settings.pages.search}" class="search search--icon">
+		<f:link.page pageUid="{settings.pages.search}" class="search search--icon" additionalAttributes="{aria-label: '{f:translate(key: \'LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_search.link\')}'}" title="{f:translate(key: 'LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_search.link')}">
 			<xo:svg.use name="search" viewBox="0 0 32 32" />
 		</f:link.page>
 	</f:section>
