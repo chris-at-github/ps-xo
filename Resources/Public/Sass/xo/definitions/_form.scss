@@ -5,7 +5,8 @@
 }
 
 %form-field {
-  padding: rem(2px);
+	outline: 0;
+  padding: rem(3px);
 }
 
 select%form-field {
@@ -18,11 +19,12 @@ select%form-field {
   & {
     padding: $spacing-tiny $spacing-small;
     border: 0;
+		outline: 0;
     background: #ccc;
     cursor: pointer;
   }
 
-  &:hover {
+  &:hover, &:focus {
     background: #bbb;
   }
 }
