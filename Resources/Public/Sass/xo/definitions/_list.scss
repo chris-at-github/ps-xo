@@ -1,0 +1,11 @@
+%list-unstyled {
+	li {
+		& {
+			padding: 0;
+		}
+
+		&:before {
+			display: none;
+		}
+	}
+}
