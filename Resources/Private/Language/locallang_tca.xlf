@@ -3,6 +3,10 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2018-11-27T06:25:54Z" product-name="xo">
 		<header/>
 		<body>
+			<trans-unit id="tx_xo_pages.flash">
+				<source>Flash</source>
+			</trans-unit>
+
 			<trans-unit id="tx_xo_tt_content.space.auto">
 				<source>Auto</source>
 			</trans-unit>
