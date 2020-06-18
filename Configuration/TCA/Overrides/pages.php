@@ -12,11 +12,25 @@ $tmpXoPagesColumns = [
 			'foreign_field' => 'tx_xo_page',
 			'maxitems' => 1,
 			'appearance' => [
-				'collapseAll' => 0,
+				'collapseAll' => 1,
 				'levelLinksPosition' => 'top',
 				'showSynchronizationLink' => 1,
 				'showPossibleLocalizationRecords' => 1,
 				'showAllLocalizationLink' => 1
+			],
+			'overrideChildTca' => [
+				'columns' => [
+					'colPos' => [
+						'config' => [
+							'items' => [
+								[
+									'TEST',
+									'20'
+								],
+							],
+						],
+					],
+				],
 			],
 		],
 	],

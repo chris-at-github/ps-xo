@@ -89,3 +89,11 @@ mod.wizards.newContentElement.wizardItems.common {
 
 	show := addToList(xo_html, xo_gallery, xo_address, xo_teaser)
 }
+
+[Ps\Xo\Condition\ContentFieldCondition irre:field==tx_xo_flash]
+	TCEFORM.tt_content.colPos {
+		addItems {
+			20 = Flash
+		}
+	}
+[global]
