@@ -1,6 +1,10 @@
 <?php
 namespace Ps\Xo\Condition;
+
+use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Database\ConnectionPool;
 
 /**
  * Ueberpruft ob bei einem neuen (GET:defVals) oder bestehenden TtContent-Element (Abfrage ueber UID) ob das abgefragte
@@ -39,7 +43,7 @@ class ContentFieldCondition extends \TYPO3\CMS\Core\Configuration\TypoScript\Con
 			$uid = key($parameter['edit']['tt_content']);
 
 			if((int) $uid !== 0) {
-				$fields = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow('*', 'tt_content', 'uid = ' . (int) $uid);
+				$fields = $this->getFields($uid);
 
 				if(empty($fields) === false && isset($fields['pid']) === true) {
 					$fields['pid'] = (int) $fields['pid'];
@@ -78,10 +82,8 @@ class ContentFieldCondition extends \TYPO3\CMS\Core\Configuration\TypoScript\Con
 				$uid = $match[2];
 			}
 
-			return false;
-
 			if((int) $uid !== 0) {
-				$fields = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow('*', 'tt_content', 'uid = ' . (int) $uid);
+				$fields = $this->getFields($uid);
 
 				if(empty($fields) === false && isset($fields['pid']) === true) {
 					$fields['pid'] = (int) $fields['pid'];
@@ -94,13 +96,13 @@ class ContentFieldCondition extends \TYPO3\CMS\Core\Configuration\TypoScript\Con
 		}
 
 		if(isset($fields['pid']) === true) {
-			$page = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow('*', 'pages', 'uid = ' . (int) $fields['pid']);
+			$page = $this->getFields($fields['pid'], 'pages');
 		}
 
 		// IF $fields => tx_flux_parent = ID FCE Elternelement
 		// @see: http://redmine/issues/17333
 		if((int) $fields['tx_flux_parent'] !== 0) {
-			$parent = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow('*', 'tt_content', 'uid = ' . (int) $fields['tx_flux_parent']);
+			$parent = $this->getFields($fields['tx_flux_parent']);
 		}
 
 		foreach($expressions as $expression) {
@@ -165,5 +167,22 @@ class ContentFieldCondition extends \TYPO3\CMS\Core\Configuration\TypoScript\Con
 		}
 
 		return $result;
+	}
+
+	/**
+	 * @param int $uid
+	 * @param string $table
+	 * @return array
+	 */
+	protected function getFields($uid, $table = 'tt_content') {
+
+		/** @var QueryBuilder $queryBuilder */
+		$queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
+
+		$statement = $queryBuilder->select('*')->from($table)->where(
+			$queryBuilder->expr()->eq('uid', (int) $uid)
+		)->execute();
+
+		return $statement->fetch();
 	}
 }
