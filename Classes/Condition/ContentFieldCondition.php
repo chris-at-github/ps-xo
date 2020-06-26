@@ -43,7 +43,7 @@ class ContentFieldCondition extends \TYPO3\CMS\Core\Configuration\TypoScript\Con
 			$uid = key($parameter['edit']['tt_content']);
 
 			if((int) $uid !== 0) {
-				$fields = $this->getFields($uid);
+				$fields = $this->getRecord($uid);
 
 				if(empty($fields) === false && isset($fields['pid']) === true) {
 					$fields['pid'] = (int) $fields['pid'];
@@ -83,7 +83,7 @@ class ContentFieldCondition extends \TYPO3\CMS\Core\Configuration\TypoScript\Con
 			}
 
 			if((int) $uid !== 0) {
-				$fields = $this->getFields($uid);
+				$fields = $this->getRecord($uid);
 
 				if(empty($fields) === false && isset($fields['pid']) === true) {
 					$fields['pid'] = (int) $fields['pid'];
@@ -96,13 +96,13 @@ class ContentFieldCondition extends \TYPO3\CMS\Core\Configuration\TypoScript\Con
 		}
 
 		if(isset($fields['pid']) === true) {
-			$page = $this->getFields($fields['pid'], 'pages');
+			$page = $this->getRecord($fields['pid'], 'pages');
 		}
 
 		// IF $fields => tx_flux_parent = ID FCE Elternelement
 		// @see: http://redmine/issues/17333
 		if((int) $fields['tx_flux_parent'] !== 0) {
-			$parent = $this->getFields($fields['tx_flux_parent']);
+			$parent = $this->getRecord($fields['tx_flux_parent']);
 		}
 
 		foreach($expressions as $expression) {
@@ -174,7 +174,7 @@ class ContentFieldCondition extends \TYPO3\CMS\Core\Configuration\TypoScript\Con
 	 * @param string $table
 	 * @return array
 	 */
-	protected function getFields($uid, $table = 'tt_content') {
+	protected function getRecord($uid, $table = 'tt_content') {
 
 		/** @var QueryBuilder $queryBuilder */
 		$queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
