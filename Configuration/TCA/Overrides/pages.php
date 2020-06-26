@@ -18,20 +18,6 @@ $tmpXoPagesColumns = [
 				'showPossibleLocalizationRecords' => 1,
 				'showAllLocalizationLink' => 1
 			],
-			'overrideChildTca' => [
-				'columns' => [
-					'colPos' => [
-						'config' => [
-							'items' => [
-								[
-									'TEST',
-									'20'
-								],
-							],
-						],
-					],
-				],
-			],
 		],
 	],
 ];

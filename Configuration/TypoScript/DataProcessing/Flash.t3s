@@ -1,0 +1,11 @@
+dataProcessing.flash = Ps\Xo\DataProcessing\ContentProcessor
+dataProcessing.flash {
+	table = tt_content
+	as = flash
+	select {
+		where.data = field:uid
+		where.wrap = tx_xo_page = |
+
+		// where.wrap = tx_gridelements_columns = 101 AND tx_gridelements_container=|
+	}
+}

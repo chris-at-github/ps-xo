@@ -1,0 +1,11 @@
+dataProcessing.pageLayout = Ps\Xo\DataProcessing\PageLayoutProcessor
+dataProcessing.pageLayout {
+	as = pageLayout
+	default = PageLayout-0
+	recursive = 1
+	mapping {
+		0 = PageLayout-0
+		1 = PageLayout-1
+		2 = PageLayout-2
+	}
+}

@@ -23,25 +23,5 @@ page {
 		partialRootPaths {
 			10 = {$plugin.tx_xo.view.partialRootPath}
 		}
-
-		dataProcessing {
-
-			// Navigationen
-			10 < navigation.main
-			20 < navigation.footer
-
-			100 =  Ps\Xo\DataProcessing\SettingsProcessor
-			110 =  Ps\Xo\DataProcessing\PageLayoutProcessor
-			110 {
-				as = pageLayout
-				default = PageLayout-0
-				recursive = 1
-				mapping {
-					0 = PageLayout-0
-					1 = PageLayout-1
-					2 = PageLayout-2
-				}
-			}
-		}
 	}
 }
