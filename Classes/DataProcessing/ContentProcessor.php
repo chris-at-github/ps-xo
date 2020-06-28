@@ -21,30 +21,6 @@ use TYPO3\CMS\Frontend\ContentObject\ContentDataProcessor;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
-/**
- * Fetch records from the database, using the default .select syntax from TypoScript.
- *
- * This way, e.g. a FLUIDTEMPLATE cObject can iterate over the array of records.
- *
- * Example TypoScript configuration:
- *
- * 10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
- * 10 {
- *   table = tt_address
- *   pidInList = 123
- *   where = company="Acme" AND first_name="Ralph"
- *   orderBy = RAND()
- *   as = addresses
- *   dataProcessing {
- *     10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
- *     10 {
- *       references.fieldName = image
- *     }
- *   }
- * }
- *
- * where "as" means the variable to be containing the result-set from the DB query.
- */
 class ContentProcessor implements DataProcessorInterface {
 
 	/**
@@ -58,8 +34,6 @@ class ContentProcessor implements DataProcessorInterface {
 	 * @return array the processed data as key/value store
 	 */
 	public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData) {
-		DebuggerUtility::var_dump($processorConfiguration);
-
 		$processedData[$processorConfiguration['as']] = $cObj->cObjGetSingle('CONTENT', $processorConfiguration);
 		return $processedData;
 	}
