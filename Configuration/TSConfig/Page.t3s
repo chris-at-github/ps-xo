@@ -17,7 +17,8 @@ TCEFORM {
 			removeItems = default, ruler-before, ruler-after, indent, indent-left, indent-right, none
 			addItems {
 				0 = Default
-				1 = None
+				1 = Frame 01
+				2 = Frame 02
 			}
 		}
 
