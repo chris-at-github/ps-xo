@@ -30,6 +30,19 @@ $tmpXoTtContentColumns = [
 			],
 		]
 	],
+	'tx_xo_no_frame' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.no_frame',
+		'config' => [
+			'type' => 'check',
+			'items' => [
+				'1' => [
+					'0' => 'LLL:EXT:lang/locallang_core.xlf:labels.enabled'
+				]
+			],
+			'default' => 0,
+		]
+	],
 	'tx_xo_file' => [
 		'exclude' => true,
 		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.file',
@@ -89,6 +102,7 @@ $tmpXoTtContentColumns = [
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tmpXoTtContentColumns);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'frames', 'tx_xo_no_frame, --linebreak--', 'before:layout');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'frames', 'tx_xo_variant', 'after:frame_class');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'headers', 'tx_xo_header_class', 'after:header_layout');
 
