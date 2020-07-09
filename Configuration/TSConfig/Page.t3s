@@ -111,7 +111,7 @@ mod.wizards.newContentElement.wizardItems.common {
 		space_after_class.disabled = 1
 
 		colPos {
-			addItems.20 = Flash
+			addItems.326022 = Flash
 			removeItems = 0,10
 		}
 	}

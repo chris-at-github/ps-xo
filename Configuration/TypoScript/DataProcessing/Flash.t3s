@@ -4,8 +4,6 @@ dataProcessing.flash {
 	as = flash
 	select {
 		where.data = field:uid
-		where.wrap = tx_xo_page = |
-
-		// where.wrap = tx_gridelements_columns = 101 AND tx_gridelements_container=|
+		where.wrap = colPos = 326022 AND tx_xo_page = |
 	}
 }
