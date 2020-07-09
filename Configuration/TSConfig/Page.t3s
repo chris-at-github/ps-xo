@@ -7,6 +7,9 @@ TCEFORM {
 
 		header_layout {
 			removeItems = 0
+			addItems {
+				container = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.header_layout.container
+			}
 		}
 
 		layout {
