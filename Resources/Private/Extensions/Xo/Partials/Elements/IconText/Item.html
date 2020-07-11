@@ -1,0 +1,17 @@
+<div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:section name="Main">
+		<f:render section="Title" arguments="{_all}" />
+	</f:section>
+
+	<f:section name="Title">
+		<header class="icon-text--item-title">
+			<f:render partial="Header/Header" arguments="{header: element.data.title, layout: 'container'}" />
+		</header>
+	</f:section>
+
+	<f:section name="Media">
+		<xo:media.isImage file="{element.media.0}">
+			<f:render partial="Elements/Teaser/Image" section="Main" arguments="{image: element.media.0, element: element}" />
+		</xo:media.isImage>
+	</f:section>
+</div>
