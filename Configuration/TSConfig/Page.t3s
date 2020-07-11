@@ -89,9 +89,18 @@ mod.wizards.newContentElement.wizardItems.common {
 				CType = xo_teaser
 			}
 		}
+
+		xo_icon_text {
+			iconIdentifier = content-textpic
+			title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.title
+			description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.description
+			tt_content_defValues {
+				CType = xo_icon_text
+			}
+		}
 	}
 
-	show := addToList(xo_html, xo_gallery, xo_address, xo_teaser)
+	show := addToList(xo_html, xo_gallery, xo_address, xo_teaser, xo_icon_text)
 }
 
 [Ps\Xo\Condition\ContentFieldCondition irre:field==tx_xo_flash]

@@ -101,6 +101,13 @@
 				<source>Manuell teaser elements</source>
 			</trans-unit>
 
+			<trans-unit id="tx_xo_icon_text.title">
+				<source>Icon Text</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_icon_text.description">
+				<source>Icon text elements</source>
+			</trans-unit>
+
 			<trans-unit id="tx_xo_domain_model_elements">
 				<source>Elements</source>
 			</trans-unit>
