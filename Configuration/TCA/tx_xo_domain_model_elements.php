@@ -25,14 +25,17 @@ return [
 	'types' => [
 		'0' => [
 			'showitem' => '
-				l10n_diffsource, hidden, title, link, description, media,
-				--linebreak--,
-				--palette--;;paletteDate'
+				l10n_diffsource, title, link, description, media,
+				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+				--palette--;;visibility,
+				--palette--;;access'
 		],
 	],
 	'palettes' => [
-		'paletteDate' => [
-			'label' => 'LLL:EXT:datamints_dachau/Resources/Private/Language/locallang_db.xlf:tx_datamintsdachau_domain_model_teaser_element_static.date.label',
+		'visibility' => [
+			'showitem' => 'hidden,',
+		],
+		'access' => [
 			'showitem' => 'starttime,endtime,',
 		],
 	],
