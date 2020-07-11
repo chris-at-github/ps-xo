@@ -130,9 +130,9 @@ return [
 				'eval' => 'trim,required',
 			],
 		],
-		'teaser' => [
-			'exclude' => true,
-			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.descriptions',
+		'description' => [
+			'exclude' => 1,
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.description',
 			'config' => [
 				'type' => 'text',
 				'enableRichtext' => true,
@@ -153,6 +153,7 @@ return [
 				'media',
 				[
 					'appearance' => [
+						'collapseAll' => 1,
 						'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference',
 					],
 					'foreign_types' => [

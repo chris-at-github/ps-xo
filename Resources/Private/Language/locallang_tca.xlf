@@ -31,6 +31,9 @@
 			<trans-unit id="tx_xo_tt_content.address">
 				<source>Address</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.tx_xo_elements">
+				<source>Elements</source>
+			</trans-unit>
 			<trans-unit id="tx_xo_tt_content.header_layout.container">
 				<source>Container</source>
 			</trans-unit>

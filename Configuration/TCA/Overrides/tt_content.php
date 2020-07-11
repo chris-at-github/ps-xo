@@ -317,6 +317,13 @@ $GLOBALS['TCA']['tt_content']['types']['xo_icon_text'] = [
 	',
 ];
 
+//$GLOBALS['TCA']['tt_content']['types']['xo_icon_text']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['types']['0'] = [
+//	'showitem' => '
+//		l10n_diffsource, hidden, title, description, media,
+//		--linebreak--,
+//		--palette--;;paletteDate'
+//];
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Zuruecksetzen der Werte Space Before / After, damit diese komplett ueber PageTs befuellt werden koennen
 $GLOBALS['TCA']['tt_content']['columns']['space_before_class']['config']['items'] = [];
