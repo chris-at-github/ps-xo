@@ -22,17 +22,8 @@
 		<f:case value="100">
 			<f:comment> -- do not show header -- </f:comment>
 		</f:case>
-		<f:case value="container">
-			<f:link.typolink parameter="{link}">{header}</f:link.typolink>
-		</f:case>
 		<f:defaultCase>
-			<f:if condition="{default}">
-				<f:render partial="Header/Header" arguments="{
-					header: header,
-					layout: default,
-					positionClass: positionClass,
-					link: link}" />
-			</f:if>
+			<f:link.typolink parameter="{link}">{header}</f:link.typolink>
 		</f:defaultCase>
 	</f:switch>
 </f:if>
