@@ -1,10 +1,21 @@
-<div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+<div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" data-namespace-typo3-fluid="true">
 	<f:section name="Main">
 		<div class="row">
 			<f:for each="{elements}" as="element">
-				<div class="icon-text col-12 col-sm-6 col-md-3">
-					<f:render partial="Elements/IconText/Item" section="Main" arguments="{_all}" />
-				</div>
+
+				<f:if condition="{element.data.link}">
+					<f:then>
+						<div data-target="{f:uri.typolink(parameter: element.data.link)}" class="icon-text col-12 col-sm-6 col-md-4">
+							<f:render partial="Elements/IconText/Item" section="Main" arguments="{_all}" />
+						</div>
+					</f:then>
+					<f:else>
+						<div class="icon-text col-12 col-sm-6 col-md-4">
+							<f:render partial="Elements/IconText/Item" section="Main" arguments="{_all}" />
+						</div>
+					</f:else>
+				</f:if>
+
 			</f:for>
 		</div>
 	</f:section>

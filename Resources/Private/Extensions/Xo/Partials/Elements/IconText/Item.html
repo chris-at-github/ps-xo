@@ -5,11 +5,21 @@
 		</f:if>
 
 		<f:render section="Title" arguments="{_all}" />
+
+		<f:if condition="{element.data.description}">
+			<f:render section="Description" arguments="{_all}" />
+		</f:if>
 	</f:section>
 
 	<f:section name="Title">
 		<header class="icon-text--title">
 			<f:render partial="Header/Header" arguments="{header: element.data.title}" />
 		</header>
+	</f:section>
+
+	<f:section name="Description">
+		<div class="icon-text--body">
+			<f:format.html>{element.data.description}</f:format.html>
+		</div>
 	</f:section>
 </div>
