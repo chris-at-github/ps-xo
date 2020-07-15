@@ -44,7 +44,7 @@
 }
 
 %container-space-before-small > %container-inner {
-  margin-top: $spacing-small;
+  margin-top: $spacing-default;
 }
 
 %container-space-before-medium > %container-inner {
@@ -52,7 +52,7 @@
 }
 
 %container-space-after-small > %container-inner {
-  margin-bottom: $spacing-small;
+  margin-bottom: $spacing-default;
 }
 
 %container-space-after-medium > %container-inner {

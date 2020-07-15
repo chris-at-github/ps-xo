@@ -103,6 +103,12 @@ mod.wizards.newContentElement.wizardItems.common {
 	show := addToList(xo_html, xo_gallery, xo_address, xo_teaser, xo_icon_text)
 }
 
+[Ps\Xo\Condition\ContentFieldCondition CType==xo_icon_text]
+	TCAdefaults.tt_content {
+		space_before_class = small
+	}
+[global]
+
 [Ps\Xo\Condition\ContentFieldCondition irre:field==tx_xo_flash]
 	TCAdefaults.tt_content {
 		header_layout = container
