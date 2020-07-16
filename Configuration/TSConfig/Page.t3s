@@ -13,7 +13,7 @@ TCEFORM {
 		}
 
 		layout {
-			removeItems = 1,2,3
+			removeItems = 2,3
 		}
 
 		frame_class {

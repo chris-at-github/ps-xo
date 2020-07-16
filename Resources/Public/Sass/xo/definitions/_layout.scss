@@ -22,6 +22,12 @@
   }
 }
 
+%container-width-indent-right {
+	%container-inner {
+		width: $page-max-width;
+	}
+}
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Ausrichtung
 %container-align-center {
@@ -57,4 +63,14 @@
 
 %container-space-after-medium > %container-inner {
   margin-bottom: $spacing-medium;
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// >= MD
+@include media-breakpoint-up(md) {
+	%container-width-indent-right {
+		%container-inner {
+			padding-right: percentage(3 / 12);
+		}
+	}
 }
