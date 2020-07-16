@@ -17,7 +17,7 @@
 	</f:section>
 
 	<f:section name="Switch">
-		<f:if condition="{icon.extension} == 'svg'">
+		<f:if condition="{icon.extension -> xo:format.toLower()} == 'svg'">
 			<f:then>
 				<f:render section="Svg" arguments="{_all}" />
 			</f:then>
