@@ -23,6 +23,14 @@ tt_content {
 					}
 				}
 			}
+
+			110 = Ps\Xo\DataProcessing\FlexFormProcessor
+			110 {
+			  fieldName = pi_flexform
+			  as = flexform
+			}
+
+			120 = Ps\Xo\DataProcessing\IconTextProcessor
 		}
 	}
 }
