@@ -304,10 +304,16 @@ $GLOBALS['TCA']['tt_content']['types']['xo_teaser'] = [
 	'xo_icon_text'
 );
 
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+	'*',
+	'FILE:EXT:xo/Configuration/FlexForms/ContentElements/IconText.xml',
+	'xo_icon_text'
+);
+
 $GLOBALS['TCA']['tt_content']['types']['xo_icon_text'] = [
 	'showitem' => '
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,description,tx_xo_elements,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,description,tx_xo_elements,pi_flexform,
 		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
 		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,

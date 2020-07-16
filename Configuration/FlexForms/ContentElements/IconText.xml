@@ -1,0 +1,36 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<main>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:datamints_sgl/Resources/Private/Language/locallang_db.xlf:tx_datamints_sgl_sequence.flexform.title</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.layout type="array">
+						<TCEforms>
+							<label>LLL:EXT:datamints_sgl/Resources/Private/Language/locallang.xlf:videomodul.icon.title</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0">LLL:EXT:datamints_sgl/Resources/Private/Language/locallang.xlf:videomodul.icon.white</numIndex>
+										<numIndex index="1">color-white</numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">LLL:EXT:datamints_sgl/Resources/Private/Language/locallang.xlf:videomodul.icon.orange</numIndex>
+										<numIndex index="1">color-orange</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.layout>
+
+				</el>
+			</ROOT>
+		</main>
+	</sheets>
+</T3DataStructure>
