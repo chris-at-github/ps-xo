@@ -110,6 +110,18 @@
 			<trans-unit id="tx_xo_icon_text.description">
 				<source>Icon text elements</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_icon_text.align">
+				<source>Align</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_icon_text.align.left">
+				<source>Left</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_icon_text.align.center">
+				<source>Center</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_icon_text.align.right">
+				<source>Right</source>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_domain_model_elements">
 				<source>Elements</source>

@@ -6,28 +6,32 @@
 		<main>
 			<ROOT>
 				<TCEforms>
-					<sheetTitle>LLL:EXT:datamints_sgl/Resources/Private/Language/locallang_db.xlf:tx_datamints_sgl_sequence.flexform.title</sheetTitle>
+					<sheetTitle>-</sheetTitle>
 				</TCEforms>
 				<type>array</type>
 				<el>
-					<settings.layout type="array">
+					<settings.align type="array">
 						<TCEforms>
-							<label>LLL:EXT:datamints_sgl/Resources/Private/Language/locallang.xlf:videomodul.icon.title</label>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.align</label>
 							<config>
 								<type>select</type>
 								<items>
 									<numIndex index="0">
-										<numIndex index="0">LLL:EXT:datamints_sgl/Resources/Private/Language/locallang.xlf:videomodul.icon.white</numIndex>
-										<numIndex index="1">color-white</numIndex>
+										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.align.left</numIndex>
+										<numIndex index="1">left</numIndex>
 									</numIndex>
 									<numIndex index="1">
-										<numIndex index="0">LLL:EXT:datamints_sgl/Resources/Private/Language/locallang.xlf:videomodul.icon.orange</numIndex>
-										<numIndex index="1">color-orange</numIndex>
+										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.align.center</numIndex>
+										<numIndex index="1">center</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.align.right</numIndex>
+										<numIndex index="1">right</numIndex>
 									</numIndex>
 								</items>
 							</config>
 						</TCEforms>
-					</settings.layout>
+					</settings.align>
 
 				</el>
 			</ROOT>
