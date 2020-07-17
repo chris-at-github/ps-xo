@@ -334,3 +334,10 @@ $GLOBALS['TCA']['tt_content']['types']['xo_icon_text'] = [
 // Zuruecksetzen der Werte Space Before / After, damit diese komplett ueber PageTs befuellt werden koennen
 $GLOBALS['TCA']['tt_content']['columns']['space_before_class']['config']['items'] = [];
 $GLOBALS['TCA']['tt_content']['columns']['space_after_class']['config']['items'] = [];
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Plugin Einstellungen
+
+// Flexform Address Plugin
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['xo_address'] = 'pi_flexform';
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue('xo_address', 'FILE:EXT:xo/Configuration/FlexForms/Plugins/Address.xml');

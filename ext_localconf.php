@@ -5,6 +5,19 @@ if(!defined('TYPO3_MODE')) {
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
+// Plugins
+
+// Configure plugins
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+	'Ps.' . $_EXTKEY,
+	'Address',
+	[
+		'Address' => 'record, map',
+	],
+	[]
+);
+
+// ---------------------------------------------------------------------------------------------------------------------
 // Hooks
 
 // Hook is called before Caching / pages on their way in the cache.
