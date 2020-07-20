@@ -10,29 +10,25 @@
 				</TCEforms>
 				<type>array</type>
 				<el>
-					<settings.align type="array">
+					<switchableControllerActions>
 						<TCEforms>
-							<label>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.align</label>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.action</label>
+							<onChange>reload</onChange>
 							<config>
 								<type>select</type>
-								<items>
-									<numIndex index="0">
-										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.align.left</numIndex>
-										<numIndex index="1">left</numIndex>
+								<items type="array">
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.action.record</numIndex>
+										<numIndex index="1">Address->record</numIndex>
 									</numIndex>
-									<numIndex index="1">
-										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.align.center</numIndex>
-										<numIndex index="1">center</numIndex>
-									</numIndex>
-									<numIndex index="2">
-										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.align.right</numIndex>
-										<numIndex index="1">right</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.action.map</numIndex>
+										<numIndex index="1">Collection->closest</numIndex>
 									</numIndex>
 								</items>
 							</config>
 						</TCEforms>
-					</settings.align>
-
+					</switchableControllerActions>
 				</el>
 			</ROOT>
 		</main>

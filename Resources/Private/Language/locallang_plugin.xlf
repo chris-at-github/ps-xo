@@ -6,6 +6,15 @@
 			<trans-unit id="tx_xo_address.title">
 				<source>Address</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_address.action">
+				<source>Display option</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_address.action.record">
+				<source>Record</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_address.action.map">
+				<source>Map</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

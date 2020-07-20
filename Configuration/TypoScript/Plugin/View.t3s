@@ -1,0 +1,15 @@
+plugin.tx_xo {
+	view {
+		layoutRootPaths {
+			1 = EXT:xo/Resources/Private/Extensions/Xo/Layouts/
+		}
+
+		templateRootPaths {
+			1 = EXT:xo/Resources/Private/Extensions/Xo/Templates/
+		}
+
+		partialRootPaths {
+			1 = EXT:xo/Resources/Private/Extensions/Xo/Partials/
+		}
+	}
+}
