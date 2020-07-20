@@ -15,6 +15,9 @@
 			<trans-unit id="tx_xo_address.action.map">
 				<source>Map</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_address.records">
+				<source>Adresses</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

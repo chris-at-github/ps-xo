@@ -32,6 +32,15 @@ class AddressRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 			$matches[] = $query->equals('txXoContent', (int) $options['content']);
 		}
 
+		if(isset($options['records']) === true) {
+
+			// bei Eingabe von festen IDs duerfen nur die IDs der Hauptsprache verwendet werden, Extbase kuemmert sich per
+			// Overlay um die korrekte Uebersetzung
+			$query->getQuerySettings()->setRespectSysLanguage(false);
+
+			$matches[] = $query->in('uid', $options['records']);
+		}
+
 		if(empty($matches) === false) {
 			$query->matching($query->logicalAnd($matches));
 		}
