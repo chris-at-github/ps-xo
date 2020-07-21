@@ -26,8 +26,8 @@
 
 		<f:if condition="{address.zip} && {address.city}">
 			<div class="address--item">
-				<span class="address--item address--item-zip">{address.zip}</span>
-				<span class="address--item address--item-city">{address.city}</span>
+				<span class="address--item address--zip">{address.zip}</span>
+				<span class="address--item address--city">{address.city}</span>
 			</div>
 		</f:if>
 	</f:section>
@@ -36,16 +36,16 @@
 
 		<f:if condition="{address.phone}">
 			<!-- @todo: Language ViewHelper verwenden -->
-			<div class="address--item address--item--phone">Telefon: <a class="link--phone" href="{xo:uri.phone(phone: address.phone)}">{address.phone}</a></div>
+			<div class="address--item address--phone">Telefon: <a class="link--phone" href="{xo:uri.phone(phone: address.phone)}">{address.phone}</a></div>
 		</f:if>
 
 		<f:if condition="{address.email}">
-			<div class="address--item address--item-mail">E-Mail: <f:link.email class="link--mail" email="{address.email}" /></div>
+			<div class="address--item address--mail">E-Mail: <f:link.email class="link--mail" email="{address.email}" /></div>
 		</f:if>
 
 		<f:if condition="{address.www}">
 			<!-- @todo: Einbindung Icon Font fuer .link--url -->
-			<div class="address--itemaddress--item-url"><f:link.external class="link--url" uri="{address.www}" target="_blank">{address.www}</f:link.external></div>
+			<div class="address--itemaddress--url"><f:link.typolink class="link--url" parameter="{address.www}" target="_blank">{address.www}</f:link.typolink></div>
 		</f:if>
 	</f:section>
 </html>
