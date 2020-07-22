@@ -3,7 +3,7 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2018-11-27T06:25:54Z" product-name="xo">
 		<header/>
 		<body>
-				<trans-unit id="tx_xo_logo.title">
+			<trans-unit id="tx_xo_logo.title">
 				<source>%s</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_logo.alt">
@@ -14,6 +14,13 @@
 			</trans-unit>
 			<trans-unit id="tx_xo_search.link">
 				<source>Zur Suche</source>
+			</trans-unit>
+
+			<trans-unit id="tx_xo.phone">
+				<source>Telefon</source>
+			</trans-unit>
+			<trans-unit id="tx_xo.mail">
+				<source>E-Mail</source>
 			</trans-unit>
 		</body>
 	</file>
