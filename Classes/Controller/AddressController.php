@@ -14,21 +14,30 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class AddressController extends ActionController {
 
 	/**
-	 * @return void
+	 * @param array $overwrite
+	 * @return array
 	 */
-	public function recordAction() {
+	protected function getDemand($overwrite = []) {
 		$options = [];
 
 		if(empty($this->settings['records']) === false) {
 			$options['records'] = GeneralUtility::trimExplode(',', $this->settings['records'], true);
 		}
 
-		$this->view->assign('records', $this->objectManager->get(AddressRepository::class)->findAll($options));
+		return $options;
+	}
+
+	/**
+	 * @return void
+	 */
+	public function recordAction() {
+		$this->view->assign('records', $this->objectManager->get(AddressRepository::class)->findAll($this->getDemand()));
 	}
 
 	/**
 	 * @return void
 	 */
 	public function mapAction() {
+		$this->view->assign('records', $this->objectManager->get(AddressRepository::class)->findAll($this->getDemand()));
 	}
 }

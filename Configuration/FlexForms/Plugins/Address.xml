@@ -23,7 +23,7 @@
 									</numIndex>
 									<numIndex index="2" type="array">
 										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.action.map</numIndex>
-										<numIndex index="1">Collection->closest</numIndex>
+										<numIndex index="1">Address->map</numIndex>
 									</numIndex>
 								</items>
 							</config>
