@@ -98,3 +98,9 @@ $GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['show
 	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,hidden
 	,--div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories
 ';
+
+$GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['columnsOverrides']['name'] = [
+	'config' => [
+		'readOnly' => false,
+	]
+];
