@@ -23,6 +23,8 @@
 	var GoogleMaps = function(selector, options) {
 		var _ = this;
 
+		_.defined = false;
+
 		_.maps = [];
 
 		_.selector = selector;
@@ -53,25 +55,36 @@
 	GoogleMaps.prototype.MARKER_TYPE_SIMPLE = 'simple';
 
 	GoogleMaps.prototype.initialize = function() {
+
+	};
+
+	GoogleMaps.prototype.initialize = function() {
 		var _ = this;
 		var nodes = document.querySelectorAll(this.selector);
 
-		nodes.forEach(function(node, index) {
-			var map = new google.maps.Map(node, {
-				center: {
-					lat: _.options.coordinates.latitude,
-					lng: _.options.coordinates.longitude
-				},
-				zoom: _.options.zoom,
-				zoomControl: _.options.controls.zoom,
-				mapTypeControl: _.options.controls.mapType,
-				scaleControl: _.options.controls.scale,
-				streetViewControl: _.options.controls.streetView,
-				rotateControl: _.options.controls.rotate,
-				fullscreenControl: _.options.controls.fullscreen
-			});
+		if(typeof (google) === 'undefined' || typeof (google.maps) === 'undefined') {
+			return;
+		}
+		_.defined = true;
 
-			_.maps[index] = map;
+		nodes.forEach(function(node, index) {
+			if(typeof(google) !== 'undefined' && typeof(google.maps) !== 'undefined') {
+				var map = new google.maps.Map(node, {
+					center: {
+						lat: _.options.coordinates.latitude,
+						lng: _.options.coordinates.longitude
+					},
+					zoom: _.options.zoom,
+					zoomControl: _.options.controls.zoom,
+					mapTypeControl: _.options.controls.mapType,
+					scaleControl: _.options.controls.scale,
+					streetViewControl: _.options.controls.streetView,
+					rotateControl: _.options.controls.rotate,
+					fullscreenControl: _.options.controls.fullscreen
+				});
+
+				_.maps[index] = map;
+			}
 		});
 	};
 
@@ -84,14 +97,16 @@
 	 * @param {object} options
 	 */
 	GoogleMaps.prototype.addMarkerType = function(name, type, options) {
-		if(type === this.MARKER_TYPE_SIMPLE) {
-			this.markerTypes[name] = {
-				type: this.MARKER_TYPE_SIMPLE,
-				url: options.url
-			};
+		if(this.defined === true) {
+			if(type === this.MARKER_TYPE_SIMPLE) {
+				this.markerTypes[name] = {
+					type: this.MARKER_TYPE_SIMPLE,
+					url: options.url
+				};
 
-			if(typeof(options.scaledSize) !== 'undefined') {
-				this.markerTypes[name].scaledSize = new google.maps.Size(options.scaledSize[0], options.scaledSize[1]);
+				if(typeof(options.scaledSize) !== 'undefined') {
+					this.markerTypes[name].scaledSize = new google.maps.Size(options.scaledSize[0], options.scaledSize[1]);
+				}
 			}
 		}
 	};
@@ -109,21 +124,23 @@
 	GoogleMaps.prototype.addMarker = function(type, position) {
 		var _ = this;
 
-		_.maps.forEach(function(map) {
-			if(_.markerTypes[type].type === _.MARKER_TYPE_SIMPLE) {
-				var options = {
-					position: {
-						lat: position.latitude,
-						lng: position.longitude
-					},
-					map: map,
-					optimized: false,
-					icon: _.markerTypes[type]
-				};
+		if(this.defined === true) {
+			_.maps.forEach(function(map) {
+				if(_.markerTypes[type].type === _.MARKER_TYPE_SIMPLE) {
+					var options = {
+						position: {
+							lat: position.latitude,
+							lng: position.longitude
+						},
+						map: map,
+						optimized: false,
+						icon: _.markerTypes[type]
+					};
 
-				var marker = new google.maps.Marker(options);
-			}
-		});
+					var marker = new google.maps.Marker(options);
+				}
+			});
+		}
 	};
 
 	return GoogleMaps;
