@@ -9,7 +9,9 @@
 
 			<f:render section="Contact" arguments="{_all}" />
 
-			<xo:jsonLd.localBusiness address="{address}" />
+			<f:if condition="{settings.structuredDataType} == 'localBusiness'">
+				<xo:jsonLd.localBusiness address="{address}" />
+			</f:if>
 		</address>
 	</f:section>
 

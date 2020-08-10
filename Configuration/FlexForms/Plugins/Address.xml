@@ -48,6 +48,25 @@
 							</config>
 						</TCEforms>
 					</settings.records>
+
+					<settings.structuredDataType>
+						<TCEforms>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.structuredDataType</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="1" type="array">
+										<numIndex index="0" />
+										<numIndex index="1" />
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.structuredDataType.localBusiness</numIndex>
+										<numIndex index="1">localBusiness</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.structuredDataType>
 				</el>
 			</ROOT>
 		</main>

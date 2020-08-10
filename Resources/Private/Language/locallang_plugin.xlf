@@ -21,6 +21,12 @@
 			<trans-unit id="tx_xo_address.records">
 				<source>Adresses</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_address.structuredDataType">
+				<source>Structured Data Type</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_address.structuredDataType.localBusiness">
+				<source>Local Business</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
