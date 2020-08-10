@@ -13,6 +13,10 @@ TCEFORM {
 		}
 
 		layout {
+			altLabels {
+				1 = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.layout.1
+				2 = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.layout.2
+			}
 			removeItems = 3
 		}
 

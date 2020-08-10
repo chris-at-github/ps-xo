@@ -7,6 +7,12 @@
 				<source>Flash</source>
 			</trans-unit>
 
+			<trans-unit id="tx_xo_tt_content.layout.1">
+				<source>Indent Right</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.layout.2">
+				<source>Fullwidth</source>
+			</trans-unit>
 			<trans-unit id="tx_xo_tt_content.space.auto">
 				<source>Auto</source>
 			</trans-unit>
