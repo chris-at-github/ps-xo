@@ -56,55 +56,71 @@ RTE {
 	default.preset = xo
 }
 
-mod.wizards.newContentElement.wizardItems.common {
-	elements {
-		xo_html {
-			iconIdentifier = content-special-html
-			title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_html.title
-			description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_html.description
-			tt_content_defValues {
-				CType = xo_html
+mod.wizards.newContentElement.wizardItems {
+	common {
+		elements {
+			xo_html {
+				iconIdentifier = content-special-html
+				title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_html.title
+				description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_html.description
+				tt_content_defValues {
+					CType = xo_html
+				}
+			}
+
+			xo_gallery {
+				iconIdentifier = content-image
+				title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_gallery.title
+				description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_gallery.description
+				tt_content_defValues {
+					CType = xo_gallery
+				}
+			}
+
+			xo_address {
+				iconIdentifier = xo-content-address
+				title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_address.title
+				description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_address.description
+				tt_content_defValues {
+					CType = xo_address
+				}
+			}
+
+			xo_teaser {
+				iconIdentifier = content-menu-section
+				title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_teaser.title
+				description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_teaser.description
+				tt_content_defValues {
+					CType = xo_teaser
+				}
+			}
+
+			xo_icon_text {
+				iconIdentifier = content-textpic
+				title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.title
+				description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.description
+				tt_content_defValues {
+					CType = xo_icon_text
+				}
 			}
 		}
 
-		xo_gallery {
-			iconIdentifier = content-image
-			title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_gallery.title
-			description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_gallery.description
-			tt_content_defValues {
-				CType = xo_gallery
-			}
-		}
+		show := addToList(xo_html, xo_gallery, xo_address, xo_teaser, xo_icon_text)
+	}
 
-		xo_address {
-			iconIdentifier = xo-content-address
-			title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_address.title
-			description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_address.description
-			tt_content_defValues {
-				CType = xo_address
-			}
-		}
-
-		xo_teaser {
-			iconIdentifier = content-menu-section
-			title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_teaser.title
-			description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_teaser.description
-			tt_content_defValues {
-				CType = xo_teaser
-			}
-		}
-
-		xo_icon_text {
-			iconIdentifier = content-textpic
-			title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.title
-			description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.description
-			tt_content_defValues {
-				CType = xo_icon_text
+	plugins {
+		elements {
+			xo_address {
+				iconIdentifier = xo-ttaddress-address
+				title = LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.title
+				description = LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.description
+				tt_content_defValues {
+					CType = list
+					list_type = xo_address
+				}
 			}
 		}
 	}
-
-	show := addToList(xo_html, xo_gallery, xo_address, xo_teaser, xo_icon_text)
 }
 
 [Ps\Xo\Condition\ContentFieldCondition CType==xo_icon_text]

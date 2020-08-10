@@ -6,6 +6,9 @@
 			<trans-unit id="tx_xo_address.title">
 				<source>Address</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_address.description">
+				<source>Show selected addresses with as an address block or as a map</source>
+			</trans-unit>
 			<trans-unit id="tx_xo_address.action">
 				<source>Display option</source>
 			</trans-unit>
