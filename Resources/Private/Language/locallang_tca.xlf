@@ -6,6 +6,9 @@
 			<trans-unit id="tx_xo_pages.flash">
 				<source>Flash</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_pages.pagetype.typolink">
+				<source>Typolink</source>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_tt_content.layout.1">
 				<source>Indent Right</source>
