@@ -27,37 +27,56 @@ $tmpXoPagesColumns = [
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Neuen Pagetyp Typolink
-//(function() {
-	$pageTypeTypolink = 120;
+$pageTypeTypolink = 120;
 
-	// Add new page type as possible select item:
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
-		'pages',
-		'doktype',
-		[
-			'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.pagetype.typolink',
-			$pageTypeTypolink,
-			'EXT:xo/Resources/Public/Icons/xo-page-typolink.svg'
-		],
-		'1',
-		'after'
-	);
+// Add new page type as possible select item:
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+	'pages',
+	'doktype',
+	[
+		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.pagetype.typolink',
+		$pageTypeTypolink,
+		'EXT:xo/Resources/Public/Icons/xo-page-typolink.svg'
+	],
+	'1',
+	'after'
+);
 
-	\TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
-		$GLOBALS['TCA']['pages'],
-		[
-			// add icon for new page type:
-			'ctrl' => [
-				'typeicon_classes' => [
-					$pageTypeTypolink => 'xo-page-typolink',
-				],
+\TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
+	$GLOBALS['TCA']['pages'],
+	[
+		// add icon for new page type:
+		'ctrl' => [
+			'typeicon_classes' => [
+				$pageTypeTypolink => 'xo-page-typolink',
 			],
-			// add all page standard fields and tabs to your new page type
-			'types' => [
-				(string) $pageTypeTypolink => [
-					'showitem' => $GLOBALS['TCA']['pages']['types'][\TYPO3\CMS\Frontend\Page\PageRepository::DOKTYPE_LINK]['showitem']
+		],
+
+		'types' => [
+			(string) $pageTypeTypolink => [
+				'showitem' => $GLOBALS['TCA']['pages']['types'][\TYPO3\CMS\Frontend\Page\PageRepository::DOKTYPE_LINK]['showitem'],
+				'columnsOverrides' => [
+					'url' => [
+						'config' => [
+							'renderType' => 'inputLink',
+							'size' => 50,
+							'max' => 1024,
+							'fieldControl' => [
+								'linkPopup' => [
+									'options' => [
+										'title' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link_formlabel',
+									],
+								],
+							],
+							'softref' => 'typolink'
+						]
+					]
 				]
 			]
 		]
-	);
-//});
+	]
+);
+//
+//$GLOBALS['TCA']['pages']['types'][(string) $pageTypeTypolink] = [
+//
+//];
