@@ -18,6 +18,13 @@ if(!defined('TYPO3_MODE')) {
 );
 
 // ---------------------------------------------------------------------------------------------------------------------
+// Override Core Classes
+// @see: https://app.asana.com/0/1184169373040457/1188160889734406/f
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Frontend\ContentObject\Menu\TextMenuContentObject::class] = [
+	'className' => Ps\Xo\ContentObject\Menu\TextMenuContentObject::class
+];
+
+// ---------------------------------------------------------------------------------------------------------------------
 // Hooks
 
 // Hook is called before Caching / pages on their way in the cache.
