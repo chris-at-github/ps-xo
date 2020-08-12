@@ -103,9 +103,18 @@ mod.wizards.newContentElement.wizardItems {
 					CType = xo_icon_text
 				}
 			}
+
+			xo_slider {
+				iconIdentifier = content-textpic
+				title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_slider.title
+				description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_slider.description
+				tt_content_defValues {
+					CType = xo_slider
+				}
+			}
 		}
 
-		show := addToList(xo_html, xo_gallery, xo_address, xo_teaser, xo_icon_text)
+		show := addToList(xo_html, xo_gallery, xo_address, xo_teaser, xo_icon_text, xo_slider)
 	}
 
 	plugins {

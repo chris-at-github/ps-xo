@@ -323,12 +323,30 @@ $GLOBALS['TCA']['tt_content']['types']['xo_icon_text'] = [
 	',
 ];
 
-//$GLOBALS['TCA']['tt_content']['types']['xo_icon_text']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['types']['0'] = [
-//	'showitem' => '
-//		l10n_diffsource, hidden, title, description, media,
-//		--linebreak--,
-//		--palette--;;paletteDate'
-//];
+// ---------------------------------------------------------------------------------------------------------------------
+// Slider
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+	array(
+		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_slider.title',
+		'xo_slider',
+		'content-textpic'
+	),
+	'CType',
+	'xo_slider'
+);
+
+$GLOBALS['TCA']['tt_content']['types']['xo_slider'] = [
+	'showitem' => '
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,description,tx_xo_elements,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
+	',
+];
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Zuruecksetzen der Werte Space Before / After, damit diese komplett ueber PageTs befuellt werden koennen
