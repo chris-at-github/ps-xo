@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+	<f:spaceless>
+		<div class="slider slider--layout-0">
+			<div class="slider--container">
+				<f:for each="{elements}" as="item" iteration="iterator">
+					<div class="slider--item">
+						{iterator.index}
+					</div>
+				</f:for>
+			</div>
+
+			<div class="slider--controls">
+				<button class="slider--prev">&lt;</button>
+				<button class="slider--next">&gt;</button>
+			</div>
+		</div>
+	</f:spaceless>
+</f:section>
+</html>

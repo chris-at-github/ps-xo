@@ -1,0 +1,28 @@
+tt_content {
+	xo_slider =< lib.contentElement
+	xo_slider {
+		templateName = Slider.html
+		dataProcessing {
+			30 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+			30 {
+				as = elements
+				table = tx_xo_domain_model_elements
+				pidInList.field = pid
+				where {
+					data = field:uid
+					intval = 1
+					wrap = tx_xo_content=|
+				}
+				orderBy = sorting
+
+				dataProcessing {
+					10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+					10 {
+						as = media
+						references.fieldName = media
+					}
+				}
+			}
+		}
+	}
+}
