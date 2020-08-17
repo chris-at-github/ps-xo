@@ -26,7 +26,15 @@
 <f:section name="Item">
 	<div class="container-outer slider--item">
 		<div class="container-inner">
-			{iterator.index}
+			<f:if condition="{item.data.title}">
+				<header class="slider--item-title">
+					<f:render partial="Header/Header" arguments="{header: item.data.title}" />
+				</header>
+			</f:if>
+
+			<f:if condition="{item.data.description}">
+				<f:format.html>{item.data.description}</f:format.html>
+			</f:if>
 		</div>
 	</div>
 </f:section>
