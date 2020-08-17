@@ -5,19 +5,29 @@
 		<div class="slider slider--layout-0">
 			<div class="slider--container">
 				<f:for each="{elements}" as="item" iteration="iterator">
-					<div class="slider--item">
-						{iterator.index}
-					</div>
+					<f:render section="Item" arguments="{_all}" />
 				</f:for>
 			</div>
 
-			<div class="container-outer slider--controls">
-				<div class="container-inner">
-					<div class="slider--prev"></divclass><button >&lt;</button></div>
-					<div class="slider--next"><button>&gt;</button></div>
-				</div>
-			</div>
+			<f:render section="Controls" arguments="{_all}" />
 		</div>
 	</f:spaceless>
+</f:section>
+
+<f:section name="Controls">
+	<div class="container-outer slider--controls">
+		<div class="container-inner">
+			<div class="slider--prev"><button >&lt;</button></div>
+			<div class="slider--next"><button>&gt;</button></div>
+		</div>
+	</div>
+</f:section>
+
+<f:section name="Item">
+	<div class="container-outer slider--item">
+		<div class="container-inner">
+			{iterator.index}
+		</div>
+	</div>
 </f:section>
 </html>
