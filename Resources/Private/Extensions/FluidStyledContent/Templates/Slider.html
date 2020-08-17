@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
 <f:section name="Main">
 	<f:spaceless>
@@ -24,7 +24,7 @@
 </f:section>
 
 <f:section name="Item">
-	<div class="container-outer slider--item">
+	<div class="container-outer slider--item slider--item-{data.uid}-{item.data.uid}">
 		<div class="container-inner">
 			<f:if condition="{item.data.title}">
 				<header class="slider--item-title">
@@ -35,7 +35,21 @@
 			<f:if condition="{item.data.description}">
 				<f:format.html>{item.data.description}</f:format.html>
 			</f:if>
+
+			<f:if condition="{item.media.0}">
+				<f:render section="Media" arguments="{data: data, item: item, media: item.media.0}" />
+			</f:if>
 		</div>
 	</div>
+</f:section>
+
+<f:section name="Media">
+	<f:variable name="sliderItemBackground">
+		.slider--item-{data.uid}-{item.data.uid} {
+			background-image: url('{f:uri.image(image: media, cropVariant: "default", maxWidth: 1800)}');
+		}
+	</f:variable>
+
+	<xo:style.inlineCode name="slider--item-{data.uid}-{item.data.uid}" code="{sliderItemBackground}" />
 </f:section>
 </html>
