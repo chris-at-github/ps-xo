@@ -28,7 +28,7 @@
 		<div class="container-inner">
 			<f:if condition="{item.data.title}">
 				<header class="slider--item-title">
-					<f:render partial="Header/Header" arguments="{header: item.data.title}" />
+					<f:render partial="Header/Header" arguments="{header: item.data.title, layout: item.data.title_type}" />
 				</header>
 			</f:if>
 

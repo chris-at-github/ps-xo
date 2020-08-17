@@ -20,12 +20,12 @@ return [
 		'iconfile' => 'EXT:xo/Resources/Public/Icons/xo-content-elements.svg'
 	],
 	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_diffsource, hidden, title, link, description, media',
+		'showRecordFieldList' => 'sys_language_uid, l10n_diffsource, hidden, title, title_type, link, description, media',
 	],
 	'types' => [
 		'0' => [
 			'showitem' => '
-				l10n_diffsource, title, link, description, media,
+				l10n_diffsource, title, title_type, link, description, media,
 				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
 				--palette--;;visibility,
 				--palette--;;access'
@@ -131,6 +131,18 @@ return [
 				'type' => 'input',
 				'size' => 30,
 				'eval' => 'trim,required',
+			],
+		],
+		'title_type' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.title_type',
+			'config' => [
+				'type' => 'select',
+				'renderType' => 'selectSingle',
+				'items' => [
+					['LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value', 0],
+				],
+				'default' => 0,
 			],
 		],
 		'description' => [

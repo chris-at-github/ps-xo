@@ -45,6 +45,19 @@ TCEFORM {
 			}
 		}
 	}
+
+	tx_xo_domain_model_elements {
+		title_type {
+			addItems {
+				1 = LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.1
+				2 = LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.2
+				3 = LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.3
+				4 = LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.4
+				5 = LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.5
+				100 = LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.6
+			}
+		}
+	}
 }
 
 TCAdefaults.tt_content {
