@@ -10,6 +10,7 @@
 			</div>
 
 			<f:render section="Controls" arguments="{_all}" />
+			<f:render section="Navigation" arguments="{_all}" />
 		</div>
 	</f:spaceless>
 </f:section>
@@ -19,6 +20,18 @@
 		<div class="container-inner">
 			<div class="slider--prev"><button><xo:svg.inline source="/assets/svg/arrow-left.svg" /></button></div>
 			<div class="slider--next"><button><xo:svg.inline source="/assets/svg/arrow-right.svg" /></button></div>
+		</div>
+	</div>
+</f:section>
+
+<f:section name="Navigation">
+	<div class="container-outer slider--navigation">
+		<div class="container-inner">
+			<ul>
+				<f:for each="{elements}" as="item" iteration="iterator">
+					<li><span>{iterator.cycle}</span></li>
+				</f:for>
+			</ul>
 		</div>
 	</div>
 </f:section>
