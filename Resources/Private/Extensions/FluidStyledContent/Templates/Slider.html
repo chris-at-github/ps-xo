@@ -29,7 +29,7 @@
 		<div class="container-inner">
 			<ul>
 				<f:for each="{elements}" as="item" iteration="iterator">
-					<li><span>{iterator.cycle}</span></li>
+					<li title="{iterator.cycle}{f:if(condition: item.data.title, then: ': {item.data.title}')}"><span>{iterator.cycle}<f:if condition="{item.data.title}">: {item.data.title}</f:if></span></li>
 				</f:for>
 			</ul>
 		</div>
