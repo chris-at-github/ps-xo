@@ -59,7 +59,13 @@
 <f:section name="Media">
 	<f:variable name="sliderItemBackground">
 		.slider--item-{data.uid}-{item.data.uid} {
-			background-image: url('{f:uri.image(image: media, cropVariant: "default", maxWidth: 1800)}');
+			background-image: url('{f:uri.image(image: media, cropVariant: "mobile", maxWidth: 900)}');
+		}
+
+		@media (min-width: 768px) {
+			.slider--item-{data.uid}-{item.data.uid} {
+				background-image: url('{f:uri.image(image: media, cropVariant: "desktop", maxWidth: 1800)}');
+			}
 		}
 	</f:variable>
 
