@@ -348,6 +348,20 @@ $GLOBALS['TCA']['tt_content']['types']['xo_slider'] = [
 	',
 ];
 
+$GLOBALS['TCA']['tt_content']['types']['xo_slider']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['columns']['record_type']['config']['items'] = [
+	['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type.slider', 'slider']
+];
+
+$GLOBALS['TCA']['tt_content']['types']['xo_slider']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['types'] = [
+	'slider' => [
+		'showitem' => '
+				l10n_diffsource, record_type, --palette--;;header, link, description, media,
+				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+				--palette--;;visibility,
+				--palette--;;access'
+	],
+];
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Zuruecksetzen der Werte Space Before / After, damit diese komplett ueber PageTs befuellt werden koennen
 $GLOBALS['TCA']['tt_content']['columns']['space_before_class']['config']['items'] = [];

@@ -31,13 +31,13 @@ return [
 				--palette--;;visibility,
 				--palette--;;access'
 		],
-		'slider' => [
-			'showitem' => '
-				l10n_diffsource, record_type, --palette--;;header, link, description, media,
-				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
-				--palette--;;visibility,
-				--palette--;;access'
-		],
+//		'slider' => [
+//			'showitem' => '
+//				l10n_diffsource, record_type, --palette--;;header, link, description, media,
+//				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+//				--palette--;;visibility,
+//				--palette--;;access'
+//		],
 	],
 	'palettes' => [
 		'header' => [
@@ -104,7 +104,6 @@ return [
 				'renderType' => 'selectSingle',
 				'items' => [
 					['LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value', 0],
-					['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type.slider', 'slider']
 				]
 			]
 		],
