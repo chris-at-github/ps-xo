@@ -6,6 +6,7 @@ return [
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
+		'type' => 'record_type',
 		'versioningWS' => true,
 		'languageField' => 'sys_language_uid',
 		'transOrigPointerField' => 'l10n_parent',
@@ -20,18 +21,28 @@ return [
 		'iconfile' => 'EXT:xo/Resources/Public/Icons/xo-content-elements.svg'
 	],
 	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_diffsource, hidden, title, title_type, link, description, media',
+		'showRecordFieldList' => 'sys_language_uid, l10n_diffsource, record_type, hidden, title, title_type, link, description, media',
 	],
 	'types' => [
 		'0' => [
 			'showitem' => '
-				l10n_diffsource, title, title_type, link, description, media,
+				l10n_diffsource, record_type, --palette--;;header, link, description, media,
+				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+				--palette--;;visibility,
+				--palette--;;access'
+		],
+		'slider' => [
+			'showitem' => '
+				l10n_diffsource, record_type, --palette--;;header, link, description, media,
 				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
 				--palette--;;visibility,
 				--palette--;;access'
 		],
 	],
 	'palettes' => [
+		'header' => [
+			'showitem' => 'title, title_type,'
+		],
 		'visibility' => [
 			'showitem' => 'hidden,',
 		],
@@ -84,6 +95,18 @@ return [
 				'size' => 30,
 				'max' => 255,
 			],
+		],
+		'record_type' => [
+			'exclude' => 0,
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type',
+			'config' => [
+				'type' => 'select',
+				'renderType' => 'selectSingle',
+				'items' => [
+					['LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value', 0],
+					['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type.slider', 'slider']
+				]
+			]
 		],
 		'hidden' => [
 			'exclude' => true,

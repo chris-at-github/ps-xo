@@ -41,6 +41,7 @@ CREATE TABLE tx_xo_domain_model_elements (
 	link varchar(1024) DEFAULT '' NOT NULL,
   media int(11) unsigned DEFAULT '0',
 
+	record_type varchar(100) NOT NULL DEFAULT '0',
 	sorting int(11) DEFAULT '0' NOT NULL,
 	tx_xo_content int(11) DEFAULT '0' NOT NULL,
 

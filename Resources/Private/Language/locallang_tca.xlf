@@ -142,6 +142,12 @@
 			<trans-unit id="tx_xo_domain_model_elements">
 				<source>Elements</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_domain_model_elements.record_type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_domain_model_elements.record_type.slider">
+				<source>Slider</source>
+			</trans-unit>
 			<trans-unit id="tx_xo_domain_model_elements.title">
 				<source>Title</source>
 			</trans-unit>
