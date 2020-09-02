@@ -31,13 +31,6 @@ return [
 				--palette--;;visibility,
 				--palette--;;access'
 		],
-//		'slider' => [
-//			'showitem' => '
-//				l10n_diffsource, record_type, --palette--;;header, link, description, media,
-//				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
-//				--palette--;;visibility,
-//				--palette--;;access'
-//		],
 	],
 	'palettes' => [
 		'header' => [
