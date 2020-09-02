@@ -313,7 +313,7 @@ $GLOBALS['TCA']['tt_content']['types']['xo_teaser'] = [
 $GLOBALS['TCA']['tt_content']['types']['xo_icon_text'] = [
 	'showitem' => '
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,description,tx_xo_elements,pi_flexform,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,bodytext,tx_xo_elements,pi_flexform,
 		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
 		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
@@ -321,6 +321,11 @@ $GLOBALS['TCA']['tt_content']['types']['xo_icon_text'] = [
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
 		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
 	',
+];
+
+$GLOBALS['TCA']['tt_content']['types']['xo_icon_text']['columnsOverrides']['bodytext']['config'] = [
+	'enableRichtext' => true,
+	'richtextConfiguration' => 'default',
 ];
 
 // ---------------------------------------------------------------------------------------------------------------------
