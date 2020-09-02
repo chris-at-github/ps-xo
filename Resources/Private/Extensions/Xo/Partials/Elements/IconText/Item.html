@@ -1,14 +1,33 @@
 <div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
 	<f:section name="Main">
-		<f:if condition="{element.media.0}">
-			<f:render partial="Elements/IconText/Icon" section="Main" arguments="{element: element, icon: element.media.0}" />
-		</f:if>
+		<f:render section="Variant-{data.tx_xo_variant}" optional="1" arguments="{_all}">
+			<f:if condition="{element.media.0}">
+				<f:render partial="Elements/IconText/Icon" section="Main" arguments="{element: element, icon: element.media.0}" />
+			</f:if>
 
-		<f:render section="Title" arguments="{_all}" />
+			<f:render section="Title" arguments="{_all}" />
 
-		<f:if condition="{element.data.description}">
-			<f:render section="Description" arguments="{_all}" />
-		</f:if>
+			<f:if condition="{element.data.description}">
+				<f:render section="Description" arguments="{_all}" />
+			</f:if>
+		</f:render>
+	</f:section>
+
+	<f:section name="Variant-1">
+		<div class="row">
+			<div class="col-3">
+				<f:if condition="{element.media.0}">
+					<f:render partial="Elements/IconText/Icon" section="Main" arguments="{element: element, icon: element.media.0}" />
+				</f:if>
+			</div>
+			<div class="col-9">
+				<f:render section="Title" arguments="{_all}" />
+
+				<f:if condition="{element.data.description}">
+					<f:render section="Description" arguments="{_all}" />
+				</f:if>
+			</div>
+		</div>
 	</f:section>
 
 	<f:section name="Title">

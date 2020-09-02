@@ -140,6 +140,12 @@
 			<trans-unit id="tx_xo_icon_text.align.right">
 				<source>Right</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_icon_text.variant.0">
+				<source>Vertical</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_icon_text.variant.1">
+				<source>Horizontal</source>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_slider.title">
 				<source>Slider</source>
