@@ -370,6 +370,37 @@ $GLOBALS['TCA']['tt_content']['types']['xo_slider']['columnsOverrides']['tx_xo_e
 ];
 
 // ---------------------------------------------------------------------------------------------------------------------
+// Media Wall
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+	array(
+		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_media_wall.title',
+		'xo_media_wall',
+		'content-image'
+	),
+	'CType',
+	'tx_xo_media_wall'
+);
+
+$GLOBALS['TCA']['tt_content']['types']['xo_media_wall'] = [
+	'showitem' => '
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,bodytext,tx_xo_elements,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+			--palette--;;hidden,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
+	',
+];
+
+$GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['bodytext']['config'] = [
+	'enableRichtext' => true,
+	'richtextConfiguration' => 'default',
+];
+
+// ---------------------------------------------------------------------------------------------------------------------
 // Zuruecksetzen der Werte Space Before / After, damit diese komplett ueber PageTs befuellt werden koennen
 $GLOBALS['TCA']['tt_content']['columns']['space_before_class']['config']['items'] = [];
 $GLOBALS['TCA']['tt_content']['columns']['space_after_class']['config']['items'] = [];
