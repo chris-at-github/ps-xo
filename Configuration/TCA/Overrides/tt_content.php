@@ -400,6 +400,30 @@ $GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['bod
 	'richtextConfiguration' => 'default',
 ];
 
+$GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['columns']['title']['config']['eval'] = 'trim';
+
+$GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['columns']['record_type']['config']['items'] = [
+	['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type.media_wall.image', 'media_wall_image'],
+	['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type.media_wall.video', 'media_wall_video']
+];
+
+$GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['types'] = [
+	'media_wall_image' => [
+		'showitem' => '
+				l10n_diffsource, record_type, --palette--;;header, media,
+				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+				--palette--;;visibility,
+				--palette--;;access'
+	],
+	'media_wall_video' => [
+		'showitem' => '
+				l10n_diffsource, record_type, --palette--;;header, media,
+				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+				--palette--;;visibility,
+				--palette--;;access'
+	],
+];
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Zuruecksetzen der Werte Space Before / After, damit diese komplett ueber PageTs befuellt werden koennen
 $GLOBALS['TCA']['tt_content']['columns']['space_before_class']['config']['items'] = [];

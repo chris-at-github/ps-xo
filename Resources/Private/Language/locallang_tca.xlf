@@ -170,6 +170,12 @@
 			<trans-unit id="tx_xo_domain_model_elements.record_type.slider">
 				<source>Slider</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_domain_model_elements.record_type.media_wall.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_domain_model_elements.record_type.media_wall.video">
+				<source>Video</source>
+			</trans-unit>
 			<trans-unit id="tx_xo_domain_model_elements.title">
 				<source>Title</source>
 			</trans-unit>
