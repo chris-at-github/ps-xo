@@ -13,7 +13,13 @@
 				</f:if>
 
 				<f:if condition="{element.data.record_type} == 'media_wall_image'">
-					<f:comment><f:render partial="Components/Media" section="Picture" arguments="{file: element.media.0}" /></f:comment>
+					<f:render partial="Components/Media" section="Picture" arguments="{
+						file: element.media.0,
+						image: {width: 160, height: 160, cropVariant: 'thumbnail'},
+						sizes: {
+							0: {width: 280, height: 280, mediaQuery: '(min-width: 768px)', cropVariant: 'thumbnail'}
+						}
+					}" />
 				</f:if>
 			</div>
 		</f:render>
