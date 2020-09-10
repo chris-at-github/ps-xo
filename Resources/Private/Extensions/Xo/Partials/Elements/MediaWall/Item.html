@@ -1,7 +1,21 @@
 <div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
 	<f:section name="Main">
 		<f:render section="Variant-{data.tx_xo_variant}" optional="1" arguments="{_all}">
-			<div class="media-wall--item"></div>
+			<div class="media-wall--item">
+				<f:if condition="{element.data.record_type} == 'media_wall_video'">
+					<f:render partial="Components/Media" section="Picture" arguments="{
+						file: element.thumbnail.0,
+						image: {width: 160, height: 160, cropVariant: 'thumbnail'},
+						sizes: {
+							0: {width: 280, height: 280, mediaQuery: '(min-width: 768px)', cropVariant: 'thumbnail'}
+						}
+					}" />
+				</f:if>
+
+				<f:if condition="{element.data.record_type} == 'media_wall_image'">
+					<f:comment><f:render partial="Components/Media" section="Picture" arguments="{file: element.media.0}" /></f:comment>
+				</f:if>
+			</div>
 		</f:render>
 	</f:section>
 </div>

@@ -21,6 +21,12 @@ tt_content {
 						as = media
 						references.fieldName = media
 					}
+
+					20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+					20 {
+						as = thumbnail
+						references.fieldName = thumbnail
+					}
 				}
 			}
 		}

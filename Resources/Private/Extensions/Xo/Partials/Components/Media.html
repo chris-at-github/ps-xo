@@ -1,0 +1,20 @@
+<div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:section name="Main">
+		<f:if condition="{file.extension -> xo:format.toLower()} == 'svg'">
+			<f:then>
+				<f:render section="Svg" arguments="{_all}" />
+			</f:then>
+		</f:if>
+	</f:section>
+
+	<f:section name="Svg">
+		<xo:svg.inline source="{file.publicUrl}" />
+	</f:section>
+
+	<f:section name="Picture">
+		<xo:media.picture file="{file}" width="{image.width}" height="{image.height}" cropVariant="{image.cropVariant}" sizes="{sizes}" />
+	</f:section>
+
+	<f:section name="Video">
+	</f:section>
+</div>
