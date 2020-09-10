@@ -1,4 +1,5 @@
 <?php
+
 return [
 	'ctrl' => [
 		'title' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements',
@@ -21,12 +22,12 @@ return [
 		'iconfile' => 'EXT:xo/Resources/Public/Icons/xo-content-elements.svg'
 	],
 	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_diffsource, record_type, hidden, title, title_type, link, description, media',
+		'showRecordFieldList' => 'sys_language_uid, l10n_diffsource, record_type, hidden, title, title_type, link, description, media, thumbnail',
 	],
 	'types' => [
 		'0' => [
 			'showitem' => '
-				l10n_diffsource, record_type, --palette--;;header, link, description, media,
+				l10n_diffsource, record_type, --palette--;;header, link, description, media, thumbnail,
 				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
 				--palette--;;visibility,
 				--palette--;;access'
@@ -212,6 +213,33 @@ return [
 				]
 			),
 		],
+		'thumbnail' => [
+			'exclude' => 1,
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.thumbnail',
+			'l10n_mode' => 'exclude',
+			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+				'thumbnail',
+				[
+					'appearance' => [
+						'collapseAll' => 1,
+						'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference',
+					],
+					'foreign_types' => [
+						'0' => [
+							'showitem' => '
+						--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+						--palette--;;filePalette'
+						],
+						\TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+							'showitem' => '
+						--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+						--palette--;;filePalette'
+						],
+					],
+					'maxitems' => 1
+				]
+			),
+		],
 		'link' => [
 			'exclude' => true,
 			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.link',
@@ -233,3 +261,6 @@ return [
 		],
 	],
 ];
+
+
+

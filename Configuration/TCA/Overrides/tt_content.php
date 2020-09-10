@@ -407,17 +407,19 @@ $GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['tx_
 	['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type.media_wall.video', 'media_wall_video']
 ];
 
+$GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['columns']['record_type']['config']['default'] = 'media_wall_image';
+
 $GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['types'] = [
 	'media_wall_image' => [
 		'showitem' => '
 				l10n_diffsource, record_type, --palette--;;header, media,
 				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
 				--palette--;;visibility,
-				--palette--;;access'
+				--palette--;;access',
 	],
 	'media_wall_video' => [
 		'showitem' => '
-				l10n_diffsource, record_type, --palette--;;header, media,
+				l10n_diffsource, record_type, --palette--;;header, media, thumbnail,
 				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
 				--palette--;;visibility,
 				--palette--;;access'
