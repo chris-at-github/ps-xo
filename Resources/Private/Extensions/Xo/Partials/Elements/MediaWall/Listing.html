@@ -1,8 +1,16 @@
 <div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
 	<f:section name="Main">
-		<div class="media-wall--container">
+		<div class="media-wall--container" data-media-wall="{data.uid}">
 			<f:for each="{elements}" as="element">
 				<f:render partial="Elements/MediaWall/Item" section="Main" arguments="{_all}" />
+			</f:for>
+		</div>
+	</f:section>
+
+	<f:section name="Content">
+		<div class="media-wall--content">
+			<f:for each="{elements}" as="element">
+				<f:render partial="Elements/MediaWall/Content" section="Main" arguments="{_all}" />
 			</f:for>
 		</div>
 	</f:section>

@@ -1,8 +1,9 @@
 <div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
 	<f:section name="Main">
 		<f:render section="Variant-{data.tx_xo_variant}" optional="1" arguments="{_all}">
-			<div class="media-wall--item">
-				<f:if condition="{element.data.record_type} == 'media_wall_video'">
+
+			<f:if condition="{element.data.record_type} == 'media_wall_video'">
+				<div class="media-wall--item media-wall--item-video" data-group="media-wall-{data.uid}" data-type="html" data-target="#media-wall--video-{element.data.uid}">
 					<f:render partial="Components/Media" section="Picture" arguments="{
 						file: element.thumbnail.0,
 						image: {width: 160, height: 160, cropVariant: 'thumbnail'},
@@ -10,9 +11,11 @@
 							0: {width: 280, height: 280, mediaQuery: '(min-width: 768px)', cropVariant: 'thumbnail'}
 						}
 					}" />
-				</f:if>
+				</div>
+			</f:if>
 
-				<f:if condition="{element.data.record_type} == 'media_wall_image'">
+			<f:if condition="{element.data.record_type} == 'media_wall_image'">
+				<a class="media-wall--item media-wall--item-image" data-group="media-wall-{data.uid}" href="{f:uri.image(src: element.media.0.uid, treatIdAsReference: 1, maxWidth: 1280, height: 1024, cropVariant: 'fullscreen')}">
 					<f:render partial="Components/Media" section="Picture" arguments="{
 						file: element.media.0,
 						image: {width: 160, height: 160, cropVariant: 'thumbnail'},
@@ -20,8 +23,9 @@
 							0: {width: 280, height: 280, mediaQuery: '(min-width: 768px)', cropVariant: 'thumbnail'}
 						}
 					}" />
-				</f:if>
-			</div>
+				</a>
+			</f:if>
+
 		</f:render>
 	</f:section>
 </div>

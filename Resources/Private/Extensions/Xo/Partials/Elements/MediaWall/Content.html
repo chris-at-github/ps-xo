@@ -1,0 +1,17 @@
+<div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:section name="Main">
+		<f:render section="Variant-{data.tx_xo_variant}" optional="1" arguments="{_all}">
+
+			<f:if condition="{element.data.record_type} == 'media_wall_video'">
+				<f:render section="Video" arguments="{_all}" />
+			</f:if>
+
+		</f:render>
+	</f:section>
+
+	<f:section name="Video">
+		<div id="media-wall--video-{element.data.uid}">
+			media-wall--content-{element.data.uid}
+		</div>
+	</f:section>
+</div>
