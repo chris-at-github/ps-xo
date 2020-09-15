@@ -1,9 +1,0 @@
-@import '../../bootstrap/mixins/screen-reader';
-
-%screenreader-hidden {
-	@include sr-only();
-}
-
-%screenreader-hidden-focusable {
-	@include sr-only-focusable();
-}
