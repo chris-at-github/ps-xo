@@ -3,7 +3,7 @@
 		<f:render section="Variant-{data.tx_xo_variant}" optional="1" arguments="{_all}">
 
 			<f:if condition="{element.data.record_type} == 'media_wall_video'">
-				<div class="media-wall--item media-wall--item-video" data-group="media-wall-{data.uid}" data-type="html" data-target="#media-wall--video-{element.data.uid}">
+				<div class="media-wall--item media-wall--item-video" data-type="html" data-target="#media-wall--video-{element.data.uid}" title="{element.data.title}">
 					<f:render partial="Components/Media" section="Picture" arguments="{
 						file: element.thumbnail.0,
 						image: {width: 160, height: 160, cropVariant: 'thumbnail'},
@@ -15,7 +15,7 @@
 			</f:if>
 
 			<f:if condition="{element.data.record_type} == 'media_wall_image'">
-				<a class="media-wall--item media-wall--item-image" data-group="media-wall-{data.uid}" href="{f:uri.image(src: element.media.0.uid, treatIdAsReference: 1, maxWidth: 1280, height: 1024, cropVariant: 'fullscreen')}">
+				<a class="media-wall--item media-wall--item-image" href="{f:uri.image(src: element.media.0.uid, treatIdAsReference: 1, maxWidth: 1280, height: 1024, cropVariant: 'fullscreen')}" title="{element.data.title}">
 					<f:render partial="Components/Media" section="Picture" arguments="{
 						file: element.media.0,
 						image: {width: 160, height: 160, cropVariant: 'thumbnail'},
