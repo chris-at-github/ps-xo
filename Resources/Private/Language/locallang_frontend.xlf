@@ -15,6 +15,9 @@
 			<trans-unit id="tx_xo_search.link">
 				<source>Zur Suche</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_hamburger.title">
+				<source>Navigation öffnen / schliessen</source>
+			</trans-unit>
 
 			<trans-unit id="tx_xo.phone">
 				<source>Telefon</source>
