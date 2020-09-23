@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
 	<f:section name="LocalBusiness">
 		<address class="address">
 			<f:render section="Name" arguments="{_all}" />
@@ -35,14 +35,24 @@
 	</f:section>
 
 	<f:section name="Contact">
+		<f:render section="Phone" arguments="{_all}" />
+		<f:render section="Mail" arguments="{_all}" />
+		<f:render section="Url" arguments="{_all}" />
+	</f:section>
+
+	<f:section name="Phone">
 		<f:if condition="{address.phone}">
 			<div class="address--item address--phone"><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo.phone" />: <a class="link--phone" href="{xo:uri.phone(phone: address.phone)}">{address.phone}</a></div>
 		</f:if>
+	</f:section>
 
+	<f:section name="Mail">
 		<f:if condition="{address.email}">
 			<div class="address--item address--mail"><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo.mail" />: <f:link.email class="link--mail" email="{address.email}" /></div>
 		</f:if>
+	</f:section>
 
+	<f:section name="Url">
 		<f:if condition="{address.www}">
 			<div class="address--itemaddress--url"><f:link.typolink class="link--url" parameter="{address.www}" target="_blank">{address.www}</f:link.typolink></div>
 		</f:if>

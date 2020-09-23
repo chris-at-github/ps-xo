@@ -38,6 +38,11 @@ class AddressRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 			// Overlay um die korrekte Uebersetzung
 			$query->getQuerySettings()->setRespectSysLanguage(false);
 
+			// immer als Array auswerten
+			if(is_array($options['records']) === false) {
+				$options['records'] = [$options['records']];
+			}
+
 			$matches[] = $query->in('uid', $options['records']);
 		}
 

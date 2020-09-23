@@ -1,0 +1,10 @@
+<div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:section name="Main">
+		<div class="address">
+			<header class="address--header"><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo.contact" /></header>
+
+			<f:render partial="Components/Address" section="Phone" arguments="{_all}" />
+			<f:render partial="Components/Address" section="Mail" arguments="{_all}" />
+		</div>
+	</f:section>
+</div>

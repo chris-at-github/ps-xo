@@ -19,6 +19,9 @@
 				<source>Navigation öffnen / schliessen</source>
 			</trans-unit>
 
+			<trans-unit id="tx_xo.contact">
+				<source>Kontakt</source>
+			</trans-unit>
 			<trans-unit id="tx_xo.phone">
 				<source>Telefon</source>
 			</trans-unit>

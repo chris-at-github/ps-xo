@@ -28,13 +28,11 @@ class AddressProcessor implements DataProcessorInterface {
 	}
 
 	/**
-	 * @param int $uid
+	 * @param array $options
 	 * @return \TYPO3\CMS\Extbase\Persistence\Generic\QueryResult
 	 */
-	public function getRecords($uid) {
-		return $this->objectManager->get(\Ps\Xo\Domain\Repository\AddressRepository::class)->findAll([
-			'content' => $uid
-		]);
+	public function getRecords($options) {
+		return $this->objectManager->get(\Ps\Xo\Domain\Repository\AddressRepository::class)->findAll($options);
 	}
 
 	/**
@@ -48,10 +46,26 @@ class AddressProcessor implements DataProcessorInterface {
 	 */
 	public function process(ContentObjectRenderer $cObject, array $contentObjectConfiguration, array $processorConfiguration, array $processedData) {
 
-		// nur weiter verarbeiten wenn mindestens ein Adressdatensatz vernuepft ist
-		if((int) $processedData['data']['tx_xo_address'] !== 0) {
-			$processedData['data']['addresses'] = $this->getRecords((int) $processedData['data']['uid']);
+		if(isset($processorConfiguration['as']) === false) {
+			$processorConfiguration['as'] = 'address';
 		}
+
+		// Sammeln von Bedingungen fuer die Repository-Abfrage
+		$options = [];
+
+		if(isset($processorConfiguration['records']) === true) {
+
+			// direkter Zahlenwert
+			if(is_numeric($processorConfiguration['records']) === true) {
+				$options['records'] = (int) $processorConfiguration['records'];
+
+			// TypoScript
+			} elseif(isset($processorConfiguration['records.']) === true) {
+				// @todo: Auswertung TypoScript (siehe typo3/sysext/frontend/Classes/DataProcessing/FilesProcessor.php)
+			}
+		}
+
+		$processedData[$processorConfiguration['as']] = $this->getRecords($options);
 
 		return $processedData;
 	}

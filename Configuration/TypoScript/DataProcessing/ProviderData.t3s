@@ -1,0 +1,5 @@
+dataProcessing.providerData = Ps\Xo\DataProcessing\AddressProcessor
+dataProcessing.providerData {
+	as = providerData
+	records = {$addresses.provider}
+}

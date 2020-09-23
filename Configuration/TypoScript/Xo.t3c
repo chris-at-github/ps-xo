@@ -100,3 +100,8 @@ googleMaps {
 	# cat=googleMaps; type=string; label=Google Maps API Key
 	apiKey = AIzaSyCOkLaiTykKBxj4oCyaRzuYZp0k2XCBLtc
 }
+
+addresses {
+	# cat=addresses; type=string; label=ID of provider data record (tt_address)
+	provider = 14
+}

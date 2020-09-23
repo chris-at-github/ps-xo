@@ -22,6 +22,7 @@ page {
 
 		partialRootPaths {
 			10 = {$plugin.tx_xo.view.partialRootPath}
+			15 = EXT:xo/Resources/Private/Extensions/Xo/Partials/
 		}
 	}
 }
