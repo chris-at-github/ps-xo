@@ -54,7 +54,7 @@
 
 	<f:section name="Url">
 		<f:if condition="{address.www}">
-			<div class="address--itemaddress--url"><f:link.typolink class="link--url" parameter="{address.www}" target="_blank">{address.www}</f:link.typolink></div>
+			<div class="address--itemaddress--url"><f:link.external class="link--url" uri="{address.www}" target="_blank" rel="noopener">{address.www}</f:link.external></div>
 		</f:if>
 	</f:section>
 </html>
