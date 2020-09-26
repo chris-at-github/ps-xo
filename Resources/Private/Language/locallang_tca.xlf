@@ -154,6 +154,13 @@
 				<source>Display slider elements in different variants.</source>
 			</trans-unit>
 
+			<trans-unit id="tx_xo_hero_slider.title">
+				<source>Hero Slider</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_hero_slider.description">
+				<source>Hero slider element.</source>
+			</trans-unit>
+
 			<trans-unit id="tx_xo_media_wall.title">
 				<source>Media Wall</source>
 			</trans-unit>

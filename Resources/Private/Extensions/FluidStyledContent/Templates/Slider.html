@@ -9,19 +9,10 @@
 				</f:for>
 			</div>
 
-			<f:render section="Controls" arguments="{_all}" />
+			<f:render partial="Elements/Slider/Controls" section="Main" arguments="{_all}" />
 			<f:render section="Navigation" arguments="{_all}" />
 		</div>
 	</f:spaceless>
-</f:section>
-
-<f:section name="Controls">
-	<div class="container-outer slider--controls">
-		<div class="container-inner">
-			<div class="slider--prev"><button aria-label="{f:translate(key: 'LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo.prev')}"><xo:svg.inline source="/assets/svg/arrow-left.svg" /></button></div>
-			<div class="slider--next"><button aria-label="{f:translate(key: 'LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo.next')}"><xo:svg.inline source="/assets/svg/arrow-right.svg" /></button></div>
-		</div>
-	</div>
 </f:section>
 
 <f:section name="Navigation">

@@ -127,6 +127,15 @@ mod.wizards.newContentElement.wizardItems {
 				}
 			}
 
+			xo_hero_slider {
+				iconIdentifier = content-textpic
+				title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_hero_slider.title
+				description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_hero_slider.description
+				tt_content_defValues {
+					CType = xo_hero_slider
+				}
+			}
+
 			xo_media_wall {
 				iconIdentifier = content-image
 				title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_media_wall.title
@@ -137,7 +146,7 @@ mod.wizards.newContentElement.wizardItems {
 			}
 		}
 
-		show := addToList(xo_html, xo_gallery, xo_address, xo_teaser, xo_icon_text, xo_slider, xo_media_wall)
+		show := addToList(xo_html, xo_gallery, xo_address, xo_teaser, xo_icon_text, xo_slider, xo_hero_slider, xo_media_wall)
 	}
 
 	plugins {
