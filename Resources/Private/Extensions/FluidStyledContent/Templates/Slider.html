@@ -10,56 +10,22 @@
 			</div>
 
 			<f:render partial="Elements/Slider/Controls" section="Main" arguments="{_all}" />
-			<f:render section="Navigation" arguments="{_all}" />
+			<f:render partial="Elements/Slider/Navigation" section="Main" arguments="{_all}" />
 		</div>
 	</f:spaceless>
 </f:section>
 
-<f:section name="Navigation">
-	<div class="container-outer slider--navigation">
-		<div class="container-inner">
-			<ul>
-				<f:for each="{elements}" as="item" iteration="iterator">
-					<li title="{iterator.cycle}{f:if(condition: item.data.title, then: ': {item.data.title}')}"><span>{iterator.cycle}<f:if condition="{item.data.title}">: {item.data.title}</f:if></span></li>
-				</f:for>
-			</ul>
-		</div>
-	</div>
-</f:section>
-
 <f:section name="Item">
-	<div class="container-outer slider--item slider--item-{data.uid}-{item.data.uid}">
-		<div class="container-inner">
-			<f:if condition="{item.data.title}">
-				<header class="slider--item-title">
-					<f:render partial="Header/Header" arguments="{header: item.data.title, layout: item.data.title_type}" />
-				</header>
-			</f:if>
+	<f:variable name="identifier">{data.uid}-{item.data.uid}</f:variable>
 
-			<f:if condition="{item.data.description}">
-				<f:format.html>{item.data.description}</f:format.html>
-			</f:if>
+	<div class="container-outer slider--item hero hero-{identifier}">
+		<div class="container-inner">
+			<f:render partial="Components/Hero" section="Content" arguments="{data: item.data, identifier: identifier}" />
 
 			<f:if condition="{item.media.0}">
-				<f:render section="Media" arguments="{data: data, item: item, media: item.media.0}" />
+				<f:render partial="Components/Hero" section="Media" arguments="{media: item.media.0, identifier: identifier}" />
 			</f:if>
 		</div>
 	</div>
-</f:section>
-
-<f:section name="Media">
-	<f:variable name="sliderItemBackground">
-		.slider--item-{data.uid}-{item.data.uid} {
-			background-image: url('{f:uri.image(image: media, cropVariant: "mobile", maxWidth: 900)}');
-		}
-
-		@media (min-width: 768px) {
-			.slider--item-{data.uid}-{item.data.uid} {
-				background-image: url('{f:uri.image(image: media, cropVariant: "desktop", maxWidth: 1800)}');
-			}
-		}
-	</f:variable>
-
-	<xo:style.inlineCode name="slider--item-{data.uid}-{item.data.uid}" code="{sliderItemBackground}" />
 </f:section>
 </html>
