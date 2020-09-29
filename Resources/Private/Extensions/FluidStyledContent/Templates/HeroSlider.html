@@ -1,0 +1,31 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+	<f:spaceless>
+		<div class="slider">
+			<div class="slider--container">
+				<f:for each="{elements}" as="item" iteration="iterator">
+					<f:render section="Item" arguments="{_all}" />
+				</f:for>
+			</div>
+
+			<f:render partial="Elements/Slider/Controls" section="Main" arguments="{_all}" />
+			<f:render partial="Elements/Slider/Navigation" section="Main" arguments="{_all}" />
+		</div>
+	</f:spaceless>
+</f:section>
+
+<f:section name="Item">
+	<f:variable name="identifier">{data.uid}-{item.data.uid}</f:variable>
+
+	<div class="container-outer slider--item hero hero-{identifier}">
+		<div class="container-inner">
+			<f:render partial="Components/Hero" section="Content" arguments="{data: item.data, identifier: identifier}" />
+
+			<f:if condition="{item.media.0}">
+				<f:render partial="Components/Hero" section="Media" arguments="{media: item.media.0, identifier: identifier}" />
+			</f:if>
+		</div>
+	</div>
+</f:section>
+</html>

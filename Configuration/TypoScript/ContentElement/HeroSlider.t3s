@@ -1,0 +1,6 @@
+tt_content {
+	xo_hero_slider =< tt_content.xo_slider
+	xo_hero_slider {
+		templateName = HeroSlider.html
+	}
+}
