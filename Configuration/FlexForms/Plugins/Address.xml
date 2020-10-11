@@ -25,6 +25,10 @@
 										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.action.map</numIndex>
 										<numIndex index="1">Address->map</numIndex>
 									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.action.contact</numIndex>
+										<numIndex index="1">Address->contact</numIndex>
+									</numIndex>
 								</items>
 							</config>
 						</TCEforms>

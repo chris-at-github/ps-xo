@@ -40,4 +40,11 @@ class AddressController extends ActionController {
 	public function mapAction() {
 		$this->view->assign('records', $this->objectManager->get(AddressRepository::class)->findAll($this->getDemand()));
 	}
+
+	/**
+	 * @return void
+	 */
+	public function contactAction() {
+		$this->view->assign('records', $this->objectManager->get(AddressRepository::class)->findAll($this->getDemand()));
+	}
 }
