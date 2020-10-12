@@ -6,10 +6,11 @@
 				<div class="media-wall--item media-wall--item-video" data-type="html" data-target="#media-wall--video-{element.data.uid}" title="{element.data.title}">
 					<f:render partial="Components/Media" section="Picture" arguments="{
 						file: element.thumbnail.0,
-						image: {width: 300, height: 300, cropVariant: 'thumbnail'},
+						image: {width: 560, height: 560, cropVariant: 'thumbnail'},
 						sizes: {
-							0: {width: 280, height: 280, mediaQuery: '(min-width: 768px)', cropVariant: 'thumbnail'},
-							1: {width: 480, height: 480, mediaQuery: '(min-width: 1200px)', cropVariant: 'thumbnail'}
+							0: {width: 160, height: 160, mediaQuery: '(min-width: 0px)', cropVariant: 'thumbnail'},
+							1: {width: 280, height: 280, mediaQuery: '(min-width: 768px)', cropVariant: 'thumbnail'},
+							2: {width: 560, height: 560, mediaQuery: '(min-width: 1200px)', cropVariant: 'thumbnail'}
 						}
 					}" />
 				</div>
@@ -19,10 +20,11 @@
 				<a class="media-wall--item media-wall--item-image" href="{f:uri.image(src: element.media.0.uid, treatIdAsReference: 1, maxWidth: 1280, height: 1024, cropVariant: 'fullscreen')}" title="{element.data.title}">
 					<f:render partial="Components/Media" section="Picture" arguments="{
 						file: element.media.0,
-						image: {width: 160, height: 160, cropVariant: 'thumbnail'},
+						image: {width: 560, height: 560, cropVariant: 'thumbnail'},
 						sizes: {
-							0: {width: 280, height: 280, mediaQuery: '(min-width: 768px)', cropVariant: 'thumbnail'},
-							1: {width: 560, height: 560, mediaQuery: '(min-width: 1200px)', cropVariant: 'thumbnail'}
+							0: {width: 160, height: 160, mediaQuery: '(min-width: 0px)', cropVariant: 'thumbnail'},
+							1: {width: 280, height: 280, mediaQuery: '(min-width: 768px)', cropVariant: 'thumbnail'},
+							2: {width: 560, height: 560, mediaQuery: '(min-width: 1200px)', cropVariant: 'thumbnail'}
 						}
 					}" />
 				</a>
