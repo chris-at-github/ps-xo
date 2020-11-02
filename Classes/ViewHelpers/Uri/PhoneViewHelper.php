@@ -2,6 +2,8 @@
 
 namespace Ps\Xo\ViewHelpers\Uri;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -26,12 +28,10 @@ namespace Ps\Xo\ViewHelpers\Uri;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
-
 /**
  * Returns a phone based uri with tel: protocol
  */
-class PhoneViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class PhoneViewHelper extends AbstractViewHelper {
 
 	/**
 	 * @var bool

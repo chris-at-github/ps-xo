@@ -2,6 +2,8 @@
 
 namespace Ps\Xo\ViewHelpers\Svg;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -26,12 +28,10 @@ namespace Ps\Xo\ViewHelpers\Svg;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
-
 /**
  * View helper to render a SVG icon inline.
  */
-class InlineViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class InlineViewHelper extends AbstractViewHelper {
 
 	/**
 	 * @var bool

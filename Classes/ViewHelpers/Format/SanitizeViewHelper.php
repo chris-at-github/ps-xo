@@ -35,7 +35,7 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 /**
  * Bereinigt einen String in-eine-saubere-variante
  */
-class SanitizeViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class SanitizeViewHelper extends AbstractViewHelper {
 
 	use CompileWithContentArgumentAndRenderStatic;
 

@@ -2,6 +2,8 @@
 
 namespace Ps\Xo\ViewHelpers\Style;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -31,7 +33,7 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 /**
  * Bindet Inline Styles im Head ein
  */
-class InlineCodeViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class InlineCodeViewHelper extends AbstractViewHelper {
 
 	/**
 	 * TYPO3's configuration manager

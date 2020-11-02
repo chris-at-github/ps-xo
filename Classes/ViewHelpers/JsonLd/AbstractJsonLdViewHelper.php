@@ -2,6 +2,8 @@
 
 namespace Ps\Xo\ViewHelpers\JsonLd;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -29,7 +31,7 @@ namespace Ps\Xo\ViewHelpers\JsonLd;
 /**
  * Json+Ld view helper parent class
  */
-class AbstractJsonLdViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper {
+class AbstractJsonLdViewHelper extends AbstractTagBasedViewHelper {
 
 	/**
 	 * @var string

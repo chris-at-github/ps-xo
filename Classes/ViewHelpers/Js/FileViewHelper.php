@@ -2,6 +2,8 @@
 
 namespace Ps\Xo\ViewHelpers\Js;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -26,12 +28,10 @@ namespace Ps\Xo\ViewHelpers\Js;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
-
 /**
  * Bindet den Script-Tag fuer die Google Maps Karte ein
  */
-class FileViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class FileViewHelper extends AbstractViewHelper {
 
 	/**
 	 * TYPO3's configuration manager
