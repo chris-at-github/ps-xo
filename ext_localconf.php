@@ -60,3 +60,12 @@ $iconRegistry->registerIcon(
 	\TYPO3\CMS\Core\Imaging\IconProvider\FontawesomeIconProvider::class,
 	['name' => 'map-marker']
 );
+
+// Provide icon for page tree, list view, ... :
+$iconRegistry->registerIcon(
+	'xo-page-typolink',
+	TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+	[
+		'source' => 'EXT:xo/Resources/Public/Icons/xo-page-typolink.svg',
+	]
+);
