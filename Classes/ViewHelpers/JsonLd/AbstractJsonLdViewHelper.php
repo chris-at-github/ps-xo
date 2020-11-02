@@ -2,7 +2,7 @@
 
 namespace Ps\Xo\ViewHelpers\JsonLd;
 
-use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 
 /***************************************************************
  *  Copyright notice
