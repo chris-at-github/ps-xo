@@ -3,6 +3,7 @@
 namespace Ps\Xo\ViewHelpers\Svg;
 
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3\CMS\Extbase\Annotation\Inject;
 
 /***************************************************************
  *  Copyright notice
@@ -42,7 +43,7 @@ class InlineViewHelper extends AbstractViewHelper {
 	 * TYPO3's configuration manager
 	 *
 	 * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
-	 * @inject
+	 * @Inject
 	 */
 	protected $configurationManager;
 

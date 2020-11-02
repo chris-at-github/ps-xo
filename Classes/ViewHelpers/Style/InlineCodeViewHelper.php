@@ -3,6 +3,7 @@
 namespace Ps\Xo\ViewHelpers\Style;
 
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3\CMS\Extbase\Annotation\Inject;
 
 /***************************************************************
  *  Copyright notice
@@ -28,8 +29,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
-
 /**
  * Bindet Inline Styles im Head ein
  */
@@ -39,7 +38,7 @@ class InlineCodeViewHelper extends AbstractViewHelper {
 	 * TYPO3's configuration manager
 	 *
 	 * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
-	 * @inject
+	 * @Inject
 	 */
 	protected $configurationManager;
 

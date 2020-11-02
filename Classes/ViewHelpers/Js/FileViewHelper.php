@@ -3,6 +3,7 @@
 namespace Ps\Xo\ViewHelpers\Js;
 
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3\CMS\Extbase\Annotation\Inject;
 
 /***************************************************************
  *  Copyright notice
@@ -37,7 +38,7 @@ class FileViewHelper extends AbstractViewHelper {
 	 * TYPO3's configuration manager
 	 *
 	 * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
-	 * @inject
+	 * @Inject
 	 */
 	protected $configurationManager;
 

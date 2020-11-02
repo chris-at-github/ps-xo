@@ -17,18 +17,15 @@ namespace Ps\Xo\ViewHelpers\Media;
 
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Resource\FileReference;
-use TYPO3\CMS\Core\Resource\Rendering\RendererRegistry;
-use TYPO3\CMS\Extbase\Domain\Model\AbstractFileFolder;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
-use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
+use TYPO3\CMS\Extbase\Annotation\Inject;
 
 class PictureViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\MediaViewHelper {
 
 	/**
 	 * @var \TYPO3\CMS\Extbase\Service\ImageService
-	 * @inject
+	 * @Inject
 	 */
 	protected $imageService;
 

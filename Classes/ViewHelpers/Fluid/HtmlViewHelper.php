@@ -2,6 +2,8 @@
 
 namespace Ps\Xo\ViewHelpers\Fluid;
 
+use TYPO3\CMS\Extbase\Annotation\Inject;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -32,7 +34,7 @@ class HtmlViewHelper extends AbstractViewHelper {
 
 	/**
 	 * @var \TYPO3\CMS\Extbase\Object\ObjectManagerInterface
-	 * @inject
+	 * @Inject
 	 */
 	protected $objectManager;
 
