@@ -1,6 +1,6 @@
 <?php
 
-namespace Ps\Xo\ViewHelpers\Style;
+namespace Ps\Xo\ViewHelpers\Css;
 
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Extbase\Annotation\Inject;
