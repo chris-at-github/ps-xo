@@ -47,12 +47,11 @@ class PictureViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\MediaViewHelper {
 			$file = $file->getOriginalResource();
 		}
 
-//		// get file, width and height
+		if(isset($this->arguments['fileExtension']) === false) {
+			$this->arguments['fileExtension'] = null;
+		}
 
-		$width = $this->arguments['width'];
-		$height = $this->arguments['height'];
-
-		return $this->renderImage($file, $width, $height);
+		return $this->renderImage($file, $this->arguments['width'], $this->arguments['height'], $this->arguments['fileExtension']);
 	}
 
 	/**
@@ -61,9 +60,10 @@ class PictureViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\MediaViewHelper {
 	 * @param FileInterface $image
 	 * @param string $width
 	 * @param string $height
+	 * @param string|null $fileExtension
 	 * @return string Rendered img tag
 	 */
-	protected function renderImage(FileInterface $image, $width, $height) {
+	protected function renderImage(FileInterface $image, $width, $height, ?string $fileExtension) {
 
 		// picture tags nur auf "normalen" Seiten (nicht amp...), wenn mehrere Größen übergeben
 		if(isset($this->arguments['sizes']) && count($this->arguments['sizes']) !== 0) {
@@ -71,13 +71,18 @@ class PictureViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\MediaViewHelper {
 
 //			// Entferne Attribut, da es sonst im Quellcode ausgegeben wird
 //			$this->tag->removeAttribute('sizes');
-			return $this->renderPicture($image, $sizes, parent::renderImage($image, $width, $height));
+			return $this->renderPicture($image, $sizes, parent::renderImage($image, $width, $height, $fileExtension));
 		} else {
-			return parent::renderImage($image, $width, $height);
+			return parent::renderImage($image, $width, $height, $fileExtension);
 		}
 	}
 
-
+	/**
+	 * @param FileInterface|FileReference $image
+	 * @param array $sizes
+	 * @param string $default
+	 * @return string
+	 */
 	protected function renderPicture($image, $sizes, $default) {
 		$content = '';
 
