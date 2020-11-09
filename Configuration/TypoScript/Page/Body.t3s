@@ -1,0 +1,10 @@
+page.bodyTagCObject = COA
+page.bodyTagCObject {
+	wrap = <body class="|">
+
+	10 = TEXT
+	10 {
+		stdWrap.wrap = page--layout-|
+		value.field = layout
+	}
+}
