@@ -30,10 +30,17 @@ lib.parseFunc_RTE {
 				HTMLparser = 1
 				HTMLparser.tags.ul.fixAttrib.class.default = list--default
 				HTMLparser.allowTags = li
+
+				postUserFunc = Ps\Xo\Service\HtmlParserService->fixListClassAttribute
+				postUserFunc.tag = ul
+				postUserFunc.class = list--default
 			}
 		}
 
 		ol < .ul
-		ol.stdWrap.HTMLparser.tags.ol.fixAttrib.class.default = list--default
+		ol.stdWrap {
+			HTMLparser.tags.ol.fixAttrib.class.default = list--default
+			postUserFunc.tag = ol
+		}
 	}
 }
