@@ -33,7 +33,6 @@ lib.parseFunc_RTE {
 
 				postUserFunc = Ps\Xo\Service\HtmlParserService->fixListClassAttribute
 				postUserFunc.tag = ul
-				postUserFunc.class = list--default
 			}
 		}
 
