@@ -70,4 +70,4 @@ classesAnchor:
 
   linkPhone:
     class: 'link--phone'
-    type: 'mail'
+    type: 'telephone'
