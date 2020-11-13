@@ -41,5 +41,13 @@ lib.parseFunc_RTE {
 			HTMLparser.tags.ol.fixAttrib.class.default = list--default
 			postUserFunc.tag = ol
 		}
+
+		table {
+			stdWrap {
+				HTMLparser.tags.table.fixAttrib.class.default = table--layout-0
+				HTMLparser.tags.table.fixAttrib.class.always >
+				HTMLparser.tags.table.fixAttrib.class.list >
+			}
+		}
 	}
 }
