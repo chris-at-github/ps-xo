@@ -23,20 +23,6 @@ $tmpXoTtAddressColumns = [
 			'eval' => 'int'
 		]
 	],
-	'tx_xo_schemaorg_type' => [
-		'exclude' => true,
-		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.schemaorg.type',
-		'config' => [
-			'type' => 'select',
-			'renderType' => 'selectSingle',
-			'items' => [
-				['', 0],
-			],
-			'size' => 1,
-			'maxitems' => 1,
-			'eval' => ''
-		],
-	],
 	'tx_xo_schemaorg_media' => [
 		'exclude' => true,
 		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.schemaorg.media',
@@ -51,6 +37,42 @@ $tmpXoTtAddressColumns = [
 			$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
 		),
 	],
+	'tx_xo_directors' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tx_xo_directors',
+		'config' => [
+			'type' => 'input',
+			'size' => 30,
+			'eval' => 'trim',
+		],
+	],
+	'tx_xo_commercial_register' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tx_xo_commercial_register',
+		'config' => [
+			'type' => 'input',
+			'size' => 30,
+			'eval' => 'trim',
+		],
+	],
+	'tx_xo_registered_office' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tx_xo_registered_office',
+		'config' => [
+			'type' => 'input',
+			'size' => 30,
+			'eval' => 'trim',
+		],
+	],
+	'tx_xo_vat_number' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tx_xo_vat_number',
+		'config' => [
+			'type' => 'input',
+			'size' => 30,
+			'eval' => 'trim',
+		],
+	],
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_address', $tmpXoTtAddressColumns);
@@ -61,7 +83,7 @@ $tmpXoTtAddressColumns = [
 $GLOBALS['TCA']['tt_address']['ctrl']['type'] = 'record_type';
 
 // Neuen Typ Adresse hinzufuegen
-$GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class] = $GLOBALS['TCA']['tx_news_domain_model_news']['types']['0'];
+$GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class] = $GLOBALS['TCA']['tt_address']['types']['0'];
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem('tt_address', 'record_type', [
 	'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.record_type.address',
 	\Ps\Xo\Domain\Model\Address::class,
@@ -81,14 +103,19 @@ $GLOBALS['TCA']['tt_address']['palettes']['xoContact'] = [
 	'showitem' => 'email, --linebreak--, phone, mobile, fax, --linebreak--, www,'
 ];
 
+$GLOBALS['TCA']['tt_address']['palettes']['xoLegal'] = [
+	'showitem' => 'tx_xo_directors, tx_xo_commercial_register, tx_xo_registered_office, tx_xo_vat_number,'
+];
+
 $GLOBALS['TCA']['tt_address']['palettes']['xoSeo'] = [
-	'showitem' => 'tx_xo_schemaorg_type, --linebreak--, tx_xo_schemaorg_media,'
+	'showitem' => 'tx_xo_schemaorg_media,'
 ];
 
 $GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['showitem'] = '
 	--palette--;xoGeneral, record_type, name, description, image,
 	--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.address;xoAddress,
 	--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.contact;xoContact,
+	--palette--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tt_address_palette.legal;xoLegal,
 	--div--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tab.map,
 	--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.coordinates;coordinates,
 	--div--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tab.seo,

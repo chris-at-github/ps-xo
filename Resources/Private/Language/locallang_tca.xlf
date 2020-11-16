@@ -70,17 +70,26 @@
 			<trans-unit id="tx_xo_tt_address.record_type">
 				<source>Type</source>
 			</trans-unit>
-			<trans-unit id="tx_xo_tt_address.schemaorg.type">
-				<source>Schema.org type</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_tt_address.schemaorg.type.local_business">
-				<source>Local business</source>
-			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.schemaorg.media">
 				<source>Schema.org image</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.tx_xo_directors">
+				<source>Directors</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.tx_xo_commercial_register">
+				<source>Commercial Register</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.tx_xo_registered_office">
+				<source>Registered Office</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.tx_xo_vat_number">
+				<source>VAT Number</source>
+			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.record_type.address">
 				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tt_address_palette.legal">
+				<source>Legal</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.tab.map">
 				<source>Map</source>
