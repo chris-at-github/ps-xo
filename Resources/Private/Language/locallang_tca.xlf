@@ -20,6 +20,12 @@
 			<trans-unit id="tx_xo_tt_content.layout.2">
 				<source>Fullwidth</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.class.0">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.class.1">
+				<source>Light Grey</source>
+			</trans-unit>
 			<trans-unit id="tx_xo_tt_content.space.auto">
 				<source>Auto</source>
 			</trans-unit>

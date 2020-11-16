@@ -39,9 +39,8 @@ TCEFORM {
 		frame_class {
 			removeItems = default, ruler-before, ruler-after, indent, indent-left, indent-right, none
 			addItems {
-				0 = Default
-				1 = Frame 01
-				2 = Frame 02
+				0 = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.class.0
+				1 = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.class.1
 			}
 		}
 
