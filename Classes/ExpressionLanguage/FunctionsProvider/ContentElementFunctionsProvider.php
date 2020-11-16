@@ -37,6 +37,7 @@ class ContentElementFunctionsProvider implements ExpressionFunctionProviderInter
 		return [
 			$this->getGetFieldFunction(),
 			$this->getGetPageFunction(),
+			$this->getGetIrreFunction(),
 		];
 	}
 
@@ -48,14 +49,17 @@ class ContentElementFunctionsProvider implements ExpressionFunctionProviderInter
 			// Not implemented, we only use the evaluator
 		}, function($arguments, $field) {
 			$data = $this->getFieldData($arguments);
+			$irre = $this->getIrreData($arguments);
+
+			if(empty($data) === true && empty($irre) === false) {
+				if(empty($irre['uid']) === false) {
+					$data = $this->getRecord($irre['uid']);
+				}
+			}
 
 			if(isset($data[$field]) === true) {
 				return $data[$field];
 			}
-
-//			DebuggerUtility::var_dump($fields);
-//			DebuggerUtility::var_dump($arguments);
-//			DebuggerUtility::var_dump($str);
 
 			return null;
 		});
@@ -79,6 +83,28 @@ class ContentElementFunctionsProvider implements ExpressionFunctionProviderInter
 	}
 
 	/**
+	 * @return ExpressionFunction
+	 */
+	protected function getGetIrreFunction(): ExpressionFunction {
+		return new ExpressionFunction('irre', function() {
+			// Not implemented, we only use the evaluator
+		}, function($arguments, $field) {
+			$data = $this->getIrreData($arguments);
+
+			if(isset($data[$field]) === true) {
+				return $data[$field];
+			}
+
+//			DebuggerUtility::var_dump($data);
+//			DebuggerUtility::var_dump($arguments);
+//			DebuggerUtility::var_dump($field);
+//			die();
+
+			return null;
+		});
+	}
+
+	/**
 	 * @param array $arguments
 	 * @return array
 	 */
@@ -87,9 +113,6 @@ class ContentElementFunctionsProvider implements ExpressionFunctionProviderInter
 		/** @var \TYPO3\CMS\Core\ExpressionLanguage\RequestWrapper $request */
 		$request = $arguments['request'];
 		$fields = [];
-		$parameter = [];
-
-//		DebuggerUtility::var_dump($arguments);
 
 		// Neuer Inhalt (defVals) und Auswahl defVals -> tt_content vorhanden
 		if(isset($request->getQueryParams()['defVals']) === true && isset($request->getQueryParams()['defVals']['tt_content']) === true) {
@@ -102,31 +125,40 @@ class ContentElementFunctionsProvider implements ExpressionFunctionProviderInter
 			if((int) $uid !== 0) {
 				$fields = $this->getRecord($uid);
 			}
+		}
 
-//		} elseif(isset($parameter['ajax']) === true && isset($parameter['ajax'][0])) {
-//			$uid = $matches[1];
-//
-//			// IRRE
-//			// Bestehender Datensatz
-//			if(preg_match('/(.*)-(.*)-(\d+)-(.*)-(.*)-(\d+)$/', $parameter['ajax'][0], $match)) {
-//				$irre = [
-//					'parent' => $match[2],
-//					'pid' => (int) $match[3],
-//					'field' => $match[4],
-//					'table' => $match[5],
-//					'uid' => $match[6]
-//				];
-//
-//				// Neuer Datensatz
-//			} elseif(preg_match('/(.*)-(.*)-(\d+)-(.*)-(.*)$/', $parameter['ajax'][0], $match)) {
-//				$irre = [
-//					'parent' => $match[2],
-//					'pid' => (int) $match[3],
-//					'field' => $match[4],
-//					'table' => $match[5]
-//				];
-//			}
-//
+		return $fields;
+	}
+
+	protected function getIrreData($arguments) {
+
+		/** @var \TYPO3\CMS\Core\ExpressionLanguage\RequestWrapper $request */
+		$request = $arguments['request'];
+		$fields = [];
+
+		if(isset($request->getParsedBody()['ajax']) === true && isset($request->getParsedBody()['ajax'][0])) {
+			// IRRE
+			// Bestehender Datensatz
+			if(preg_match('/(.*)-(.*)-(\d+)-(.*)-(.*)-(\d+)$/', $request->getParsedBody()['ajax'][0], $match)) {
+				$fields = [
+					'parent' => $match[2],
+					'pid' => (int) $match[3],
+					'field' => $match[4],
+					'table' => $match[5],
+					'uid' => $match[6]
+				];
+
+				// Neuer Datensatz
+			} elseif(preg_match('/(.*)-(.*)-(\d+)-(.*)-(.*)$/', $request->getParsedBody()['ajax'][0], $match)) {
+				$fields = [
+					'parent' => $match[2],
+					'pid' => (int) $match[3],
+					'field' => $match[4],
+					'table' => $match[5]
+				];
+			}
+
+//			Noch aus Programmierung von ContentFieldCondition::matchCondition
 //			// Zwei verschiedene IRRE Ausfuehrungen -> irgendwie kommt man an die UID
 //			if(preg_match('/tt_content-(\d+)$/', $parameter['ajax'][0], $match)) {
 //				$uid = $match[1];

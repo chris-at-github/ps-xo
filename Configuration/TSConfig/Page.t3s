@@ -201,19 +201,6 @@ mod.web_layout.BackendLayouts {
 	}
 }
 
-[Ps\Xo\Condition\ContentFieldCondition CType==xo_icon_text]
-	TCAdefaults.tt_content {
-		space_before_class = small
-	}
-
-	TCEFORM.tt_content {
-		tx_xo_variant {
-			altLabels.0 = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.variant.0
-			addItems.1 = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.variant.1
-		}
-	}
-[global]
-
 [field('CType') === 'xo_icon_text']
 	TCAdefaults.tt_content {
 		space_before_class = small
@@ -227,7 +214,7 @@ mod.web_layout.BackendLayouts {
 	}
 [END]
 
-[Ps\Xo\Condition\ContentFieldCondition irre:field==tx_xo_flash]
+[irre('field') === 'tx_xo_flash']
 	TCAdefaults.tt_content {
 		header_layout = container
 		tx_xo_no_frame = 1
@@ -248,4 +235,4 @@ mod.web_layout.BackendLayouts {
 			removeItems = 0,10
 		}
 	}
-[global]
+[END]
