@@ -36,6 +36,7 @@ class ContentElementFunctionsProvider implements ExpressionFunctionProviderInter
 	public function getFunctions() {
 		return [
 			$this->getGetFieldFunction(),
+			$this->getGetPageFunction(),
 		];
 	}
 
@@ -55,6 +56,23 @@ class ContentElementFunctionsProvider implements ExpressionFunctionProviderInter
 //			DebuggerUtility::var_dump($fields);
 //			DebuggerUtility::var_dump($arguments);
 //			DebuggerUtility::var_dump($str);
+
+			return null;
+		});
+	}
+
+	/**
+	 * @return ExpressionFunction
+	 */
+	protected function getGetPageFunction(): ExpressionFunction {
+		return new ExpressionFunction('page', function() {
+			// Not implemented, we only use the evaluator
+		}, function($arguments, $field) {
+			$data = $arguments['page'];
+
+			if(isset($data[$field]) === true) {
+				return $data[$field];
+			}
 
 			return null;
 		});
