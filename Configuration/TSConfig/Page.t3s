@@ -214,6 +214,19 @@ mod.web_layout.BackendLayouts {
 	}
 [global]
 
+[field('CType') === 'xo_icon_text']
+	TCAdefaults.tt_content {
+		space_before_class = small
+	}
+
+	TCEFORM.tt_content {
+		tx_xo_variant {
+			altLabels.0 = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.variant.0
+			addItems.1 = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.variant.1
+		}
+	}
+[END]
+
 [Ps\Xo\Condition\ContentFieldCondition irre:field==tx_xo_flash]
 	TCAdefaults.tt_content {
 		header_layout = container
