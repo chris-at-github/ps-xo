@@ -10,7 +10,6 @@ return [
 		'type' => 'record_type',
 		'versioningWS' => true,
 		'languageField' => 'sys_language_uid',
-		'transOrigPointerField' => 'l10n_parent',
 		'transOrigDiffSourceField' => 'l10n_diffsource',
 		'delete' => 'deleted',
 		'enablecolumns' => [
@@ -20,9 +19,6 @@ return [
 		],
 		'searchFields' => 'title, description',
 		'iconfile' => 'EXT:xo/Resources/Public/Icons/xo-content-elements.svg'
-	],
-	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_diffsource, record_type, hidden, title, title_type, link, description, media, thumbnail',
 	],
 	'types' => [
 		'0' => [
