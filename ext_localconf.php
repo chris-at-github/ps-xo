@@ -7,15 +7,18 @@ if(!defined('TYPO3_MODE')) {
 // ---------------------------------------------------------------------------------------------------------------------
 // Plugins
 
-// Configure plugins
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'Ps.' . $_EXTKEY,
-	'Address',
-	[
-		'Address' => 'record, map',
-	],
-	[]
-);
+call_user_func(function($_EXTKEY) {
+
+	// Configure plugins
+	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+		'Ps.' . $_EXTKEY,
+		'Address',
+		[
+			'Address' => 'record, map, contact',
+		],
+		[]
+	);
+}, 'xo');
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Override Core Classes
