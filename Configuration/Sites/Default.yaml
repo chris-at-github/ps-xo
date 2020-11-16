@@ -20,4 +20,8 @@ errorHandling:
     errorHandler: Page
     errorContentSource: 't3://page?uid=47'
 routeEnhancers: { }
-routes: { }
+routes:
+  -
+    route: sitemap.xml
+    type: uri
+    source: 't3://page?type=1533906435'
