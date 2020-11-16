@@ -3,6 +3,13 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2018-11-27T06:25:54Z" product-name="xo">
 		<header/>
 		<body>
+			<trans-unit id="tx_xo_backend_layout.default.title">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_backend_layout.default.main">
+				<source>Main</source>
+			</trans-unit>
+
 			<trans-unit id="tx_xo_pages.layout.2">
 				<source>Without Layout</source>
 			</trans-unit>
