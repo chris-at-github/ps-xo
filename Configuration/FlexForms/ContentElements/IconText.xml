@@ -15,6 +15,7 @@
 							<label>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.align</label>
 							<config>
 								<type>select</type>
+								<renderType>selectSingle</renderType>
 								<items>
 									<numIndex index="0">
 										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.align.left</numIndex>
