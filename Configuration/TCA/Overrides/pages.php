@@ -22,10 +22,29 @@ call_user_func(function($_EXTKEY) {
 				],
 			],
 		],
+		'tx_xo_no_breadcrumb' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.no_breadcrumb',
+			'config' => [
+				'type' => 'check',
+				'items' => [
+					'1' => [
+						'0' => 'LLL:EXT:lang/locallang_core.xlf:labels.enabled'
+					]
+				],
+				'default' => 0,
+			]
+		],
+	];
+
+	// Neue Palette General hinzufuegen
+	$GLOBALS['TCA']['pages']['palettes']['xoBreadcrumb'] = [
+		'showitem' => 'tx_xo_no_breadcrumb,'
 	];
 
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $tmpXoPagesColumns);
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages', 'media', '--linebreak--, tx_xo_flash', 'after:media');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages', '--palette--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.palette.breadcrumb;xoBreadcrumb,', '', 'after:layout');
 
 	// ---------------------------------------------------------------------------------------------------------------------
 	// Neuen Pagetyp Typolink

@@ -115,7 +115,7 @@ $GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['show
 	--palette--;xoGeneral, record_type, name, description, image,
 	--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.address;xoAddress,
 	--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.contact;xoContact,
-	--palette--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tt_address_palette.legal;xoLegal,
+	--palette--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.palette.legal;xoLegal,
 	--div--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tab.map,
 	--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.coordinates;coordinates,
 	--div--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tab.seo,

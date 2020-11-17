@@ -2,7 +2,8 @@
 # Extend Pages
 #
 CREATE TABLE pages (
-	tx_xo_flash int(11) unsigned DEFAULT '0' NOT NULL
+	tx_xo_flash int(11) unsigned DEFAULT '0' NOT NULL,
+	tx_xo_no_breadcrumb smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
 #

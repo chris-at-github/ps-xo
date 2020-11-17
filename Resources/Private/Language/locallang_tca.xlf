@@ -13,12 +13,17 @@
 			<trans-unit id="tx_xo_pages.layout.2">
 				<source>Without Layout</source>
 			</trans-unit>
-
 			<trans-unit id="tx_xo_pages.flash">
 				<source>Flash</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_pages.pagetype.typolink">
 				<source>Typolink</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_pages.palette.breadcrumb">
+				<source>Breadcrumb</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_pages.no_breadcrumb">
+				<source>Hide Breadcrumb</source>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_tt_content.layout.1">
@@ -88,7 +93,7 @@
 			<trans-unit id="tx_xo_tt_address.record_type.address">
 				<source>Address</source>
 			</trans-unit>
-			<trans-unit id="tt_address_palette.legal">
+			<trans-unit id="tx_xo_tt_address.palette.legal">
 				<source>Legal</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.tab.map">
