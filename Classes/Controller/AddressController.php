@@ -31,20 +31,7 @@ class AddressController extends ActionController {
 	 * @return void
 	 */
 	public function recordAction() {
-		$this->view->assign('records', $this->objectManager->get(AddressRepository::class)->findAll($this->getDemand()));
-	}
-
-	/**
-	 * @return void
-	 */
-	public function mapAction() {
-		$this->view->assign('records', $this->objectManager->get(AddressRepository::class)->findAll($this->getDemand()));
-	}
-
-	/**
-	 * @return void
-	 */
-	public function contactAction() {
-		$this->view->assign('records', $this->objectManager->get(AddressRepository::class)->findAll($this->getDemand()));
+		$this->view->assign('address', $this->objectManager->get(AddressRepository::class)->find($this->getDemand()));
+		$this->view->assign('partial', ucfirst($this->settings['partial']));
 	}
 }

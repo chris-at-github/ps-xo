@@ -20,12 +20,11 @@ class AddressRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	}
 
 	/**
+	 * @param \TYPO3\CMS\Extbase\Persistence\QueryInterface $query
 	 * @param array $options
-	 * @return QueryResultInterface
-	 * @throws InvalidQueryException
+	 * @return array
 	 */
-	public function findAll($options = []) {
-		$query = $this->createQuery();
+	protected function getMatches($query, $options) {
 		$matches = [];
 
 		if(isset($options['content']) === true) {
@@ -46,10 +45,30 @@ class AddressRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 			$matches[] = $query->in('uid', $options['records']);
 		}
 
-		if(empty($matches) === false) {
+		return $matches;
+	}
+
+	/**
+	 * @param array $options
+	 * @return QueryResultInterface
+	 * @throws InvalidQueryException
+	 */
+	public function findAll($options = []) {
+		$query = $this->createQuery();
+
+		if(empty($matches = $this->getMatches($query, $options)) === false) {
 			$query->matching($query->logicalAnd($matches));
 		}
 
 		return $query->execute();
+	}
+
+	/**
+	 * @param array $options
+	 * @return object
+	 * @throws InvalidQueryException
+	 */
+	public function find($options = []) {
+		return $this->findAll($options)->getFirst();
 	}
 }
