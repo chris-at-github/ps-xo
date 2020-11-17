@@ -246,15 +246,15 @@ $GLOBALS['TCA']['tt_content']['types']['xo_gallery']['columnsOverrides']['tx_xo_
 // Address Module von TT-Content
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
 	array(
-		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_address.title',
-		'xo_address',
+		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_address.record.title',
+		'xo_addressrecord',
 		'xo-content-address'
 	),
 	'CType',
-	'xo_address'
+	'xo'
 );
 
-$GLOBALS['TCA']['tt_content']['types']['xo_address'] = [
+$GLOBALS['TCA']['tt_content']['types']['xo_addressrecord'] = [
 	'showitem' => '
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
 			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,tx_xo_address,
@@ -449,5 +449,5 @@ $GLOBALS['TCA']['tt_content']['columns']['space_after_class']['config']['items']
 // Plugin Einstellungen
 
 // Flexform Address Plugin
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['xo_address'] = 'pi_flexform';
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue('xo_address', 'FILE:EXT:xo/Configuration/FlexForms/Plugins/Address.xml');
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['xo_addressrecord'] = 'pi_flexform';
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue('xo_addressrecord', 'FILE:EXT:xo/Configuration/FlexForms/Plugins/AddressRecord.xml');

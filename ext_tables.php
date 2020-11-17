@@ -8,8 +8,8 @@ call_user_func(function($_EXTKEY) {
 	// Register plugin für Contact
 	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 		'Ps.' . $_EXTKEY,
-		'Address',
-		'LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.title',
+		'AddressRecord',
+		'LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.record.title',
 		'xo-ttaddress-address'
 	);
 

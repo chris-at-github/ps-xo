@@ -1,7 +1,0 @@
-TCEFORM.tt_address {
-	tx_xo_schemaorg_type {
-		addItems {
-			1 = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.schemaorg.type.local_business
-		}
-	}
-}

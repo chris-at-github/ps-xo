@@ -1,0 +1,97 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<main>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.sheet.record</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.records>
+						<TCEforms>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.record</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>tt_address</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<wizards>
+									<suggest>
+										<type>suggest</type>
+									</suggest>
+								</wizards>
+							</config>
+						</TCEforms>
+					</settings.records>
+				</el>
+			</ROOT>
+		</main>
+		<display>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.sheet.display</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.partial>
+						<TCEforms>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.partial</label>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<items type="array">
+									<numIndex index="1" type="array">
+										<numIndex index="0" />
+										<numIndex index="1">default</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.partial.map</numIndex>
+										<numIndex index="1">map</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.partial.imprint</numIndex>
+										<numIndex index="1">imprint</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.partial>
+				</el>
+			</ROOT>
+		</display>
+		<seo>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.sheet.seo</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.structuredDataType>
+						<TCEforms>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.structuredDataType</label>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<items type="array">
+									<numIndex index="1" type="array">
+										<numIndex index="0" />
+										<numIndex index="1" />
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.structuredDataType.localBusiness</numIndex>
+										<numIndex index="1">localBusiness</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.structuredDataType>
+				</el>
+			</ROOT>
+		</seo>
+	</sheets>
+</T3DataStructure>

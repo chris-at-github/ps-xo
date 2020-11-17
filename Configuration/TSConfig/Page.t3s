@@ -167,11 +167,11 @@ mod.wizards.newContentElement.wizardItems {
 		elements {
 			xo_address {
 				iconIdentifier = xo-ttaddress-address
-				title = LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.title
-				description = LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.description
+				title = LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.record.title
+				description = LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.record.description
 				tt_content_defValues {
 					CType = list
-					list_type = xo_address
+					list_type = xo_addressrecord
 				}
 			}
 		}

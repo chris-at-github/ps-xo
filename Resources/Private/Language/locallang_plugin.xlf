@@ -3,32 +3,38 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2018-11-27T06:25:54Z" product-name="xo">
 		<header/>
 		<body>
-			<trans-unit id="tx_xo_address.title">
+			<trans-unit id="tx_xo_address.record.title">
 				<source>Address</source>
 			</trans-unit>
-			<trans-unit id="tx_xo_address.description">
-				<source>Show selected addresses with as an address block or as a map</source>
+			<trans-unit id="tx_xo_address.record.description">
+				<source>Show a selected address in different views.</source>
 			</trans-unit>
-			<trans-unit id="tx_xo_address.action">
-				<source>Display option</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_address.action.record">
+			<trans-unit id="tx_xo_address.sheet.record">
 				<source>Record</source>
 			</trans-unit>
-			<trans-unit id="tx_xo_address.action.map">
-				<source>Map</source>
+			<trans-unit id="tx_xo_address.sheet.seo">
+				<source>Seo</source>
 			</trans-unit>
-			<trans-unit id="tx_xo_address.action.contact">
-				<source>Contact data</source>
+			<trans-unit id="tx_xo_address.sheet.display">
+				<source>Display</source>
 			</trans-unit>
-			<trans-unit id="tx_xo_address.records">
-				<source>Adresses</source>
+			<trans-unit id="tx_xo_address.record">
+				<source>Address Record</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.structuredDataType">
 				<source>Structured Data Type</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.structuredDataType.localBusiness">
 				<source>Local Business</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_address.partial">
+				<source>Display</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_address.partial.map">
+				<source>Map</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_address.partial.imprint">
+				<source>Imprint</source>
 			</trans-unit>
 		</body>
 	</file>
