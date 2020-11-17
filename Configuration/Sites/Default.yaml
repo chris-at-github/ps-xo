@@ -14,11 +14,7 @@ languages:
     direction: ''
     flag: de
 baseVariants: { }
-errorHandling:
-  -
-    errorCode: '404'
-    errorHandler: Page
-    errorContentSource: 't3://page?uid=47'
+errorHandling: { }
 routeEnhancers: { }
 routes:
   -
