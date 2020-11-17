@@ -1,0 +1,7 @@
+navigation.breadcrumb = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+navigation.breadcrumb {
+	special = rootline
+	special.range = 0|-1
+	includeNotInMenu = 1
+	as = breadcrumb
+}
