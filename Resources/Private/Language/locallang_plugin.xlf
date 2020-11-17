@@ -33,6 +33,9 @@
 			<trans-unit id="tx_xo_address.partial.map">
 				<source>Map</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_address.partial.contact">
+				<source>Contact</source>
+			</trans-unit>
 			<trans-unit id="tx_xo_address.partial.imprint">
 				<source>Imprint</source>
 			</trans-unit>

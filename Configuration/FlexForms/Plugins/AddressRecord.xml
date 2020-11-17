@@ -54,6 +54,10 @@
 										<numIndex index="1">map</numIndex>
 									</numIndex>
 									<numIndex index="3" type="array">
+										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.partial.contact</numIndex>
+										<numIndex index="1">contact</numIndex>
+									</numIndex>
+									<numIndex index="4" type="array">
 										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.partial.imprint</numIndex>
 										<numIndex index="1">imprint</numIndex>
 									</numIndex>
