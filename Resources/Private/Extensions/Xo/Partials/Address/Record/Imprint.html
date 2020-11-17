@@ -2,9 +2,24 @@
 <f:section name="Main">
 	<div class="address">
 		<f:render partial="Components/Address" section="Name" arguments="{address: address}" />
-		<f:render partial="Components/Address" section="Location" arguments="{address: address}" />
-		<f:render partial="Components/Address" section="Contact" arguments="{address: address}" />
-		<f:render partial="Components/Address" section="Legal" arguments="{address: address}" />
+
+		<div class="address--item-group">
+			<f:render partial="Components/Address" section="Location" arguments="{address: address}" />
+		</div>
+
+		<div class="address--item-group">
+			<f:render partial="Components/Address" section="Contact" arguments="{address: address}" />
+		</div>
+
+		<div class="address--item-group">
+			<f:render partial="Components/Address" section="Directors" arguments="{address: address}" />
+			<f:render partial="Components/Address" section="VatNumber" arguments="{address: address}" />
+		</div>
+
+		<div class="address--item-group">
+			<f:render partial="Components/Address" section="CommercialRegister" arguments="{address: address}" />
+			<f:render partial="Components/Address" section="RegisteredOffice" arguments="{address: address}" />
+		</div>
 	</div>
 </f:section>
 </html>
