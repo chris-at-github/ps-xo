@@ -1,0 +1,12 @@
+tt_content {
+	list {
+		dataProcessing {
+			100 {
+				frameTypeClass.replacement.10 {
+					search = ce-addressrecord
+					replace = ce-address ce-address-record
+				}
+			}
+		}
+	}
+}
