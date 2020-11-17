@@ -5,12 +5,21 @@ return [
 	\Ps\Xo\Domain\Model\Address::class => [
 		'tableName' => 'tt_address',
 		'properties' => [
-			'schemaOrgType' => [
-				'fieldName' => 'tx_xo_schemaorg_type'
-			],
 			'schemaOrgMedia' => [
 				'fieldName' => 'tx_xo_schemaorg_media'
-			]
+			],
+			'directors' => [
+				'fieldName' => 'tx_xo_directors'
+			],
+			'commercialRegister' => [
+				'fieldName' => 'tx_xo_commercial_register'
+			],
+			'registeredOffice' => [
+				'fieldName' => 'tx_xo_registered_office'
+			],
+			'vatNumber' => [
+				'fieldName' => 'tx_xo_vat_number'
+			],
 		]
 	],
 ];

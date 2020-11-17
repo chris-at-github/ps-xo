@@ -35,6 +35,19 @@
 			<trans-unit id="tx_xo.prev">
 				<source>Zurück</source>
 			</trans-unit>
+
+			<trans-unit id="tx_xo_address.directors">
+				<source>Geschäftsführung</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_address.vatnumber">
+				<source>USt.-IDNr.</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_address.commercialregister">
+				<source>Handelsregister</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_address.registeredoffice">
+				<source>Sitz der Gesellschaft</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

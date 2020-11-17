@@ -57,4 +57,35 @@
 			<div class="address--itemaddress--url"><f:link.external class="link--url" uri="{address.www}" target="_blank" rel="noopener">{address.www}</f:link.external></div>
 		</f:if>
 	</f:section>
+
+	<f:section name="Legal">
+		<f:render section="Directors" arguments="{_all}" />
+		<f:render section="VatNumber" arguments="{_all}" />
+		<f:render section="CommercialRegister" arguments="{_all}" />
+		<f:render section="RegisteredOffice" arguments="{_all}" />
+	</f:section>
+
+	<f:section name="Directors">
+		<f:if condition="{address.directors}">
+			<div class="address--item address--directors"><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_address.directors" />: {address.directors}</div>
+		</f:if>
+	</f:section>
+
+	<f:section name="VatNumber">
+		<f:if condition="{address.vatNumber}">
+			<div class="address--item address--vat-number"><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_address.vatnumber" />: {address.vatNumber}</div>
+		</f:if>
+	</f:section>
+
+	<f:section name="CommercialRegister">
+		<f:if condition="{address.commercialRegister}">
+			<div class="address--item address--commercial-register"><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_address.commercialregister" />: {address.commercialRegister}</div>
+		</f:if>
+	</f:section>
+
+	<f:section name="RegisteredOffice">
+		<f:if condition="{address.registeredOffice}">
+			<div class="address--item address--registered-office"><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_address.registeredoffice" />: {address.registeredOffice}</div>
+		</f:if>
+	</f:section>
 </html>
