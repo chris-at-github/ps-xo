@@ -22,4 +22,7 @@ return [
 			],
 		]
 	],
+	\Ps\Xo\Domain\Model\Page::class => [
+		'tableName' => 'pages'
+	],
 ];
