@@ -1,5 +1,5 @@
 #
-# Extend Pages
+# Extend SysCategory
 #
 CREATE TABLE sys_category (
 	tx_xo_link varchar(1024) DEFAULT '' NOT NULL
