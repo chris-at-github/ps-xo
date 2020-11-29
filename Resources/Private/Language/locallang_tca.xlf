@@ -10,6 +10,10 @@
 				<source>Main</source>
 			</trans-unit>
 
+			<trans-unit id="tx_xo_sys_category.link">
+				<source>Link</source>
+			</trans-unit>
+
 			<trans-unit id="tx_xo_pages.layout.2">
 				<source>Without Layout</source>
 			</trans-unit>
