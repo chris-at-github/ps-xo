@@ -55,8 +55,8 @@ class ContentElementProcessor implements DataProcessorInterface {
 		// _ -> -
 		// -- -> -
 		$frameType = preg_replace(
-			['/[_\s]/', '/[-]+/', '/xo-/'],
-			['-', '-', ''],
+			['/[_\s]/', '/[-]+/', '/xo-/', '/xna-/'],
+			['-', '-', '', ''],
 			strtolower(trim($frameType))
 		);
 
