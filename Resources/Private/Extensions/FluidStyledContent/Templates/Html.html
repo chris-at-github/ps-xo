@@ -3,7 +3,7 @@
 	<f:section name="Main">
 
 		<f:for each="{files}" as="file">
-			<xo:fluid.html html="{file.originalFile.contents}" />
+			<xo:fluid.html html="{file.originalFile.contents}" variables="{data: data, settings: settings}" />
 		</f:for>
 
 	</f:section>

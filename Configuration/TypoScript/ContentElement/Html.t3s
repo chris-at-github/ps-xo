@@ -9,6 +9,8 @@ tt_content {
 				as = files
 				references.fieldName = tx_xo_file
 			}
+
+			20 = Ps\Xo\DataProcessing\SettingsProcessor
 		}
 	}
 }

@@ -28,6 +28,7 @@ use TYPO3\CMS\Extbase\Annotation\Inject;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 class HtmlViewHelper extends AbstractViewHelper {
@@ -49,6 +50,7 @@ class HtmlViewHelper extends AbstractViewHelper {
 	public function initializeArguments() {
 		parent::initializeArguments();
 		$this->registerArgument('html', 'string', 'HTML String', true, null);
+		$this->registerArgument('variables', 'array', '', false, []);
 	}
 
 	/**
@@ -61,6 +63,7 @@ class HtmlViewHelper extends AbstractViewHelper {
 		/* @var \TYPO3\CMS\Fluid\View\StandaloneView $view */
 		$view = $this->objectManager->get(\TYPO3\CMS\Fluid\View\StandaloneView::class);
 		$view->setTemplateSource($this->arguments['html']);
+		$view->assignMultiple($this->arguments['variables']);
 
 		return $view->render();
 	}
