@@ -1,25 +1,29 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:section name="Main">
-	<div class="address">
-		<f:render partial="Components/Address" section="Name" arguments="{address: address}" />
+	<f:section name="Main">
+		<div class="address">
+			<f:render partial="Components/Address" section="Name" arguments="{address: address}" />
 
-		<div class="address--item-group">
-			<f:render partial="Components/Address" section="Location" arguments="{address: address}" />
-		</div>
+			<div class="address--item-group">
+				<f:render partial="Components/Address" section="Location" arguments="{address: address}" />
+			</div>
 
-		<div class="address--item-group">
-			<f:render partial="Components/Address" section="Contact" arguments="{address: address}" />
-		</div>
+			<div class="address--item-group">
+				<f:render partial="Components/Address" section="Contact" arguments="{address: address}" />
+			</div>
 
-		<div class="address--item-group">
-			<f:render partial="Components/Address" section="Directors" arguments="{address: address}" />
-			<f:render partial="Components/Address" section="VatNumber" arguments="{address: address}" />
-		</div>
+			<f:if condition="{address.vatNumber} || {address.directors}">
+				<div class="address--item-group">
+					<f:render partial="Components/Address" section="Directors" arguments="{address: address}" />
+					<f:render partial="Components/Address" section="VatNumber" arguments="{address: address}" />
+				</div>
+			</f:if>
 
-		<div class="address--item-group">
-			<f:render partial="Components/Address" section="CommercialRegister" arguments="{address: address}" />
-			<f:render partial="Components/Address" section="RegisteredOffice" arguments="{address: address}" />
+			<f:if condition="{address.registeredOffice} || {address.commercialRegister}">
+				<div class="address--item-group">
+					<f:render partial="Components/Address" section="CommercialRegister" arguments="{address: address}" />
+					<f:render partial="Components/Address" section="RegisteredOffice" arguments="{address: address}" />
+				</div>
+			</f:if>
 		</div>
-	</div>
-</f:section>
+	</f:section>
 </html>
