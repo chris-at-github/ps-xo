@@ -329,6 +329,36 @@ $GLOBALS['TCA']['tt_content']['types']['xo_icon_text']['columnsOverrides']['body
 	'richtextConfiguration' => 'default',
 ];
 
+// START TODO
+
+$GLOBALS['TCA']['tt_content']['types']['xo_icon_text']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca'] = [
+	'columns' => [
+		'record_type' => [
+			'config' => [
+				'items' => [
+					['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type.icon_text_default', 'icon_text_default'],
+				],
+				'default' => 'icon_text_default'
+			]
+		],
+		'media' => [
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.type.icon_text.media'
+		]
+	],
+	'types' => [
+		'icon_text_default' => [
+			'showitem' => '
+				l10n_diffsource, record_type, --palette--;;header, link, description, media,
+				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+				--palette--;;visibility,
+				--palette--;;access',
+		],
+	]
+];
+
+// END TODO
+
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Slider
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
