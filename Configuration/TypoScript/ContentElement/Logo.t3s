@@ -1,0 +1,13 @@
+tt_content {
+	xo_logo =< lib.contentElement
+	xo_logo {
+		templateName = Logo.html
+		dataProcessing {
+			10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+			10 {
+				as = logos
+				references.fieldName = image
+			}
+		}
+	}
+}

@@ -329,8 +329,6 @@ $GLOBALS['TCA']['tt_content']['types']['xo_icon_text']['columnsOverrides']['body
 	'richtextConfiguration' => 'default',
 ];
 
-// START TODO
-
 $GLOBALS['TCA']['tt_content']['types']['xo_icon_text']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca'] = [
 	'columns' => [
 		'record_type' => [
@@ -355,8 +353,6 @@ $GLOBALS['TCA']['tt_content']['types']['xo_icon_text']['columnsOverrides']['tx_x
 		],
 	]
 ];
-
-// END TODO
 
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -469,6 +465,35 @@ $GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['tx_
 				--palette--;;access'
 	],
 ];
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Media Wall
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+	array(
+		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_logo.title',
+		'xo_logo',
+		'content-image'
+	),
+	'CType',
+	'tx_xo_logo'
+);
+
+$GLOBALS['TCA']['tt_content']['types']['xo_logo'] = [
+	'showitem' => '
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,image,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+			--palette--;;hidden,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
+			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
+	',
+];
+
+$GLOBALS['TCA']['tt_content']['types']['xo_logo']['columnsOverrides']['image']['label'] = 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_logo.field.image';
+$GLOBALS['TCA']['tt_content']['types']['xo_logo']['columnsOverrides']['image']['config']['appearance']['collapseAll'] = 1;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Zuruecksetzen der Werte Space Before / After, damit diese komplett ueber PageTs befuellt werden koennen

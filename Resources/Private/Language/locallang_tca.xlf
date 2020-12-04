@@ -199,6 +199,16 @@
 				<source>Display media elements in different variants.</source>
 			</trans-unit>
 
+			<trans-unit id="tx_xo_logo.title">
+				<source>Logo</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_logo.description">
+				<source>Display logos for brands or manufactures as a gallery or a slider</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_logo.field.image">
+				<source>Logos</source>
+			</trans-unit>
+
 			<trans-unit id="tx_xo_domain_model_elements">
 				<source>Elements</source>
 			</trans-unit>
