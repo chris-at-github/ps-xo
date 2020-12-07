@@ -21,6 +21,13 @@
 	</f:section>
 
 	<f:section name="Image">
-		<f:image src="{logo.uid}" treatIdAsReference="1" maxWidth="260" maxHeight="260" />
+		<f:render partial="Components/Media" section="Picture" arguments="{
+			file: logo,
+			image: {maxWidth: 150, maxHeight: 50, cropVariant: 'default'},
+			sizes: {
+				0: {maxWidth: 150, maxHeight: 50, mediaQuery: '(min-width: 768px)', cropVariant: 'default'},
+				1: {maxWidth: 75, maxHeight: 45, mediaQuery: '(min-width: 1px)', cropVariant: 'default'}
+			}
+		}" />
 	</f:section>
 </div>

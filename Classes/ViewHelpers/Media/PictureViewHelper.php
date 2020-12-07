@@ -103,6 +103,14 @@ class PictureViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\MediaViewHelper {
 				'crop' => null
 			];
 
+			if(empty($size['maxWidth']) === false) {
+				$processingInstructions['maxWidth'] = $size['maxWidth'];
+			}
+
+			if(empty($size['maxHeight']) === false) {
+				$processingInstructions['maxHeight'] = $size['maxHeight'];
+			}
+
 			if(empty($size['cropVariant']) === false) {
 
 				$cropString = '';
@@ -110,11 +118,11 @@ class PictureViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\MediaViewHelper {
 					$cropString = $image->getProperty('crop');
 				}
 
-				$cropVariantCollection = CropVariantCollection::create((string) $cropString);
+				$cropVariantCollection = CropVariantCollection::create((string)$cropString);
 				$cropArea = $cropVariantCollection->getCropArea($size['cropVariant']);
 
 				if($cropArea->isEmpty() === false) {
-					$processingInstructions['crop'] =  $cropArea->makeAbsoluteBasedOnFile($image);
+					$processingInstructions['crop'] = $cropArea->makeAbsoluteBasedOnFile($image);
 				}
 			}
 
