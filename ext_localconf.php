@@ -44,6 +44,15 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['xo'] = 'EXT:xo/Configuration/RTE/
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals'][\Ps\Xo\Evaluation\FloatEvaluation::class] = '';
 
 // ---------------------------------------------------------------------------------------------------------------------
+// Eigener RenderType
+// @see: https://www.typo3lexikon.de/typo3-tutorials/core/systemextensions/backend/form/rendertype.html
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1607634030] = array(
+	'nodeName' => 'flexNoTab',
+	'priority' => '90',
+	'class' => \Ps\Xo\Form\Container\FlexFormNoTabContainer::class,
+);
+
+// ---------------------------------------------------------------------------------------------------------------------
 // Icons
 
 // Registrierung Icons
