@@ -22,4 +22,6 @@ call_user_func(function($_EXTKEY) {
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
 		'options.pageTree.doktypesToShowInNewPageDragArea := addToList(' . $pageTypeTypolink . ')'
 	);
+
+	$GLOBALS['TBE_STYLES']['skins'][$_EXTKEY]['stylesheetDirectories'][] = 'EXT:xo/Resources/Public/Styles/';
 }, 'xo');
