@@ -40,6 +40,10 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php'][
 $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['xo'] = 'EXT:xo/Configuration/RTE/Xo.yaml';
 
 // ---------------------------------------------------------------------------------------------------------------------
+// TCA Evaluations
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals'][\Ps\Xo\Evaluation\FloatEvaluation::class] = '';
+
+// ---------------------------------------------------------------------------------------------------------------------
 // Icons
 
 // Registrierung Icons
