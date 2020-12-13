@@ -13,6 +13,14 @@ call_user_func(function($_EXTKEY) {
 		'xo-ttaddress-address'
 	);
 
+	// Register plugin für Contact
+	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+		'Ps.' . $_EXTKEY,
+		'PageTeaser',
+		'LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_page.teaser.title',
+		'xo-page-teaser'
+	);
+
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_xo_domain_model_elements');
 
 	// Neuen Seitentyp Typolink erstellen
