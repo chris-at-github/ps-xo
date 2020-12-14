@@ -3,7 +3,15 @@
 
 	<f:section name="Main">
 
-		fdlkjflsa
+		<div class="card--container">
+			<f:for each="{pages}" as="page">
+				<div class="card" data-target="{f:uri.page(pageUid: page.uid)}">
+					<div class="card--header">
+						<f:link.page class="card--title" pageUid="{page.uid}">{page.title}</f:link.page>
+					</div>
+				</div>
+			</f:for>
+		</div>
 
 	</f:section>
 </div>

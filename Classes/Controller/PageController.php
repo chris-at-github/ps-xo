@@ -2,7 +2,7 @@
 
 namespace Ps\Xo\Controller;
 
-use Ps\Xo\Domain\Repository\AddressRepository;
+use Ps\Xo\Domain\Repository\PageRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -31,7 +31,6 @@ class PageController extends ActionController {
 	 * @return void
 	 */
 	public function teaserAction() {
-		$this->view->assign('address', $this->objectManager->get(AddressRepository::class)->find($this->getDemand()));
-		$this->view->assign('partial', ucfirst($this->settings['partial']));
+		$this->view->assign('pages', $this->objectManager->get(PageRepository::class)->findAll($this->getDemand()));
 	}
 }
