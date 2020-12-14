@@ -1,0 +1,36 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<main>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_page_teaser.sheet.main</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.records>
+						<TCEforms>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_page_teaser.records</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<foreign_table_where>AND {#pages}.{#sys_language_uid} IN (-1,0)</foreign_table_where>
+								<size>4</size>
+								<maxitems>99</maxitems>
+								<minitems>0</minitems>
+								<wizards>
+									<suggest>
+										<type>suggest</type>
+									</suggest>
+								</wizards>
+							</config>
+						</TCEforms>
+					</settings.records>
+				</el>
+			</ROOT>
+		</main>
+	</sheets>
+</T3DataStructure>
