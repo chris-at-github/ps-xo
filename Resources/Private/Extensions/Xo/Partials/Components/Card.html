@@ -22,7 +22,18 @@
 
 <f:section name="Header">
 	<div class="card--header">
-		<f:render partial="Header/Header" arguments="{header: title, layout: titleType, link: link, class: 'card--title'}" />
+		<f:render section="Title" arguments="{title: title, link: link}" />
 	</div>
+</f:section>
+
+<f:section name="Title">
+	<f:if condition="{link}">
+		<f:then>
+			<a href="{link}" class="card--title">{title}</a>
+		</f:then>
+		<f:else>
+			<div class="card--title">{title}</div>
+		</f:else>
+	</f:if>
 </f:section>
 </html>
