@@ -2,16 +2,10 @@
 	<<f:layout name="Default" />
 
 	<f:section name="Main">
-
 		<div class="card--container">
 			<f:for each="{pages}" as="page">
-				<div class="card" data-target="{f:uri.page(pageUid: page.uid)}">
-					<div class="card--header">
-						<f:link.page class="card--title" pageUid="{page.uid}">{page.title}</f:link.page>
-					</div>
-				</div>
+				<f:render partial="Components/Card" section="Main" arguments="{data: page, link: '{f:uri.page(pageUid: page.uid)}'}" />
 			</f:for>
 		</div>
-
 	</f:section>
 </div>

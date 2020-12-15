@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:section name="Main">
+	<f:if condition="{link}">
+		<f:then>
+			<div class="card" data-target="{link}">
+				<f:render section="Inner" arguments="{_all}" />
+			</div>
+		</f:then>
+		<f:else>
+			<div class="card">
+				<f:render section="Inner" arguments="{_all}" />
+			</div>
+		</f:else>
+	</f:if>
+</f:section>
+
+<f:section name="Inner">
+	<f:if condition="{data.title}">
+		<f:render section="Header" arguments="{title: data.title, link: link}" />
+	</f:if>
+</f:section>
+
+<f:section name="Header">
+	<div class="card--header">
+		<f:render partial="Header/Header" arguments="{header: title, layout: titleType, link: link, class: 'card--title'}" />
+	</div>
+</f:section>
+</html>
