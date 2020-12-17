@@ -1,0 +1,22 @@
+<div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:section name="Main">
+		<f:spaceless>
+			<ul>
+				<f:for each="{navigation}" as="item">
+					<xo:language.get languageId="{item.languageUid}">
+						<li class="{f:if(condition: '{item.available} == 0', then: 'disabled')}{f:if(condition: '{item.active} == 1', then: 'current')}" title="{language.title}">
+							<f:if condition="{item.active} == 1 || {item.available} == 0">
+								<f:then>
+									<span>{language.twoLetterIsoCode}</span>
+								</f:then>
+								<f:else>
+									<a href="{item.link}">{language.twoLetterIsoCode}</a>
+								</f:else>
+							</f:if>
+						</li>
+					</xo:language.get>
+				</f:for>
+			</ul>
+		</f:spaceless>
+	</f:section>
+</div>
