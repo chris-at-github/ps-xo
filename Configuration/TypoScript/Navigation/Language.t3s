@@ -1,6 +1,6 @@
 navigation.language = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
 navigation.language {
 	special = language
-	special.value = 0,1
+	special.value = {$navigation.language}
 	as = navigationLanguage
 }
