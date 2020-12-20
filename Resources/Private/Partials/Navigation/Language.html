@@ -4,16 +4,18 @@
 			<ul>
 				<f:for each="{navigation}" as="item">
 					<xo:language.get languageId="{item.languageUid}">
-						<li class="{f:if(condition: '{item.available} == 0', then: 'disabled')}{f:if(condition: '{item.active} == 1', then: 'current')}" title="{language.title}">
-							<f:if condition="{item.active} == 1 || {item.available} == 0">
-								<f:then>
-									<span>{language.twoLetterIsoCode}</span>
-								</f:then>
-								<f:else>
-									<a href="{item.link}">{language.twoLetterIsoCode}</a>
-								</f:else>
-							</f:if>
-						</li>
+						<f:if condition="{language}">
+							<li class="{f:if(condition: '{item.available} == 0', then: 'disabled')}{f:if(condition: '{item.active} == 1', then: 'current')}" title="{language.title}">
+								<f:if condition="{item.active} == 1 || {item.available} == 0">
+									<f:then>
+										<span>{language.twoLetterIsoCode}</span>
+									</f:then>
+									<f:else>
+										<a href="{item.link}">{language.twoLetterIsoCode}</a>
+									</f:else>
+								</f:if>
+							</li>
+						</f:if>
 					</xo:language.get>
 				</f:for>
 			</ul>
