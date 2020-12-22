@@ -4,5 +4,5 @@ navigation.main {
 	special.value = {$navigation.main}
 	as = navigationMain
 	levels = 3
-	expandAll = 0
+	expandAll = 1
 }
