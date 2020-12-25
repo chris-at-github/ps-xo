@@ -1,15 +1,18 @@
 plugin.tx_xo {
 	view {
 		layoutRootPaths {
-			1 = EXT:xo/Resources/Private/Extensions/Xo/Layouts/
+			1 = EXT:xo/Resources/Private/Extensions/FluidStyledContent/Layouts/
+			2 = EXT:xo/Resources/Private/Extensions/Xo/Layouts/
 		}
 
 		templateRootPaths {
-			1 = EXT:xo/Resources/Private/Extensions/Xo/Templates/
+			1 = EXT:xo/Resources/Private/Extensions/FluidStyledContent/Templates/
+			2 = EXT:xo/Resources/Private/Extensions/Xo/Templates/
 		}
 
 		partialRootPaths {
-			1 = EXT:xo/Resources/Private/Extensions/Xo/Partials/
+			1 = EXT:xo/Resources/Private/Extensions/FluidStyledContent/Partials/
+			2 = EXT:xo/Resources/Private/Extensions/Xo/Partials/
 		}
 	}
 }

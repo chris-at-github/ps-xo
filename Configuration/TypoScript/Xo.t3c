@@ -75,6 +75,12 @@ navigation {
 
 	# cat=navigation; type=int+; label=Footer-Navigation folder page: Page id of the folder which contains the footer-navigation.
 	footer = 5
+
+	# cat=navigation; type=int+; label=Meta-Navigation folder page: Page id of the folder which contains the meta-navigation.
+	meta = 54
+
+	# cat=navigation; type=string; label=List of Language IDs
+	language = 0, 1
 }
 
 pages {

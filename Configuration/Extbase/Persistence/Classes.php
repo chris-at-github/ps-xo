@@ -22,4 +22,15 @@ return [
 			],
 		]
 	],
+	\Ps\Xo\Domain\Model\Page::class => [
+		'tableName' => 'pages'
+	],
+	\Ps\Xo\Domain\Model\Category::class => [
+		'tableName' => 'sys_category',
+		'properties' => [
+			'link' => [
+				'fieldName' => 'tx_xo_link'
+			],
+		]
+	],
 ];

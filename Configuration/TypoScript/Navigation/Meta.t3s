@@ -1,0 +1,5 @@
+navigation.meta < navigation.default
+navigation.meta {
+	special.value = {$navigation.meta}
+	as = navigationMeta
+}

@@ -18,6 +18,16 @@ call_user_func(function($_EXTKEY) {
 		],
 		[]
 	);
+
+	// Configure plugins
+	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+		'Ps.' . $_EXTKEY,
+		'PageTeaser',
+		[
+			'Page' => 'teaser',
+		],
+		[]
+	);
 }, 'xo');
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -40,6 +50,19 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php'][
 $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['xo'] = 'EXT:xo/Configuration/RTE/Xo.yaml';
 
 // ---------------------------------------------------------------------------------------------------------------------
+// TCA Evaluations
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals'][\Ps\Xo\Evaluation\FloatEvaluation::class] = '';
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Eigener RenderType
+// @see: https://www.typo3lexikon.de/typo3-tutorials/core/systemextensions/backend/form/rendertype.html
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1607634030] = array(
+	'nodeName' => 'flexNoTab',
+	'priority' => '90',
+	'class' => \Ps\Xo\Form\Container\FlexFormNoTabContainer::class,
+);
+
+// ---------------------------------------------------------------------------------------------------------------------
 // Icons
 
 // Registrierung Icons
@@ -58,11 +81,15 @@ $iconRegistry->registerIcon(
 	['name' => 'map-marker']
 );
 
+$iconRegistry->registerIcon(
+	'xo-page-teaser',
+	\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+	['source' => 'EXT:xo/Resources/Public/Icons/xo-content-page-teaser.svg']
+);
+
 // Provide icon for page tree, list view, ... :
 $iconRegistry->registerIcon(
 	'xo-page-typolink',
 	TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-	[
-		'source' => 'EXT:xo/Resources/Public/Icons/xo-page-typolink.svg',
-	]
+	['source' => 'EXT:xo/Resources/Public/Icons/xo-page-typolink.svg']
 );

@@ -1,4 +1,11 @@
 #
+# Extend SysCategory
+#
+CREATE TABLE sys_category (
+	tx_xo_link varchar(1024) DEFAULT '' NOT NULL
+);
+
+#
 # Extend Pages
 #
 CREATE TABLE pages (

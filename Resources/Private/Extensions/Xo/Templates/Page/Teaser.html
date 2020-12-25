@@ -1,0 +1,11 @@
+<div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+	<<f:layout name="Default" />
+
+	<f:section name="Main">
+		<div class="card--container">
+			<f:for each="{pages}" as="page">
+				<f:render partial="Components/Card" section="Main" arguments="{data: page, link: '{f:uri.page(pageUid: page.uid)}'}" />
+			</f:for>
+		</div>
+	</f:section>
+</div>
