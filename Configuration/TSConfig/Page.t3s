@@ -169,7 +169,7 @@ mod.wizards.newContentElement.wizardItems {
 			}
 		}
 
-		show := addToList(xo_html, xo_gallery, xo_address, xo_teaser, xo_icon_text, xo_slider, xo_hero_slider, xo_media_wall, tx_xo_logo)
+		show := addToList(xo_html, xo_gallery, xo_address, xo_teaser, xo_icon_text, xo_slider, xo_hero_slider, xo_media_wall, xo_logo)
 	}
 
 	plugins {
