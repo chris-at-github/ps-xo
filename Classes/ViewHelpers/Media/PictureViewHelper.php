@@ -17,11 +17,12 @@ namespace Ps\Xo\ViewHelpers\Media;
 
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Resource\FileReference;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\CropVariantCollection;
 use TYPO3\CMS\Extbase\Annotation\Inject;
 
-class PictureViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\MediaViewHelper {
+class PictureViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\ImageViewHelper {
 
 	/**
 	 * @var \TYPO3\CMS\Extbase\Service\ImageService
@@ -31,7 +32,7 @@ class PictureViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\MediaViewHelper {
 
 	public function initializeArguments() {
 		parent::initializeArguments();
-		$this->registerArgument('sizes', 'array', 'Specifies the sizes ({size:{width:200,height:200},media:"mediaQuery"}) for the image', false);
+		$this->registerArgument('sizes', 'array', 'Specifies the sizes ({size: {width:200, height:200}, media: "mediaQuery"}) for the image', false);
 	}
 
 	/**
@@ -39,10 +40,15 @@ class PictureViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\MediaViewHelper {
 	 *
 	 */
 	public function render() {
-		$file = $this->arguments['file'];
+		$file = $this->arguments['src'];
+
+		if($file instanceof \TYPO3\CMS\Extbase\Domain\Model\FileReference && $this->arguments['treatIdAsReference'] === true) {
+			$this->arguments['src'] = $file->getUid();
+		}
 
 		// get Resource Object (non ExtBase version)
 		if(is_callable([$file, 'getOriginalResource'])) {
+
 			// We have a domain model, so we need to fetch the FAL resource object from there
 			$file = $file->getOriginalResource();
 		}
@@ -71,9 +77,9 @@ class PictureViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\MediaViewHelper {
 
 //			// Entferne Attribut, da es sonst im Quellcode ausgegeben wird
 //			$this->tag->removeAttribute('sizes');
-			return $this->renderPicture($image, $sizes, parent::renderImage($image, $width, $height, $fileExtension));
+			return $this->renderPicture($image, $sizes, parent::render());
 		} else {
-			return parent::renderImage($image, $width, $height, $fileExtension);
+			//return parent::renderImage($image, $width, $height, $fileExtension);
 		}
 	}
 
@@ -126,7 +132,7 @@ class PictureViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\MediaViewHelper {
 				}
 			}
 
-			$imageService = $this->getImageService();
+			$imageService = $this->imageService;
 			$processedImage = $imageService->applyProcessingInstructions($image, $processingInstructions);
 			$imageUri = $imageService->getImageUri($processedImage);
 			$source = new TagBuilder('source');
