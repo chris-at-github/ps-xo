@@ -146,6 +146,9 @@
 			<trans-unit id="tx_xo_crop_variant.default">
 				<source>Default</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_crop_variant.ratio.5_3">
+				<source>5:3</source>
+			</trans-unit>
 			<trans-unit id="tx_xo_crop_variant.ratio.21_9">
 				<source>21:9</source>
 			</trans-unit>
