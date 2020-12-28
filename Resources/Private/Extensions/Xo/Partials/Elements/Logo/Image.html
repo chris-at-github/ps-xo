@@ -1,0 +1,12 @@
+<div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:section name="Main">
+		<f:render partial="Components/Media" section="Picture" arguments="{
+			file: logo,
+			image: {maxWidth: 150, maxHeight: 50, cropVariant: 'default'},
+			sizes: {
+				0: {maxWidth: 230, maxHeight: 120, mediaQuery: '(min-width: 768px)', cropVariant: 'default'},
+				1: {maxWidth: 165, maxHeight: 120, mediaQuery: '(min-width: 1px)', cropVariant: 'default'}
+			}
+		}" />
+	</f:section>
+</div>

@@ -6,28 +6,17 @@
 				<f:if condition="{logo.link}">
 					<f:then>
 						<f:link.typolink parameter="{logo.link}">
-							<f:render section="Image" arguments="{_all}" />
+							<f:render partial="Elements/Logo/Image" section="Main" arguments="{_all}" />
 						</f:link.typolink>
 					</f:then>
 					<f:else>
 						<span>
-							<f:render section="Image" arguments="{_all}" />
+							<f:render partial="Elements/Logo/Image" section="Main" arguments="{_all}" />
 						</span>
 					</f:else>
 				</f:if>
 			</div>
 
 		</f:render>
-	</f:section>
-
-	<f:section name="Image">
-		<f:render partial="Components/Media" section="Picture" arguments="{
-			file: logo,
-			image: {maxWidth: 150, maxHeight: 50, cropVariant: 'default'},
-			sizes: {
-				0: {maxWidth: 230, maxHeight: 120, mediaQuery: '(min-width: 768px)', cropVariant: 'default'},
-				1: {maxWidth: 165, maxHeight: 120, mediaQuery: '(min-width: 1px)', cropVariant: 'default'}
-			}
-		}" />
 	</f:section>
 </div>
