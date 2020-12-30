@@ -1,16 +1,3 @@
-#content = PAGE
-#content {
-#	typeNum = 1548191072
-#
-#	10 = CONTENT
-#	10 {
-#		table = tt_content
-#		select {
-#			pidInList = 12
-#			uidInList = 13
-#		}
-#	}
-#}
 content = PAGE
 content {
 	typeNum = 1548191072
@@ -24,13 +11,21 @@ content {
 		no_cache = 1
 	}
 
-	10 = RECORDS
+	10 = CONTENT
 	10 {
-		tables = tt_content
-		source{
-			data = GP:uid
-			intval = 1
+		table = tt_content
+		select {
+			pidInList = this
+			orderBy = sorting
 		}
-		dontCheckPid = 1
+
+		renderObj = < tt_content
 	}
 }
+
+[request.getQueryParams()['uid'] != 0]
+	content.10.select.uidInList {
+		data = GP:uid
+		intval = 1
+	}
+[END]
