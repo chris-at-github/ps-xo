@@ -33,6 +33,7 @@ class PictureViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\ImageViewHelper {
 	public function initializeArguments() {
 		parent::initializeArguments();
 		$this->registerArgument('sizes', 'array', 'Specifies the sizes ({size: {width:200, height:200}, media: "mediaQuery"}) for the image', false);
+		$this->registerArgument('file', 'object', '\TYPO3\CMS\Extbase\Domain\Model\FileReference|TYPO3\CMS\Core\Resource\FileReference', true);
 	}
 
 	/**
@@ -40,9 +41,12 @@ class PictureViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\ImageViewHelper {
 	 *
 	 */
 	public function render() {
-		$file = $this->arguments['src'];
+		$file = $this->arguments['file'];
 
-		if($file instanceof \TYPO3\CMS\Extbase\Domain\Model\FileReference && $this->arguments['treatIdAsReference'] === true) {
+		if(
+			($file instanceof \TYPO3\CMS\Extbase\Domain\Model\FileReference || $file instanceof \TYPO3\CMS\Core\Resource\FileReference) &&
+			$this->arguments['treatIdAsReference'] === true)
+		{
 			$this->arguments['src'] = $file->getUid();
 		}
 
