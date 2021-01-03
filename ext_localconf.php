@@ -47,7 +47,7 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php'][
 // ---------------------------------------------------------------------------------------------------------------------
 // FCK Editor
 // Konfiguration fuer den (CKE) Editor im Backend
-$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['xo'] = 'EXT:xo/Configuration/RTE/Xo.yaml';
+$GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['xoDefault'] = 'EXT:xo/Configuration/RTE/XoDefault.yaml';
 
 // ---------------------------------------------------------------------------------------------------------------------
 // TCA Evaluations

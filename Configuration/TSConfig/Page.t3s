@@ -81,7 +81,7 @@ TCAdefaults.tt_content {
 }
 
 RTE {
-	default.preset = xo
+	default.preset = xoDefault
 }
 
 mod.wizards.newContentElement.wizardItems {

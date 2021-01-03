@@ -1,0 +1,66 @@
+# Load default processing options
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+editor:
+  config:
+    contentsCss:
+      - 'EXT:rte_ckeditor/Resources/Public/Css/contents.css'
+    height: 100
+    autoGrow_maxHeight: 100
+    resize_maxHeight: 100
+    format_tags: "p;h1;h2;h3;h4"
+
+    toolbarGroups:
+      - { name: basicstyles, groups: [ basicstyles ] }
+      - { name: links, groups: [ links ] }
+      - { name: clipboard, groups: [ clipboard, cleanup, undo ] }
+      - { name: insert, groups: [ insert ] }
+      - { name: tools, groups: [ specialchar ] }
+      - { name: document, groups: [ mode ] }
+
+    removePlugins:
+      - image
+
+    removeButtons:
+      - Anchor
+      - Underline
+      - Strike
+      - JustifyBlock
+      - Table
+      - HorizontalRule
+
+# @see: https://www.thomaskieslich.de/blog/135-links-im-ckeditor-mit-eigenen-css-klassen/
+buttons:
+  link:
+    properties:
+      class:
+        allowedClasses: 'link--download,link--external,link--mail,link--phone'
+
+classesAnchor:
+  linkInternal:
+    class: ''
+    type: 'page'
+
+  linkDownload:
+    class: 'link--download'
+    type: 'file'
+
+  linkExternal:
+    class: 'link--external'
+    type: 'url'
+
+  linkExternalBlank:
+    class: 'link--external'
+    type: 'url'
+    target: '_blank'
+
+  linkMail:
+    class: 'link--mail'
+    type: 'mail'
+
+  linkPhone:
+    class: 'link--phone'
+    type: 'telephone'
