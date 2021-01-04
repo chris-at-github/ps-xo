@@ -326,7 +326,7 @@ $GLOBALS['TCA']['tt_content']['types']['xo_icon_text'] = [
 
 $GLOBALS['TCA']['tt_content']['types']['xo_icon_text']['columnsOverrides']['bodytext']['config'] = [
 	'enableRichtext' => true,
-	'richtextConfiguration' => 'default',
+	'richtextConfiguration' => 'xoDefault',
 ];
 
 $GLOBALS['TCA']['tt_content']['types']['xo_icon_text']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca'] = [
@@ -341,7 +341,12 @@ $GLOBALS['TCA']['tt_content']['types']['xo_icon_text']['columnsOverrides']['tx_x
 		],
 		'media' => [
 			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.type.icon_text.media'
-		]
+		],
+		'description' => [
+			'config' => [
+				'richtextConfiguration' => 'xoMinimal'
+			]
+		],
 	],
 	'types' => [
 		'icon_text_default' => [
