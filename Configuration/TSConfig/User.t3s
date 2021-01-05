@@ -1,1 +1,2 @@
 admPanel.override.tsdebug.forceTemplateParsing = 1
+options.clearCache.pages = 1
