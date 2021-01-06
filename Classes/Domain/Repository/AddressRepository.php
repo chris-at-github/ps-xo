@@ -11,11 +11,12 @@ class AddressRepository extends Repository {
 
 	/**
 	 * override the storagePid settings (do not use storagePid) of extbase
+	 * WIRD NUR FUER DAS MODUL ADDRESS BENOETIGT -> hier einfach in Zukunft die entsprechende PID mit uebergeben
 	 */
-	public function initializeObject() {
-		$this->defaultQuerySettings = $this->objectManager->get(Typo3QuerySettings::class);
-		$this->defaultQuerySettings->setRespectStoragePage(false);
-	}
+//	public function initializeObject() {
+//		$this->defaultQuerySettings = $this->objectManager->get(Typo3QuerySettings::class);
+//		$this->defaultQuerySettings->setRespectStoragePage(false);
+//	}
 
 	/**
 	 * @param \TYPO3\CMS\Extbase\Persistence\QueryInterface $query
