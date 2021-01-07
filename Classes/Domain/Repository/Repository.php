@@ -3,13 +3,20 @@
 namespace Ps\Xo\Domain\Repository;
 
 use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
+use TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface;
 use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
  * The repository for the domain model Pages
  */
 class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+
+	/**
+	 * @var \TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface
+	 */
+	protected $querySettings = null;
 
 	/**
 	 * @param \TYPO3\CMS\Extbase\Persistence\QueryInterface $query
@@ -46,6 +53,10 @@ class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	public function findAll($options = []) {
 		$query = $this->createQuery();
 
+		if($this->querySettings !== null) {
+			$query->setQuerySettings($this->querySettings);
+		}
+
 		if(empty($matches = $this->getMatches($query, $options)) === false) {
 			$query->matching($query->logicalAnd($matches));
 		}
@@ -60,5 +71,21 @@ class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	 */
 	public function find($options = []) {
 		return $this->findAll($options)->getFirst();
+	}
+
+	/**
+	 * @param array $settings
+	 * @return Repository
+	 */
+	public function setQuerySettings($settings) {
+		if(empty($settings) === false) {
+			$this->querySettings = $this->createQuery()->getQuerySettings();
+
+			if(isset($settings['respectStoragePage']) === true) {
+				$this->querySettings->setRespectStoragePage($settings['respectStoragePage']);
+			}
+		}
+
+		return $this;
 	}
 }
