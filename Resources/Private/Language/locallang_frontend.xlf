@@ -19,6 +19,17 @@
 				<source>Navigation öffnen / schliessen</source>
 			</trans-unit>
 
+			<trans-unit id="tx_xo.zip">
+				<source>Zip</source>
+			</trans-unit>
+			<trans-unit id="tx_xo.country">
+				<source>Country</source>
+			</trans-unit>
+
+			<trans-unit id="tx_xo.action.search">
+				<source>Suchen</source>
+			</trans-unit>
+
 			<trans-unit id="tx_xo.contact">
 				<source>Kontakt</source>
 			</trans-unit>
