@@ -1,0 +1,17 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:section name="Salutation">
+		<f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_address.salutation.{person.gender}" />
+	</f:section>
+
+	<f:section name="Name">
+		<f:if condition="{person.firstName}">{person.firstName}</f:if>
+		<f:if condition="{person.lastName}">{person.lastName}</f:if>
+	</f:section>
+
+	<f:section name="Fullname">
+		<f:spaceless>
+			<f:render section="Salutation" arguments="{person: person}" />
+			<f:render section="Name" arguments="{person: person}" />
+		</f:spaceless>
+	</f:section>
+</html>

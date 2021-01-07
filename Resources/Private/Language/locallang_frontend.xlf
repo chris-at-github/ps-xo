@@ -47,6 +47,12 @@
 				<source>Zurück</source>
 			</trans-unit>
 
+			<trans-unit id="tx_xo_address.salutation.m">
+				<source>Mr.</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_address.salutation.f">
+				<source>Mrs.</source>
+			</trans-unit>
 			<trans-unit id="tx_xo_address.directors">
 				<source>Geschäftsführung</source>
 			</trans-unit>
