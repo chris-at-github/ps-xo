@@ -1,70 +1,70 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2018-11-27T06:25:54Z" product-name="xo">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-11-27T06:25:54Z" product-name="xo" target-language="de">
 		<header/>
 		<body>
 			<trans-unit id="tx_xo_logo.title">
-				<source>%s</source>
+				<target>%s</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_logo.alt">
-				<source>Logo %s</source>
+				<target>Logo %s</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_skipnavigation.contentMain">
-				<source>Zum Inhalt springen</source>
+				<target>Zum Inhalt springen</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_search.link">
-				<source>Zur Suche</source>
+				<target>Zur Suche</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_hamburger.title">
-				<source>Navigation öffnen / schliessen</source>
+				<target>Navigation öffnen / schliessen</target>
 			</trans-unit>
 
 			<trans-unit id="tx_xo.zip">
-				<source>Zip</source>
+				<target>Postleitzahl</target>
 			</trans-unit>
 			<trans-unit id="tx_xo.country">
-				<source>Country</source>
+				<target>Land</target>
 			</trans-unit>
 
 			<trans-unit id="tx_xo.action.search">
-				<source>Search</source>
+				<target>Suchen</target>
 			</trans-unit>
 
 			<trans-unit id="tx_xo.contact">
-				<source>Contact</source>
+				<target>Kontakt</target>
 			</trans-unit>
 			<trans-unit id="tx_xo.phone">
-				<source>Phone</source>
+				<target>Telefon</target>
 			</trans-unit>
 			<trans-unit id="tx_xo.mail">
-				<source>E-mail</source>
+				<target>E-Mail</target>
 			</trans-unit>
 
 			<trans-unit id="tx_xo.next">
-				<source>Next</source>
+				<target>Weiter</target>
 			</trans-unit>
 			<trans-unit id="tx_xo.prev">
-				<source>Previous</source>
+				<target>Zurück</target>
 			</trans-unit>
 
 			<trans-unit id="tx_xo.salutation.m">
-				<source>Mr.</source>
+				<target>Herr</target>
 			</trans-unit>
 			<trans-unit id="tx_xo.salutation.f">
-				<source>Mrs.</source>
+				<target>Frau</target>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_address.directors">
-				<source>Geschäftsführung</source>
+				<target>Geschäftsführung</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.vatnumber">
-				<source>USt.-IDNr.</source>
+				<target>USt.-IDNr.</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.commercialregister">
-				<source>Handelsregister</source>
+				<target>Handelsregister</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.registeredoffice">
-				<source>Sitz der Gesellschaft</source>
+				<target>Sitz der Gesellschaft</target>
 			</trans-unit>
 		</body>
 	</file>
