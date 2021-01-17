@@ -3,3 +3,7 @@
 	border: 0;
 	background: transparent;
 }
+
+.cke_combopanel {
+	width: 400px !important;
+}
