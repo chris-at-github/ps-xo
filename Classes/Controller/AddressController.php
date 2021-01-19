@@ -31,7 +31,7 @@ class AddressController extends ActionController {
 	 * @return void
 	 */
 	public function recordAction() {
-		$this->view->assign('address', $this->objectManager->get(AddressRepository::class)->find($this->getDemand()));
+		$this->view->assign('address', $this->objectManager->get(AddressRepository::class)->setQuerySettings(['respectStoragePage' => false])->find($this->getDemand()));
 		$this->view->assign('partial', ucfirst($this->settings['partial']));
 	}
 }
