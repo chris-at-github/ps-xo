@@ -29,7 +29,7 @@ lib.parseFunc_RTE {
 			stdWrap {
 				HTMLparser = 1
 				HTMLparser.tags.ul.fixAttrib.class.default = list--default
-				HTMLparser.allowTags = li
+				HTMLparser.allowTags = li, a, span, strong, b, em, sub, sup
 
 				postUserFunc = Ps\Xo\Service\HtmlParserService->fixListClassAttribute
 				postUserFunc.tag = ul
