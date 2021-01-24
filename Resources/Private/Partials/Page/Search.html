@@ -7,7 +7,7 @@
 
 	<f:section name="Field">
 		<form action="{f:uri.page(pageUid: settings.pages.search)}" class="search-widget search-widget--field" id="search-widget--field">
-			<f:form.textfield class="search-widget--keyword" name="q" placeholder="{f:translate(key: 'LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_search.placeholder')}" />
+			<input type="text" class="search-widget--keyword" name="q" aria-label="{f:translate(key: 'LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_search.placeholder')}" placeholder="{f:translate(key: 'LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_search.placeholder')}" />
 			<button class="search-widget--submit" type="submit" aria-label="{f:translate(key: 'LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_search.submit')}"><xo:svg.use name="search" viewBox="0 0 32 32" /></button>
 			<button class="search-widget--close" type="button"  aria-label="{f:translate(key: 'LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_search.close')}"><xo:svg.use name="close" viewBox="0 0 11 11" /></button>
 		</form>
