@@ -15,6 +15,15 @@
 			<trans-unit id="tx_xo_search.link">
 				<source>Zur Suche</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_search.submit">
+				<source>Submit search</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_search.close">
+				<source>Close search</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_search.placeholder">
+				<source>Enter search term</source>
+			</trans-unit>
 			<trans-unit id="tx_xo_hamburger.title">
 				<source>Navigation öffnen / schliessen</source>
 			</trans-unit>
