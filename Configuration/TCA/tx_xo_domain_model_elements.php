@@ -163,7 +163,7 @@ return [
 			'config' => [
 				'type' => 'text',
 				'enableRichtext' => true,
-				'richtextConfiguration' => 'default',
+				'richtextConfiguration' => 'xoMinimal',
 				'fieldControl' => [
 					'fullScreenRichtext' => [
 						'disabled' => false,

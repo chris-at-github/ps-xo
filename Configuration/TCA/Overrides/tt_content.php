@@ -442,7 +442,7 @@ $GLOBALS['TCA']['tt_content']['types']['xo_media_wall'] = [
 
 $GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['bodytext']['config'] = [
 	'enableRichtext' => true,
-	'richtextConfiguration' => 'default',
+	'richtextConfiguration' => 'xoDefault',
 ];
 
 $GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['columns']['title']['config']['eval'] = 'trim';
