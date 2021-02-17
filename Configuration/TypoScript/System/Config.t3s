@@ -49,11 +49,3 @@ config {
 	spamProtectEmailAddresses = ascii
 	spamProtectEmailAddresses_atSubst = @<span style="display:none;">&#65279;</span>
 }
-
-[applicationContext == "Development"]
-	config {
-
-		// Remove CURL Error cURL error 18: transfer closed with 18 bytes remaining to read ...
-		enableContentLengthHeader = 0
-	}
-[END]

@@ -6,6 +6,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use TYPO3\CMS\Core\Http\HtmlResponse;
 use TYPO3\CMS\Core\Http\NullResponse;
 use TYPO3\CMS\Core\Http\Response;
 use TYPO3\CMS\Core\Http\Stream;
@@ -31,10 +32,7 @@ class HtmlPolisher implements MiddlewareInterface {
 			$html = $this->removeEmptyAttributes($html);
 			$html = $this->removeWhitespaces($html);
 
-			$body = new Stream('php://temp', 'rw');
-			$body->write($html);
-			$response = $response->withBody($body);
-
+			return new HtmlResponse($html, $response->getStatusCode(), $response->getHeaders());
 		}
 
 		return $response;
