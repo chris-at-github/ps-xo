@@ -10,11 +10,11 @@ use TYPO3\CMS\Extbase\Service\ImageService;
 class CropImageService {
 
 	/**
-	 * @param FileReference $file
+	 * @param \TYPO3\CMS\Core\Resource\FileReference|\TYPO3\CMS\Extbase\Domain\Model\FileReference $file
 	 * @param array $options
 	 * @return array
 	 */
-	public function crop($file, array $options = []) {
+	public function crop($file, array $options = []): array {
 
 		if($file instanceof \TYPO3\CMS\Extbase\Domain\Model\FileReference) {
 			$file = $file->getOriginalResource();
