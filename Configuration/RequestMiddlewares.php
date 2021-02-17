@@ -11,5 +11,21 @@ return [
 				'typo3/cms-frontend/content-length-headers'
 			]
 		],
+
+		// Ladereihenfolge veraendern -> da sonst statische Routen wie robots.txt unter /de/robots.txt versucht werden
+		// aufzurufen
+		'typo3/cms-frontend/base-redirect-resolver' => [
+			'disabled' => true
+		],
+
+		'typo3/cms-frontend/base-redirect-resolver-override' => [
+			'target' => \TYPO3\CMS\Frontend\Middleware\SiteBaseRedirectResolver::class,
+			'after' => [
+				'typo3/cms-frontend/static-route-resolver'
+			],
+			'before' => [
+				'typo3/cms-redirects/redirecthandler'
+			]
+		],
 	],
 ];
