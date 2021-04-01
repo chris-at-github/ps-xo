@@ -31,6 +31,7 @@ class HtmlPolisher implements MiddlewareInterface {
 			$html = $response->getBody()->getContents();
 			$html = $this->removeEmptyAttributes($html);
 			$html = $this->removeWhitespaces($html);
+			$html = $this->removeDeprecatedHtml($html);
 
 			return new HtmlResponse($html, $response->getStatusCode(), $response->getHeaders());
 		}
@@ -44,8 +45,24 @@ class HtmlPolisher implements MiddlewareInterface {
 	 */
 	protected function removeEmptyAttributes($html) {
 
-		// Entferne leere Klassen-Attribute
+		// Entferne leere Klassen- und Title-Attribute
 		$html = str_replace(' class=""', null, $html);
+		$html = str_replace(' title=""', null, $html);
+
+		return $html;
+	}
+
+	/**
+	 * @param string $html
+	 * @return string
+	 */
+	protected function removeDeprecatedHtml($html) {
+
+		// kein type="text/css" und type="text/javascript"
+		$html = str_replace([
+			' type="text/css"',
+			' type="text/javascript"'
+		], null, $html);
 
 		return $html;
 	}
@@ -55,10 +72,14 @@ class HtmlPolisher implements MiddlewareInterface {
 	 * @return string $html
 	 */
 	protected function removeWhitespaces($html) {
+		$applicationContext = \TYPO3\CMS\Core\Core\Environment::getContext();
 
-//		// Entferne alle Whitespaces zwischen den Tags
-//		// @todo: nur im Produktion Mode
-//		$html = trim(preg_replace('/\\>\\s+\\</', '><', $html));
+		// Entferne alle Whitespaces zwischen den Tags
+		if($applicationContext->isProduction() === true) {
+			$html = trim(preg_replace('/\r|\n|\t/', ' ', $html));
+			$html = preg_replace('/\\>\\s+\\</', '><', $html);
+			$html = trim(preg_replace('/\s\s+/', ' ', $html));
+		}
 
 		return $html;
 	}

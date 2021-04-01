@@ -44,6 +44,7 @@ class InlineFileViewHelper extends AbstractViewHelper {
 		$this->registerArgument('file', 'string', 'Content for css code', true);
 		$this->registerArgument('compress', 'boolean', 'Compress', false, true);
 		$this->registerArgument('forceOnTop', 'boolean', 'Force on top', false);
+		$this->registerArgument('minifyOnProduction', 'boolean', 'Search for .min.css file', false, true);
 	}
 
 	/**
@@ -74,11 +75,23 @@ class InlineFileViewHelper extends AbstractViewHelper {
 	 * @return string
 	 */
 	protected function resolvePath($path) {
+
 		// /fileadmin/... wird zu fileadmin und kann damit ueber GeneralUtility::getFileAbsFileName aufgeloest werden
 		if(strpos($path, '/') === 0) {
 			$path = trim($path, '/');
 		}
 
-		return \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($path);
+		$path = \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($path);
+		$applicationContext = \TYPO3\CMS\Core\Core\Environment::getContext();
+
+		if($this->arguments['minifyOnProduction'] === true && $applicationContext->isProduction() === true) {
+			$minifyPath = preg_replace('/\.css$/', '.min.css', $path);
+
+			if(is_file($minifyPath) === true) {
+				$path = $minifyPath;
+			}
+		}
+
+		return $path;
 	}
 }
