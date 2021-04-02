@@ -7,4 +7,10 @@ page.bodyTagCObject {
 		stdWrap.wrap = page--layout-|
 		value.field = layout
 	}
+
+	20 = TEXT
+	20 {
+		value = no-js no-touch
+		noTrimWrap = | ||
+	}
 }
