@@ -117,13 +117,18 @@ $GLOBALS['TCA']['tt_content']['palettes']['xoImageGallery'] = [
 	'label' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.palette.gallerySettings',
 	'showitem' => 'imageorient, --linebreak--, pi_flexform'
 ];
+$GLOBALS['TCA']['tt_content']['palettes']['xoImageHidden'] = [
+	'showitem' => 'imagecols',
+	'isHiddenPalette' => 1
+];
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Image-Text Modul
 
 // Showitem
 $GLOBALS['TCA']['tt_content']['types']['textpic']['showitem'] = '
-	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general, 
+	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+		--palette--;;xoImageHidden,
 		--palette--;;general, 
 		--palette--;;headers, bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel, 
 	--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.images, 
@@ -138,13 +143,14 @@ $GLOBALS['TCA']['tt_content']['types']['textpic']['showitem'] = '
 		--palette--;;language, 
 	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, 
 		--palette--;;hidden, 
-		--palette--;;access, 
+		--palette--;;access,
 	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories, 
 	--div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories, 
 	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes, rowDescription, 
 	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended';
 
 // Imageorient
+$GLOBALS['TCA']['tt_content']['columns']['imageorient']['config']['default'] = 25;
 $GLOBALS['TCA']['tt_content']['columns']['imageorient']['config']['items'] = [];
 $GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['imageorient']['config']['items'] = [
 	[
@@ -159,6 +165,11 @@ $GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['imageorie
 	]
 ];
 
+// Ueberschreiben von Felddefinitionen
+$GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['image']['config']['maxitems'] = 2;
+$GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['imagecols']['config']['default'] = 1;
+
+// Flexform Einstellungen anhand der Bildausrichtungen
 $GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['imageorient']['onChange'] = 'reload';
 $GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['pi_flexform']['displayCond'] = 'FIELD:imageorient:IN:25,26';
 
