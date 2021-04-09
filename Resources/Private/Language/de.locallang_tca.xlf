@@ -107,6 +107,28 @@
 				<target>Seo</target>
 			</trans-unit>
 
+			<trans-unit id="tx_xo_align.horizontal">
+				<target>Ausrichtung Horizontal</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_align.vertical">
+				<target>Ausrichtung Vertikal</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_align.left">
+				<target>Links</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_align.center">
+				<target>Mittig</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_align.right">
+				<target>Right</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_align.top">
+				<target>Oben</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_align.bottom">
+				<target>Unten</target>
+			</trans-unit>
+
 			<trans-unit id="tx_xo_html.title">
 				<target>HTML Datei</target>
 			</trans-unit>

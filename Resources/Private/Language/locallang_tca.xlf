@@ -107,6 +107,28 @@
 				<source>Seo</source>
 			</trans-unit>
 
+			<trans-unit id="tx_xo_align.horizontal">
+				<source>Ausrichtung Horizontal</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_align.vertical">
+				<source>Ausrichtung Vertikal</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_align.left">
+				<source>Links</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_align.center">
+				<source>Mittig</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_align.right">
+				<source>Right</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_align.top">
+				<source>Oben</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_align.bottom">
+				<source>Unten</source>
+			</trans-unit>
+
 			<trans-unit id="tx_xo_html.title">
 				<source>HTML File</source>
 			</trans-unit>
