@@ -107,6 +107,24 @@ $tmpXoTtContentColumns = [
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'headers', 'tx_xo_header_class', 'after:header_layout');
 
 // ---------------------------------------------------------------------------------------------------------------------
+// Image-Text Modul
+
+// Erstmal komplett reseten -> dann kann man sie wieder leicht einzeln hinzufuegen
+$GLOBALS['TCA']['tt_content']['columns']['imageorient']['config']['items'] = [];
+$GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['imageorient']['config']['items'] = [
+	[
+		'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.9',
+		25,
+		'content-beside-text-img-right'
+	],
+	[
+		'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.10',
+		26,
+		'content-beside-text-img-left'
+	]
+];
+
+// ---------------------------------------------------------------------------------------------------------------------
 // HTML-Erweiterungen von TT-Content
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
 	array(

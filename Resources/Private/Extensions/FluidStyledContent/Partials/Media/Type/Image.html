@@ -1,0 +1,42 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:section name="Main">
+		<figure class="ce-image--item">
+			<f:if condition="{file.link}">
+				<f:then>
+					<f:link.typolink parameter="{file.link}" title="{file.title}">
+						<f:render partial="Media/Rendering/Image" arguments="{file: file, dimensions: dimensions, settings: settings}"/>
+					</f:link.typolink>
+				</f:then>
+				<f:else>
+					<f:if condition="{data.image_zoom}">
+						<f:then>
+							<ce:link.clickEnlarge image="{file}" configuration="{settings.media.popup}">
+								<f:render partial="Media/Rendering/Image" arguments="{file: file, dimensions: dimensions, settings: settings}"/>
+							</ce:link.clickEnlarge>
+						</f:then>
+						<f:else>
+							<f:render section="Image" arguments="{file: file, dimensions: dimensions, settings: settings}"/>
+						</f:else>
+					</f:if>
+				</f:else>
+			</f:if>
+			<f:if condition="{file.description}">
+				<figcaption class="ce-image--item-caption">
+					{file.description -> f:format.nl2br()}
+				</figcaption>
+			</f:if>
+		</figure>
+	</f:section>
+
+	<f:section name="Image">
+		<f:render partial="Components/Media" section="Picture" arguments="{
+			file: file,
+			image: {width: dimensions.width, height: dimensions.height, cropVariant: 'default'},
+			sizes: {
+				0: {width: 560, height: 560, mediaQuery: '(min-width: 1200px)', cropVariant: 'default'},
+				1: {width: 280, height: 280, mediaQuery: '(min-width: 768px)', cropVariant: 'default'},
+				2: {width: 160, height: 160, mediaQuery: '(min-width: 0px)', cropVariant: 'default'}
+			}
+		}" />
+	</f:section>
+</html>

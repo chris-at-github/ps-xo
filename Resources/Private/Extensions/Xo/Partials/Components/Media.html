@@ -4,6 +4,12 @@
 			<f:then>
 				<f:render section="Svg" arguments="{_all}" />
 			</f:then>
+			<f:else if="{file.extension -> xo:format.toLower()} == 'mp4'">
+				<f:render section="Video" arguments="{_all}" />
+			</f:else>
+			<f:else>
+				<f:render section="Picture" arguments="{_all}" />
+			</f:else>
 		</f:if>
 	</f:section>
 
