@@ -1,0 +1,15 @@
+tt_content.textpic.dataProcessing {
+	100 = Ps\Xo\DataProcessing\ContentElementProcessor
+	100 {
+		frameTypeClass.replacement.10 {
+			search = ce-textpic
+			replace = ce-text-image
+		}
+	}
+
+	110 = Ps\Xo\DataProcessing\FlexFormProcessor
+	110 {
+		fieldName = pi_flexform
+		as = flexform
+	}
+}

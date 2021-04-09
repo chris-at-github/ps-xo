@@ -3,6 +3,8 @@
 	<f:section name="Header" />
 	<f:section name="Main">
 
+		<f:debug>{_all}</f:debug>
+
 		<f:if condition="{gallery.position.noWrap}">
 			<f:then>
 				<f:render section="Columns" arguments="{_all}" />

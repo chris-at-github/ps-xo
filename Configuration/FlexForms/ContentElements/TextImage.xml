@@ -10,7 +10,7 @@
 				</TCEforms>
 				<type>array</type>
 				<el>
-					<image.alignHorizontal type="array">
+					<image.align.horizontal type="array">
 						<TCEforms>
 							<label>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.horizontal</label>
 							<config>
@@ -32,8 +32,8 @@
 								</items>
 							</config>
 						</TCEforms>
-					</image.alignHorizontal>
-					<image.alignVertical type="array">
+					</image.align.horizontal>
+					<image.align.vertical type="array">
 						<TCEforms>
 							<label>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.vertical</label>
 							<config>
@@ -42,7 +42,7 @@
 								<items>
 									<numIndex index="0">
 										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.top</numIndex>
-										<numIndex index="1">left</numIndex>
+										<numIndex index="1">top</numIndex>
 									</numIndex>
 									<numIndex index="1">
 										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.center</numIndex>
@@ -50,12 +50,12 @@
 									</numIndex>
 									<numIndex index="2">
 										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.bottom</numIndex>
-										<numIndex index="1">right</numIndex>
+										<numIndex index="1">bottom</numIndex>
 									</numIndex>
 								</items>
 							</config>
 						</TCEforms>
-					</image.alignVertical>
+					</image.align.vertical>
 				</el>
 			</ROOT>
 		</main>
