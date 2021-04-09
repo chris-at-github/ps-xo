@@ -12,4 +12,6 @@ tt_content.textpic.dataProcessing {
 		fieldName = pi_flexform
 		as = flexform
 	}
+
+	130 = Ps\Xo\DataProcessing\TextImageProcessor
 }

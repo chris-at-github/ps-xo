@@ -36,13 +36,13 @@
 
 	<f:section name="Columns">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-xs-12 col-md-{data.columns.0}">
 				<f:if condition="{gallery.position.horizontal} == 'left'">
 					<f:then><f:render section="Content" arguments="{_all}" /></f:then>
 					<f:else><f:render partial="Media/Gallery" section="Container" arguments="{_all}"/></f:else>
 				</f:if>
 			</div>
-			<div class="col-md-6">
+			<div class="col-xs-12 col-md-{data.columns.1}">
 				<f:if condition="{gallery.position.horizontal} == 'right'">
 					<f:else><f:render partial="Media/Gallery" section="Container" arguments="{_all}"/></f:else>
 					<f:then><f:render section="Content" arguments="{_all}" /></f:then>

@@ -108,25 +108,29 @@
 			</trans-unit>
 
 			<trans-unit id="tx_xo_align.horizontal">
-				<source>Ausrichtung Horizontal</source>
+				<source>Alignment Horizontal</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_align.vertical">
-				<source>Ausrichtung Vertikal</source>
+				<source>Alignment Vertical</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_align.left">
-				<source>Links</source>
+				<source>Left</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_align.center">
-				<source>Mittig</source>
+				<source>Center</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_align.right">
 				<source>Right</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_align.top">
-				<source>Oben</source>
+				<source>Top</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_align.bottom">
-				<source>Unten</source>
+				<source>Bottom</source>
+			</trans-unit>
+
+			<trans-unit id="tx_xo_text_image.column">
+				<source>Columns</source>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_html.title">

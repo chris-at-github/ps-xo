@@ -129,6 +129,10 @@
 				<target>Unten</target>
 			</trans-unit>
 
+			<trans-unit id="tx_xo_text_image.column">
+				<target>Spalten</target>
+			</trans-unit>
+
 			<trans-unit id="tx_xo_html.title">
 				<target>HTML Datei</target>
 			</trans-unit>
