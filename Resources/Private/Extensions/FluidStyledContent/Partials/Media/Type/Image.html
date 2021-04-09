@@ -31,11 +31,11 @@
 	<f:section name="Image">
 		<f:render partial="Components/Media" section="Picture" arguments="{
 			file: file,
-			image: {width: dimensions.width, height: dimensions.height, cropVariant: 'default'},
+			image: {width: dimensions.width, height: dimensions.height, cropVariant: 'desktop'},
 			sizes: {
-				0: {width: 560, height: 560, mediaQuery: '(min-width: 1200px)', cropVariant: 'default'},
-				1: {width: 280, height: 280, mediaQuery: '(min-width: 768px)', cropVariant: 'default'},
-				2: {width: 160, height: 160, mediaQuery: '(min-width: 0px)', cropVariant: 'default'}
+				0: {width: 560, height: 560, mediaQuery: '(min-width: 1200px)', cropVariant: 'desktop'},
+				1: {width: 280, height: 280, mediaQuery: '(min-width: 768px)', cropVariant: 'desktop'},
+				2: {width: 160, height: 160, mediaQuery: '(min-width: 0px)', cropVariant: 'mobile'}
 			}
 		}" />
 	</f:section>
