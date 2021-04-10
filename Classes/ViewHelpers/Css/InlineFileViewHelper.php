@@ -84,7 +84,7 @@ class InlineFileViewHelper extends AbstractViewHelper {
 		$path = \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($path);
 		$applicationContext = \TYPO3\CMS\Core\Core\Environment::getContext();
 
-		if($this->arguments['minifyOnProduction'] === true && $applicationContext->isProduction() === true) {
+		if($this->arguments['minifyOnProduction'] === true && $applicationContext->isDevelopment() === false) {
 			$minifyPath = preg_replace('/\.css$/', '.min.css', $path);
 
 			if(is_file($minifyPath) === true) {
