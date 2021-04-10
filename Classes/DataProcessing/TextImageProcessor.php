@@ -13,7 +13,14 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
-class TextImageProcessor implements DataProcessorInterface {
+class TextImageProcessor extends ModuleProcessor implements DataProcessorInterface {
+
+	/**
+	 * @var string[]
+	 */
+	protected $importCssFiles = [
+		'/assets/css/modules/text-image.css'
+	];
 
 	/**
 	 * @param ContentObjectRenderer $cObj The data of the content element or page
