@@ -6,7 +6,7 @@
 		<main>
 			<ROOT>
 				<TCEforms>
-					<sheetTitle>-</sheetTitle>
+					<sheetTitle>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_text_image.tab.layout</sheetTitle>
 				</TCEforms>
 				<type>array</type>
 				<el>
@@ -19,28 +19,38 @@
 								<items>
 									<numIndex index="0">
 										<numIndex index="0">25% / 75%</numIndex>
-										<numIndex index="1">3-9</numIndex>
+										<numIndex index="1">25-75</numIndex>
 									</numIndex>
 									<numIndex index="1">
 										<numIndex index="0">33% / 66%</numIndex>
-										<numIndex index="1">4-8</numIndex>
+										<numIndex index="1">33-66</numIndex>
 									</numIndex>
 									<numIndex index="2">
 										<numIndex index="0">50% / 50%</numIndex>
-										<numIndex index="1">6-6</numIndex>
+										<numIndex index="1">50-50</numIndex>
 									</numIndex>
 									<numIndex index="3">
 										<numIndex index="0">66% / 33%</numIndex>
-										<numIndex index="1">8-4</numIndex>
+										<numIndex index="1">66-33</numIndex>
 									</numIndex>
 									<numIndex index="4">
 										<numIndex index="0">75% / 25%</numIndex>
-										<numIndex index="1">9-3</numIndex>
+										<numIndex index="1">75-25</numIndex>
 									</numIndex>
 								</items>
 							</config>
 						</TCEforms>
 					</column>
+				</el>
+			</ROOT>
+		</main>
+		<image>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_text_image.tab.image</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
 					<image.align.horizontal type="array">
 						<TCEforms>
 							<label>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.horizontal</label>
@@ -89,6 +99,39 @@
 					</image.align.vertical>
 				</el>
 			</ROOT>
-		</main>
+		</image>
+		<text>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_text_image.tab.image</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<text.align.vertical type="array">
+						<TCEforms>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.vertical</label>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.top</numIndex>
+										<numIndex index="1">top</numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.center</numIndex>
+										<numIndex index="1">center</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.bottom</numIndex>
+										<numIndex index="1">bottom</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</text.align.vertical>
+				</el>
+			</ROOT>
+		</text>
 	</sheets>
 </T3DataStructure>
