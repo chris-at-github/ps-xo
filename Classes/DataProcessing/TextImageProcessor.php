@@ -10,6 +10,7 @@
 namespace Ps\Xo\DataProcessing;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
@@ -31,11 +32,35 @@ class TextImageProcessor extends ModuleProcessor implements DataProcessorInterfa
 	 */
 	public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData) {
 
-		if(isset($processedData['flexform']) === true) {
+		if(isset($processedData['gallery']) === true) {
+			if($processedData['gallery']['position']['vertical'] === 'intext') {
+				$mediaQuery = $processorConfiguration['mediaQueries.']['intext.'];
+			} else {
+				$mediaQuery = $processorConfiguration['mediaQueries.']['fullwidth.'];
+			}
 
-			// Spaltenbreiten
-			if(isset($processedData['flexform']['column']) === true) {
-				$processedData['data']['columns'] = GeneralUtility::trimExplode('-', $processedData['flexform']['column']);
+			foreach($processedData['gallery']['rows'] as &$row) {
+				foreach($row['columns'] as &$column) {
+					$column['dimensions']['mediaQuery'] = [];
+
+					foreach($mediaQuery as $breakpoint => $options) {
+
+						// (maximale) Breite nicht groeßer als der angegebene Wert
+						if(isset($options['width']) === true && $options['width'] > $column['dimensions']['width']) {
+							$options['width'] = (string) $column['dimensions']['width'];
+						}
+
+						if(isset($options['maxWidth']) === true && $options['maxWidth'] > $column['dimensions']['width']) {
+							$options['maxWidth'] = (string) $column['dimensions']['width'];
+						}
+
+						// Media-Query String zusammenbauen (. aus dem Key entfernen)
+						$options['mediaQuery'] = '(min-width: ' . trim($breakpoint, '.') . 'px)';
+
+						// fertiges Array fuers Template
+						$column['dimensions']['mediaQuery'][] = $options;
+					}
+				}
 			}
 		}
 

@@ -111,3 +111,8 @@ addresses {
 	# cat=addresses; type=string; label=ID of provider data record (tt_address)
 	provider = 14
 }
+
+styles.content.textmedia {
+	maxW = 1200
+	maxWInText = 800
+}
