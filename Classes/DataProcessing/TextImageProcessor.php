@@ -34,9 +34,9 @@ class TextImageProcessor extends ModuleProcessor implements DataProcessorInterfa
 
 		if(isset($processedData['gallery']) === true) {
 			if($processedData['gallery']['position']['vertical'] === 'intext') {
-				$mediaQuery = $processorConfiguration['mediaQueries.']['intext.'];
+				$mediaQuery = $processedData['settings']['modules']['textmedia']['pictureMediaQueries']['intext'];
 			} else {
-				$mediaQuery = $processorConfiguration['mediaQueries.']['fullwidth.'];
+				$mediaQuery = $processedData['settings']['modules']['textmedia']['pictureMediaQueries']['maximal'];
 			}
 
 			foreach($processedData['gallery']['rows'] as &$row) {
@@ -54,8 +54,8 @@ class TextImageProcessor extends ModuleProcessor implements DataProcessorInterfa
 							$options['maxWidth'] = (string) $column['dimensions']['width'];
 						}
 
-						// Media-Query String zusammenbauen (. aus dem Key entfernen)
-						$options['mediaQuery'] = '(min-width: ' . trim($breakpoint, '.') . 'px)';
+						// Media-Query String zusammenbauen
+						$options['mediaQuery'] = '(min-width: ' . $breakpoint . 'px)';
 
 						// fertiges Array fuers Template
 						$column['dimensions']['mediaQuery'][] = $options;

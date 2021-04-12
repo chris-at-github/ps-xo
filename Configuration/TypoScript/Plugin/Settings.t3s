@@ -8,4 +8,73 @@ plugin.tx_xo.settings {
 		uri = {$googleMaps.uri}
 		apiKey = {$googleMaps.apiKey}
 	}
+
+	modules {
+		textmedia {
+			options {
+				columns {
+					25-75 = 25% / 75%
+					33-66 = 33% / 66%
+					50-50 = 50% / 50%
+					66-33 = 66% / 33%
+					75-25 = 75% / 25%
+				}
+
+				imageHorizontalAlignment {
+					left = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.left
+					center = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.center
+					right = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.right
+				}
+
+				imageVerticalAlignment {
+					top = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.top
+					center = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.center
+					bottom = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.bottom
+				}
+
+				textVerticalAlignment {
+					top = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.top
+					center = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.center
+					bottom = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.bottom
+				}
+			}
+
+			pictureMediaQueries {
+				intext {
+					1200 {
+						maxWidth = 800
+						cropVariant = desktop
+					}
+					768 {
+						maxWidth = 750
+						cropVariant = desktop
+					}
+					0 {
+						maxWidth = 560
+						cropVariant = desktop
+					}
+				}
+
+				maximal {
+					1200 {
+						width = 560
+						height = 560
+						cropVariant = desktop
+					}
+					768 {
+						width = 560
+						height = 560
+						cropVariant = desktop
+					}
+					0 {
+						width = 560
+						height = 560
+						cropVariant = desktop
+					}
+				}
+			}
+		}
+	}
 }
+
+module.tx_xo.settings < plugin.tx_xo.settings

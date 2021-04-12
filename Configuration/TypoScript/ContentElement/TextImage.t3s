@@ -3,7 +3,7 @@ tt_content.textpic.dataProcessing {
 	100 {
 		frameTypeClass.replacement.10 {
 			search = ce-textpic
-			replace = ce-text-image
+			replace = ce-textmedia
 		}
 	}
 
@@ -13,41 +13,6 @@ tt_content.textpic.dataProcessing {
 		as = flexform
 	}
 
+	120 = Ps\Xo\DataProcessing\SettingsProcessor
 	130 = Ps\Xo\DataProcessing\TextImageProcessor
-	130 {
-		mediaQueries {
-			intext {
-				1200 {
-					maxWidth = 800
-					cropVariant = desktop
-				}
-				768 {
-					maxWidth = 750
-					cropVariant = desktop
-				}
-				0 {
-					maxWidth = 560
-					cropVariant = desktop
-				}
-			}
-			fullwidth {
-				1200 {
-					width = 560
-					height = 560
-					cropVariant = desktop
-				}
-				768 {
-					width = 560
-					height = 560
-					cropVariant = desktop
-				}
-
-				0 {
-					width = 560
-					height = 560
-					cropVariant = desktop
-				}
-			}
-		}
-	}
 }

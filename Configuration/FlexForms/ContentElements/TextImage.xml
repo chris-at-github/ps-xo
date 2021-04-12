@@ -16,28 +16,11 @@
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
-								<items>
-									<numIndex index="0">
-										<numIndex index="0">25% / 75%</numIndex>
-										<numIndex index="1">25-75</numIndex>
-									</numIndex>
-									<numIndex index="1">
-										<numIndex index="0">33% / 66%</numIndex>
-										<numIndex index="1">33-66</numIndex>
-									</numIndex>
-									<numIndex index="2">
-										<numIndex index="0">50% / 50%</numIndex>
-										<numIndex index="1">50-50</numIndex>
-									</numIndex>
-									<numIndex index="3">
-										<numIndex index="0">66% / 33%</numIndex>
-										<numIndex index="1">66-33</numIndex>
-									</numIndex>
-									<numIndex index="4">
-										<numIndex index="0">75% / 25%</numIndex>
-										<numIndex index="1">75-25</numIndex>
-									</numIndex>
-								</items>
+								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
+								<itemsProcConfig>
+									<identifier>modules.textmedia.options.columns</identifier>
+									<extension>xo</extension>
+								</itemsProcConfig>
 							</config>
 						</TCEforms>
 					</column>
@@ -57,20 +40,11 @@
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
-								<items>
-									<numIndex index="0">
-										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.left</numIndex>
-										<numIndex index="1">left</numIndex>
-									</numIndex>
-									<numIndex index="1">
-										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.center</numIndex>
-										<numIndex index="1">center</numIndex>
-									</numIndex>
-									<numIndex index="2">
-										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.left</numIndex>
-										<numIndex index="1">right</numIndex>
-									</numIndex>
-								</items>
+								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
+								<itemsProcConfig>
+									<identifier>modules.textmedia.options.imageHorizontalAlignment</identifier>
+									<extension>xo</extension>
+								</itemsProcConfig>
 							</config>
 						</TCEforms>
 					</image.align.horizontal>
@@ -80,20 +54,11 @@
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
-								<items>
-									<numIndex index="0">
-										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.top</numIndex>
-										<numIndex index="1">top</numIndex>
-									</numIndex>
-									<numIndex index="1">
-										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.center</numIndex>
-										<numIndex index="1">center</numIndex>
-									</numIndex>
-									<numIndex index="2">
-										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.bottom</numIndex>
-										<numIndex index="1">bottom</numIndex>
-									</numIndex>
-								</items>
+								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
+								<itemsProcConfig>
+									<identifier>modules.textmedia.options.imageVerticalAlignment</identifier>
+									<extension>xo</extension>
+								</itemsProcConfig>
 							</config>
 						</TCEforms>
 					</image.align.vertical>
@@ -103,7 +68,7 @@
 		<text>
 			<ROOT>
 				<TCEforms>
-					<sheetTitle>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_text_image.tab.image</sheetTitle>
+					<sheetTitle>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_text_image.tab.text</sheetTitle>
 				</TCEforms>
 				<type>array</type>
 				<el>
@@ -113,20 +78,11 @@
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
-								<items>
-									<numIndex index="0">
-										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.top</numIndex>
-										<numIndex index="1">top</numIndex>
-									</numIndex>
-									<numIndex index="1">
-										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.center</numIndex>
-										<numIndex index="1">center</numIndex>
-									</numIndex>
-									<numIndex index="2">
-										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.bottom</numIndex>
-										<numIndex index="1">bottom</numIndex>
-									</numIndex>
-								</items>
+								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
+								<itemsProcConfig>
+									<identifier>modules.textmedia.options.textVerticalAlignment</identifier>
+									<extension>xo</extension>
+								</itemsProcConfig>
 							</config>
 						</TCEforms>
 					</text.align.vertical>
