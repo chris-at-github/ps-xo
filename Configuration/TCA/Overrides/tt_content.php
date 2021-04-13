@@ -176,7 +176,7 @@ $GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['pi_flexfo
 // Flexform
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
 	'*',
-	'FILE:EXT:xo/Configuration/FlexForms/ContentElements/TextImage.xml',
+	'FILE:EXT:xo/Configuration/FlexForms/ContentElements/TextMedia.xml',
 	'textpic'
 );
 

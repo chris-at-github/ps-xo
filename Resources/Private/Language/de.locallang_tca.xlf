@@ -129,16 +129,16 @@
 				<target>Unten</target>
 			</trans-unit>
 
-			<trans-unit id="tx_xo_text_image.tab.layout">
+			<trans-unit id="tx_xo_textmedia.tab.layout">
 				<target>Layout</target>
 			</trans-unit>
-			<trans-unit id="tx_xo_text_image.tab.image">
+			<trans-unit id="tx_xo_textmedia.tab.image">
 				<target>Bild</target>
 			</trans-unit>
-			<trans-unit id="tx_xo_text_image.tab.text">
+			<trans-unit id="tx_xo_textmedia.tab.text">
 				<target>Text</target>
 			</trans-unit>
-			<trans-unit id="tx_xo_text_image.column">
+			<trans-unit id="tx_xo_textmedia.column">
 				<target>Spalten</target>
 			</trans-unit>
 

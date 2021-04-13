@@ -6,13 +6,13 @@
 		<main>
 			<ROOT>
 				<TCEforms>
-					<sheetTitle>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_text_image.tab.layout</sheetTitle>
+					<sheetTitle>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_textmedia.tab.layout</sheetTitle>
 				</TCEforms>
 				<type>array</type>
 				<el>
 					<column type="array">
 						<TCEforms>
-							<label>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_text_image.column</label>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_textmedia.column</label>
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
@@ -30,7 +30,7 @@
 		<image>
 			<ROOT>
 				<TCEforms>
-					<sheetTitle>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_text_image.tab.image</sheetTitle>
+					<sheetTitle>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_textmedia.tab.image</sheetTitle>
 				</TCEforms>
 				<type>array</type>
 				<el>
@@ -68,7 +68,7 @@
 		<text>
 			<ROOT>
 				<TCEforms>
-					<sheetTitle>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_text_image.tab.text</sheetTitle>
+					<sheetTitle>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_textmedia.tab.text</sheetTitle>
 				</TCEforms>
 				<type>array</type>
 				<el>

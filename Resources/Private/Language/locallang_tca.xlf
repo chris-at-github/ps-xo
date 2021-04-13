@@ -129,16 +129,16 @@
 				<source>Bottom</source>
 			</trans-unit>
 
-			<trans-unit id="tx_xo_text_image.tab.layout">
+			<trans-unit id="tx_xo_textmedia.tab.layout">
 				<source>Layout</source>
 			</trans-unit>
-			<trans-unit id="tx_xo_text_image.tab.image">
+			<trans-unit id="tx_xo_textmedia.tab.image">
 				<source>Image</source>
 			</trans-unit>
-			<trans-unit id="tx_xo_text_image.tab.text">
+			<trans-unit id="tx_xo_textmedia.tab.text">
 				<source>Text</source>
 			</trans-unit>
-			<trans-unit id="tx_xo_text_image.column">
+			<trans-unit id="tx_xo_textmedia.column">
 				<source>Columns</source>
 			</trans-unit>
 

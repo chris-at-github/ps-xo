@@ -14,7 +14,7 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
-class TextImageProcessor extends ModuleProcessor implements DataProcessorInterface {
+class TextMediaProcessor extends ModuleProcessor implements DataProcessorInterface {
 
 	/**
 	 * @var string[]
