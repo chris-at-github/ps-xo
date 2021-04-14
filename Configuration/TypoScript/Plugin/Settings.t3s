@@ -13,11 +13,9 @@ plugin.tx_xo.settings {
 		textmedia {
 			options {
 				columns {
-					25-75 = 25% / 75%
 					33-66 = 33% / 66%
 					50-50 = 50% / 50%
 					66-33 = 66% / 33%
-					75-25 = 75% / 25%
 				}
 
 				imageHorizontalAlignment {
