@@ -39,16 +39,20 @@ plugin.tx_xo.settings {
 
 			pictureMediaQueries {
 				intext {
-					1200 {
-						maxWidth = 800
+					992 {
+						maxWidth = 556
 						cropVariant = desktop
 					}
 					768 {
-						maxWidth = 750
+						maxWidth = 458
+						cropVariant = desktop
+					}
+					576 {
+						maxWidth = 720
 						cropVariant = desktop
 					}
 					0 {
-						maxWidth = 560
+						maxWidth = 528
 						cropVariant = desktop
 					}
 				}
