@@ -135,7 +135,6 @@ $GLOBALS['TCA']['tt_content']['types']['textpic']['showitem'] = '
 		image, 
 		--palette--;;xoImageAdjustment,
 		--palette--;;xoImageGallery,
-		--palette--;;imagelinks, 
 	--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance, 
 		--palette--;;frames, 
 		--palette--;;appearanceLinks, 
@@ -148,6 +147,9 @@ $GLOBALS['TCA']['tt_content']['types']['textpic']['showitem'] = '
 	--div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories, 
 	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes, rowDescription, 
 	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended';
+
+// Oeffnen im neuen Lightbox vorruebergehend ausgeblendet
+// @see: https://app.asana.com/0/1184169373040457/1200211172517498/f
 
 // Imageorient
 $GLOBALS['TCA']['tt_content']['columns']['imageorient']['config']['default'] = 25;
