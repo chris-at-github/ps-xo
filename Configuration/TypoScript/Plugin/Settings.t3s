@@ -77,6 +77,11 @@ plugin.tx_xo.settings {
 			}
 		}
 	}
+
+	moduleProcessor {
+		cssInlineLimit = 2
+		jsInlineLimit = 2
+	}
 }
 
 module.tx_xo.settings < plugin.tx_xo.settings
