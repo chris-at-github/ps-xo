@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
 	<f:section name="Main">
 		<figure class="ce-image--item">
 			<f:if condition="{file.link}">
@@ -29,10 +29,18 @@
 	</f:section>
 
 	<f:section name="Image">
-		<f:render partial="Components/Media" section="Picture" arguments="{
-			file: file,
-			image: {width: dimensions.width, height: dimensions.height, cropVariant: 'desktop'},
-			sizes: dimensions.mediaQuery
-		}" />
+		<f:if condition="{file.extension -> xo:format.toLower()} == 'svg'">
+			<f:then>
+				<xo:svg.inline source="{file.publicUrl}" attributes="{width: dimensions.width, height: dimensions.height}" />
+			</f:then>
+			<f:else>
+				<f:render partial="Components/Media" section="Picture" arguments="{
+					file: file,
+					image: {width: dimensions.width, height: dimensions.height, cropVariant: 'desktop'},
+					sizes: dimensions.mediaQuery
+				}" />
+			</f:else>
+		</f:if>
+
 	</f:section>
 </html>
