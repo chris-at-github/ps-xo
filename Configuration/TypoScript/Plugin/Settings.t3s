@@ -79,8 +79,8 @@ plugin.tx_xo.settings {
 	}
 
 	moduleProcessor {
-		cssInlineLimit = 2
-		jsInlineLimit = 2
+		cssModuleInlineLimit = {$moduleProcessor.cssModuleInlineLimit}
+		cssUseMinifyOnProduction = {$moduleProcessor.cssUseMinifyOnProduction}
 	}
 }
 

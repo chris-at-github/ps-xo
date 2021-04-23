@@ -84,7 +84,7 @@ class ModuleProcessor implements DataProcessorInterface {
 		$path = \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($path);
 		$applicationContext = \TYPO3\CMS\Core\Core\Environment::getContext();
 
-		if($options['minifyOnProduction'] === true && $applicationContext->isDevelopment() === false) {
+		if($options['cssUseMinifyOnProduction'] === true && $applicationContext->isDevelopment() === false) {
 			$minifyPath = preg_replace('/\.css$/', '.min.css', $path);
 
 			if(is_file($minifyPath) === true) {
@@ -113,7 +113,7 @@ class ModuleProcessor implements DataProcessorInterface {
 			if(in_array($name, self::$importedCssFiles) === false) {
 
 				// CSS Datei Inline einbinden wenn es im konfigurierten Limit liegt
-				if(self::$moduleCounter <= (int) $settings['moduleProcessor']['cssInlineLimit']) {
+				if(self::$moduleCounter <= (int) $settings['moduleProcessor']['cssModuleInlineLimit']) {
 
 					$css = file_get_contents($this->resolveAbsoluteCssPath(trim($importCssFile)));
 

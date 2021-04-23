@@ -116,3 +116,12 @@ styles.content.textmedia {
 	maxW = 1200
 	maxWInText = 800
 }
+
+moduleProcessor {
+
+	# cat=moduleProcessor; type=int+; label=Number of modules which CSS would be inline
+	cssModuleInlineLimit = 2
+
+	# cat=moduleProcessor; type=boolean; label=Use, if exists, a minified version (.min.css) in production environment
+	cssUseMinifyOnProduction = 1
+}
