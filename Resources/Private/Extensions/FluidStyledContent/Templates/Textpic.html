@@ -34,12 +34,12 @@
 
 	<f:section name="Columns">
 		<div class="ce-textmedia--container ce-textmedia--grid ce-textmedia--grid-{flexform.column}">
-			<f:if condition="{gallery.position.horizontal} == 'left'">
+			<f:if condition="{gallery.position.horizontal} == 'right'">
 				<f:then><div class="ce-textmedia--column ce-textmedia--content"><f:render section="Content" arguments="{_all}" /></div></f:then>
 				<f:else><div class="ce-textmedia--column ce-textmedia--media"><f:render partial="Media/Gallery" section="Container" arguments="{_all}"/></div></f:else>
 			</f:if>
 
-			<f:if condition="{gallery.position.horizontal} == 'right'">
+			<f:if condition="{gallery.position.horizontal} == 'left'">
 				<f:else><div class="ce-textmedia--column ce-textmedia--media"><f:render partial="Media/Gallery" section="Container" arguments="{_all}"/></div></f:else>
 				<f:then><div class="ce-textmedia--column ce-textmedia--content"><f:render section="Content" arguments="{_all}" /></div></f:then>
 			</f:if>
