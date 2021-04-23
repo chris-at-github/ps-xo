@@ -21,16 +21,21 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 class ModuleProcessor implements DataProcessorInterface {
 
 	/**
+	 * @var int
+	 */
+	static protected $moduleCounter = 0;
+
+	/**
+	 * @var string[]
+	 */
+	static protected $importedCssFiles = [];
+
+	/**
 	 * Object Manager
 	 *
 	 * @var \TYPO3\CMS\Extbase\Object\ObjectManagerInterface
 	 */
 	protected $objectManager;
-
-	/**
-	 * @var int
-	 */
-	static protected $moduleCounter = 0;
 
 	/**
 	 * @var string[]
@@ -103,17 +108,25 @@ class ModuleProcessor implements DataProcessorInterface {
 
 		foreach($this->importCssFiles as $importCssFile) {
 
-			// CSS Datei Inline einbinden wenn es im konfigurierten Limit liegt
-			if(self::$moduleCounter <= (int) $settings['moduleProcessor']['cssInlineLimit']) {
+			$name = md5($importCssFile);
 
-				$output = file_get_contents($this->resolveAbsoluteCssPath(trim($importCssFile)));
+			if(in_array($name, self::$importedCssFiles) === false) {
 
-				/** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
-				$pageRenderer = $GLOBALS['TSFE']->pageRenderer;
-				$pageRenderer->addCssInlineBlock(md5($importCssFile), $output);
+				// CSS Datei Inline einbinden wenn es im konfigurierten Limit liegt
+				if(self::$moduleCounter <= (int) $settings['moduleProcessor']['cssInlineLimit']) {
 
-			} else {
-				$pageRenderer->addCssFile($importCssFile);
+					$css = file_get_contents($this->resolveAbsoluteCssPath(trim($importCssFile)));
+
+					/** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
+					$pageRenderer = $GLOBALS['TSFE']->pageRenderer;
+					$pageRenderer->addCssInlineBlock($name, $css);
+
+				} else {
+					$pageRenderer->addCssFile($importCssFile);
+				}
+
+				// in die bereits importierte Liste mit aufnehmen, damit Dateien nicht doppelt eingebunden werden
+				self::$importedCssFiles[] = $name;
 			}
 		}
 	}
