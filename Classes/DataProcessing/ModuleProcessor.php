@@ -9,6 +9,7 @@
 
 namespace Ps\Xo\DataProcessing;
 
+use Ps\Xo\Service\InlineResourceService;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
@@ -70,29 +71,10 @@ class ModuleProcessor implements DataProcessorInterface {
 	}
 
 	/**
-	 * @param string $path;
-	 * @param array $options
-	 * @return string
+	 * @return PageRenderer
 	 */
-	protected function resolveAbsoluteCssPath(string $path, $options = []): string {
-
-		// /fileadmin/... wird zu fileadmin und kann damit ueber GeneralUtility::getFileAbsFileName aufgeloest werden
-		if(strpos($path, '/') === 0) {
-			$path = trim($path, '/');
-		}
-
-		$path = \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($path);
-		$applicationContext = \TYPO3\CMS\Core\Core\Environment::getContext();
-
-		if($options['cssUseMinifyOnProduction'] === true && $applicationContext->isDevelopment() === false) {
-			$minifyPath = preg_replace('/\.css$/', '.min.css', $path);
-
-			if(is_file($minifyPath) === true) {
-				$path = $minifyPath;
-			}
-		}
-
-		return $path;
+	protected function getPageRenderer() {
+		return $GLOBALS['TSFE']->pageRenderer;
 	}
 
 	/**
@@ -102,8 +84,8 @@ class ModuleProcessor implements DataProcessorInterface {
 	 */
 	protected function addImportCssFiles() {
 
-		/** @var PageRenderer $pageRenderer */
-		$pageRenderer = $GLOBALS['TSFE']->pageRenderer;
+		/** @var InlineResourceService $inlineResourceService */
+		$inlineResourceService = GeneralUtility::makeInstance(InlineResourceService::class);
 		$settings = $this->getSettings();
 
 		foreach($this->importCssFiles as $importCssFile) {
@@ -115,14 +97,12 @@ class ModuleProcessor implements DataProcessorInterface {
 				// CSS Datei Inline einbinden wenn es im konfigurierten Limit liegt
 				if(self::$moduleCounter <= (int) $settings['moduleProcessor']['cssModuleInlineLimit']) {
 
-					$css = file_get_contents($this->resolveAbsoluteCssPath(trim($importCssFile)));
-
-					/** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
-					$pageRenderer = $GLOBALS['TSFE']->pageRenderer;
-					$pageRenderer->addCssInlineBlock($name, $css);
+					$inlineResourceService->addCssResource($importCssFile, [
+						'useMinifyOnProduction' => $settings['moduleProcessor']['cssUseMinifyOnProduction']
+					]);
 
 				} else {
-					$pageRenderer->addCssFile($importCssFile);
+					$this->getPageRenderer()->addCssFile($importCssFile);
 				}
 
 				// in die bereits importierte Liste mit aufnehmen, damit Dateien nicht doppelt eingebunden werden
