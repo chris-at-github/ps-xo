@@ -20,7 +20,7 @@ class TextMediaProcessor extends ModuleProcessor implements DataProcessorInterfa
 	 * @var string[]
 	 */
 	protected $importCssFiles = [
-		'/assets/css/modules/text-image.css'
+		'/assets/css/modules/text-media.css'
 	];
 
 	/**
