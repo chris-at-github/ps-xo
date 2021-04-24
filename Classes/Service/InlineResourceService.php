@@ -28,8 +28,6 @@ class InlineResourceService {
 		$applicationContext = Environment::getContext();
 		$fileExtension = pathinfo($path, PATHINFO_EXTENSION);
 
-		DebuggerUtility::var_dump($fileExtension);
-
 		if($options['useMinifyOnProduction'] === true && $applicationContext->isDevelopment() === false) {
 			$minifyPath = preg_replace('/\.' . $fileExtension . '$/', '.min.' . $fileExtension, $path);
 
@@ -37,8 +35,6 @@ class InlineResourceService {
 				$path = $minifyPath;
 			}
 		}
-
-		DebuggerUtility::var_dump($path);
 
 		return $path;
 	}
@@ -54,11 +50,19 @@ class InlineResourceService {
 	 * @param string $file
 	 * @param array $options
 	 */
-	public function addCssResource(string $file, $options = []) {
+	public function addCss(string $file, $options = []) {
 		$css = file_get_contents($this->resolveAbsolutePath(trim($file), $options));
 		$pageRenderer = $this->getPageRenderer();
 		$name = md5($file);
 
-		$pageRenderer->addCssInlineBlock($name, $css);
+		if(isset($options['compress']) === false) {
+			$options['compress'] = false;
+		}
+
+		if(isset($options['forceOnTop']) === false) {
+			$options['forceOnTop'] = false;
+		}
+
+		$pageRenderer->addCssInlineBlock($name, $css, $options['compress'], $options['forceOnTop']);
 	}
 }

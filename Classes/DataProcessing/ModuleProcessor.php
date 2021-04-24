@@ -97,7 +97,7 @@ class ModuleProcessor implements DataProcessorInterface {
 				// CSS Datei Inline einbinden wenn es im konfigurierten Limit liegt
 				if(self::$moduleCounter <= (int) $settings['moduleProcessor']['cssModuleInlineLimit']) {
 
-					$inlineResourceService->addCssResource($importCssFile, [
+					$inlineResourceService->addCss($importCssFile, [
 						'useMinifyOnProduction' => $settings['moduleProcessor']['cssUseMinifyOnProduction']
 					]);
 

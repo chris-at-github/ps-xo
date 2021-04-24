@@ -2,6 +2,8 @@
 
 namespace Ps\Xo\ViewHelpers\Css;
 
+use Ps\Xo\Service\InlineResourceService;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Extbase\Annotation\Inject;
 
@@ -44,7 +46,7 @@ class InlineFileViewHelper extends AbstractViewHelper {
 		$this->registerArgument('file', 'string', 'Content for css code', true);
 		$this->registerArgument('compress', 'boolean', 'Compress', false, true);
 		$this->registerArgument('forceOnTop', 'boolean', 'Force on top', false);
-		$this->registerArgument('minifyOnProduction', 'boolean', 'Search for .min.css file', false, true);
+		$this->registerArgument('useMinifyOnProduction', 'boolean', 'Search for .min.css file', false, true);
 	}
 
 	/**
@@ -54,44 +56,8 @@ class InlineFileViewHelper extends AbstractViewHelper {
 	 */
 	protected function render() {
 
-		$path = $this->resolvePath(trim($this->arguments['file']));
-		$output = file_get_contents($path);
-
-		if(empty($this->arguments['name']) === true) {
-			$this->arguments['name'] = md5(trim($this->arguments['file']));
-		}
-
-		/** @var \TYPO3\CMS\Core\Page\PageRenderer $pageRenderer */
-		$pageRenderer = $GLOBALS['TSFE']->pageRenderer;
-		$pageRenderer->addCssInlineBlock(
-			$this->arguments['name'],
-			$output,
-			$this->arguments['compress'],
-			$this->arguments['forceOnTop']);
-	}
-
-	/**
-	 * @param string $path;
-	 * @return string
-	 */
-	protected function resolvePath($path) {
-
-		// /fileadmin/... wird zu fileadmin und kann damit ueber GeneralUtility::getFileAbsFileName aufgeloest werden
-		if(strpos($path, '/') === 0) {
-			$path = trim($path, '/');
-		}
-
-		$path = \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($path);
-		$applicationContext = \TYPO3\CMS\Core\Core\Environment::getContext();
-
-		if($this->arguments['minifyOnProduction'] === true && $applicationContext->isDevelopment() === false) {
-			$minifyPath = preg_replace('/\.css$/', '.min.css', $path);
-
-			if(is_file($minifyPath) === true) {
-				$path = $minifyPath;
-			}
-		}
-
-		return $path;
+		/** @var InlineResourceService $inlineResourceService */
+		$inlineResourceService = GeneralUtility::makeInstance(InlineResourceService::class);
+		$inlineResourceService->addCss($this->arguments['file'], $this->arguments);
 	}
 }
