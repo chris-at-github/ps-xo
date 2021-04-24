@@ -42,19 +42,32 @@ class InlineResourceService {
 	/**
 	 * @return PageRenderer
 	 */
-	protected function getPageRenderer() {
+	protected function getPageRenderer(): PageRenderer {
 		return $GLOBALS['TSFE']->pageRenderer;
 	}
 
 	/**
 	 * @param string $file
-	 * @param array $options
+	 * @return string
 	 */
-	public function addCss(string $file, $options = []) {
-		$css = file_get_contents($this->resolveAbsolutePath(trim($file), $options));
-		$pageRenderer = $this->getPageRenderer();
-		$name = md5($file);
+	protected function getName(string $file): string {
+		return md5($file);
+	}
 
+	/**
+	 * @param string $file
+	 * @param array $options
+	 * @return string
+	 */
+	protected function getSource(string $file, $options = []): string {
+		return file_get_contents($this->resolveAbsolutePath(trim($file), $options));
+	}
+
+	/**
+	 * @param array $options
+	 * @return array
+	 */
+	protected function getOptions($options = []): array {
 		if(isset($options['compress']) === false) {
 			$options['compress'] = false;
 		}
@@ -63,6 +76,36 @@ class InlineResourceService {
 			$options['forceOnTop'] = false;
 		}
 
-		$pageRenderer->addCssInlineBlock($name, $css, $options['compress'], $options['forceOnTop']);
+		return $options;
+	}
+
+	/**
+	 * @param string $file
+	 * @param array $options
+	 */
+	public function addCss(string $file, $options = []) {
+		$options = $this->getOptions($options);
+
+		$this->getPageRenderer()->addCssInlineBlock(
+			$this->getName($file),
+			$this->getSource($file, $options),
+			$options['compress'],
+			$options['forceOnTop']
+		);
+	}
+
+	/**
+	 * @param string $file
+	 * @param array $options
+	 */
+	public function addJs(string $file, $options = []) {
+		$options = $this->getOptions($options);
+
+		$this->getPageRenderer()->addJsInlineCode(
+			$this->getName($file),
+			$this->getSource($file, $options),
+			$options['compress'],
+			$options['forceOnTop']
+		);
 	}
 }
