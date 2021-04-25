@@ -195,31 +195,6 @@
 				<source>Manuell teaser elements</source>
 			</trans-unit>
 
-			<trans-unit id="tx_xo_icon_text.title">
-				<source>Icon Text</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_icon_text.description">
-				<source>Icon text elements</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_icon_text.align">
-				<source>Align</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_icon_text.align.left">
-				<source>Left</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_icon_text.align.center">
-				<source>Center</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_icon_text.align.right">
-				<source>Right</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_icon_text.variant.0">
-				<source>Vertical</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_icon_text.variant.1">
-				<source>Horizontal</source>
-			</trans-unit>
-
 			<trans-unit id="tx_xo_slider.title">
 				<source>Slider</source>
 			</trans-unit>
@@ -266,9 +241,6 @@
 			<trans-unit id="tx_xo_domain_model_elements.record_type.media_wall.video">
 				<source>Video</source>
 			</trans-unit>
-			<trans-unit id="tx_xo_domain_model_elements.record_type.icon_text_default">
-				<source>Default</source>
-			</trans-unit>
 			<trans-unit id="tx_xo_domain_model_elements.title">
 				<source>Title</source>
 			</trans-unit>
@@ -286,9 +258,6 @@
 			</trans-unit>
 			<trans-unit id="tx_xo_domain_model_elements.thumbnail">
 				<source>Thumbnail</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_domain_model_elements.type.icon_text.media">
-				<source>Icon</source>
 			</trans-unit>
 		</body>
 	</file>

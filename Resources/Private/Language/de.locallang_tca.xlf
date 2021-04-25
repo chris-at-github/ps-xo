@@ -195,31 +195,6 @@
 				<target>Manuell teaser elements</target>
 			</trans-unit>
 
-			<trans-unit id="tx_xo_icon_text.title">
-				<target>Icon Text</target>
-			</trans-unit>
-			<trans-unit id="tx_xo_icon_text.description">
-				<target>Icon text elements</target>
-			</trans-unit>
-			<trans-unit id="tx_xo_icon_text.align">
-				<target>Ausrichtung</target>
-			</trans-unit>
-			<trans-unit id="tx_xo_icon_text.align.left">
-				<target>Links</target>
-			</trans-unit>
-			<trans-unit id="tx_xo_icon_text.align.center">
-				<target>Zentriert</target>
-			</trans-unit>
-			<trans-unit id="tx_xo_icon_text.align.right">
-				<target>Rechts</target>
-			</trans-unit>
-			<trans-unit id="tx_xo_icon_text.variant.0">
-				<target>Veritikal</target>
-			</trans-unit>
-			<trans-unit id="tx_xo_icon_text.variant.1">
-				<target>Horizontal</target>
-			</trans-unit>
-
 			<trans-unit id="tx_xo_slider.title">
 				<target>Slider</target>
 			</trans-unit>
@@ -266,9 +241,6 @@
 			<trans-unit id="tx_xo_domain_model_elements.record_type.media_wall.video">
 				<target>Video</target>
 			</trans-unit>
-			<trans-unit id="tx_xo_domain_model_elements.record_type.icon_text_default">
-				<target>Default</target>
-			</trans-unit>
 			<trans-unit id="tx_xo_domain_model_elements.title">
 				<target>Titel</target>
 			</trans-unit>
@@ -286,9 +258,6 @@
 			</trans-unit>
 			<trans-unit id="tx_xo_domain_model_elements.thumbnail">
 				<target>Thumbnail</target>
-			</trans-unit>
-			<trans-unit id="tx_xo_domain_model_elements.type.icon_text.media">
-				<target>Icon</target>
 			</trans-unit>
 		</body>
 	</file>
