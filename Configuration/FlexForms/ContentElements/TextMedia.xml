@@ -36,7 +36,7 @@
 				<el>
 					<image.align.horizontal type="array">
 						<TCEforms>
-							<label>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.horizontal</label>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_textmedia.align.horizontal</label>
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
@@ -50,7 +50,7 @@
 					</image.align.horizontal>
 					<image.align.vertical type="array">
 						<TCEforms>
-							<label>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.vertical</label>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_textmedia.align.vertical</label>
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>

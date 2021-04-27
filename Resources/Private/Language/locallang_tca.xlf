@@ -108,10 +108,10 @@
 			</trans-unit>
 
 			<trans-unit id="tx_xo_align.horizontal">
-				<source>Alignment Horizontal</source>
+				<source>Horizontal</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_align.vertical">
-				<source>Alignment Vertical</source>
+				<source>Vertical</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_align.left">
 				<source>Left</source>
@@ -140,6 +140,12 @@
 			</trans-unit>
 			<trans-unit id="tx_xo_textmedia.column">
 				<source>Columns</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_textmedia.align.horizontal">
+				<source>Alignment Horizontal</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_textmedia.align.vertical">
+				<source>Alignment Vertical</source>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_html.title">
