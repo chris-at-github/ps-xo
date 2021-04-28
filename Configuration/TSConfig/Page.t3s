@@ -123,15 +123,6 @@ mod.wizards.newContentElement.wizardItems {
 				}
 			}
 
-			xo_icon_text {
-				iconIdentifier = content-textpic
-				title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.title
-				description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.description
-				tt_content_defValues {
-					CType = xo_icon_text
-				}
-			}
-
 			xo_slider {
 				iconIdentifier = content-textpic
 				title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_slider.title
@@ -169,7 +160,7 @@ mod.wizards.newContentElement.wizardItems {
 			}
 		}
 
-		show := addToList(xo_html, xo_gallery, xo_address, xo_teaser, xo_icon_text, xo_slider, xo_hero_slider, xo_media_wall, xo_logo)
+		show := addToList(xo_html, xo_gallery, xo_address, xo_teaser, xo_slider, xo_hero_slider, xo_media_wall, xo_logo)
 	}
 
 	plugins {
@@ -221,19 +212,6 @@ mod.web_layout.BackendLayouts {
 		}
 	}
 }
-
-[field('CType') === 'xo_icon_text']
-	TCAdefaults.tt_content {
-		space_before_class = small
-	}
-
-	TCEFORM.tt_content {
-		tx_xo_variant {
-			altLabels.0 = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.variant.0
-			addItems.1 = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.variant.1
-		}
-	}
-[END]
 
 [irre('field') === 'tx_xo_flash']
 	TCAdefaults.tt_content {
