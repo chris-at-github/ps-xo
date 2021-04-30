@@ -98,13 +98,31 @@ $tmpXoTtContentColumns = [
 				'newRecordLinkAddTitle' => 1
 			],
 		]
-	]
+	],
+	'tx_xo_flash' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.flash',
+		'config' => [
+			'type' => 'inline',
+			'foreign_table' => 'tt_content',
+			'foreign_field' => 'tx_xo_parent',
+			'maxitems' => 1,
+			'appearance' => [
+				'collapseAll' => 1,
+				'levelLinksPosition' => 'top',
+				'showSynchronizationLink' => 1,
+				'showPossibleLocalizationRecords' => 1,
+				'showAllLocalizationLink' => 1
+			],
+		],
+	],
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tmpXoTtContentColumns);
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'frames', 'tx_xo_no_frame, --linebreak--', 'before:layout');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'frames', 'tx_xo_variant', 'after:frame_class');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'headers', 'tx_xo_header_class', 'after:header_layout');
+
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Weitere Paletten in TT-Content
@@ -117,10 +135,21 @@ $GLOBALS['TCA']['tt_content']['palettes']['xoImageGallery'] = [
 	'label' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.palette.gallerySettings',
 	'showitem' => 'imageorient, --linebreak--, pi_flexform'
 ];
+
 $GLOBALS['TCA']['tt_content']['palettes']['xoImageHidden'] = [
 	'showitem' => 'imagecols',
 	'isHiddenPalette' => 1
 ];
+
+$GLOBALS['TCA']['tt_content']['palettes']['xoFlash'] = [
+	'showitem' => 'tx_xo_flash,'
+];
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Text Modul
+$GLOBALS['TCA']['tt_content']['types']['text']['showitem'] .= ', --palette--;;xoFlash,';
+
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Image-Text Modul

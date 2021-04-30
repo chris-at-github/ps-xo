@@ -23,7 +23,9 @@ CREATE TABLE tt_content (
 	tx_xo_file int(11) unsigned DEFAULT '0' NOT NULL,
 	tx_xo_address int(11) unsigned DEFAULT '0' NOT NULL,
 	tx_xo_elements int(11) unsigned DEFAULT '0' NOT NULL,
-	tx_xo_page int(11) unsigned DEFAULT '0' NOT NULL
+	tx_xo_page int(11) unsigned DEFAULT '0' NOT NULL,
+	tx_xo_flash int(11) unsigned DEFAULT '0' NOT NULL,
+	tx_xo_parent int(11) unsigned DEFAULT '0' NOT NULL
 );
 
 #

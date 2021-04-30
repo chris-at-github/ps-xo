@@ -72,6 +72,9 @@
 			<trans-unit id="tx_xo_tt_content.header_layout.container">
 				<target>Container</target>
 			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.flash">
+				<target>Flash</target>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_tt_address.address">
 				<target>Adresse</target>
