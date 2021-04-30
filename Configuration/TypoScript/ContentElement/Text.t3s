@@ -1,3 +1,12 @@
-tt_content.header.dataProcessing {
+tt_content.text.dataProcessing {
 	110 = Ps\Xo\DataProcessing\ModuleProcessor
+	120 = Ps\Xo\DataProcessing\ContentProcessor
+	120 {
+		table = tt_content
+		as = flash
+		select {
+			where.data = field:uid
+			where.wrap = colPos = 326022 AND tx_xo_parent = |
+		}
+	}
 }
