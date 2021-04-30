@@ -1,0 +1,21 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:scriptmerger/Configuration/TypoScript/constants.typoscript">
+
+plugin.tx_scriptmerger {
+	css {
+		enable = 1
+		doNotRemoveInDoc = 1
+		minify.enable = 0
+		compress.enable = 0
+		merge.enable = 1
+	}
+
+	javascript {
+		enable = 1
+		parseBody = 1
+		doNotRemoveInDocInHead = 1
+		asyncLoading = 1
+		minify.enable = 0
+		compress.enable = 0
+		merge.enable = 1
+	}
+}
