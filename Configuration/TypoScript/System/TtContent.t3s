@@ -18,6 +18,16 @@ lib.contentElement {
 		100 = Ps\Xo\DataProcessing\ContentElementProcessor
 		100 {
 		}
+
+		105 = Ps\Xo\DataProcessing\FlashContentProcessor
+		105 {
+			table = tt_content
+			as = flash
+			select {
+				where.data = field:uid
+				where.wrap = colPos = 326022 AND tx_xo_parent = |
+			}
+		}
 	}
 }
 
