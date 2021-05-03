@@ -4,15 +4,6 @@ dataProcessing.flash {
 	as = flash
 	select {
 		where.data = field:uid
+		where.wrap = colPos = 326022 AND tx_xo_page = |
 	}
-}
-
-dataProcessing.flashPage < dataProcessing.flash
-dataProcessing.flashPage {
-	select.where.wrap = colPos = 326022 AND tx_xo_page = |
-}
-
-dataProcessing.flashContent < dataProcessing.flash
-dataProcessing.flashContent {
-	select.where.wrap = colPos = 326022 AND tx_xo_parent = |
 }
