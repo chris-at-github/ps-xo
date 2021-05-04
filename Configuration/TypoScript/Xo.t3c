@@ -125,3 +125,9 @@ moduleProcessor {
 	# cat=moduleProcessor; type=boolean; label=Use, if exists, a minified version (.min.css) in production environment
 	cssUseMinifyOnProduction = 1
 }
+
+flash {
+
+	# cat=flash; type=int+; label=ColPos for flash content elements
+	colPos = 326022
+}

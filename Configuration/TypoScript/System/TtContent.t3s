@@ -25,7 +25,7 @@ lib.contentElement {
 			as = flash
 			select {
 				where.data = field:uid
-				where.wrap = colPos = 326022 AND tx_xo_parent = |
+				where.wrap = colPos = {$flash.colPos} AND tx_xo_parent = |
 			}
 		}
 	}
