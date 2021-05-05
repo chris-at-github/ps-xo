@@ -8,6 +8,7 @@
 			</div>
 
 			<f:render section="Contact" arguments="{_all}" />
+			<f:render section="OpeningHours" arguments="{_all}" />
 
 			<f:if condition="{settings.structuredDataType} == 'localBusiness'">
 				<xo:jsonLd.localBusiness address="{address}" />
@@ -54,7 +55,7 @@
 
 	<f:section name="Url">
 		<f:if condition="{address.www}">
-			<div class="address--itemaddress--url"><f:link.external class="link--url" uri="{address.www}" target="_blank" rel="noopener">{address.www}</f:link.external></div>
+			<div class="address--item address--url"><f:link.external class="link--url" uri="{address.www}" target="_blank" rel="noopener">{address.www}</f:link.external></div>
 		</f:if>
 	</f:section>
 
@@ -86,6 +87,29 @@
 	<f:section name="RegisteredOffice">
 		<f:if condition="{address.registeredOffice}">
 			<div class="address--item address--registered-office"><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_address.registeredoffice" />: {address.registeredOffice}</div>
+		</f:if>
+	</f:section>
+
+	<f:section name="OpeningHours">
+		<f:if condition="{address.openingHours} || {address.openingHoursDescription}">
+			<div class="address--item address--opening-hours">
+				<header><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_address.openinghours" /></header>
+
+				<f:if condition="{address.openingHours}">
+					<dl class="address--item">
+						<f:for each="{address.openingHours}" as="openingHours">
+							<dt>{openingHours.daysListing -> xo:iterable.implode(separator: ', ')}</dt>
+							<dd><f:format.date format="H:i">{openingHours.openAt}</f:format.date> - <f:format.date format="H:i">{openingHours.closeAt}</f:format.date></dd>
+						</f:for>
+					</dl>
+				</f:if>
+
+				<f:if condition="{address.openingHoursDescription}">
+					<div class="address--item">
+						<f:format.html>{address.openingHoursDescription}</f:format.html>
+					</div>
+				</f:if>
+			</div>
 		</f:if>
 	</f:section>
 </html>
