@@ -437,19 +437,7 @@ $GLOBALS['TCA']['tt_content']['types']['xo_slider']['columnsOverrides']['tx_xo_e
 	],
 ];
 
-// ---------------------------------------------------------------------------------------------------------------------
-// Hero Slider
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
-	array(
-		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_hero_slider.title',
-		'xo_hero_slider',
-		'content-textpic'
-	),
-	'CType',
-	'xo_hero_slider'
-);
 
-$GLOBALS['TCA']['tt_content']['types']['xo_hero_slider'] = $GLOBALS['TCA']['tt_content']['types']['xo_slider'];
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Media Wall

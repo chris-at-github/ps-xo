@@ -18,13 +18,9 @@
 <f:section name="Item">
 	<f:variable name="identifier">{data.uid}-{item.data.uid}</f:variable>
 
-	<div class="container-outer slider--item hero hero-{identifier}">
+	<div class="container-outer slider--item">
 		<div class="container-inner">
-			<f:render partial="Components/Hero" section="Content" arguments="{data: item.data, identifier: identifier}" />
-
-			<f:if condition="{item.media.0}">
-				<f:render partial="Components/Hero" section="Media" arguments="{media: item.media.0, identifier: identifier}" />
-			</f:if>
+			<f:debug>{_all}</f:debug>
 		</div>
 	</div>
 </f:section>
