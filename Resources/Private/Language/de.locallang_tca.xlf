@@ -97,6 +97,12 @@
 			<trans-unit id="tx_xo_tt_address.tx_xo_vat_number">
 				<target>VAT Number</target>
 			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.tx_xo_opening_hours_description">
+				<target>Öffnungszeiten Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.tx_xo_opening_hours">
+				<target>Öffnungszeiten</target>
+			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.record_type.address">
 				<target>Address</target>
 			</trans-unit>
@@ -108,6 +114,44 @@
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.tab.seo">
 				<target>Seo</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.tab.opening_hours">
+				<target>Öffnungszeiten</target>
+			</trans-unit>
+
+			<trans-unit id="tx_xo_domain_model_openinghours">
+				<target>Öffnungszeiten</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_domain_model_openinghours.days">
+				<target>Tage</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_domain_model_openinghours.open_at">
+				<target>Öffnet um</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_domain_model_openinghours.close_at">
+				<target>Schliesst um</target>
+			</trans-unit>
+
+			<trans-unit id="tx_xo_date.monday">
+				<source>Montag</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_date.tuesday">
+				<source>Dienstag</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_date.wednesday">
+				<source>Mittwoch</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_date.thursday">
+				<source>Donnerstag</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_date.friday">
+				<source>Freitag</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_date.saturday">
+				<source>Samstag</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_date.sunday">
+				<source>Sonntag</source>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_align.horizontal">

@@ -73,6 +73,42 @@ $tmpXoTtAddressColumns = [
 			'eval' => 'trim',
 		],
 	],
+	'tx_xo_opening_hours_description' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tx_xo_opening_hours_description',
+		'config' => [
+			'type' => 'text',
+			'enableRichtext' => true,
+			'richtextConfiguration' => 'xoMinimal',
+			'fieldControl' => [
+				'fullScreenRichtext' => [
+					'disabled' => false,
+				],
+			],
+			'cols' => 40,
+			'rows' => 15,
+			'eval' => 'trim',
+		],
+	],
+	'tx_xo_opening_hours' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tx_xo_opening_hours',
+		'config' => [
+			'type' => 'inline',
+			'foreign_table' => 'tx_xo_domain_model_openinghours',
+			'foreign_field' => 'address',
+			'foreign_sortby' => 'sorting',
+			'maxitems' => 9999,
+			'appearance' => [
+				'collapseAll' => 1,
+				'levelLinksPosition' => 'top',
+				'showSynchronizationLink' => 1,
+				'showPossibleLocalizationRecords' => 1,
+				'useSortable' => 1,
+				'showAllLocalizationLink' => 1
+			],
+		],
+	],
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_address', $tmpXoTtAddressColumns);
@@ -111,19 +147,27 @@ $GLOBALS['TCA']['tt_address']['palettes']['xoSeo'] = [
 	'showitem' => 'tx_xo_schemaorg_media,'
 ];
 
+$GLOBALS['TCA']['tt_address']['palettes']['xoOpeningHours'] = [
+	'showitem' => 'tx_xo_opening_hours, --linebreak--, tx_xo_opening_hours_description, '
+];
+
 $GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['showitem'] = '
-	--palette--;xoGeneral, record_type, name, description, image,
-	--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.address;xoAddress,
-	--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.contact;xoContact,
-	--palette--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.palette.legal;xoLegal,
+		--palette--;xoGeneral, record_type, name, description, image,
+		--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.address;xoAddress,
+		--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.contact;xoContact,
+		--palette--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.palette.legal;xoLegal,
 	--div--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tab.map,
-	--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.coordinates;coordinates,
+		--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.coordinates;coordinates,
+	--div--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tab.opening_hours,
+		--palette--;;xoOpeningHours,
 	--div--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tab.seo,
-	--palette--;;xoSeo,
-	,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
-	--palette--;;language,
-	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,hidden
-	,--div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories
+		--palette--;;xoSeo,
+	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+		--palette--;;language,
+	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+		hidden,
+	--div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,
+		categories
 ';
 
 $GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['columnsOverrides']['name'] = [

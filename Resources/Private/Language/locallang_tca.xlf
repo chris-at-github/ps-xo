@@ -97,6 +97,12 @@
 			<trans-unit id="tx_xo_tt_address.tx_xo_vat_number">
 				<source>VAT Number</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.tx_xo_opening_hours_description">
+				<source>Opening Hours Description</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.tx_xo_opening_hours">
+				<source>Opening Hours</source>
+			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.record_type.address">
 				<source>Address</source>
 			</trans-unit>
@@ -108,6 +114,22 @@
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.tab.seo">
 				<source>Seo</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.tab.opening_hours">
+				<source>Opening Hours</source>
+			</trans-unit>
+
+			<trans-unit id="tx_xo_domain_model_openinghours">
+				<source>Opening Hours</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_domain_model_openinghours.days">
+				<source>Days</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_domain_model_openinghours.open_at">
+				<source>Open At</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_domain_model_openinghours.close_at">
+				<source>Close At</source>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_align.horizontal">
@@ -130,6 +152,28 @@
 			</trans-unit>
 			<trans-unit id="tx_xo_align.bottom">
 				<source>Bottom</source>
+			</trans-unit>
+
+			<trans-unit id="tx_xo_date.monday">
+				<source>Monday</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_date.tuesday">
+				<source>Tuesday</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_date.wednesday">
+				<source>Wednesday</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_date.thursday">
+				<source>Thursday</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_date.friday">
+				<source>Friday</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_date.saturday">
+				<source>Saturday</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_date.sunday">
+				<source>Sunday</source>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_textmedia.tab.layout">
