@@ -7,9 +7,8 @@
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Ps\Xo\DataProcessing\Module;
+namespace Ps\Xo\DataProcessing;
 
-use Ps\Xo\DataProcessing\ModuleProcessor;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 

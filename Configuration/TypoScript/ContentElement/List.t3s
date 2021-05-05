@@ -7,6 +7,15 @@ tt_content {
 					replace = ce-address ce-address-record
 				}
 			}
+
+			200 = Ps\Xo\DataProcessing\PluginProcessor
+			200 {
+				xo_addressrecord {
+					importCss {
+						10 = /assets/css/modules/address.css
+					}
+				}
+			}
 		}
 	}
 }

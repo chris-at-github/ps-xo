@@ -55,7 +55,7 @@ class ModuleProcessor implements DataProcessorInterface {
 		self::$moduleCounter++;
 
 		// CSS Dateien aus $importCssFiles verarbeiten
-		$this->addImportCssFiles();
+		$this->addImportCssFiles($this->importCssFiles);
 	}
 
 	/**
@@ -82,13 +82,13 @@ class ModuleProcessor implements DataProcessorInterface {
 	 *
 	 * @return void
 	 */
-	protected function addImportCssFiles() {
+	protected function addImportCssFiles($importCssFiles) {
 
 		/** @var InlineResourceService $inlineResourceService */
 		$inlineResourceService = GeneralUtility::makeInstance(InlineResourceService::class);
 		$settings = $this->getSettings();
 
-		foreach($this->importCssFiles as $importCssFile) {
+		foreach($importCssFiles as $importCssFile) {
 
 			$name = md5($importCssFile);
 

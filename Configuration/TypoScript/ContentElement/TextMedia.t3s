@@ -14,5 +14,5 @@ tt_content.textpic.dataProcessing {
 	}
 
 	120 = Ps\Xo\DataProcessing\SettingsProcessor
-	130 = Ps\Xo\DataProcessing\Module\TextMediaProcessor
+	130 = Ps\Xo\DataProcessing\TextMediaProcessor
 }
