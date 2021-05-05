@@ -7,10 +7,9 @@
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Ps\Xo\DataProcessing;
+namespace Ps\Xo\DataProcessing\Module;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+use Ps\Xo\DataProcessing\ModuleProcessor;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
