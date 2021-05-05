@@ -38,6 +38,33 @@ class Address extends \FriendsOfTYPO3\TtAddress\Domain\Model\Address {
 	protected $vatNumber;
 
 	/**
+	 * @var string
+	 */
+	protected $openingHoursDescription = '';
+
+	/**
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps\Xo\Domain\Model\OpeningHours>
+	 * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+	 * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+	 */
+	protected $openingHours = null;
+
+	/**
+	 * __construct
+	 */
+	public function __construct() {
+		parent::__construct();
+		$this->initializeObject();
+	}
+
+	/**
+	 * @return void
+	 */
+	public function initializeObject() {
+		$this->openingHours = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+	}
+
+	/**
 	 * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference
 	 */
 	public function getSchemaOrgMedia() {
@@ -105,5 +132,51 @@ class Address extends \FriendsOfTYPO3\TtAddress\Domain\Model\Address {
 	 */
 	public function setVatNumber(string $vatNumber): void {
 		$this->vatNumber = $vatNumber;
+	}
+
+	/**
+	 * @return string openingHoursDescription
+	 */
+	public function getOpeningHoursDescription() {
+		return $this->openingHoursDescription;
+	}
+
+	/**
+	 * @param string $openingHoursDescription
+	 * @return void
+	 */
+	public function setOpeningHoursDescription($openingHoursDescription) {
+		$this->openingHoursDescription = $openingHoursDescription;
+	}
+
+	/**
+	 * @param \Ps\Xo\Domain\Model\OpeningHours $openingHour
+	 * @return void
+	 */
+	public function addOpeningHour(\Ps\Xo\Domain\Model\OpeningHours $openingHour) {
+		$this->openingHours->attach($openingHour);
+	}
+
+	/**
+	 * @param \Ps\Xo\Domain\Model\OpeningHours $openingHour
+	 * @return void
+	 */
+	public function removeOpeningHour(\Ps\Xo\Domain\Model\OpeningHours $openingHour) {
+		$this->openingHours->detach($openingHour);
+	}
+
+	/**
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps\Xo\Domain\Model\OpeningHours> openingHours
+	 */
+	public function getOpeningHours() {
+		return $this->openingHours;
+	}
+
+	/**
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps\Xo\Domain\Model\OpeningHours> $openingHours
+	 * @return void
+	 */
+	public function setOpeningHours(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $openingHours) {
+		$this->openingHours = $openingHours;
 	}
 }

@@ -133,25 +133,25 @@
 			</trans-unit>
 
 			<trans-unit id="tx_xo_date.monday">
-				<source>Montag</source>
+				<target>Montag</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_date.tuesday">
-				<source>Dienstag</source>
+				<target>Dienstag</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_date.wednesday">
-				<source>Mittwoch</source>
+				<target>Mittwoch</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_date.thursday">
-				<source>Donnerstag</source>
+				<target>Donnerstag</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_date.friday">
-				<source>Freitag</source>
+				<target>Freitag</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_date.saturday">
-				<source>Samstag</source>
+				<target>Samstag</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_date.sunday">
-				<source>Sonntag</source>
+				<target>Sonntag</target>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_align.horizontal">

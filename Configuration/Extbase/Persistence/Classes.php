@@ -20,6 +20,12 @@ return [
 			'vatNumber' => [
 				'fieldName' => 'tx_xo_vat_number'
 			],
+			'openingHours' => [
+				'fieldName' => 'tx_xo_opening_hours'
+			],
+			'openingHoursDescription' => [
+				'fieldName' => 'tx_xo_opening_hours_description'
+			],
 		]
 	],
 	\Ps\Xo\Domain\Model\Page::class => [

@@ -347,30 +347,30 @@ $GLOBALS['TCA']['tt_content']['types']['xo_gallery']['columnsOverrides']['tx_xo_
 	],
 ];
 
-// ---------------------------------------------------------------------------------------------------------------------
-// Address Module von TT-Content
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
-	array(
-		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_address.record.title',
-		'xo_addressrecord',
-		'xo-content-address'
-	),
-	'CType',
-	'xo'
-);
-
-$GLOBALS['TCA']['tt_content']['types']['xo_addressrecord'] = [
-	'showitem' => '
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,tx_xo_address,
-		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
-		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
-		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
-	',
-];
+//// ---------------------------------------------------------------------------------------------------------------------
+//// Address Module von TT-Content
+//\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+//	array(
+//		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_address.record.title',
+//		'xo_addressrecord',
+//		'xo-content-address'
+//	),
+//	'CType',
+//	'xo'
+//);
+//
+//$GLOBALS['TCA']['tt_content']['types']['xo_addressrecord'] = [
+//	'showitem' => '
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,tx_xo_address,
+//		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
+//		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
+//		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
+//	',
+//];
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Teaser Module von TT-Content

@@ -2,6 +2,7 @@
 
 namespace Ps\Xo\ViewHelpers\JsonLd;
 
+use Ps\Xo\Domain\Model\OpeningHours;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
@@ -100,6 +101,36 @@ class LocalBusinessViewHelper extends AbstractJsonLdViewHelper {
 				'latitude' => $this->getAddress()->getLatitude(),
 				'longitude' => $this->getAddress()->getLongitude()
 			];
+		}
+
+		// Opening Hours
+		// @see: https://developers.google.com/search/docs/data-types/local-business?hl=de
+		if(empty($this->getAddress()->getOpeningHours()) === false) {
+			$this->data['openingHoursSpecification'] = [];
+
+			/** @var OpeningHours $openingHours */
+			foreach($this->getAddress()->getOpeningHours() as $openingHours) {
+				$specification = [
+					'@type' => 'OpeningHoursSpecification',
+					'opens' => $openingHours->getOpenAt()->format('H:i'),
+          'closes' => $openingHours->getCloseAt()->format('H:i'),
+				];
+
+				// die Keys entsprechen den englischen Wochentagen -> die Values waeren die Uebersetzungen
+				$daysOfWeek = array_map(function($day) {
+					return ucfirst($day);
+				}, array_keys($openingHours->getDaysListing()));
+
+				// bei nur einem ausgewaehlten Tag soll nur ein String uebergeben werden
+				if(count($daysOfWeek) === 1) {
+					$specification['dayOfWeek'] = $daysOfWeek[0];
+
+				} else {
+					$specification['dayOfWeek'] = $daysOfWeek;
+				}
+
+				$this->data['openingHoursSpecification'][] = $specification;
+			}
 		}
 
 		return parent::render();

@@ -75,6 +75,28 @@
 			<trans-unit id="tx_xo_address.registeredoffice">
 				<source>Sitz der Gesellschaft</source>
 			</trans-unit>
+
+			<trans-unit id="tx_xo_date.monday">
+				<source>Monday</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_date.tuesday">
+				<source>Tuesday</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_date.wednesday">
+				<source>Wednesday</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_date.thursday">
+				<source>Thursday</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_date.friday">
+				<source>Friday</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_date.saturday">
+				<source>Saturday</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_date.sunday">
+				<source>Sunday</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
