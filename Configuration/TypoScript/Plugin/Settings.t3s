@@ -49,11 +49,11 @@ plugin.tx_xo.settings {
 					}
 					576 {
 						maxWidth = 720
-						cropVariant = desktop
+						cropVariant = mobile
 					}
 					0 {
 						maxWidth = 528
-						cropVariant = desktop
+						cropVariant = mobile
 					}
 				}
 
@@ -71,7 +71,7 @@ plugin.tx_xo.settings {
 					0 {
 						width = 560
 						height = 560
-						cropVariant = desktop
+						cropVariant = mobile
 					}
 				}
 			}
