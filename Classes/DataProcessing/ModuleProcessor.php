@@ -132,7 +132,13 @@ class ModuleProcessor implements DataProcessorInterface {
 		$inlineResourceService = GeneralUtility::makeInstance(InlineResourceService::class);
 		$settings = $this->getSettings();
 
-		foreach($importJsFiles as $importJsFile) {
+		foreach($importJsFiles as $importJsFile => $importJsFileOptions) {
+
+			// wenn es kein Array ist, ist es der Pfad zu der Datei
+			if(is_array($importJsFileOptions) === false) {
+				$importJsFile = $importJsFileOptions;
+				$importJsFileOptions = [];
+			}
 
 			$name = md5($importJsFile);
 
@@ -146,7 +152,33 @@ class ModuleProcessor implements DataProcessorInterface {
 					]);
 
 				} else {
-					$this->getPageRenderer()->addJsFooterFile($importJsFile);
+
+					$importJsFileOptions = array_merge([
+						'type' => 'text/javascript',
+						'compress' => true,
+						'forceOnTop' => false,
+						'allWrap' => '',
+						'excludeFromConcatenation' => false,
+						'splitChar' => '|',
+						'async' => false,
+						'integrity' => '',
+						'defer' => false,
+						'crossorigin' => ''
+					], $importJsFileOptions);
+
+					$this->getPageRenderer()->addJsFooterFile(
+						$importJsFile,
+						$importJsFileOptions['type'],
+						$importJsFileOptions['compress'],
+						$importJsFileOptions['forceOnTop'],
+						$importJsFileOptions['allWrap'],
+						$importJsFileOptions['excludeFromConcatenation'],
+						$importJsFileOptions['splitChar'],
+						$importJsFileOptions['async'],
+						$importJsFileOptions['integrity'],
+						$importJsFileOptions['defer'],
+						$importJsFileOptions['crossorigin']
+					);
 				}
 
 				// in die bereits importierte Liste mit aufnehmen, damit Dateien nicht doppelt eingebunden werden
