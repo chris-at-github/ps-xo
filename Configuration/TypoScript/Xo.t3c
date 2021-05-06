@@ -124,6 +124,12 @@ moduleProcessor {
 
 	# cat=moduleProcessor; type=boolean; label=Use, if exists, a minified version (.min.css) in production environment
 	cssUseMinifyOnProduction = 1
+
+	# cat=moduleProcessor; type=int+; label=Number of modules which JS would be inline
+	jsModuleInlineLimit = 0
+
+	# cat=moduleProcessor; type=boolean; label=Use, if exists, a minified version (.min.css) in production environment
+	jsUseMinifyOnProduction = 1
 }
 
 flash {

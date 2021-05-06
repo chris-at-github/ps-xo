@@ -29,7 +29,7 @@ class ModuleProcessor implements DataProcessorInterface {
 	/**
 	 * @var string[]
 	 */
-	static protected $importedCssFiles = [];
+	static protected $importedFiles = [];
 
 	/**
 	 * Object Manager
@@ -44,6 +44,11 @@ class ModuleProcessor implements DataProcessorInterface {
 	protected $importCssFiles = [];
 
 	/**
+	 * @var string[]
+	 */
+	protected $importJsFiles = [];
+
+	/**
 	 * @return void
 	 */
 	public function __construct() {
@@ -56,6 +61,9 @@ class ModuleProcessor implements DataProcessorInterface {
 
 		// CSS Dateien aus $importCssFiles verarbeiten
 		$this->addImportCssFiles($this->importCssFiles);
+
+		// CSS Dateien aus $importJsFiles verarbeiten
+		$this->addImportJsFiles($this->importJsFiles);
 	}
 
 	/**
@@ -80,6 +88,7 @@ class ModuleProcessor implements DataProcessorInterface {
 	/**
 	 * Fuegt die Css Dateien im Head hinzu
 	 *
+	 * @param string[] $importCssFiles
 	 * @return void
 	 */
 	protected function addImportCssFiles($importCssFiles) {
@@ -92,7 +101,7 @@ class ModuleProcessor implements DataProcessorInterface {
 
 			$name = md5($importCssFile);
 
-			if(in_array($name, self::$importedCssFiles) === false) {
+			if(in_array($name, self::$importedFiles) === false) {
 
 				// CSS Datei Inline einbinden wenn es im konfigurierten Limit liegt
 				if(self::$moduleCounter <= (int) $settings['moduleProcessor']['cssModuleInlineLimit']) {
@@ -106,7 +115,42 @@ class ModuleProcessor implements DataProcessorInterface {
 				}
 
 				// in die bereits importierte Liste mit aufnehmen, damit Dateien nicht doppelt eingebunden werden
-				self::$importedCssFiles[] = $name;
+				self::$importedFiles[] = $name;
+			}
+		}
+	}
+
+	/**
+	 * Fuegt die Js Dateien der Seite hinzu
+	 *
+	 * @param string[] $importJsFiles
+	 * @return void
+	 */
+	protected function addImportJsFiles($importJsFiles) {
+
+		/** @var InlineResourceService $inlineResourceService */
+		$inlineResourceService = GeneralUtility::makeInstance(InlineResourceService::class);
+		$settings = $this->getSettings();
+
+		foreach($importJsFiles as $importJsFile) {
+
+			$name = md5($importJsFile);
+
+			if(in_array($name, self::$importedFiles) === false) {
+
+				// CSS Datei Inline einbinden wenn es im konfigurierten Limit liegt
+				if(self::$moduleCounter <= (int) $settings['moduleProcessor']['jsModuleInlineLimit']) {
+
+					$inlineResourceService->addJs($importJsFile, [
+						'useMinifyOnProduction' => $settings['moduleProcessor']['jsUseMinifyOnProduction']
+					]);
+
+				} else {
+					$this->getPageRenderer()->addJsFooterFile($importJsFile);
+				}
+
+				// in die bereits importierte Liste mit aufnehmen, damit Dateien nicht doppelt eingebunden werden
+				self::$importedFiles[] = $name;
 			}
 		}
 	}
