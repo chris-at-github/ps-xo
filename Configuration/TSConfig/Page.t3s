@@ -96,15 +96,6 @@ mod.wizards.newContentElement.wizardItems {
 				}
 			}
 
-			xo_gallery {
-				iconIdentifier = content-image
-				title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_gallery.title
-				description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_gallery.description
-				tt_content_defValues {
-					CType = xo_gallery
-				}
-			}
-
 			xo_address {
 				iconIdentifier = xo-content-address
 				title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_address.title
@@ -151,7 +142,7 @@ mod.wizards.newContentElement.wizardItems {
 			}
 		}
 
-		show := addToList(xo_html, xo_gallery, xo_address, xo_teaser, xo_slider, xo_media_wall, xo_logo)
+		show := addToList(xo_html, xo_address, xo_teaser, xo_slider, xo_media_wall, xo_logo)
 	}
 
 	plugins {

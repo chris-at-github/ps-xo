@@ -202,16 +202,6 @@
 				<target>Lädt eine HTML Datei und fügt deren Inhalt ein.</target>
 			</trans-unit>
 
-			<trans-unit id="tx_xo_gallery.title">
-				<target>Gallery</target>
-			</trans-unit>
-			<trans-unit id="tx_xo_gallery.description">
-				<target>Simple image gallery.</target>
-			</trans-unit>
-			<trans-unit id="tx_xo_gallery.tx_xo_file">
-				<target>Images</target>
-			</trans-unit>
-
 			<trans-unit id="tx_xo_address.title">
 				<target>Address</target>
 			</trans-unit>

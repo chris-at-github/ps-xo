@@ -202,16 +202,6 @@
 				<source>Include and parse a static HTML file.</source>
 			</trans-unit>
 
-			<trans-unit id="tx_xo_gallery.title">
-				<source>Gallery</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_gallery.description">
-				<source>Simple image gallery.</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_gallery.tx_xo_file">
-				<source>Images</source>
-			</trans-unit>
-
 			<trans-unit id="tx_xo_address.title">
 				<source>Address</source>
 			</trans-unit>
