@@ -1,0 +1,29 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+
+	<f:section name="Controls">
+
+		<f:if condition="{icons}">
+			<f:else><f:variable name="icons" value="{prev: '/assets/svg/arrow-left.svg', next: '/assets/svg/arrow-right.svg'}" /></f:else>
+		</f:if>
+
+		<div class="slider--controls">
+			<div class="slider--controls-inner">
+				<div class="slider--prev"><button aria-label="{f:translate(key: 'LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo.prev')}"><xo:svg.inline source="{icons.prev}" /></button></div>
+				<div class="slider--next"><button aria-label="{f:translate(key: 'LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo.next')}"><xo:svg.inline source="{icons.next}" /></button></div>
+			</div>
+		</div>
+	</f:section>
+
+
+	<f:section name="Navigation">
+		<div class="slider--navigation">
+			<div class="slider--navigation-inner">
+				<ul>
+					<f:for each="{elements}" as="item" iteration="iterator">
+						<li title="{iterator.cycle}{f:if(condition: item.data.title, then: ': {item.data.title}')}"><span>{iterator.cycle}<f:if condition="{item.data.title}">: {item.data.title}</f:if></span></li>
+					</f:for>
+				</ul>
+			</div>
+		</div>
+	</f:section>
+</html>
