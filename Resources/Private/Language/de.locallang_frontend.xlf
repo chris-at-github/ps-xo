@@ -38,6 +38,9 @@
 			<trans-unit id="tx_xo.action.search">
 				<target>Suchen</target>
 			</trans-unit>
+			<trans-unit id="tx_xo.action.enlarge">
+				<target>Vergrößerte Ansicht anzeigen</target>
+			</trans-unit>
 
 			<trans-unit id="tx_xo.contact">
 				<target>Kontakt</target>
