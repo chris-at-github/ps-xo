@@ -230,6 +230,9 @@
 			<trans-unit id="tx_xo_crop_variant.ratio.21_9">
 				<target>21:9</target>
 			</trans-unit>
+			<trans-unit id="tx_xo_crop_variant.ratio.3_4">
+				<target>3:4</target>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_teaser.title">
 				<target>Teaser</target>
