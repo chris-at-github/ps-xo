@@ -24,6 +24,10 @@ class AddressController extends ActionController {
 			$options['records'] = GeneralUtility::trimExplode(',', $this->settings['records'], true);
 		}
 
+		if(empty($this->settings['storagePid']) === false) {
+			$options['storagePid'] = GeneralUtility::trimExplode(',', $this->settings['storagePid'], true);
+		}
+
 		return $options;
 	}
 

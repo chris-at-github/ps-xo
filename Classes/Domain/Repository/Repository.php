@@ -42,6 +42,10 @@ class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 			$matches[] = $query->in('uid', $options['records']);
 		}
 
+		if(isset($options['storagePid']) === true) {
+			$query->getQuerySettings()->setStoragePageIds($options['storagePid']);
+		}
+
 		return $matches;
 	}
 
