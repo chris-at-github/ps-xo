@@ -33,22 +33,7 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 /**
  * Json+Ld view helper parent class
  */
-class LocalBusinessViewHelper extends AbstractJsonLdViewHelper {
-
-	/**
-	 * Initialize all arguments with their description and options.
-	 */
-	public function initializeArguments() {
-		$this->registerUniversalTagAttributes();
-		$this->registerArgument('address', 'object', 'Object instance of \Ps\Xo\Domain\Model\Address', true);
-	}
-
-	/**
-	 * @return \Ps\Xo\Domain\Model\Address
-	 */
-	protected function getAddress() {
-		return $this->arguments['address'];
-	}
+class LocalBusinessViewHelper extends AddressViewHelper {
 
 	/**
 	 * @return string
@@ -72,10 +57,7 @@ class LocalBusinessViewHelper extends AbstractJsonLdViewHelper {
 
 		// Image
 		if($this->getAddress()->getImage()->count() !== 0) {
-
-			/* @var \TYPO3\CMS\Core\Resource\FileReference $image */
-			$image = $this->getAddress()->getImage()->current()->getOriginalResource();
-			$this->data['image'] = \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_SITE_URL') . $image->getPublicUrl();
+			$this->data['image'] = $this->getImage($this->getAddress()->getImage()->current());
 		}
 
 		if(empty($this->getAddress()->getPhone()) === false) {
@@ -87,20 +69,19 @@ class LocalBusinessViewHelper extends AbstractJsonLdViewHelper {
 		}
 
 		// Address
-		$this->data['address'] = [
-			'@type' => 'PostalAddress',
-			'addressLocality' => $this->getAddress()->getZip() . ' ' . $this->getAddress()->getCity(),
-			'addressCountry' => $this->getAddress()->getCountry(),
-			'streetAddress' => $this->getAddress()->getAddress()
-		];
+		$this->data['address'] = $this->getPostalAddress([
+			'zip' => $this->getAddress()->getZip(),
+			'city' => $this->getAddress()->getCity(),
+			'country' => $this->getAddress()->getCountry(),
+			'address' => $this->getAddress()->getAddress()
+		]);
 
 		// Geo
 		if(empty($this->getAddress()->getLatitude()) === false && empty($this->getAddress()->getLongitude()) === false) {
-			$this->data['geo'] = [
-				'@type' => 'GeoCoordinates',
+			$this->data['geo'] = $this->getGeoCoordinates([
 				'latitude' => $this->getAddress()->getLatitude(),
 				'longitude' => $this->getAddress()->getLongitude()
-			];
+			]);
 		}
 
 		// Opening Hours
