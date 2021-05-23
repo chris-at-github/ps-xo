@@ -32,7 +32,7 @@ class AddressProcessor implements DataProcessorInterface {
 	 * @return \TYPO3\CMS\Extbase\Persistence\Generic\QueryResult
 	 */
 	public function getRecords($options) {
-		return $this->objectManager->get(\Ps\Xo\Domain\Repository\AddressRepository::class)->findAll($options);
+		return $this->objectManager->get(\Ps\Xo\Domain\Repository\AddressRepository::class)->setQuerySettings(['respectStoragePage' => false])->findAll($options);
 	}
 
 	/**
