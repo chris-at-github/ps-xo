@@ -11,6 +11,16 @@
 				<button class="sticky--icon">
 					<xo:svg.inline source="assets/svg/contact.svg" />
 				</button>
+
+				<div class="sticky--off-canvas">
+					<div class="address">
+						<header class="address--header"><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo.contact" /></header>
+
+						<f:render partial="Components/Address" section="Location" arguments="{address: providerData.0}" />
+						<f:render partial="Components/Address" section="Phone" arguments="{address: providerData.0}" />
+						<f:render partial="Components/Address" section="Mail" arguments="{address: providerData.0}" />
+					</div>
+				</div>
 			</div>
 		</f:if>
 	</f:section>
