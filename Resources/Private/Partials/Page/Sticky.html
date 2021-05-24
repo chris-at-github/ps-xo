@@ -1,0 +1,17 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:section name="Container">
+		<div class="sticky--container">
+			<f:render section="Contact" arguments="{_all}" />
+		</div>
+	</f:section>
+
+	<f:section name="Contact">
+		<f:if condition="{providerData.0}">
+			<div class="sticky--element sticky--element-contact">
+				<button class="sticky--icon">
+					<xo:svg.inline source="assets/svg/contact.svg" />
+				</button>
+			</div>
+		</f:if>
+	</f:section>
+</html>
