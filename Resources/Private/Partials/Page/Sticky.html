@@ -8,11 +8,11 @@
 	<f:section name="Contact">
 		<f:if condition="{providerData.0}">
 			<div class="sticky--element sticky--element-contact">
-				<button class="sticky--icon">
+				<button class="sticky--icon" aria-controls="sticky--off-canvas-contact">
 					<xo:svg.inline source="assets/svg/contact.svg" />
 				</button>
 
-				<div class="sticky--off-canvas">
+				<div class="sticky--off-canvas" id="sticky--off-canvas-contact" aria-hidden="true">
 					<div class="address">
 						<header class="address--header"><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo.contact" /></header>
 
