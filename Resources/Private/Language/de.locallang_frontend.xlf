@@ -28,6 +28,10 @@
 				<target>Navigation öffnen / schliessen</target>
 			</trans-unit>
 
+			<trans-unit id="tx_xo_sticky.contact">
+				<target>Direktkontakt</target>
+			</trans-unit>
+
 			<trans-unit id="tx_xo.zip">
 				<target>Postleitzahl</target>
 			</trans-unit>
@@ -35,6 +39,9 @@
 				<target>Land</target>
 			</trans-unit>
 
+			<trans-unit id="tx_xo.action.close">
+				<target>Schließen</target>
+			</trans-unit>
 			<trans-unit id="tx_xo.action.search">
 				<target>Suchen</target>
 			</trans-unit>
