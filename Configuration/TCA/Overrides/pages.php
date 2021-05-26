@@ -29,7 +29,20 @@ call_user_func(function($_EXTKEY) {
 				'type' => 'check',
 				'items' => [
 					'1' => [
-						'0' => 'LLL:EXT:lang/locallang_core.xlf:labels.enabled'
+						'0' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled'
+					]
+				],
+				'default' => 0,
+			]
+		],
+		'tx_xo_no_sticky' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.no_sticky',
+			'config' => [
+				'type' => 'check',
+				'items' => [
+					'1' => [
+						'0' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled'
 					]
 				],
 				'default' => 0,
@@ -42,9 +55,14 @@ call_user_func(function($_EXTKEY) {
 		'showitem' => 'tx_xo_no_breadcrumb,'
 	];
 
+	$GLOBALS['TCA']['pages']['palettes']['xoSticky'] = [
+		'showitem' => 'tx_xo_no_sticky,'
+	];
+
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $tmpXoPagesColumns);
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages', 'media', '--linebreak--, tx_xo_flash', 'after:media');
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages', '--palette--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.palette.breadcrumb;xoBreadcrumb,', '', 'after:layout');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages', '--palette--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.palette.sticky;xoSticky,', '', 'after:layout');
 
 	// ---------------------------------------------------------------------------------------------------------------------
 	// Neuen Pagetyp Typolink

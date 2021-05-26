@@ -10,7 +10,8 @@ CREATE TABLE sys_category (
 #
 CREATE TABLE pages (
 	tx_xo_flash int(11) unsigned DEFAULT '0' NOT NULL,
-	tx_xo_no_breadcrumb smallint(5) unsigned DEFAULT '0' NOT NULL
+	tx_xo_no_breadcrumb smallint(5) unsigned DEFAULT '0' NOT NULL,
+	tx_xo_no_sticky smallint(5) unsigned DEFAULT '0' NOT NULL
 );
 
 #
