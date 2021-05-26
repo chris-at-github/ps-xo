@@ -13,10 +13,16 @@
 				</button>
 
 				<div class="sticky--off-canvas" id="sticky--off-canvas-contact" aria-hidden="true">
+					<button class="sticky--close">
+						<xo:svg.inline source="assets/svg/close.svg" />
+					</button>
+
 					<div class="address">
 						<header class="address--header"><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo.contact" /></header>
 
-						<f:render partial="Components/Address" section="Location" arguments="{address: providerData.0}" />
+						<div class="address--item-group">
+							<f:render partial="Components/Address" section="Location" arguments="{address: providerData.0}" />
+						</div>
 						<f:render partial="Components/Address" section="Phone" arguments="{address: providerData.0}" />
 						<f:render partial="Components/Address" section="Mail" arguments="{address: providerData.0}" />
 					</div>
