@@ -95,20 +95,27 @@
 			<div class="address--item-group address--opening-hours">
 				<header><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_address.openinghours" /></header>
 
-				<f:if condition="{address.openingHours}">
-					<dl class="address--item">
-						<f:for each="{address.openingHours}" as="openingHours">
-							<dt>{openingHours.daysListing -> xo:iterable.implode(separator: ', ')}</dt>
-							<dd><f:format.date format="H:i">{openingHours.openAt}</f:format.date> - <f:format.date format="H:i">{openingHours.closeAt}</f:format.date></dd>
-						</f:for>
-					</dl>
-				</f:if>
+				<f:render section="OpeningHoursDays" arguments="{_all}" />
+				<f:render section="OpeningHoursDescription" arguments="{_all}" />
+			</div>
+		</f:if>
+	</f:section>
 
-				<f:if condition="{address.openingHoursDescription}">
-					<div class="address--item">
-						<f:format.html>{address.openingHoursDescription}</f:format.html>
-					</div>
-				</f:if>
+	<f:section name="OpeningHoursDays">
+		<f:if condition="{address.openingHours}">
+			<dl class="address--item address--opening-hours-days">
+				<f:for each="{address.openingHours}" as="openingHours">
+					<dt>{openingHours.daysListing -> xo:iterable.implode(separator: ', ')}</dt>
+					<dd><f:format.date format="H:i">{openingHours.openAt}</f:format.date> - <f:format.date format="H:i">{openingHours.closeAt}</f:format.date></dd>
+				</f:for>
+			</dl>
+		</f:if>
+	</f:section>
+
+	<f:section name="OpeningHoursDescription">
+		<f:if condition="{address.openingHoursDescription}">
+			<div class="address--item address--opening-hours-description">
+				<f:format.html>{address.openingHoursDescription}</f:format.html>
 			</div>
 		</f:if>
 	</f:section>
