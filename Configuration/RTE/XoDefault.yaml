@@ -43,7 +43,7 @@ buttons:
   link:
     properties:
       class:
-        allowedClasses: 'link--download,link--external,link--mail,link--phone'
+        allowedClasses: 'link--download, link--external, link--mail, link--phone'
 
 classesAnchor:
   linkInternal:
