@@ -105,7 +105,12 @@
 		<f:if condition="{address.openingHours}">
 			<dl class="address--item address--opening-hours-days">
 				<f:for each="{address.openingHours}" as="openingHours">
-					<dt>{openingHours.daysListing -> xo:iterable.implode(separator: ', ')}</dt>
+					<dt>
+						<f:if condition="{openingHours.daysTitle}">
+							<f:then>{openingHours.daysTitle}</f:then>
+							<f:else>{openingHours.daysListing -> xo:iterable.implode(separator: ', ')}</f:else>
+						</f:if>
+					</dt>
 					<dd><f:format.date format="H:i">{openingHours.openAt}</f:format.date> - <f:format.date format="H:i">{openingHours.closeAt}</f:format.date></dd>
 				</f:for>
 			</dl>

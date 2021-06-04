@@ -22,6 +22,11 @@ class OpeningHours extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $days = '';
 
 	/**
+	 * @var string
+	 */
+	protected $daysTitle = '';
+
+	/**
 	 * @var \DateTime
 	 */
 	protected $openAt = null;
@@ -103,5 +108,19 @@ class OpeningHours extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		}
 
 		return $listing;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getDaysTitle(): string {
+		return $this->daysTitle;
+	}
+
+	/**
+	 * @param string $daysTitle
+	 */
+	public function setDaysTitle(string $daysTitle): void {
+		$this->daysTitle = $daysTitle;
 	}
 }

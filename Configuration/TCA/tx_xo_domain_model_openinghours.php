@@ -21,7 +21,7 @@ return [
 		'iconfile' => 'EXT:xo/Resources/Public/Icons/xo-opening-hours.svg'
 	],
 	'types' => [
-		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, days, open_at, close_at, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, days, days_title, open_at, close_at, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
 	],
 	'columns' => [
 		'sys_language_uid' => [
@@ -121,6 +121,15 @@ return [
 				],
 				'size' => 1,
 				'mintems' => 1,
+			],
+		],
+		'days_title' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_openinghours.days_title',
+			'config' => [
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim',
 			],
 		],
 		'open_at' => [
