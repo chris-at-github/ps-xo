@@ -203,6 +203,15 @@
 			<trans-unit id="tx_xo_textmedia.align.vertical">
 				<target>Ausrichtung Vertikal</target>
 			</trans-unit>
+			<trans-unit id="tx_xo_textmedia.arrangement">
+				<target>Bild / Text Anordnung im Quelltext</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_textmedia.arrangement.before">
+				<target>Bild vor Text</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_textmedia.arrangement.after">
+				<target>Bild nach Text</target>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_html.title">
 				<target>HTML Datei</target>

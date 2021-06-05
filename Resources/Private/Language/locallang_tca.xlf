@@ -203,6 +203,15 @@
 			<trans-unit id="tx_xo_textmedia.align.vertical">
 				<source>Alignment Vertical</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_textmedia.arrangement">
+				<source>Image / Text Arrangement</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_textmedia.arrangement.before">
+				<source>Image before text</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_textmedia.arrangement.after">
+				<source>Image after text</source>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_html.title">
 				<source>HTML File</source>
