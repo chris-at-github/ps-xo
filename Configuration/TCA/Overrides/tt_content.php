@@ -126,6 +126,11 @@ $tmpXoTtContentColumns = [
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Weitere Paletten in TT-Content
+$GLOBALS['TCA']['tt_content']['palettes']['xoHeader'] = [
+	'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header',
+	'showitem' => 'header, --linebreak--, header_layout, tx_xo_header_class, --linebreak--, header_link'
+];
+
 $GLOBALS['TCA']['tt_content']['palettes']['xoImageAdjustment'] = [
 	'label' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.palette.mediaAdjustments',
 	'showitem' => 'imagewidth, imageheight,'
