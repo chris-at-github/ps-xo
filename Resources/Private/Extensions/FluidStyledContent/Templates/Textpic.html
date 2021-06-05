@@ -33,13 +33,13 @@
 	</f:section>
 
 	<f:section name="Columns">
-		<div class="ce-textmedia--container ce-textmedia--grid ce-textmedia--grid-{flexform.column}">
-			<f:if condition="{gallery.position.horizontal} == 'right'">
+		<div class="ce-textmedia--container ce-textmedia--grid ce-textmedia--grid-{flexform.column} ce-textmedia--arrangement-{flexform.arrangement} ce-textmedia--media-position-{gallery.position.horizontal}">
+			<f:if condition="{flexform.arrangement} == 'after'">
 				<f:then><div class="ce-textmedia--column ce-textmedia--content"><f:render section="Content" arguments="{_all}" /></div></f:then>
 				<f:else><div class="ce-textmedia--column ce-textmedia--media"><f:render partial="Media/Gallery" section="Container" arguments="{_all}"/></div></f:else>
 			</f:if>
 
-			<f:if condition="{gallery.position.horizontal} == 'left'">
+			<f:if condition="{flexform.arrangement} == 'before'">
 				<f:else><div class="ce-textmedia--column ce-textmedia--media"><f:render partial="Media/Gallery" section="Container" arguments="{_all}"/></div></f:else>
 				<f:then><div class="ce-textmedia--column ce-textmedia--content"><f:render section="Content" arguments="{_all}" /></div></f:then>
 			</f:if>
