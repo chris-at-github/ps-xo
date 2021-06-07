@@ -62,7 +62,7 @@ class ModuleProcessor implements DataProcessorInterface {
 		// CSS Dateien aus $importCssFiles verarbeiten
 		$this->addImportCssFiles($this->importCssFiles);
 
-		// CSS Dateien aus $importJsFiles verarbeiten
+		// JS Dateien aus $importJsFiles verarbeiten
 		$this->addImportJsFiles($this->importJsFiles);
 	}
 
@@ -83,6 +83,31 @@ class ModuleProcessor implements DataProcessorInterface {
 	 */
 	protected function getPageRenderer() {
 		return $GLOBALS['TSFE']->pageRenderer;
+	}
+
+	/**
+	 * @param array $configuration
+	 * @return void
+	 */
+	public function addFilesByProcessorConfiguration($configuration) {
+
+		// CSS Dateien importieren
+		if(empty(isset($configuration['importCss.'])) === false) {
+
+			// anhand des Keys sortieren -> um eine gewollte Reihenfolge abzudecken
+			ksort($configuration['importCss.']);
+
+			$this->addImportCssFiles($configuration['importCss.']);
+		}
+
+		// JS Dateien importieren
+		if(empty(isset($configuration['importJs.'])) === false) {
+
+			// anhand des Keys sortieren -> um eine gewollte Reihenfolge abzudecken
+			ksort($configuration['importJs.']);
+
+			$this->addImportJsFiles($configuration['importJs.']);
+		}
 	}
 
 	/**
@@ -195,6 +220,10 @@ class ModuleProcessor implements DataProcessorInterface {
 	 * @return array the processed data as key/value store
 	 */
 	public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData) {
+
+		// CSS- und JS-Dateien anhand der Processor Configuration laden
+		$this->addFilesByProcessorConfiguration($processorConfiguration);
+
 		return $processedData;
 	}
 }

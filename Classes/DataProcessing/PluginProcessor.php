@@ -28,11 +28,7 @@ class PluginProcessor extends ModuleProcessor implements DataProcessorInterface 
 		$plugin = $processedData['data']['list_type'];
 
 		if(isset($processorConfiguration[$plugin . '.']) === true) {
-
-			// CSS Dateien importieren
-			if(empty(isset($processorConfiguration[$plugin . '.']['importCss.'])) === false) {
-				$this->addImportCssFiles($processorConfiguration[$plugin . '.']['importCss.']);
-			}
+			$this->addFilesByProcessorConfiguration($processorConfiguration[$plugin . '.']);
 		}
 
 		return $processedData;
