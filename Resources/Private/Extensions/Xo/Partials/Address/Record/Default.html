@@ -1,5 +1,27 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:section name="Main">
-	<f:render partial="Components/Address" section="LocalBusiness" arguments="{address: address}" />
+	<address class="address">
+		<f:if condition="{settings.display.name} == 1">
+			<f:render partial="Components/Address" section="Name" arguments="{_all}" />
+		</f:if>
+
+		<f:if condition="{settings.display.location} == 1">
+			<div class="address--item-group">
+				<f:render partial="Components/Address" section="Location" arguments="{_all}" />
+			</div>
+		</f:if>
+
+		<f:if condition="{settings.display.contact} == 1">
+			<f:render partial="Components/Address" section="Contact" arguments="{_all}" />
+		</f:if>
+
+		<f:if condition="{settings.display.openingHours} == 1">
+			<f:render partial="Components/Address" section="OpeningHours" arguments="{_all}" />
+		</f:if>
+
+		<f:if condition="{settings.structuredDataType} == 'localBusiness'">
+			<xo:jsonLd.localBusiness address="{address}" />
+		</f:if>
+	</address>
 </f:section>
 </html>

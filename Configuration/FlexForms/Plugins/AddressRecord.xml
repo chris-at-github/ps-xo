@@ -41,6 +41,7 @@
 					<settings.partial>
 						<TCEforms>
 							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.partial</label>
+							<onChange>reload</onChange>
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
@@ -65,6 +66,86 @@
 							</config>
 						</TCEforms>
 					</settings.partial>
+					<settings.display.name type="array">
+						<TCEforms>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.display.name</label>
+							<displayCond>
+								<OR>
+									<numIndex index="0">FIELD:settings.partial:=:default</numIndex>
+									<numIndex index="1">FIELD:settings.partial:=:imprint</numIndex>
+								</OR>
+							</displayCond>
+							<config>
+								<type>check</type>
+								<default>1</default>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.display.name>
+					<settings.display.location type="array">
+						<TCEforms>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.display.location</label>
+							<displayCond>
+								<OR>
+									<numIndex index="0">FIELD:settings.partial:=:default</numIndex>
+									<numIndex index="1">FIELD:settings.partial:=:imprint</numIndex>
+								</OR>
+							</displayCond>
+							<config>
+								<type>check</type>
+								<default>1</default>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.display.location>
+					<settings.display.contact type="array">
+						<TCEforms>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.display.contact</label>
+							<displayCond>
+								<OR>
+									<numIndex index="0">FIELD:settings.partial:=:default</numIndex>
+									<numIndex index="1">FIELD:settings.partial:=:imprint</numIndex>
+								</OR>
+							</displayCond>
+							<config>
+								<type>check</type>
+								<default>1</default>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.display.contact>
+					<settings.display.openingHours type="array">
+						<TCEforms>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.display.openingHours</label>
+							<displayCond>
+								<OR>
+									<numIndex index="0">FIELD:settings.partial:=:default</numIndex>
+									<numIndex index="1">FIELD:settings.partial:=:imprint</numIndex>
+								</OR>
+							</displayCond>
+							<config>
+								<type>check</type>
+								<default>1</default>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.display.openingHours>
 				</el>
 			</ROOT>
 		</display>

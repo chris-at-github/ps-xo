@@ -1,69 +1,56 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2018-11-27T06:25:54Z" product-name="xo">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-11-27T06:25:54Z" product-name="xo" target-language="de">
 		<header/>
 		<body>
 			<trans-unit id="tx_xo_address.record.title">
-				<source>Address</source>
+				<target>Adresse</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.record.description">
-				<source>Show a selected address in different views.</source>
+				<target>Zeigt eine Adresse mit unterschiedlichen Ansichten und Optionen an</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.sheet.record">
-				<source>Record</source>
+				<target>Auswahl</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.sheet.seo">
-				<source>Seo</source>
+				<target>Seo</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.sheet.display">
-				<source>Display</source>
+				<target>Anzeige</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.record">
-				<source>Address Record</source>
+				<target>Datensatz</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.structuredDataType">
-				<source>Structured Data Type</source>
+				<target>Typ Strukturierte Daten</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.structuredDataType.localBusiness">
-				<source>Local Business</source>
+				<target>Local Business</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.partial">
-				<source>Display</source>
+				<target>Ansicht</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.partial.map">
-				<source>Map</source>
+				<target>Karte</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.partial.contact">
-				<source>Contact</source>
+				<target>Kontaktdaten</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.partial.imprint">
-				<source>Imprint</source>
+				<target>Impressum</target>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_address.display.name">
-				<source>Display name</source>
+				<target>Name anzeigen</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.display.location">
-				<source>Display location</source>
+				<target>Postanschrift anzeigen</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.display.contact">
-				<source>Display contact</source>
+				<target>Kontaktdaten anzeigen</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_address.display.openingHours">
-				<source>Display opening hours</source>
-			</trans-unit>
-
-			<trans-unit id="tx_xo_page.teaser.title">
-				<source>Page Teaser</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_page.teaser.description">
-				<source>Show title, teaser and images from selected pages.</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_page_teaser.sheet.main">
-				<source>Main</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_page_teaser.records">
-				<source>Pages</source>
+				<target>Öffnungszeiten anzeigen</target>
 			</trans-unit>
 		</body>
 	</file>
