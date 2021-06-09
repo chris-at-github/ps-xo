@@ -3,6 +3,7 @@ imports:
   - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
   - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
   - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+  - { resource: "EXT:xo/Configuration/RTE/XoGlobal.yaml" }
 
 editor:
   config:
@@ -29,36 +30,3 @@ editor:
       - JustifyBlock
       - Table
       - HorizontalRule
-
-# @see: https://www.thomaskieslich.de/blog/135-links-im-ckeditor-mit-eigenen-css-klassen/
-buttons:
-  link:
-    properties:
-      class:
-        allowedClasses: 'link--download, link--external, link--mail, link--phone'
-
-classesAnchor:
-  linkInternal:
-    class: ''
-    type: 'page'
-
-  linkDownload:
-    class: 'link--download'
-    type: 'file'
-
-  linkExternal:
-    class: 'link--external'
-    type: 'url'
-
-  linkExternalBlank:
-    class: 'link--external'
-    type: 'url'
-    target: '_blank'
-
-  linkMail:
-    class: 'link--mail'
-    type: 'mail'
-
-  linkPhone:
-    class: 'link--phone'
-    type: 'telephone'
