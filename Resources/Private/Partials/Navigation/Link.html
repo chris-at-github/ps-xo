@@ -2,13 +2,13 @@
 	<f:section name="Main">
 		<f:if condition="{item.data.target}">
 			<f:then>
-				<a href="{item.link}" target="{item.data.target}" title="{item.data.title}"><span>{item.title}</span></a>
+				<a href="{item.link}" target="{item.data.target}"><span>{item.title}</span></a>
 			</f:then>
 			<f:else if="{item.target}">
-				<a href="{item.link}" target="{item.target}" title="{item.data.title}"><span>{item.title}</span></a>
+				<a href="{item.link}" target="{item.target}"><span>{item.title}</span></a>
 			</f:else>
 			<f:else>
-				<a href="{item.link}" title="{item.data.title}"><span>{item.title}</span></a>
+				<a href="{item.link}"><span>{item.title}</span></a>
 			</f:else>
 		</f:if>
 	</f:section>
