@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:section name="Main">
+	<div class="filter-item filter-item--group filter-item--group-checkbox{f:if(condition: '{item.resettable} == 1', then: ' filter-item--resettable')}{f:if(condition: '{item.autoSubmit} == 1', then: ' filter-item--auto-submit')}">
+		<div class="filter-item--group-title" data-remodal-target="filter-modal-{item.identifier}">{item.label}</div>
+
+		<div class="filter-item--modal" data-remodal-id="filter-modal-{item.identifier}">
+			<div data-remodal-action="cancel" class="remodal-close-button"></div>
+
+			<div class="filter-item--group-title">
+				<span>{item.label}</span>
+			</div>
+			<div class="filter-item--group-options-outer clearfix">
+				<div class="filter-item--group-options">
+					<f:for each="{item.data}" as="properties">
+						<label class="filter-item--option" for="{properties.identifier}">
+							<f:form.checkbox id="{properties.identifier}" name="{filter.identifier}[{item.name}][]" value="{properties.value}" checked="{properties.selected}" title="{properties.label}" additionalAttributes="{data-filter-name: item.name}" />
+							<span>{properties.label}</span>
+						</label>
+					</f:for>
+				</div>
+			</div>
+			<div class="filter-item--group-submit">
+				<button type="submit" class="filter--submit"><span><f:translate key="LLL:EXT:datamints_filter/Resources/Private/Language/locallang.xlf:submit.title" /></span></button>
+			</div>
+		</div>
+	</div>
+</f:section>
+</html>

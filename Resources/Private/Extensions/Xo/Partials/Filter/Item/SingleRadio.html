@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:section name="Main">
+
+	<div class="filter-item filter-item--single-radio {f:if(condition: '{item.resettable} == 1', then: 'filter-item--resettable')} {f:if(condition: '{item.autoSubmit} == 1', then: 'filter-item--auto-submit')}">
+		<f:for each="{item.data}" key="value" as="properties">
+			<label for="{properties.identifier}">
+				<f:if condition="{properties.disabled}">
+					<f:then><f:form.radio id="{properties.identifier}" name="{filter.identifier}[{item.name}][]" value="{properties.value}" checked="{properties.selected}" disabled="disabled" additionalAttributes="{data-filter-name: item.name}"/></f:then>
+					<f:else><f:form.radio id="{properties.identifier}" name="{filter.identifier}[{item.name}][]" value="{properties.value}" checked="{properties.selected}" disabled="" additionalAttributes="{data-filter-name: item.name}"/></f:else>
+				</f:if>
+
+				<span>{properties.label}</span>
+			</label>
+		</f:for>
+	</div>
+
+</f:section>
+</html>

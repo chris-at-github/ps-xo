@@ -34,7 +34,7 @@ class CategoryTreeDataProvider extends AbstractDataProvider {
 	 */
 	protected function getChildren($parent, $data, $properties) {
 
-		$children = [];
+		$categories = [];
 
 		/** @var \TYPO3\CMS\Core\Database\Query\QueryBuilder  $queryBuilder */
 		$queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('sys_category')->createQueryBuilder();
@@ -90,18 +90,25 @@ class CategoryTreeDataProvider extends AbstractDataProvider {
 				$selected = true;
 			}
 
+			// moegliche Kindelemente abfragen
+			$children = $this->getChildren((int) $row['uid'], $data, $properties);
+			if(empty($children) === true) {
+				$children = null;
+			}
+
 			// Datenuebernahme
-			$children[] = [
+			$categories[] = [
 				'value' => $row['uid'],
 				'label' => $row['title'],
 				'selected' => $selected,
 				'identifier' => 'fi' . md5($data['identifier'] . $row['uid']),
-				'sorting' => $sorting
+				'sorting' => $sorting,
+				'children' => $children
 			];
 		}
 
 		// Nachtraegliche Sortierung ueber PHP -> Sortierung nach Titel wg. Overlay nicht ueber SQL moeglich
-		usort($children, function($a, $b) {
+		usort($categories, function($a, $b) {
 
 			if(is_numeric($a['sorting']) === true && is_numeric($b['sorting']) === true) {
 				return $a['sorting'] < $b['sorting'] ? -1 : ($a['sorting'] > $b['sorting'] ? 1 : 0);
@@ -111,6 +118,6 @@ class CategoryTreeDataProvider extends AbstractDataProvider {
 			}
 		});
 
-		return $children;
+		return $categories;
 	}
 }

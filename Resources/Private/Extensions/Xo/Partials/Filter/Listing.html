@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:section name="Main">
+	<div class="filter">
+		<f:if condition="{filter.title}">
+			<div class="filter-title">{filter.title}</div>
+		</f:if>
+
+		<f:form id="filter-{filter.identifier}" fieldNamePrefix="{filter.namespace}" pageType="{filter.pageType}" method="post">
+			<div>
+				<input type="hidden" name="tx_datamintsfilter[uid]" value="{filter.record}" />
+			</div>
+
+			<div class="filter--submit-all">
+				<button type="submit">OK</button>
+			</div>
+
+			<div class="filter-inner clearfix">
+				<div class="filter-items">
+					<f:for each="{filter.items}" as="item">
+						<f:render partial="Filter/Item/{item.renderType -> f:format.case(mode: 'capital')}" section="Main" arguments="{_all}" />
+					</f:for>
+					<f:if condition="{filter.resetAll} == 1">
+						<button type="button" class="filter-reset--all"><f:translate key="LLL:EXT:datamints_filter/Resources/Private/Language/locallang.xlf:resetall.title" /></button>
+					</f:if>
+				</div>
+			</div>
+		</f:form>
+	</div>
+</f:section>
+</html>

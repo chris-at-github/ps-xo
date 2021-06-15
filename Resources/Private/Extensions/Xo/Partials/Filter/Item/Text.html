@@ -1,0 +1,10 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:section name="Main">
+
+	<div class="filter-item filter-item--text{f:if(condition: '{item.resettable} == 1', then: ' filter-item--resettable')}">
+		<label for="{item.identifier}">{item.label}</label>
+		<f:form.textfield name="{filter.identifier}[{item.name}]" id="{item.identifier}" value="{item.selected}" placeholder="{item.placeholder}" additionalAttributes="{data-filter-name: item.name}" />
+	</div>
+
+</f:section>
+</html>
