@@ -8,7 +8,7 @@ content {
 		xhtml_cleaning = 0
 		admPanel = 0
 		debug = 0
-		no_cache = 1
+		no_cache = 1s
 	}
 
 	10 = CONTENT
@@ -23,7 +23,7 @@ content {
 	}
 }
 
-[traverse(request.getQueryParams(), 'tx_xo/content') != 0]
+[traverse(request.getQueryParams(), 'tx_xo/content') != 0 || traverse(request.getParsedBody(), 'tx_xo/content') != 0]
 	content.10.select.uidInList {
 		data = GP:tx_xo|content
 		intval = 1
