@@ -23,9 +23,9 @@ content {
 	}
 }
 
-[request.getQueryParams()['uid'] != 0]
+[traverse(request.getQueryParams(), 'tx_xo/content') != 0]
 	content.10.select.uidInList {
-		data = GP:uid
+		data = GP:tx_xo|content
 		intval = 1
 	}
 [END]
