@@ -2,7 +2,7 @@
 <f:section name="Main">
 	<div class="filter-item filter-item--group filter-item--tree-checkbox{f:if(condition: '{item.resettable} == 1', then: ' filter-item--resettable')}{f:if(condition: '{item.autoSubmit} == 1', then: ' filter-item--auto-submit')}">
 		<ul class="filter-item--options">
-			<f:render section="Options" arguments="{filter: filter, item: item, options: item.data}" />
+			<f:render section="Options" arguments="{filter: filter, item: item, options: item.data, groupedBy: item.identifier}" />
 		</ul>
 	</div>
 </f:section>
@@ -11,13 +11,13 @@
 	<f:for each="{options}" as="properties">
 		<li>
 			<label class="filter-item--option" for="{properties.identifier}">
-				<f:form.checkbox id="{properties.identifier}" name="{filter.identifier}[{item.name}][]" value="{properties.value}" checked="{properties.selected}" title="{properties.label}" additionalAttributes="{data-filter-name: item.name}" />
+				<f:form.checkbox id="{properties.identifier}" name="{filter.identifier}[{item.name}][{groupedBy}][]" value="{properties.value}" checked="{properties.selected}" additionalAttributes="{data-filter-name: item.name}" />
 				<span>{properties.label}</span>
 			</label>
 
 			<f:if condition="{properties.children}">
 				<ul class="filter-item--options filter-item--children">
-					<f:render section="Options" arguments="{filter: filter, item: item, options: properties.children}" />
+					<f:render section="Options" arguments="{filter: filter, item: item, options: properties.children, groupedBy: properties.identifier}" />
 				</ul>
 			</f:if>
 		</li>

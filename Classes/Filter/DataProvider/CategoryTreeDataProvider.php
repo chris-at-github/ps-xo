@@ -76,6 +76,10 @@ class CategoryTreeDataProvider extends AbstractDataProvider {
 				);
 			}
 
+			// Identifier erstellen
+			$identifier = 'fi' . md5($data['identifier'] . $row['uid']);
+			$groupIdentifier = 'fi' . md5($data['identifier'] . $parent);
+
 			// Sortierungsfeld / -wert
 			$sorting = $row[$properties['sorting']];
 
@@ -85,8 +89,7 @@ class CategoryTreeDataProvider extends AbstractDataProvider {
 
 			// Eintraege vorselektieren
 			$selected = false;
-
-			if(in_array($row['uid'], $data['selected']) === true) {
+			if(in_array($row['uid'], $data['selected'][$groupIdentifier]) === true) {
 				$selected = true;
 			}
 
@@ -101,7 +104,7 @@ class CategoryTreeDataProvider extends AbstractDataProvider {
 				'value' => $row['uid'],
 				'label' => $row['title'],
 				'selected' => $selected,
-				'identifier' => 'fi' . md5($data['identifier'] . $row['uid']),
+				'identifier' => $identifier,
 				'sorting' => $sorting,
 				'children' => $children
 			];
