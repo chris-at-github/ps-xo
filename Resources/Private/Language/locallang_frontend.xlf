@@ -45,6 +45,9 @@
 			<trans-unit id="tx_xo.action.search">
 				<source>Search</source>
 			</trans-unit>
+			<trans-unit id="tx_xo.action.reset">
+				<source>Reset</source>
+			</trans-unit>
 			<trans-unit id="tx_xo.action.enlarge">
 				<source>Show enlarged view</source>
 			</trans-unit>

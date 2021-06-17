@@ -14,16 +14,19 @@
 				<f:for each="{filter.items}" as="item">
 					<f:render partial="Filter/Item/{item.renderType -> f:format.case(mode: 'capital')}" section="Main" arguments="{_all}" />
 				</f:for>
-
-				<f:if condition="{filter.resetAll} == 1">
-					<button type="button" class="filter-reset--all"><f:translate key="LLL:EXT:datamints_filter/Resources/Private/Language/locallang.xlf:resetall.title" /></button>
-				</f:if>
 			</div>
 
-			<div class="filter--submit-all">
-				<button type="submit">OK</button>
-			</div>
+			<f:if condition="{filter.submitAll} == 1 || {filter.resetAll} == 1">
+				<div class="filter-actions">
+					<f:if condition="{filter.submitAll} == 1">
+						<button class="button filter--submit-all" type="submit"><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo.action.search" /></button>
+					</f:if>
 
+					<f:if condition="{filter.resetAll} == 1">
+						<button type="button" class="button filter-reset--all"><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo.action.reset" /></button>
+					</f:if>
+				</div>
+			</f:if>
 		</f:form>
 	</div>
 </f:section>
