@@ -129,7 +129,11 @@ class FilterService {
 				$return['pageType'] = (int) $this->settings['filter'][$this->name]['pageType'];
 			}
 
-			// Reset All Button
+			// Submit / Reset All Button
+			if(empty($this->settings['filter'][$this->name]['submitAll']) === false) {
+				$return['submitAll'] = $this->settings['filter'][$this->name]['submitAll'];
+			}
+
 			if(empty($this->settings['filter'][$this->name]['resetAll']) === false) {
 				$return['resetAll'] = $this->settings['filter'][$this->name]['resetAll'];
 			}
