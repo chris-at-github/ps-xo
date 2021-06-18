@@ -20,7 +20,7 @@ class CategoryTreeDataProvider extends AbstractDataProvider {
 	 * @param array $properties
 	 * @return array $data
 	 */
-	public function provide($data, $properties) {
+	public function provide($data, $properties): array {
 		$data['data'] = $this->getChildren($properties['parent'], $data, $properties);
 
 		return $data;
@@ -45,9 +45,15 @@ class CategoryTreeDataProvider extends AbstractDataProvider {
 				$queryBuilder->expr()->eq('parent', $queryBuilder->createNamedParameter($parent, \PDO::PARAM_INT))
 			);
 
-		if(isset($properties['exclude']) === true) {
+		if(isset($properties['blacklist']) === true && empty($properties['blacklist']) === false) {
 			$queryBuilder->andWhere(
-				$queryBuilder->expr()->notIn('uid', GeneralUtility::intExplode(',', $properties['exclude'], true))
+				$queryBuilder->expr()->notIn('uid', $properties['blacklist'])
+			);
+		}
+
+		if(isset($properties['whitelist']) === true && empty($properties['whitelist']) === false) {
+			$queryBuilder->andWhere(
+				$queryBuilder->expr()->in('uid', $properties['whitelist'])
 			);
 		}
 

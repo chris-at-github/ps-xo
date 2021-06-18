@@ -3,8 +3,11 @@
 namespace Ps\Xo\Service;
 
 use Ps\Xo\Filter\DataProvider\AbstractDataProvider;
+use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Mvc\Web\Request;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
 class FilterService {
 
@@ -30,12 +33,12 @@ class FilterService {
 	protected $name;
 
 	/**
-	 * @var \TYPO3\CMS\Extbase\Mvc\Web\Request $request
+	 * @var Request $request
 	 */
 	protected $request;
 
 	/**
-	 * @var \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer
+	 * @var ContentObjectRenderer
 	 */
 	protected $contentObject;
 
@@ -49,16 +52,17 @@ class FilterService {
 
 	/**
 	 * @param string $name
-	 * @param \TYPO3\CMS\Extbase\Mvc\Web\Request $request
-	 * @param \TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer $contentObject
+	 * @param Request $request
+	 * @param ContentObjectRenderer $contentObject
+	 * @param array $settings
 	 * @return void
 	 */
-	public function __construct($name, $request, $contentObject) {
+	public function __construct(string $name, Request $request, ContentObjectRenderer $contentObject, array $settings = []) {
 		$this->name = $name;
 		$this->request = $request;
 		$this->contentObject = $contentObject;
 
-		$this->initializeSettings();
+		$this->initializeSettings($settings);
 		$this->initializePersists();
 	}
 
@@ -78,13 +82,16 @@ class FilterService {
 	/**
 	 * liefert die TypoScript Plugin Einstellungen
 	 *
+	 * @param array $override
 	 * @return array
 	 */
-	public function initializeSettings() {
+	public function initializeSettings($override = []) {
 		if(isset($this->settings) === false) {
 			$this->settings = $this->getObjectManager()->get(\TYPO3\CMS\Extbase\Configuration\ConfigurationManager::class)->getConfiguration(
 				\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'Xo'
 			);
+
+			ArrayUtility::mergeRecursiveWithOverrule($this->settings, $override, true, false);
 		}
 
 		return $this->settings;
@@ -182,9 +189,18 @@ class FilterService {
 					}
 
 					foreach($itemProperties['dataProvider'] as $dataProviderFqcn => $dataProviderProperties) {
+
 						/** @var AbstractDataProvider $dataProvider */
 						$dataProvider = $this->getObjectManager()->get($dataProviderFqcn);
 						$dataProvider->setFilter($this);
+
+						if(isset($dataProviderProperties['whitelist']) === true || isset($dataProviderProperties['whitelistProvider']) === true) {
+							$dataProviderProperties['whitelist'] = $this->getWhitelist($return['items'][$itemName], $dataProviderProperties);
+						}
+
+						if(isset($dataProviderProperties['blacklist']) === true || isset($dataProviderProperties['blacklistProvider']) === true) {
+							$dataProviderProperties['blacklist'] = $this->getBlacklist($return['items'][$itemName], $dataProviderProperties);
+						}
 
 						$return['items'][$itemName] = $dataProvider->provide($return['items'][$itemName], $dataProviderProperties);
 					}
@@ -193,6 +209,62 @@ class FilterService {
 		}
 
 		return $return;
+	}
+
+	/**
+	 * @param array $data
+	 * @param array $properties
+	 */
+	protected function getWhitelist($data, $properties) {
+		$whitelist = [];
+
+		if(isset($properties['whitelist']) === true) {
+			if(is_array($properties['whitelist']) === true) {
+				$whitelist = $properties['whitelist'];
+
+			} else {
+				$whitelist = GeneralUtility::intExplode(',', $properties['whitelist'], true);
+			}
+		}
+
+		if(isset($properties['whitelistProvider']) === true) {
+
+			/** @var AbstractDataProvider $dataProvider */
+			$dataProvider = GeneralUtility::makeInstance($properties['whitelistProvider']);
+			$dataProvider->setFilter($this);
+
+			ArrayUtility::mergeRecursiveWithOverrule($whitelist, $dataProvider->provide($data, $properties));
+		}
+
+		return $whitelist;
+	}
+
+	/**
+	 * @param array $data
+	 * @param array $properties
+	 */
+	protected function getBlacklist($data, $properties) {
+		$blacklist = [];
+
+		if(isset($properties['blacklist']) === true) {
+			if(is_array($properties['blacklist']) === true) {
+				$blacklist = $properties['blacklist'];
+
+			} else {
+				$blacklist = GeneralUtility::intExplode(',', $properties['blacklist'], true);
+			}
+		}
+
+		if(isset($properties['blacklistProvider']) === true) {
+
+			/** @var AbstractDataProvider $dataProvider */
+			$dataProvider = GeneralUtility::makeInstance($properties['blacklistProvider']);
+			$dataProvider->setFilter($this);
+
+			ArrayUtility::mergeRecursiveWithOverrule($blacklist, $dataProvider->provide($data, $properties));
+		}
+
+		return $blacklist;
 	}
 
 	/**
@@ -314,5 +386,26 @@ class FilterService {
 		if(isset($this->settings['filter'][$this->name]['items'][$name]['default']) === true) {
 			unset($this->settings['filter'][$this->name]['items'][$name]['default']);
 		}
+	}
+
+	/**
+	 * @return ContentObjectRenderer
+	 */
+	public function getContentObject(): ContentObjectRenderer {
+		return $this->contentObject;
+	}
+
+	/**
+	 * @param ContentObjectRenderer $contentObject
+	 */
+	public function setContentObject(ContentObjectRenderer $contentObject): void {
+		$this->contentObject = $contentObject;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getSettings(): array {
+		return $this->settings;
 	}
 }

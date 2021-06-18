@@ -36,9 +36,15 @@ class CategoryDataProvider extends AbstractDataProvider {
 			);
 		}
 
-		if(isset($properties['exclude']) === true) {
+		if(isset($properties['blacklist']) === true && empty($properties['blacklist']) === false) {
 			$queryBuilder->andWhere(
-				$queryBuilder->expr()->notIn('uid', GeneralUtility::intExplode(',', $properties['exclude'], true))
+				$queryBuilder->expr()->notIn('uid', $properties['blacklist'])
+			);
+		}
+
+		if(isset($properties['whitelist']) === true && empty($properties['whitelist']) === false) {
+			$queryBuilder->andWhere(
+				$queryBuilder->expr()->in('uid', $properties['whitelist'])
 			);
 		}
 
