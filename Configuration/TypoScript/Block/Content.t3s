@@ -17,3 +17,13 @@ block.contentMain {
 		languageField = sys_language_uid
 	}
 }
+
+block.contentFooter = CONTENT
+block.contentFooter {
+	table = tt_content
+	select {
+		orderBy = sorting
+		where = colPos = 20
+		languageField = sys_language_uid
+	}
+}
