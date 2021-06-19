@@ -29,11 +29,17 @@
 			<trans-unit id="tx_xo_pages.no_breadcrumb">
 				<target>Hide Breadcrumb</target>
 			</trans-unit>
+			<trans-unit id="tx_xo_pages.breadcrumb_hidden">
+				<target>Hide in Breadcrumb</target>
+			</trans-unit>
 			<trans-unit id="tx_xo_pages.sticky">
 				<target>Sticky Elements</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_pages.no_sticky">
 				<target>Hide Sticky Elements</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_pages.no_link">
+				<target>Do not link in navigation</target>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_tt_content.layout.1">

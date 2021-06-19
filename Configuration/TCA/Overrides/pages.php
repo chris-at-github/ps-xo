@@ -48,11 +48,39 @@ call_user_func(function($_EXTKEY) {
 				'default' => 0,
 			]
 		],
+		'tx_xo_no_link' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.no_link',
+			'config' => [
+				'type' => 'check',
+				'renderType' => 'checkboxToggle',
+				'items' => [
+					[
+						0 => '',
+						1 => '',
+						'invertStateDisplay' => false
+					]
+				],
+			]
+		],
+		'tx_xo_breadcrumb_hidden' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.breadcrumb_hidden',
+			'config' => [
+				'type' => 'check',
+				'items' => [
+					'1' => [
+						'0' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled'
+					]
+				],
+				'default' => 0,
+			]
+		],
 	];
 
 	// Neue Palette General hinzufuegen
 	$GLOBALS['TCA']['pages']['palettes']['xoBreadcrumb'] = [
-		'showitem' => 'tx_xo_no_breadcrumb,'
+		'showitem' => 'tx_xo_no_breadcrumb, tx_xo_breadcrumb_hidden,'
 	];
 
 	$GLOBALS['TCA']['pages']['palettes']['xoSticky'] = [
@@ -60,9 +88,12 @@ call_user_func(function($_EXTKEY) {
 	];
 
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $tmpXoPagesColumns);
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages', 'media', '--linebreak--, tx_xo_flash', 'after:media');
+
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages', '--palette--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.palette.breadcrumb;xoBreadcrumb,', '', 'after:layout');
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages', '--palette--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.palette.sticky;xoSticky,', '', 'after:layout');
+
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages', 'media', '--linebreak--, tx_xo_flash', 'after:media');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages', 'miscellaneous', 'tx_xo_no_link', 'after:no_search');
 
 	// ---------------------------------------------------------------------------------------------------------------------
 	// Neuen Pagetyp Typolink
