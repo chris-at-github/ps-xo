@@ -3,21 +3,23 @@
 		<f:spaceless>
 			<ul itemscope itemtype="http://schema.org/BreadcrumbList">
 				<f:for each="{navigation}" as="item" iteration="iterator">
-					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-						<f:if condition="{iterator.isFirst}">
-							<f:then>
-								<f:render section="ItemFirst" arguments="{_all}" />
-							</f:then>
-							<f:else if="{iterator.isLast}">
-								<f:render section="ItemLast" arguments="{_all}" />
-							</f:else>
-							<f:else>
-								<f:render section="Item" arguments="{_all}" />
-							</f:else>
-						</f:if>
+					<f:if condition="{item.data.tx_xo_breadcrumb_hidden} == 0">
+						<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+							<f:if condition="{iterator.isFirst}">
+								<f:then>
+									<f:render section="ItemFirst" arguments="{_all}" />
+								</f:then>
+								<f:else if="{iterator.isLast}">
+									<f:render section="ItemLast" arguments="{_all}" />
+								</f:else>
+								<f:else>
+									<f:render section="Item" arguments="{_all}" />
+								</f:else>
+							</f:if>
 
-						<meta itemprop="position" content="{iterator.cycle}">
-					</li>
+							<meta itemprop="position" content="{iterator.cycle}">
+						</li>
+					</f:if>
 				</f:for>
 			</ul>
 		</f:spaceless>
