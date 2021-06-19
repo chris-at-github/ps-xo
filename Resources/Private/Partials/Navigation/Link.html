@@ -1,9 +1,12 @@
 <div xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 	<f:section name="Main">
-		<f:if condition="{item.data.target}">
+		<f:if condition="{item.data.tx_xo_no_link}">
 			<f:then>
-				<a href="{item.link}" target="{item.data.target}"><span>{item.title}</span></a>
+				<span>{item.title}</span>
 			</f:then>
+			<f:else if="{item.data.target}">
+				<a href="{item.link}" target="{item.target}"><span>{item.title}</span></a>
+			</f:else>
 			<f:else if="{item.target}">
 				<a href="{item.link}" target="{item.target}"><span>{item.title}</span></a>
 			</f:else>
