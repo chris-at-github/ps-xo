@@ -2,7 +2,17 @@
 <f:section name="Main">
 	<div class="filter-item filter-item--group filter-item--tree-checkbox{f:if(condition: '{item.resettable} == 1', then: ' filter-item--resettable')}{f:if(condition: '{item.autoSubmit} == 1', then: ' filter-item--auto-submit')}">
 		<ul class="filter-item--options">
-			<f:render section="Options" arguments="{filter: filter, item: item, options: item.data, groupedBy: item.identifier}" />
+			<f:for each="{item.data}" as="properties">
+				<li class="filter-item--option-group">
+					<div class="filter-item--option-group-title">{properties.label}</div>
+
+					<f:if condition="{properties.children}">
+						<ul class="filter-item--options filter-item--children">
+							<f:render section="Options" arguments="{filter: filter, item: item, options: properties.children, groupedBy: properties.identifier}" />
+						</ul>
+					</f:if>
+				</li>
+			</f:for>
 		</ul>
 	</div>
 </f:section>
