@@ -2,11 +2,18 @@
 
 namespace Ps\Xo\Filter\DataProvider;
 
+use TYPO3\CMS\Core\Context\Context;
+use TYPO3\CMS\Core\Context\LanguageAspect;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 class CategoryTreeDataProvider extends AbstractDataProvider {
+
+	/**
+	 * @var LanguageAspect
+	 */
+	protected $languageAspect = null;
 
 	/**
 	 * @return \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController
@@ -16,13 +23,23 @@ class CategoryTreeDataProvider extends AbstractDataProvider {
 	}
 
 	/**
+	 * @return LanguageAspect
+	 */
+	protected function getLanguageAspect() {
+		if($this->languageAspect === null) {
+			$this->languageAspect = GeneralUtility::makeInstance(Context::class)->getAspect('language');
+		}
+
+		return $this->languageAspect;
+	}
+
+	/**
 	 * @param array $data
 	 * @param array $properties
 	 * @return array $data
 	 */
 	public function provide($data, $properties): array {
 		$data['data'] = $this->getChildren($properties['parent'], $data, $properties);
-
 		return $data;
 	}
 
@@ -73,12 +90,11 @@ class CategoryTreeDataProvider extends AbstractDataProvider {
 		while($row = $statement->fetch()) {
 
 			// Uebersetzung laden
-			if(empty($row) === false && (int) $row['sys_language_uid'] !== $this->getFrontend()->sys_language_content && (int) $this->getFrontend()->sys_language_contentOL === 1) {
+			if(empty($row) === false && (int) $row['sys_language_uid'] !== $this->getLanguageAspect()->getContentId()) {
 				$row = $this->getFrontend()->sys_page->getRecordOverlay(
 					'sys_category',
 					$row,
-					$this->getFrontend()->sys_language_content,
-					$this->getFrontend()->sys_language_contentOL
+					$this->getLanguageAspect()->getContentId()
 				);
 			}
 
