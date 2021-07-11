@@ -1,0 +1,5 @@
+navigation.sibling < navigation.default
+navigation.sibling {
+	special.value.field = pid
+	as = navigationSibling
+}
