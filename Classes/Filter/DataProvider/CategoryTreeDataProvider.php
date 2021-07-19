@@ -121,6 +121,11 @@ class CategoryTreeDataProvider extends AbstractDataProvider {
 				$children = null;
 			}
 
+			// Einzelwerte nicht mit aufnehmen
+			if(count($children) === 1 && isset($properties['removeSingleValues']) === true && (int) $properties['removeSingleValues'] === 1) {
+				$children = null;
+			}
+
 			// Datenuebernahme
 			$categories[] = [
 				'value' => $row['uid'],
