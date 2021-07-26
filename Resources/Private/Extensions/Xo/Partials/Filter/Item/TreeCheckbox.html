@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:section name="Main">
-	<div class="filter-item filter-item--group filter-item--tree-checkbox{f:if(condition: '{item.resettable} == 1', then: ' filter-item--resettable')}{f:if(condition: '{item.autoSubmit} == 1', then: ' filter-item--auto-submit')}">
+	<div class="filter-item filter-item--group filter-item--tree-checkbox{f:if(condition: '{item.resetable} == 1', then: ' filter-item--resetable')}{f:if(condition: '{item.autoSubmit} == 1', then: ' filter-item--auto-submit')}">
 		<ul class="filter-item--options">
 			<f:for each="{item.data}" as="properties">
 				<f:if condition="{properties.children}">
