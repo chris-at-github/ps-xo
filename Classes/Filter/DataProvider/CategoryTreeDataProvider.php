@@ -122,7 +122,7 @@ class CategoryTreeDataProvider extends AbstractDataProvider {
 			}
 
 			// Einzelwerte nicht mit aufnehmen
-			if(count($children) === 1 && isset($properties['removeSingleValues']) === true && (int) $properties['removeSingleValues'] === 1) {
+			if($children !== null && count($children) === 1 && isset($properties['removeSingleValues']) === true && (int) $properties['removeSingleValues'] === 1) {
 				$children = null;
 			}
 
