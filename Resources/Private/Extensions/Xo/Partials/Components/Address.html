@@ -124,4 +124,46 @@
 			</div>
 		</f:if>
 	</f:section>
+
+	<f:section name="Social">
+		<div class="address--item-group address--social">
+			<header><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_address.social" /></header>
+
+			<f:render section="Facebook" arguments="{_all}" />
+			<f:render section="Twitter" arguments="{_all}" />
+			<f:render section="LinkedIn" arguments="{_all}" />
+			<f:render section="Instagram" arguments="{_all}" />
+			<f:render section="Youtube" arguments="{_all}" />
+		</div>
+	</f:section>
+
+	<f:section name="Facebook">
+		<f:if condition="{address.facebook}">
+			<div class="address--item address--facebook"><f:link.typolink parameter="{address.facebook}">{address.facebook}</f:link.typolink></div>
+		</f:if>
+	</f:section>
+
+	<f:section name="Twitter">
+		<f:if condition="{address.twitter}">
+			<div class="address--item address--twitter"><f:link.typolink parameter="{address.twitter}">{address.twitter}</f:link.typolink></div>
+		</f:if>
+	</f:section>
+
+	<f:section name="LinkedIn">
+		<f:if condition="{address.linkedin}">
+			<div class="address--item address--linkedin"><f:link.typolink parameter="{address.linkedin}">{address.linkedin}</f:link.typolink></div>
+		</f:if>
+	</f:section>
+
+	<f:section name="Instagram">
+		<f:if condition="{address.instagram}">
+			<div class="address--item address--instagram"><f:link.typolink parameter="{address.instagram}">{address.instagram}</f:link.typolink></div>
+		</f:if>
+	</f:section>
+
+	<f:section name="Youtube">
+		<f:if condition="{address.youtube}">
+			<div class="address--item address--youtube"><f:link.typolink parameter="{address.youtube}">{address.youtube}</f:link.typolink></div>
+		</f:if>
+	</f:section>
 </html>

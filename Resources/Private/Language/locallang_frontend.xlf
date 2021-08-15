@@ -94,6 +94,9 @@
 			<trans-unit id="tx_xo_address.openinghours">
 				<source>Opening hours</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_address.social">
+				<source>Follow us</source>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_date.monday">
 				<source>Monday</source>

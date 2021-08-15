@@ -50,6 +50,16 @@ class Address extends \FriendsOfTYPO3\TtAddress\Domain\Model\Address {
 	protected $openingHours = null;
 
 	/**
+	 * @var string
+	 */
+	protected $instagram;
+
+	/**
+	 * @var string
+	 */
+	protected $youtube;
+
+	/**
 	 * __construct
 	 */
 	public function __construct() {
@@ -178,5 +188,33 @@ class Address extends \FriendsOfTYPO3\TtAddress\Domain\Model\Address {
 	 */
 	public function setOpeningHours(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $openingHours) {
 		$this->openingHours = $openingHours;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getInstagram(): string {
+		return $this->instagram;
+	}
+
+	/**
+	 * @param string $instagram
+	 */
+	public function setInstagram(string $instagram): void {
+		$this->instagram = $instagram;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getYoutube(): string {
+		return $this->youtube;
+	}
+
+	/**
+	 * @param string $youtube
+	 */
+	public function setYoutube(string $youtube): void {
+		$this->youtube = $youtube;
 	}
 }

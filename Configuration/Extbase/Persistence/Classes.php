@@ -26,6 +26,12 @@ return [
 			'openingHoursDescription' => [
 				'fieldName' => 'tx_xo_opening_hours_description'
 			],
+			'instagram' => [
+				'fieldName' => 'tx_xo_instagram'
+			],
+			'youtube' => [
+				'fieldName' => 'tx_xo_youtube'
+			],
 		]
 	],
 	\Ps\Xo\Domain\Model\Page::class => [

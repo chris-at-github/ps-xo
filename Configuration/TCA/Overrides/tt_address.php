@@ -109,6 +109,24 @@ $tmpXoTtAddressColumns = [
 			],
 		],
 	],
+	'tx_xo_instagram' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tx_xo_instagram',
+		'config' => [
+			'type' => 'input',
+			'size' => 40,
+			'eval' => 'trim',
+		],
+	],
+	'tx_xo_youtube' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tx_xo_youtube',
+		'config' => [
+			'type' => 'input',
+			'size' => 40,
+			'eval' => 'trim',
+		],
+	],
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_address', $tmpXoTtAddressColumns);
@@ -147,6 +165,10 @@ $GLOBALS['TCA']['tt_address']['palettes']['xoSeo'] = [
 	'showitem' => 'tx_xo_schemaorg_media,'
 ];
 
+$GLOBALS['TCA']['tt_address']['palettes']['xoSocial'] = [
+	'showitem' => 'facebook, --linebreak--, twitter, --linebreak--, linkedin, --linebreak--, tx_xo_instagram, --linebreak--, tx_xo_youtube,'
+];
+
 $GLOBALS['TCA']['tt_address']['palettes']['xoOpeningHours'] = [
 	'showitem' => 'tx_xo_opening_hours, --linebreak--, tx_xo_opening_hours_description, '
 ];
@@ -162,6 +184,8 @@ $GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['show
 		--palette--;;xoOpeningHours,
 	--div--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tab.seo,
 		--palette--;;xoSeo,
+	--div--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.tab.social,
+		--palette--;;xoSocial,		
 	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
 		--palette--;;language,
 	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
@@ -173,5 +197,23 @@ $GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['show
 $GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['columnsOverrides']['name'] = [
 	'config' => [
 		'readOnly' => false,
+	]
+];
+
+$GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['columnsOverrides']['facebook'] = [
+	'config' => [
+		'size' => 40,
+	]
+];
+
+$GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['columnsOverrides']['twitter'] = [
+	'config' => [
+		'size' => 40,
+	]
+];
+
+$GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['columnsOverrides']['linkedin'] = [
+	'config' => [
+		'size' => 40,
 	]
 ];

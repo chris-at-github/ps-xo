@@ -118,6 +118,12 @@
 			<trans-unit id="tx_xo_tt_address.tx_xo_opening_hours">
 				<source>Opening Hours</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.tx_xo_instagram">
+				<source>Instagram</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.tx_xo_youtube">
+				<source>Youtube</source>
+			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.record_type.address">
 				<source>Address</source>
 			</trans-unit>
@@ -129,6 +135,9 @@
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.tab.seo">
 				<source>Seo</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.tab.social">
+				<source>Social Media</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_tt_address.tab.opening_hours">
 				<source>Opening Hours</source>

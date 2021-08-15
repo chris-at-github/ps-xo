@@ -43,7 +43,9 @@ CREATE TABLE tt_address (
 	tx_xo_registered_office varchar(100) DEFAULT '' NOT NULL,
 	tx_xo_vat_number varchar(50) DEFAULT '' NOT NULL,
 	tx_xo_opening_hours_description text,
-	tx_xo_opening_hours int(11) unsigned DEFAULT '0' NOT NULL
+	tx_xo_opening_hours int(11) unsigned DEFAULT '0' NOT NULL,
+	tx_xo_instagram varchar(255) DEFAULT '' NOT NULL,
+	tx_xo_youtube varchar(255) DEFAULT '' NOT NULL
 );
 
 #
