@@ -31,6 +31,9 @@
 			<trans-unit id="tx_xo_sticky.contact">
 				<source>Direct contact</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_sticky.toTop">
+				<source>Scroll to top</source>
+			</trans-unit>
 
 			<trans-unit id="tx_xo.zip">
 				<source>Zip</source>

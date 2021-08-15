@@ -31,6 +31,9 @@
 			<trans-unit id="tx_xo_sticky.contact">
 				<target>Direktkontakt</target>
 			</trans-unit>
+			<trans-unit id="tx_xo_sticky.toTop">
+				<target>Nach oben scrollen</target>
+			</trans-unit>
 
 			<trans-unit id="tx_xo.zip">
 				<target>Postleitzahl</target>
