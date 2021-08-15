@@ -63,6 +63,9 @@
 			<trans-unit id="tx_xo_tt_content.space.medium">
 				<source>Medium</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.space.large">
+				<source>Large</source>
+			</trans-unit>
 			<trans-unit id="tx_xo_tt_content.no_frame">
 				<source>No Frame</source>
 			</trans-unit>
