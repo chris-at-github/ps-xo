@@ -81,6 +81,26 @@ plugin.tx_xo.settings {
 				}
 			}
 		}
+
+		image {
+			pictureMediaQueries {
+				1200 {
+					maxWidth = 560
+					maxHeight = 560
+					cropVariant = desktop
+				}
+				768 {
+					maxWidth = 560
+					maxHeight = 560
+					cropVariant = desktop
+				}
+				0 {
+					maxWidth = 560
+					maxHeight = 560
+					cropVariant = mobile
+				}
+			}
+		}
 	}
 
 	moduleProcessor {

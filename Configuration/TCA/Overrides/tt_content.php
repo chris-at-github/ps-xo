@@ -138,7 +138,7 @@ $GLOBALS['TCA']['tt_content']['palettes']['xoImageAdjustment'] = [
 
 $GLOBALS['TCA']['tt_content']['palettes']['xoImageGallery'] = [
 	'label' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.palette.gallerySettings',
-	'showitem' => 'imageorient, --linebreak--, pi_flexform'
+	'showitem' => 'imageorient,'
 ];
 
 $GLOBALS['TCA']['tt_content']['palettes']['xoImageHidden'] = [
@@ -168,7 +168,7 @@ $GLOBALS['TCA']['tt_content']['types']['textpic']['showitem'] = '
 	--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.images, 
 		image, 
 		--palette--;;xoImageAdjustment,
-		--palette--;;xoImageGallery,
+		--palette--;;xoImageGallery, --linebreak--, pi_flexform,
 	--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance, 
 		--palette--;;frames, 
 		--palette--;;appearanceLinks, 
@@ -215,6 +215,58 @@ $GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['pi_flexfo
 	'FILE:EXT:xo/Configuration/FlexForms/ContentElements/TextMedia.xml',
 	'textpic'
 );
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Image Modul
+
+// Showitem
+$GLOBALS['TCA']['tt_content']['types']['image']['showitem'] = '
+	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+		--palette--;;xoImageHidden,
+		--palette--;;general, 
+		--palette--;;headers, 
+	--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.images, 
+		image, 
+		--palette--;;xoImageAdjustment,
+		--palette--;;xoImageGallery,
+	--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance, 
+		--palette--;;frames, 
+		--palette--;;appearanceLinks, 
+	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, 
+		--palette--;;language, 
+	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, 
+		--palette--;;hidden, 
+		--palette--;;access,
+	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories, 
+	--div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories, 
+	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes, rowDescription, 
+	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended';
+
+// Oeffnen im neuen Lightbox vorruebergehend ausgeblendet
+// @see: https://app.asana.com/0/1184169373040457/1200211172517498/f
+
+// Imageorient
+$GLOBALS['TCA']['tt_content']['types']['image']['columnsOverrides']['imageorient']['config']['items'] = [
+	[
+		'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.0',
+		0,
+		'content-beside-text-img-above-center'
+	],
+	[
+		'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.1',
+		1,
+		'content-beside-text-img-above-right'
+	],
+	[
+		'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.2',
+		2,
+		'content-beside-text-img-above-left'
+	],
+];
+
+// Ueberschreiben von Felddefinitionen
+$GLOBALS['TCA']['tt_content']['types']['image']['columnsOverrides']['image']['config']['maxitems'] = 2;
+$GLOBALS['TCA']['tt_content']['types']['image']['columnsOverrides']['imagecols']['config']['default'] = 1;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // HTML-Erweiterungen von TT-Content
