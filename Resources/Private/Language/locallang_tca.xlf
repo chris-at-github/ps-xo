@@ -26,20 +26,29 @@
 			<trans-unit id="tx_xo_pages.palette.breadcrumb">
 				<source>Breadcrumb</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_pages.palette.sticky">
+				<source>Sticky Elements</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_pages.palette.navigation">
+				<source>Navigation</source>
+			</trans-unit>
 			<trans-unit id="tx_xo_pages.no_breadcrumb">
 				<source>Hide Breadcrumb</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_pages.breadcrumb_hidden">
 				<source>Hide in Breadcrumb</source>
 			</trans-unit>
-			<trans-unit id="tx_xo_pages.sticky">
-				<source>Sticky Elements</source>
-			</trans-unit>
 			<trans-unit id="tx_xo_pages.no_sticky">
 				<source>Hide Sticky Elements</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_pages.no_link">
 				<source>Do not link in navigation</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_pages.tx_xo_navigation_layout">
+				<source>Navigation Layout</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_pages.tx_xo_navigation_content">
+				<source>Navigation Content</source>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_tt_content.layout.1">

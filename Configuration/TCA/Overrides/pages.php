@@ -76,6 +76,33 @@ call_user_func(function($_EXTKEY) {
 				'default' => 0,
 			]
 		],
+		'tx_xo_navigation_layout' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.tx_xo_navigation_layout',
+			'config' => [
+				'type' => 'select',
+				'renderType' => 'selectSingle',
+				'items' => [
+					['', 0],
+				],
+				'size' => 1,
+				'maxitems' => 1,
+				'eval' => ''
+			],
+		],
+		'tx_xo_navigation_content' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.tx_xo_navigation_content',
+			'config' => [
+				'type' => 'group',
+				'internal_type' => 'db',
+				'allowed' => 'tt_content',
+				'foreign_table' => 'tt_content',
+				'MM' => 'tx_xo_pages_content_mm',
+				'maxitems' => 3,
+				'size' => 4,
+			],
+		],
 	];
 
 	// Neue Palette General hinzufuegen
@@ -87,10 +114,15 @@ call_user_func(function($_EXTKEY) {
 		'showitem' => 'tx_xo_no_sticky,'
 	];
 
+	$GLOBALS['TCA']['pages']['palettes']['xoNavigation'] = [
+		'showitem' => 'tx_xo_navigation_layout, --linebreak--, tx_xo_navigation_content,'
+	];
+
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $tmpXoPagesColumns);
 
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages', '--palette--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.palette.breadcrumb;xoBreadcrumb,', '', 'after:layout');
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages', '--palette--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.palette.sticky;xoSticky,', '', 'after:layout');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages', '--palette--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.palette.navigation;xoNavigation,', '', 'after:layout');
 
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages', 'media', '--linebreak--, tx_xo_flash', 'after:media');
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages', 'miscellaneous', 'tx_xo_no_link', 'after:no_search');
