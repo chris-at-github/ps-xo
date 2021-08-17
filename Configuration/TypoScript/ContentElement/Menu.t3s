@@ -1,0 +1,12 @@
+tt_content.menu_pages.dataProcessing {
+	10 {
+		includeNotInMenu = 1
+	}
+
+	100 = Ps\Xo\DataProcessing\ContentElementProcessor
+	100 {
+	}
+
+#	120 = Ps\Xo\DataProcessing\SettingsProcessor
+#	130 = Ps\Xo\DataProcessing\TextMediaProcessor
+}
