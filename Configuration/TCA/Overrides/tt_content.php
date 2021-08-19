@@ -152,6 +152,17 @@ $GLOBALS['TCA']['tt_content']['palettes']['xoFlash'] = [
 
 
 // ---------------------------------------------------------------------------------------------------------------------
+// Header Modul
+$GLOBALS['TCA']['tt_content']['types']['text']['showitem'] .= ', --palette--;;xoFlash,';
+$GLOBALS['TCA']['tt_content']['columns']['subheader']['config'] = [
+	'type' => 'text',
+	'cols' => 50,
+	'rows' => 3,
+	'eval' => 'trim',
+];
+
+
+// ---------------------------------------------------------------------------------------------------------------------
 // Text Modul
 $GLOBALS['TCA']['tt_content']['types']['text']['showitem'] .= ', --palette--;;xoFlash,';
 

@@ -218,3 +218,16 @@ mod.web_layout.BackendLayouts {
 		}
 	}
 [END]
+
+[field('CType') === 'header']
+	TCAdefaults.tt_content {
+		header_layout = 1
+		space_before_class = auto
+		space_after_class = auto
+		layout = 1
+	}
+
+	TCEFORM.tt_content {
+		subheader.disabled = 0
+	}
+[END]

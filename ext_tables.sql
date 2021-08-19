@@ -22,6 +22,7 @@ CREATE TABLE pages (
 # Extend TtContent
 #
 CREATE TABLE tt_content (
+	subheader text,
 	tx_xo_no_frame smallint(5) unsigned DEFAULT '0' NOT NULL,
 	tx_xo_variant int(11) unsigned DEFAULT '0',
 	tx_xo_header_class int(11) unsigned DEFAULT '0',
