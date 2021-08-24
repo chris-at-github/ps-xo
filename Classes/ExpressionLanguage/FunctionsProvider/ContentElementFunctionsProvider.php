@@ -21,6 +21,7 @@ use Symfony\Component\ExpressionLanguage\ExpressionFunction;
 use Symfony\Component\ExpressionLanguage\ExpressionFunctionProviderInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
+use TYPO3\CMS\Core\Database\Query\Restriction\HiddenRestriction;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
@@ -188,6 +189,9 @@ class ContentElementFunctionsProvider implements ExpressionFunctionProviderInter
 
 		/** @var QueryBuilder $queryBuilder */
 		$queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
+
+		$queryBuilder->getRestrictions()
+			->removeByType(HiddenRestriction::class);
 
 		$statement = $queryBuilder->select('*')->from($table)->where(
 			$queryBuilder->expr()->eq('uid', (int) $uid)
