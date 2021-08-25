@@ -28,13 +28,12 @@ namespace Ps\Xo\ViewHelpers\Media;
 
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Resource\FileReference;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
-use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractConditionViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * Ueberprueft ob die uebergebene FileReference ein Bild ist
  */
-class IsImageViewHelper extends AbstractConditionViewHelper {
+class IsImageViewHelper extends AbstractViewHelper {
 
 	/**
 	 * Initialize all arguments with their description and options.
@@ -51,17 +50,17 @@ class IsImageViewHelper extends AbstractConditionViewHelper {
 	 * @param array $arguments ViewHelper arguments to evaluate the condition for this ViewHelper, allows for flexiblity in overriding this method.
 	 * @return bool
 	 */
-	protected static function evaluateCondition($arguments = null) {
+	protected function render($arguments = null) {
 
-		if(is_object($arguments['file']) === false) {
+		if(is_object($this->arguments['file']) === false) {
 			return false;
 		}
 
-		if(($arguments['file'] instanceof File) === false && ($arguments['file'] instanceof FileReference) === false) {
+		if(($this->arguments['file'] instanceof File) === false && ($this->arguments['file'] instanceof FileReference) === false) {
 			return false;
 		}
 
-		$properties = $arguments['file']->getProperties();
+		$properties = $this->arguments['file']->getProperties();
 
 		if(strtolower($properties['extension']) === 'jpg' || strtolower($properties['extension']) === 'png' || strtolower($properties['extension']) === 'gif') {
 			return true;
