@@ -28,6 +28,7 @@ namespace Ps\Xo\ViewHelpers\Media;
 
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Resource\FileReference;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
@@ -54,6 +55,11 @@ class IsImageViewHelper extends AbstractViewHelper {
 
 		if(is_object($this->arguments['file']) === false) {
 			return false;
+		}
+
+		// Vereinheitlichung der Models
+		if($this->arguments['file'] instanceof \TYPO3\CMS\Extbase\Domain\Model\FileReference) {
+			$this->arguments['file'] = $this->arguments['file']->getOriginalResource();
 		}
 
 		if(($this->arguments['file'] instanceof File) === false && ($this->arguments['file'] instanceof FileReference) === false) {
