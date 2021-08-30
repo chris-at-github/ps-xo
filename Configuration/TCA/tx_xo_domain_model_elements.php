@@ -23,7 +23,7 @@ return [
 	'types' => [
 		'0' => [
 			'showitem' => '
-				l10n_diffsource, record_type, --palette--;;header, link, description, media, thumbnail,
+				l10n_diffsource, record_type, --palette--;;header, link, description, media, thumbnail, files,
 				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
 				--palette--;;visibility,
 				--palette--;;access'
@@ -242,6 +242,20 @@ return [
 					'maxitems' => 1
 				]
 			),
+		],
+		'files' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.files',
+			'config' =>
+				\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+					'files',
+					[
+						'appearance' => [
+							'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference'
+						],
+						'maxitems' => 9999
+					]
+				),
 		],
 		'link' => [
 			'exclude' => true,
