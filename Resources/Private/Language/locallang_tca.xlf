@@ -9,6 +9,9 @@
 			<trans-unit id="tx_xo_backend_layout.default.main">
 				<source>Main</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_backend_layout.default.footer">
+				<source>Footer</source>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_sys_category.link">
 				<source>Link</source>
