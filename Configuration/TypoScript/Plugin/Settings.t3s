@@ -2,6 +2,7 @@ plugin.tx_xo.settings {
 	pages {
 		home = {$pages.home}
 		search = {$pages.search}
+		contact = {$pages.contact}
 	}
 
 	googleMaps {

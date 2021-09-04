@@ -89,6 +89,9 @@ pages {
 
 	# cat=pages; type=int+; label=Page id for search results
 	search = 38
+
+	# cat=pages; type=int+; label=Page id for main contact
+	contact = 111
 }
 
 googleAnalytics {
