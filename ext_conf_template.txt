@@ -1,0 +1,2 @@
+# cat=Middleware; type=int+; label=Html Polisher Middleware PageTypes
+htmlPolisherPageTypes = 0

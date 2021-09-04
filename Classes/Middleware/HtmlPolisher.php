@@ -10,6 +10,7 @@ use TYPO3\CMS\Core\Http\HtmlResponse;
 use TYPO3\CMS\Core\Http\NullResponse;
 use TYPO3\CMS\Core\Http\Response;
 use TYPO3\CMS\Core\Http\Stream;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
@@ -22,18 +23,23 @@ class HtmlPolisher implements MiddlewareInterface {
 	 */
 	public function process(ServerRequestInterface $request, RequestHandlerInterface $handler):ResponseInterface {
 		$response = $handler->handle($request);
+		$extensionConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class)->get('xo');
+		$allowedPageTypes = GeneralUtility::intExplode(',', $extensionConfiguration['htmlPolisherPageTypes']);
+		$pageType = (int) GeneralUtility::_GP('type');
 
-		if(!($response instanceof NullResponse) && $GLOBALS['TSFE'] instanceof TypoScriptFrontendController && $GLOBALS['TSFE']->isOutputting()) {
+		if(empty($pageType) === true || in_array($pageType, $allowedPageTypes) === true) {
+			if(!($response instanceof NullResponse) && $GLOBALS['TSFE'] instanceof TypoScriptFrontendController && $GLOBALS['TSFE']->isOutputting()) {
 
-			$body = $response->getBody();
-			$body->rewind();
+				$body = $response->getBody();
+				$body->rewind();
 
-			$html = $response->getBody()->getContents();
-			$html = $this->removeEmptyAttributes($html);
-			$html = $this->removeWhitespaces($html);
-			$html = $this->removeDeprecatedHtml($html);
+				$html = $response->getBody()->getContents();
+				$html = $this->removeEmptyAttributes($html);
+				$html = $this->removeWhitespaces($html);
+				$html = $this->removeDeprecatedHtml($html);
 
-			return new HtmlResponse($html, $response->getStatusCode(), $response->getHeaders());
+				return new HtmlResponse($html, $response->getStatusCode(), $response->getHeaders());
+			}
 		}
 
 		return $response;
