@@ -127,7 +127,7 @@ call_user_func(function($_EXTKEY) {
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages', 'media', '--linebreak--, tx_xo_flash', 'after:media');
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages', 'miscellaneous', 'tx_xo_no_link', 'after:no_search');
 
-	// ---------------------------------------------------------------------------------------------------------------------
+	// -------------------------------------------------------------------------------------------------------------------
 	// Neuen Pagetyp Typolink
 	$pageTypeTypolink = 120;
 
