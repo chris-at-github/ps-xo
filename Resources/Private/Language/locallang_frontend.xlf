@@ -54,6 +54,9 @@
 			<trans-unit id="tx_xo.action.enlarge">
 				<source>Show enlarged view</source>
 			</trans-unit>
+			<trans-unit id="tx_xo.action.readmore">
+				<source>Show enlarged view</source>
+			</trans-unit>
 
 			<trans-unit id="tx_xo.contact">
 				<source>Contact</source>
