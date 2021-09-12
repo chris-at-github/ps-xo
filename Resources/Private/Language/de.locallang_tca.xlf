@@ -35,6 +35,9 @@
 			<trans-unit id="tx_xo_pages.palette.navigation">
 				<target>Navigation</target>
 			</trans-unit>
+			<trans-unit id="tx_xo_pages.palette.taste">
+				<target>Teaser</target>
+			</trans-unit>
 			<trans-unit id="tx_xo_pages.no_breadcrumb">
 				<target>Hide Breadcrumb</target>
 			</trans-unit>

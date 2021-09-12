@@ -120,6 +120,16 @@ call_user_func(function($_EXTKEY) {
 
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $tmpXoPagesColumns);
 
+	$GLOBALS['TCA']['pages']['palettes']['xoTaste'] = [
+		'showitem' => 'media, --linebreak--, abstract,'
+	];
+
+	$GLOBALS['TCA']['pages']['types'][1]['showitem'] = str_replace(['--palette--;;abstract,', '--palette--;;media'], '', $GLOBALS['TCA']['pages']['types'][1]['showitem']);
+
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages', '
+		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended,
+			--palette--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.palette.taste;xoTaste,', '', 'after:content_from_pid');
+
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages', '--palette--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.palette.breadcrumb;xoBreadcrumb,', '', 'after:layout');
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages', '--palette--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.palette.sticky;xoSticky,', '', 'after:layout');
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages', '--palette--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_pages.palette.navigation;xoNavigation,', '', 'after:layout');
