@@ -23,6 +23,18 @@ class Page extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $media = null;
 
 	/**
+	 * @var string
+	 */
+	protected $abstract;
+
+	/**
+	 * Categories
+	 *
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps\Xo\Domain\Model\Category>
+	 */
+	protected $categories;
+
+	/**
 	 * @return string
 	 */
 	public function getTitle(): string {
@@ -48,5 +60,33 @@ class Page extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setMedia(?\TYPO3\CMS\Extbase\Domain\Model\FileReference $media): void {
 		$this->media = $media;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getAbstract(): string {
+		return $this->abstract;
+	}
+
+	/**
+	 * @param string $abstract
+	 */
+	public function setAbstract(string $abstract): void {
+		$this->abstract = $abstract;
+	}
+
+	/**
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+	 */
+	public function getCategories(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
+		return $this->categories;
+	}
+
+	/**
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $categories
+	 */
+	public function setCategories(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $categories): void {
+		$this->categories = $categories;
 	}
 }
