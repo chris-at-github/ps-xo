@@ -45,4 +45,7 @@ return [
 			],
 		]
 	],
+	\Ps\Xo\Domain\Model\Element::class => [
+		'tableName' => 'tx_xo_domain_model_elements'
+	],
 ];
