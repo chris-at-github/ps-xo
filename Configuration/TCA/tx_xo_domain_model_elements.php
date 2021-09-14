@@ -276,6 +276,16 @@ return [
 				'softref' => 'typolink'
 			]
 		],
+		'foreign_uid' => [
+			'config' => [
+				'type' => 'passthrough'
+			],
+		],
+		'foreign_field' => [
+			'config' => [
+				'type' => 'passthrough'
+			],
+		],
 	],
 ];
 

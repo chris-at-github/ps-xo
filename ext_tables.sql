@@ -68,6 +68,9 @@ CREATE TABLE tx_xo_domain_model_elements (
 
 	record_type varchar(100) NOT NULL DEFAULT '0',
 	sorting int(11) DEFAULT '0' NOT NULL,
+
+	foreign_uid int(11) DEFAULT '0' NOT NULL,
+	foreign_field varchar(255) DEFAULT '' NOT NULL,
 	tx_xo_content int(11) DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
