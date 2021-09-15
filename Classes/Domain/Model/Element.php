@@ -17,6 +17,11 @@ class Element extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $title;
 
 	/**
+	 * @var int
+	 */
+	protected $titleType;
+
+	/**
 	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
 	 * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
 	 */
@@ -88,5 +93,19 @@ class Element extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setDescription(string $description): void {
 		$this->description = $description;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getTitleType(): int {
+		return $this->titleType;
+	}
+
+	/**
+	 * @param int $titleType
+	 */
+	public function setTitleType(int $titleType): void {
+		$this->titleType = $titleType;
 	}
 }
