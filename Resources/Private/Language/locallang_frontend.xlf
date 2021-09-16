@@ -55,7 +55,10 @@
 				<source>Show enlarged view</source>
 			</trans-unit>
 			<trans-unit id="tx_xo.action.readmore">
-				<source>Show enlarged view</source>
+				<source>Read more</source>
+			</trans-unit>
+			<trans-unit id="tx_xo.action.loadmore">
+				<source>Load more</source>
 			</trans-unit>
 
 			<trans-unit id="tx_xo.contact">
