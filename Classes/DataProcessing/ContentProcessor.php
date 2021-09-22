@@ -24,6 +24,11 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 class ContentProcessor implements DataProcessorInterface {
 
 	/**
+	 * @var ContentDataProcessor
+	 */
+	protected $contentDataProcessor;
+
+	/**
 	 * Fetches records from the database as an array
 	 *
 	 * @param ContentObjectRenderer $cObj The data of the content element or page
@@ -34,6 +39,11 @@ class ContentProcessor implements DataProcessorInterface {
 	 * @return array the processed data as key/value store
 	 */
 	public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData) {
+
+		if(isset($processorConfiguration['if.']) && $cObj->checkIf($processorConfiguration['if.']) === false) {
+			return $processedData;
+		}
+
 		$processedData[$processorConfiguration['as']] = $cObj->cObjGetSingle('CONTENT', $processorConfiguration);
 		return $processedData;
 	}
