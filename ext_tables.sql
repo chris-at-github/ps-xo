@@ -65,6 +65,7 @@ CREATE TABLE tx_xo_domain_model_elements (
   media int(11) unsigned DEFAULT '0',
   thumbnail int(11) unsigned DEFAULT '0',
 	files int(11) unsigned DEFAULT '0' NOT NULL,
+	content int(11) unsigned DEFAULT '0' NOT NULL,
 
 	record_type varchar(100) NOT NULL DEFAULT '0',
 	sorting int(11) DEFAULT '0' NOT NULL,

@@ -172,9 +172,6 @@ return [
 				'eval' => 'trim',
 			],
 		],
-
-		// ['media']['config']['overrideChildTca']['types']
-
 		'media' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.media',
@@ -275,6 +272,23 @@ return [
 				],
 				'softref' => 'typolink'
 			]
+		],
+		'content' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.content',
+			'config' => [
+				'type' => 'inline',
+				'foreign_table' => 'tt_content',
+				'foreign_field' => 'tx_xo_parent',
+				'maxitems' => 99,
+				'appearance' => [
+					'collapseAll' => 1,
+					'levelLinksPosition' => 'top',
+					'showSynchronizationLink' => 1,
+					'showPossibleLocalizationRecords' => 1,
+					'showAllLocalizationLink' => 1
+				],
+			],
 		],
 		'foreign_uid' => [
 			'config' => [

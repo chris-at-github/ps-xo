@@ -352,6 +352,9 @@
 			<trans-unit id="tx_xo_domain_model_elements.files">
 				<source>Files</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_domain_model_elements.content">
+				<source>Content Elements</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
