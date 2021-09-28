@@ -201,18 +201,13 @@ mod.web_layout.BackendLayouts {
 #	}
 
 	TCEFORM.tt_content {
-#		categories.disabled = 1
-#		linkToTop.disabled = 1
-#		sectionIndex.disabled = 1
-#		layout.disabled = 1
-#		frame_class.disabled = 1
-#		tx_xo_variant.disabled = 1
-#		space_before_class.disabled = 1
-#		space_after_class.disabled = 1
-#		tx_xo_flash.disabled = 1
+		linkToTop.disabled = 1
+		sectionIndex.disabled = 1
+		tx_xo_flash.disabled = 1
 
 		colPos {
-			addItems.5628 = XXX
+			addItems.5628 = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.content
+			removeItems = 0,10,20
 		}
 	}
 [END]
