@@ -82,7 +82,11 @@ class ContentElementProcessor implements DataProcessorInterface {
 	 * @return string
 	 */
 	protected function getFrameOuterClass($processedData, $processorConfiguration, $cObject) {
-		return 'ce-frame--outer';
+		if(empty($processedData['data']['tx_xo_parent']) === true) {
+			return 'ce-frame--outer';
+		}
+
+		return '';
 	}
 
 
