@@ -195,10 +195,10 @@ mod.web_layout.BackendLayouts {
 }
 
 [irre('parent') === 'tx_xo_domain_model_elements' && irre('field') === 'content']
-#	TCAdefaults.tt_content {
-#		header_layout = container
-#		tx_xo_no_frame = 1
-#	}
+	TCAdefaults.tt_content {
+		space_before_class = small
+		space_after_class = auto
+	}
 
 	TCEFORM.tt_content {
 		linkToTop.disabled = 1
@@ -207,7 +207,7 @@ mod.web_layout.BackendLayouts {
 
 		colPos {
 			addItems.5628 = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.content
-			removeItems = 0,10,20
+			removeItems = 0,10
 		}
 	}
 [END]
