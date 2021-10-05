@@ -507,6 +507,3 @@ $GLOBALS['TCA']['tt_content']['columns']['space_after_class']['config']['items']
 // Flexform Address Plugin
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['xo_addressrecord'] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue('xo_addressrecord', 'FILE:EXT:xo/Configuration/FlexForms/Plugins/AddressRecord.xml');
-
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['xo_pageteaser'] = 'pi_flexform';
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue('xo_pageteaser', 'FILE:EXT:xo/Configuration/FlexForms/Plugins/PageTeaser.xml');

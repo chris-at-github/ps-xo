@@ -18,16 +18,6 @@ call_user_func(function($_EXTKEY) {
 		],
 		[]
 	);
-
-	// Configure plugins
-	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-		'Ps.' . $_EXTKEY,
-		'PageTeaser',
-		[
-			'Page' => 'teaser',
-		],
-		[]
-	);
 }, 'xo');
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -79,12 +69,6 @@ $iconRegistry->registerIcon(
 	'xo-ttaddress-address',
 	\TYPO3\CMS\Core\Imaging\IconProvider\FontawesomeIconProvider::class,
 	['name' => 'map-marker']
-);
-
-$iconRegistry->registerIcon(
-	'xo-page-teaser',
-	\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-	['source' => 'EXT:xo/Resources/Public/Icons/xo-content-page-teaser.svg']
 );
 
 // Provide icon for page tree, list view, ... :

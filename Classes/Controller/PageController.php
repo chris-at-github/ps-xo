@@ -26,11 +26,4 @@ class PageController extends ActionController {
 
 		return $options;
 	}
-
-	/**
-	 * @return void
-	 */
-	public function teaserAction() {
-		$this->view->assign('pages', $this->objectManager->get(PageRepository::class)->findAll($this->getDemand()));
-	}
 }

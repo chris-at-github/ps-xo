@@ -52,19 +52,6 @@
 			<trans-unit id="tx_xo_address.display.openingHours">
 				<source>Display opening hours</source>
 			</trans-unit>
-
-			<trans-unit id="tx_xo_page.teaser.title">
-				<source>Page Teaser</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_page.teaser.description">
-				<source>Show title, teaser and images from selected pages.</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_page_teaser.sheet.main">
-				<source>Main</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_page_teaser.records">
-				<source>Pages</source>
-			</trans-unit>
 		</body>
 	</file>
 </xliff>

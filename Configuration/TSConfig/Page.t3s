@@ -155,16 +155,6 @@ mod.wizards.newContentElement.wizardItems {
 					list_type = xo_addressrecord
 				}
 			}
-
-			xo_page_teaser {
-				iconIdentifier = xo-page-teaser
-				title = LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_page.teaser.title
-				description = LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_page.teaser.description
-				tt_content_defValues {
-					CType = list
-					list_type = xo_pageteaser
-				}
-			}
 		}
 
 		show := addToList(xo_address)
