@@ -53,6 +53,24 @@ class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 			$matches['categories'] = $query->logicalOr($or);
 		}
 
+		// NOT
+		if(isset($options['not']) === true) {
+
+			// Einzelne Datensaetze
+			if(isset($options['not']['records']) === true) {
+
+				// siehe oben
+				$query->getQuerySettings()->setLanguageOverlayMode(true);
+
+				// immer als Array auswerten
+				if(is_array($options['not']['records']) === false) {
+					$options['not']['records'] = [$options['not']['records']];
+				}
+
+				$matches['notRecords'] = $query->logicalNot($query->in('uid', $options['not']['records']));
+			}
+		}
+
 		if(isset($options['storagePid']) === true) {
 			$query->getQuerySettings()->setStoragePageIds($options['storagePid']);
 		}
@@ -75,6 +93,10 @@ class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 		if(empty($matches = $this->getMatches($query, $options)) === false) {
 			$query->matching($query->logicalAnd($matches));
 		}
+
+//		$queryParser = $this->objectManager->get(\TYPO3\CMS\Extbase\Persistence\Generic\Storage\Typo3DbQueryParser::class);
+//		\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($queryParser->convertQueryToDoctrineQueryBuilder($query)->getSQL());
+//		\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($queryParser->convertQueryToDoctrineQueryBuilder($query)->getParameters());
 
 		return $query->execute();
 	}
