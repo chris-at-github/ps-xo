@@ -30,6 +30,7 @@ class VideoViewHelper extends AbstractViewHelper {
 	public function initializeArguments() {
 		parent::initializeArguments();
 		$this->registerArgument('options', 'array', 'autoplay, loop, mute', false);
+		$this->registerArgument('additionalAttributes', 'array', 'additionalAttributes', false, []);
 		$this->registerArgument('width', 'string', '', false, 0);
 		$this->registerArgument('height', 'string', '', false, 0);
 		$this->registerArgument('file', 'object', '\TYPO3\CMS\Extbase\Domain\Model\FileReference|TYPO3\CMS\Core\Resource\FileReference', true);
@@ -59,10 +60,6 @@ class VideoViewHelper extends AbstractViewHelper {
 				$options['autoplay'] = $autoplay;
 			}
 		}
-
-//		if(isset($options['additionalAttributes']) && is_array($options['additionalAttributes'])) {
-//			$attributes[] = GeneralUtility::implodeAttributes($options['additionalAttributes'], true, true);
-//		}
 
 //		if (isset($options['data']) && is_array($options['data'])) {
 //			array_walk($options['data'], function (&$value, $key) {
@@ -95,17 +92,11 @@ class VideoViewHelper extends AbstractViewHelper {
 			$attributes[] = 'loop';
 		}
 
-//		if (isset($options['additionalConfig']) && is_array($options['additionalConfig'])) {
-//			foreach ($options['additionalConfig'] as $key => $value) {
-//				if((bool) $value) {
-//					$attributes[] = htmlspecialchars($key);
-//				}
-//			}
-//		}
-
-		foreach(['class', 'dir', 'id', 'lang', 'style', 'title', 'accesskey', 'tabindex', 'onclick', 'controlsList', 'preload'] as $key) {
-			if(empty($options[$key]) === false) {
-				$attributes[] = $key . '="' . htmlspecialchars($options[$key]) . '"';
+		if(empty($this->arguments['additionalAttributes']) === false) {
+			foreach(['class', 'dir', 'id', 'lang', 'style', 'title', 'accesskey', 'tabindex', 'controlsList', 'preload'] as $key) {
+				if(empty($this->arguments['additionalAttributes'][$key]) === false) {
+					$attributes[] = $key . '="' . htmlspecialchars($this->arguments['additionalAttributes'][$key]) . '"';
+				}
 			}
 		}
 
