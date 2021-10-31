@@ -247,13 +247,13 @@
 				<target>Bild nach Text</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_textmedia.header.position">
-				<source>Überschrift Position</source>
+				<target>Überschrift Position</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_textmedia.header.position.above">
-				<source>Oberhalb des Textes / Bildes</source>
+				<target>Oberhalb des Textes / Bildes</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_textmedia.header.position.aside">
-				<source>Oberhalb des Textes neben dem Bild</source>
+				<target>Oberhalb des Textes neben dem Bild</target>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_html.title">
