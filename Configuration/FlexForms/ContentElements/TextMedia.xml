@@ -79,32 +79,45 @@
 				</el>
 			</ROOT>
 		</image>
-		<!--
-			Voruebergehend ausgeblendet: https://app.asana.com/0/1184169373040457/1200211172517511/f
-			<text>
-				<ROOT>
-					<TCEforms>
-						<sheetTitle>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_textmedia.tab.text</sheetTitle>
-					</TCEforms>
-					<type>array</type>
-					<el>
-						<text.align.vertical type="array">
-							<TCEforms>
-								<label>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.vertical</label>
-								<config>
-									<type>select</type>
-									<renderType>selectSingle</renderType>
-									<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
-									<itemsProcConfig>
-										<identifier>modules.textmedia.options.textVerticalAlignment</identifier>
-										<extension>xo</extension>
-									</itemsProcConfig>
-								</config>
-							</TCEforms>
-						</text.align.vertical>
-					</el>
-				</ROOT>
-			</text>
-		-->
+		<text>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_textmedia.tab.text</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<!--
+					<text.align.vertical type="array">
+						<TCEforms>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.vertical</label>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
+								<itemsProcConfig>
+									<identifier>modules.textmedia.options.textVerticalAlignment</identifier>
+									<extension>xo</extension>
+								</itemsProcConfig>
+							</config>
+						</TCEforms>
+					</text.align.vertical>
+					-->
+					<text.header.position type="array">
+						<TCEforms>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_textmedia.header.position</label>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
+								<itemsProcConfig>
+									<identifier>modules.textmedia.options.textHeaderPosition</identifier>
+									<extension>xo</extension>
+								</itemsProcConfig>
+							</config>
+						</TCEforms>
+					</text.header.position>
+				</el>
+			</ROOT>
+		</text>
 	</sheets>
 </T3DataStructure>

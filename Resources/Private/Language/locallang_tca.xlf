@@ -245,6 +245,15 @@
 			<trans-unit id="tx_xo_textmedia.arrangement.after">
 				<source>Image after text</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_textmedia.header.position">
+				<source>Header Position</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_textmedia.header.position.above">
+				<source>Above the text and image</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_textmedia.header.position.aside">
+				<source>Above the text and aside the image</source>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_html.title">
 				<source>HTML File</source>

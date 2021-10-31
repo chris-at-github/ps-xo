@@ -41,6 +41,11 @@ plugin.tx_xo.settings {
 					center = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.center
 					bottom = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.bottom
 				}
+
+				textHeaderPosition {
+					above = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_textmedia.header.position.above
+					aside = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_textmedia.header.position.aside
+				}
 			}
 
 			pictureMediaQueries {
