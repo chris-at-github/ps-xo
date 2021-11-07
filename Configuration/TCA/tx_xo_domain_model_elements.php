@@ -10,6 +10,7 @@ return [
 		'type' => 'record_type',
 		'versioningWS' => true,
 		'languageField' => 'sys_language_uid',
+		'transOrigPointerField' => 'l10n_parent',
 		'transOrigDiffSourceField' => 'l10n_diffsource',
 		'delete' => 'deleted',
 		'enablecolumns' => [
