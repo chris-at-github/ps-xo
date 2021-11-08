@@ -13,6 +13,7 @@ return [
 		'transOrigPointerField' => 'l10n_parent',
 		'transOrigDiffSourceField' => 'l10n_diffsource',
 		'delete' => 'deleted',
+		'sortby' => 'sorting',
 		'enablecolumns' => [
 			'disabled' => 'hidden',
 			'starttime' => 'starttime',
@@ -100,6 +101,10 @@ return [
 		],
 		'hidden' => [
 			'exclude' => true,
+			'l10n_mode' => 'exclude',
+			'behaviour' => [
+				'allowLanguageSynchronization' => true
+			],
 			'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
 			'config' => [
 				'type' => 'check',
@@ -301,7 +306,7 @@ return [
 				'type' => 'passthrough'
 			],
 		],
-	],
+	]
 ];
 
 

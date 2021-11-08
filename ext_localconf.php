@@ -34,6 +34,9 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Frontend\ContentObject\
 // @see: https://docs.typo3.org/c/typo3/cms-core/master/en-us/Changelog/9.0/Feature-82213-NewHookToDetermineIfContentRecordIsUsedUnused.html
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['record_is_used'][] = \Ps\Xo\Service\BackendPageLayoutService::class . '->isContentUsed';
 
+// Automatisches Setzen des Status von Neu auf in Bearbeitung
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][\Ps\Xo\Service\TcaService::class] = \Ps\Xo\Service\TcaService::class;
+
 // ---------------------------------------------------------------------------------------------------------------------
 // FCK Editor
 // Konfiguration fuer den (CKE) Editor im Backend
