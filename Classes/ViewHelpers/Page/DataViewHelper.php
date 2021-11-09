@@ -27,11 +27,13 @@ namespace Ps\Xo\ViewHelpers\Page;
  ***************************************************************/
 
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\Variables\VariableProviderInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Context\Context;
 
 /**
  * Laedt ein Page (Ps\Xo\Domain\Model) Model
@@ -79,17 +81,29 @@ class DataViewHelper extends AbstractViewHelper {
 	 */
 	protected static function getData(int $uid) {
 
+		/** @var Context $context */
+		$context = GeneralUtility::makeInstance(Context::class);
+		$languageId = $context->getPropertyFromAspect('language', 'id');
+
 		/** @var QueryBuilder $queryBuilder */
 		$queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('pages')->createQueryBuilder();
-		$statement = $queryBuilder
+		$queryBuilder
 			->select('*')
-			->from('pages')
-			->where(
-				$queryBuilder->expr()->eq('uid', $queryBuilder->createNamedParameter($uid,\PDO::PARAM_INT))
-			)
-			->execute();
+			->from('pages');
 
-		if(empty($data = $statement->fetch()) === false) {
+		if($languageId === 0) {
+			$queryBuilder->where(
+				$queryBuilder->expr()->eq('uid', $queryBuilder->createNamedParameter($uid,\PDO::PARAM_INT))
+			);
+
+		} else {
+			$queryBuilder->where(
+				$queryBuilder->expr()->eq('sys_language_uid', $queryBuilder->createNamedParameter($languageId,\PDO::PARAM_INT)),
+				$queryBuilder->expr()->eq('l10n_parent', $queryBuilder->createNamedParameter($uid,\PDO::PARAM_INT))
+			);
+		}
+
+		if(empty($data = $queryBuilder->execute()->fetch()) === false) {
 			return $data;
 		}
 
