@@ -5,6 +5,7 @@
 $tmpXoTtContentColumns = [
 	'tx_xo_variant' => [
 		'exclude' => true,
+		'l10n_mode' => 'exclude',
 		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.variant',
 		'config' => [
 			'type' => 'select',
@@ -16,6 +17,7 @@ $tmpXoTtContentColumns = [
 	],
 	'tx_xo_header_class' => [
 		'exclude' => true,
+		'l10n_mode' => 'exclude',
 		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.header_class',
 		'config' => [
 			'type' => 'select',
@@ -32,6 +34,7 @@ $tmpXoTtContentColumns = [
 	],
 	'tx_xo_no_frame' => [
 		'exclude' => true,
+		'l10n_mode' => 'exclude',
 		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.no_frame',
 		'config' => [
 			'type' => 'check',
@@ -500,6 +503,17 @@ $GLOBALS['TCA']['tt_content']['types']['xo_logo']['columnsOverrides']['image']['
 // Zuruecksetzen der Werte Space Before / After, damit diese komplett ueber PageTs befuellt werden koennen
 $GLOBALS['TCA']['tt_content']['columns']['space_before_class']['config']['items'] = [];
 $GLOBALS['TCA']['tt_content']['columns']['space_after_class']['config']['items'] = [];
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Uebersetzungsverhalten von bestehenden Feldern anpassen
+$GLOBALS['TCA']['tt_content']['columns']['header_layout']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['tt_content']['columns']['layout']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['tt_content']['columns']['frame_class']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['tt_content']['columns']['tx_xo_variant']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['tt_content']['columns']['space_before_class']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['tt_content']['columns']['space_after_class']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['tt_content']['columns']['sectionIndex']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['tt_content']['columns']['linkToTop']['l10n_mode'] = 'exclude';
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Plugin Einstellungen
