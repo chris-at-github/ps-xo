@@ -36,6 +36,7 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php'][
 
 // Automatisches Setzen des Status von Neu auf in Bearbeitung
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][\Ps\Xo\Service\TcaService::class] = \Ps\Xo\Service\TcaService::class;
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][\Ps\Xo\Hooks\LocalizeInlineRecordsHook::class] = \Ps\Xo\Hooks\LocalizeInlineRecordsHook::class;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // FCK Editor
