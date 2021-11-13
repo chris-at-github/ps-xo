@@ -92,7 +92,11 @@ class LocalizeInlineRecordsHook {
 				$GLOBALS['TCA'][$table]['columns'][$fieldName]['config']['type'] === 'inline' &&
 				empty($record[$fieldName]) === false
 			) {
-				$l10nExludeFields[$fieldName] = $fieldConfiguration['config'];
+
+				$defaultFieldConfiguration = $GLOBALS['TCA'][$table]['columns'][$fieldName]['config'];
+				ArrayUtility::mergeRecursiveWithOverrule($defaultFieldConfiguration, $fieldConfiguration['config']);
+
+				$l10nExludeFields[$fieldName] = $defaultFieldConfiguration;
 			}
 		}
 
