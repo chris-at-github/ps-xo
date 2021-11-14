@@ -13,11 +13,11 @@ use TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 
 /**
- * TYPO3 verarbeitet SysFileReference Felder die per columnsOverride auf l10n_mode=exclude gesetzt sind nur beim
+ * 1. TYPO3 verarbeitet SysFileReference Felder die per columnsOverride auf l10n_mode=exclude gesetzt sind nur beim
  * ersten Uebersetzen korrekt. Loescht man diese Datensaetze in der Hauptsprache werden diese im Anschluss nicht wieder
  * angelegt
  */
-class LocalizeInlineRecordsHook {
+class LocalizeL10nExcludeHook {
 
 	/**
 	 * @param DataHandler $dataHandler

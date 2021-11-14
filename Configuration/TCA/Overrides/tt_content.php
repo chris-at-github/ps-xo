@@ -202,6 +202,7 @@ $GLOBALS['TCA']['tt_content']['types']['textpic']['showitem'] = '
 // Imageorient
 $GLOBALS['TCA']['tt_content']['columns']['imageorient']['config']['default'] = 25;
 $GLOBALS['TCA']['tt_content']['columns']['imageorient']['config']['items'] = [];
+
 $GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['imageorient']['config']['items'] = [
 	[
 		'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.9',
@@ -215,20 +216,24 @@ $GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['imageorie
 	]
 ];
 
-// Ueberschreiben von Felddefinitionen
-$GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['image']['config']['maxitems'] = 2;
-$GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['imagecols']['config']['default'] = 1;
-
-// Flexform Einstellungen anhand der Bildausrichtungen
-$GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['imageorient']['onChange'] = 'reload';
-$GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['pi_flexform']['displayCond'] = 'FIELD:imageorient:IN:25,26';
-
 // Flexform
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
 	'*',
 	'FILE:EXT:xo/Configuration/FlexForms/ContentElements/TextMedia.xml',
 	'textpic'
 );
+
+// Ueberschreiben von Felddefinitionen
+$GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['image']['config']['maxitems'] = 2;
+$GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['image']['l10n_mode'] = 'exclude';
+
+$GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['imagecols']['config']['default'] = 1;
+
+// Flexform Einstellungen anhand der Bildausrichtungen
+$GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['imageorient']['onChange'] = 'reload';
+
+$GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['pi_flexform']['displayCond'] = 'FIELD:imageorient:IN:25,26';
+$GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['pi_flexform']['l10n_mode'] = 'exclude';
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Image Modul
@@ -514,6 +519,9 @@ $GLOBALS['TCA']['tt_content']['columns']['space_before_class']['l10n_mode'] = 'e
 $GLOBALS['TCA']['tt_content']['columns']['space_after_class']['l10n_mode'] = 'exclude';
 $GLOBALS['TCA']['tt_content']['columns']['sectionIndex']['l10n_mode'] = 'exclude';
 $GLOBALS['TCA']['tt_content']['columns']['linkToTop']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['tt_content']['columns']['imageorient']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['tt_content']['columns']['imagewidth']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['tt_content']['columns']['imageheight']['l10n_mode'] = 'exclude';
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Plugin Einstellungen
