@@ -14,8 +14,10 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
 
 /**
  * 1. TYPO3 verarbeitet SysFileReference Felder die per columnsOverride auf l10n_mode=exclude gesetzt sind nur beim
- * ersten Uebersetzen korrekt. Loescht man diese Datensaetze in der Hauptsprache werden diese im Anschluss nicht wieder
- * angelegt
+ * 	ersten Uebersetzen korrekt. Loescht man diese Datensaetze in der Hauptsprache werden diese im Anschluss nicht
+ * 	wieder angelegt
+ * 2. Einfache Felder wie z.B. die per columnsOverride auf l10n_mode=exclude gesetzt werden ebenfalls nicht dauerhaft
+ * 	angepasst
  */
 class LocalizeL10nExcludeHook {
 
@@ -89,12 +91,13 @@ class LocalizeL10nExcludeHook {
 				isset($fieldConfiguration['l10n_mode']) === true &&
 				$fieldConfiguration['l10n_mode'] === 'exclude' &&
 				isset($GLOBALS['TCA'][$table]['columns'][$fieldName]) === true &&
-				$GLOBALS['TCA'][$table]['columns'][$fieldName]['config']['type'] === 'inline' &&
 				empty($record[$fieldName]) === false
 			) {
-
 				$defaultFieldConfiguration = $GLOBALS['TCA'][$table]['columns'][$fieldName]['config'];
-				ArrayUtility::mergeRecursiveWithOverrule($defaultFieldConfiguration, $fieldConfiguration['config']);
+
+				if(isset($fieldConfiguration['config']) === true) {
+					ArrayUtility::mergeRecursiveWithOverrule($defaultFieldConfiguration, $fieldConfiguration['config']);
+				}
 
 				$l10nExludeFields[$fieldName] = $defaultFieldConfiguration;
 			}
@@ -121,7 +124,13 @@ class LocalizeL10nExcludeHook {
 
 		// 4. alle l10n Exclude Fields durchlaufen und uebersetzen falls notwendig
 		foreach($l10nExludeFields as $fieldName => $fieldConfiguration) {
-			$this->localizeField($fieldName, $fieldConfiguration, $table, $uid, $translations, $dataHandler);
+
+			if($fieldConfiguration['type'] === 'inline') {
+				$this->localizeInlineField($fieldName, $fieldConfiguration, $table, $uid, $translations, $dataHandler);
+
+			} elseif($fieldConfiguration['type'] === 'flex') {
+				$this->localizeSimpleField($fieldName, $fieldConfiguration, $table, $uid, $translations, $dataHandler);
+			}
 		}
 	}
 
@@ -134,7 +143,7 @@ class LocalizeL10nExcludeHook {
 	 * @param DataHandler $dataHandler
 	 * @return boolean|void
 	 */
-	protected function localizeField($fieldName, $fieldConfiguration, $table, $uid, $translations, DataHandler &$dataHandler) {
+	protected function localizeInlineField($fieldName, $fieldConfiguration, $table, $uid, $translations, DataHandler &$dataHandler) {
 
 		// 1. laesst sich diese Tabelle ueberhaupt uebersetzen
 		if(isset($GLOBALS['TCA'][$fieldConfiguration['foreign_table']]['ctrl']['transOrigPointerField']) === false) {
@@ -201,6 +210,42 @@ class LocalizeL10nExcludeHook {
 						->insert($fieldConfiguration['foreign_table'], $insert);
 				}
 			}
+		}
+	}
+
+	/**
+	 * @param string $fieldName
+	 * @param array $fieldConfiguration
+	 * @param string $table
+	 * @param array $translations
+	 * @param int $uid
+	 * @param DataHandler $dataHandler
+	 * @return boolean|void
+	 */
+	protected function localizeSimpleField($fieldName, $fieldConfiguration, $table, $uid, $translations, DataHandler &$dataHandler) {
+
+		// aktuellen Wert aus der Hauptsprache laden
+		$queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable($table)->createQueryBuilder();
+		$statement  = $queryBuilder
+			->select($fieldName)
+			->from($table)
+			->where(
+				$queryBuilder->expr()->in('uid', $uid),
+				$queryBuilder->expr()->eq('sys_language_uid', 0)
+			)
+			->execute();
+		$data = $statement->fetch();
+
+		foreach($translations as $translation) {
+			$queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
+			$queryBuilder
+				->update($table)
+				->where(
+					$queryBuilder->expr()->eq($GLOBALS['TCA'][$table]['ctrl']['transOrigPointerField'], $queryBuilder->createNamedParameter($uid, \PDO::PARAM_INT)),
+					$queryBuilder->expr()->eq('sys_language_uid', $queryBuilder->createNamedParameter($translation['sys_language_uid'], \PDO::PARAM_INT))
+				)
+				->set($fieldName, $data[$fieldName])
+				->execute();
 		}
 	}
 }
