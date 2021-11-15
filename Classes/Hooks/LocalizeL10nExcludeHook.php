@@ -62,6 +62,11 @@ class LocalizeL10nExcludeHook {
 		$typeField = $GLOBALS['TCA'][$table]['ctrl']['type'];
 		$transOrigPointerField = $GLOBALS['TCA'][$table]['ctrl']['transOrigPointerField'];
 
+		// Nur mit tatsaechlichen IDs weiter arbeiten
+		if(strpos($uid, 'NEW') !== false) {
+			$uid = $dataHandler->substNEWwithIDs[$uid];
+		}
+
 		// 1. gibt es ueberhaupt l10n_mode Felder, die ueber columnsOverride definiert sind
 		//
 		// gibt es fuer diese Tabelle ueberhaupt eine Typ-Definition?
