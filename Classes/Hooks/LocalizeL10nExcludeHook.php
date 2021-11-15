@@ -230,7 +230,7 @@ class LocalizeL10nExcludeHook {
 			->select($fieldName)
 			->from($table)
 			->where(
-				$queryBuilder->expr()->in('uid', $uid),
+				$queryBuilder->expr()->in('uid', $queryBuilder->createNamedParameter($uid, \PDO::PARAM_INT)),
 				$queryBuilder->expr()->eq('sys_language_uid', 0)
 			)
 			->execute();
