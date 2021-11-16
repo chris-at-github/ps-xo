@@ -524,6 +524,15 @@ $GLOBALS['TCA']['tt_content']['columns']['imagewidth']['l10n_mode'] = 'exclude';
 $GLOBALS['TCA']['tt_content']['columns']['imageheight']['l10n_mode'] = 'exclude';
 
 // ---------------------------------------------------------------------------------------------------------------------
+// Pi Flexform nachbearbeiten
+
+// sinnloses Label entfernen -> weitere Infos stehen in den Tabs
+$GLOBALS['TCA']['tt_content']['columns']['pi_flexform']['label'] = ' ';
+
+// Verhindert das ausblenden Flexforms, die per l10n_mode auf exclude gestellt wurden
+$GLOBALS['TCA']['tt_content']['columns']['pi_flexform']['l10n_display'] = null;
+
+// ---------------------------------------------------------------------------------------------------------------------
 // Plugin Einstellungen
 
 // Flexform Address Plugin
