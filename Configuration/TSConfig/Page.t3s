@@ -5,6 +5,9 @@ TCEFORM {
 		author_email.disabled = 1
 		lastUpdated.disabled = 1
 		newUntil.disabled = 1
+		fe_login_mode.disabled = 1
+		editlock.disabled = 1
+		tsconfig_includes.disabled = 1
 
 		layout {
 			altLabels {
