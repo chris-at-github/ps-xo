@@ -196,3 +196,17 @@ call_user_func(function($_EXTKEY) {
 	);
 
 }, 'xo');
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Uebersetzungsverhalten von bestehenden Feldern anpassen
+$GLOBALS['TCA']['pages']['columns']['categories']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['pages']['columns']['nav_hide']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['pages']['columns']['tx_xo_navigation_layout']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['pages']['columns']['tx_xo_navigation_content']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['pages']['columns']['tx_xo_no_sticky']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['pages']['columns']['tx_xo_no_breadcrumb']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['pages']['columns']['tx_xo_breadcrumb_hidden']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['pages']['columns']['content_from_pid']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['pages']['columns']['sitemap_changefreq']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['pages']['columns']['sitemap_priority']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['pages']['columns']['exclude_slug_for_subpages']['l10n_mode'] = 'exclude';
