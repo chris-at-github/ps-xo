@@ -65,7 +65,7 @@ class Page extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @return string
 	 */
-	public function getAbstract(): string {
+	public function getAbstract(): ?string {
 		return $this->abstract;
 	}
 
