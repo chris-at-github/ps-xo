@@ -14,6 +14,11 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 	/**
+	 * @var array
+	 */
+	protected $defaultOrderings = ['sorting' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING];
+
+	/**
 	 * @var \TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface
 	 */
 	protected $querySettings = null;
@@ -33,6 +38,9 @@ class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 			// @see: https://docs.typo3.org/m/typo3/book-extbasefluid/master/en-us/9-CrosscuttingConcerns/1-localizing-and-internationalizing-an-extension.html#typo3-v9-and-higher
 			$query->getQuerySettings()->setRespectSysLanguage(false);
 			$query->getQuerySettings()->setLanguageOverlayMode(true);
+		}
+
+		if(isset($options['records']) === true) {
 
 			// immer als Array auswerten
 			if(is_array($options['records']) === false) {
@@ -40,6 +48,16 @@ class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 			}
 
 			$matches['records'] = $query->in('uid', $options['records']);
+		}
+
+		if(isset($options['parent']) === true) {
+
+			// immer als Array auswerten
+			if(is_array($options['parent']) === false) {
+				$options['parent'] = [$options['parent']];
+			}
+
+			$matches['parent'] = $query->in('pid', $options['parent']);
 		}
 
 		// Kategorien (SysCategory)
@@ -69,6 +87,10 @@ class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 				$matches['notRecords'] = $query->logicalNot($query->in('uid', $options['not']['records']));
 			}
+		}
+
+		if(isset($options['hiddenEnabled']) === true && $options['hiddenEnabled'] === false) {
+			$matches['hiddenEnabled'] = $query->equals('navHide', false);
 		}
 
 		if(isset($options['storagePid']) === true) {
