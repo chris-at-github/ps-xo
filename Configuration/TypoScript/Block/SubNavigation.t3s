@@ -6,12 +6,12 @@ block.subNavigation {
 
 	1 = TMENU
 	1 {
-		wrap = <nav class="navigation"><ul> | </ul></nav>
+		wrap = <nav class="navigation"><ul>|</ul></nav>
 
 		NO {
-			wrapItemAndSub = <li> | </li>
+			wrapItemAndSub = <li>|</li>
 			ATagBeforeWrap = 1
-			linkWrap = <span> | </span>
+			linkWrap = <span>|</span>
 		}
 	}
 }
