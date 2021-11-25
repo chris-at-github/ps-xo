@@ -1,0 +1,17 @@
+// Aufruf ueber Fluid ueber <f:cObject typoscriptObjectPath="block.teaserSubNavigation" data="{parent: page.uid}" />
+block.subNavigation = HMENU
+block.subNavigation {
+	special = directory
+	special.value.field = parent
+
+	1 = TMENU
+	1 {
+		wrap = <nav class="navigation"><ul> | </ul></nav>
+
+		NO {
+			wrapItemAndSub = <li> | </li>
+			ATagBeforeWrap = 1
+			linkWrap = <span> | </span>
+		}
+	}
+}
