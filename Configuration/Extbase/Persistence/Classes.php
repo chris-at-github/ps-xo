@@ -35,7 +35,12 @@ return [
 		]
 	],
 	\Ps\Xo\Domain\Model\Page::class => [
-		'tableName' => 'pages'
+		'tableName' => 'pages',
+		'properties' => [
+			'noLink' => [
+				'fieldName' => 'tx_xo_no_link'
+			],
+		]
 	],
 	\Ps\Xo\Domain\Model\Category::class => [
 		'tableName' => 'sys_category',

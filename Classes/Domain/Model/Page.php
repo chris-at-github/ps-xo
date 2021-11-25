@@ -35,6 +35,11 @@ class Page extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $categories;
 
 	/**
+	 * @var boolean
+	 */
+	protected $noLink = false;
+
+	/**
 	 * @return string
 	 */
 	public function getTitle(): string {
@@ -88,5 +93,30 @@ class Page extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setCategories(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $categories): void {
 		$this->categories = $categories;
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function isNoLink(): bool {
+		return $this->noLink;
+	}
+
+	/**
+	 * @param bool $noLink
+	 */
+	public function setNoLink(bool $noLink): void {
+		$this->noLink = $noLink;
+	}
+
+	/**
+	 * @return boolean
+	 */
+	public function isLinkable(): bool {
+		if($this->isNoLink() === true) {
+			return false;
+		}
+
+		return true;
 	}
 }
