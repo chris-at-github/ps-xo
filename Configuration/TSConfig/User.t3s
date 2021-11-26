@@ -2,3 +2,17 @@ admPanel.override.tsdebug.forceTemplateParsing = 1
 options.clearCache.pages = 1
 options.createFoldersInEB = 1
 options.defaultUploadFolder = 1:/
+
+TCEMAIN {
+	# Besitzergruppe festlegen (ID der Gruppe „Seitenbaumrechte“):
+	permissions.groupid = 2
+
+	# Rechte Besitzer:
+	permissions.user = show, editcontent, edit, delete, new
+
+	# Rechte Besitzergruppe:
+	permissions.group = show, editcontent, edit, delete, new
+
+	# Rechte "everybody" (kann ungesetzt bleiben):
+	permissions.everybody =
+}
