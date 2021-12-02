@@ -19,7 +19,7 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
-class ModuleProcessor implements DataProcessorInterface {
+class ModuleProcessor extends AbstractProcessor implements DataProcessorInterface {
 
 	/**
 	 * @var int
