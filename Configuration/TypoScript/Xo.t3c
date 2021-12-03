@@ -122,11 +122,17 @@ styles.content.textmedia {
 
 moduleProcessor {
 
+	# cat=moduleProcessor; type=boolean; label=Activate module css integration
+	cssModuleEnabled = 1
+
 	# cat=moduleProcessor; type=int+; label=Number of modules which CSS would be inline
 	cssModuleInlineLimit = 2
 
 	# cat=moduleProcessor; type=boolean; label=Use, if exists, a minified version (.min.css) in production environment
 	cssUseMinifyOnProduction = 1
+
+	# cat=moduleProcessor; type=boolean; label=Activate module js integration
+	jsModuleEnabled = 1
 
 	# cat=moduleProcessor; type=int+; label=Number of modules which JS would be inline
 	jsModuleInlineLimit = 0

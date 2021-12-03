@@ -122,6 +122,10 @@ class ModuleProcessor extends AbstractProcessor implements DataProcessorInterfac
 		$inlineResourceService = GeneralUtility::makeInstance(InlineResourceService::class);
 		$settings = $this->getSettings();
 
+		if((int) $settings['moduleProcessor']['cssModuleEnabled'] === 0) {
+			return;
+		}
+
 		foreach($importCssFiles as $importCssFile) {
 
 			$name = md5($importCssFile);
@@ -156,6 +160,10 @@ class ModuleProcessor extends AbstractProcessor implements DataProcessorInterfac
 		/** @var InlineResourceService $inlineResourceService */
 		$inlineResourceService = GeneralUtility::makeInstance(InlineResourceService::class);
 		$settings = $this->getSettings();
+
+		if((int) $settings['moduleProcessor']['jsModuleEnabled'] === 0) {
+			return;
+		}
 
 		foreach($importJsFiles as $importJsFile => $importJsFileOptions) {
 

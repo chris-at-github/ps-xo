@@ -110,8 +110,13 @@ plugin.tx_xo.settings {
 	}
 
 	moduleProcessor {
+		cssModuleEnabled = {$moduleProcessor.cssModuleEnabled}
 		cssModuleInlineLimit = {$moduleProcessor.cssModuleInlineLimit}
 		cssUseMinifyOnProduction = {$moduleProcessor.cssUseMinifyOnProduction}
+
+		jsModuleEnabled = {$moduleProcessor.jsModuleEnabled}
+		jsModuleInlineLimit = {$moduleProcessor.jsModuleInlineLimit}
+		jsUseMinifyOnProduction = {$moduleProcessor.jsUseMinifyOnProduction}
 	}
 }
 
