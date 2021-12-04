@@ -106,6 +106,27 @@
 			<trans-unit id="tx_xo_tt_content.flash">
 				<target>Flash</target>
 			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.palette.print">
+				<target>Druckeinstellungen</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.tx_xo_print_break">
+				<target>Seitenumbruch</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.tx_xo_print_break.before">
+				<target>Davor</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.tx_xo_print_break.after">
+				<target>Danach</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.tx_xo_print_visibility">
+				<target>Sichtbarkeit</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.tx_xo_print_visibility.hidden">
+				<target>Ausblendet im Druck</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.tx_xo_print_visibility.visible">
+				<target>Nur im Druck sichtbar</target>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_tt_address.address">
 				<target>Adresse</target>

@@ -15,7 +15,9 @@ CREATE TABLE pages (
 	tx_xo_no_link smallint(5) unsigned DEFAULT '0' NOT NULL,
 	tx_xo_breadcrumb_hidden smallint(5) unsigned DEFAULT '0' NOT NULL,
 	tx_xo_navigation_layout varchar(50) DEFAULT '0' NOT NULL,
-	tx_xo_navigation_content int(11) unsigned NOT NULL DEFAULT '0'
+	tx_xo_navigation_content int(11) unsigned NOT NULL DEFAULT '0',
+	tx_xo_print_break varchar(20) DEFAULT '' NOT NULL,
+	tx_xo_print_visibility varchar(20) DEFAULT '' NOT NULL
 );
 
 #

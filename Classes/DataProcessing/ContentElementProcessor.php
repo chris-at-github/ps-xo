@@ -23,6 +23,7 @@ class ContentElementProcessor implements DataProcessorInterface {
 		$frameClasses = [];
 		$frameTypeClass = $this->getFrameTypeClass($processedData, $processorConfiguration, $cObject);
 		$frameOuterClass = $this->getFrameOuterClass($processedData, $processorConfiguration, $cObject);
+		$framePrintClass = $this->getFramePrintClass($processedData, $processorConfiguration, $cObject);
 
 		if(empty($frameTypeClass) === false) {
 			$frameClasses[] = $frameTypeClass;
@@ -30,6 +31,10 @@ class ContentElementProcessor implements DataProcessorInterface {
 
 		if(empty($frameOuterClass) === false) {
 			$frameClasses[] = $frameOuterClass;
+		}
+
+		if(empty($framePrintClass) === false) {
+			$frameClasses[] = $framePrintClass;
 		}
 
 		return $frameClasses;
@@ -87,6 +92,28 @@ class ContentElementProcessor implements DataProcessorInterface {
 		}
 
 		return '';
+	}
+
+	/**
+	 * CSS Klassen zur Drucksteuerung
+	 *
+	 * @param array $processedData Daten des Contentelements aus der Datenbank
+	 * @param array $processorConfiguration Konfiguration aus Typoscript
+	 * @param ContentObjectRenderer $cObject
+	 * @return string
+	 */
+	protected function getFramePrintClass($processedData, $processorConfiguration, $cObject) {
+		$printClass = '';
+
+		if(empty($processedData['data']['tx_xo_print_break']) === false) {
+			$printClass .= ' ce-frame--print-break-' .  $processedData['data']['tx_xo_print_break'];
+		}
+
+		if(empty($processedData['data']['tx_xo_print_visibility']) === false) {
+			$printClass .= ' ce-frame--print-visibility-' .  $processedData['data']['tx_xo_print_visibility'];
+		}
+
+		return trim($printClass);
 	}
 
 

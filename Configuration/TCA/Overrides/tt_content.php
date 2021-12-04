@@ -119,6 +119,34 @@ $tmpXoTtContentColumns = [
 			],
 		],
 	],
+	'tx_xo_print_break' => [
+		'exclude' => true,
+		'l10n_mode' => 'exclude',
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.tx_xo_print_break',
+		'config' => [
+			'type' => 'select',
+			'renderType' => 'selectSingle',
+			'items' => [
+				['LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value', ''],
+				['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.tx_xo_print_break.before', 'before'],
+				['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.tx_xo_print_break.after', 'after'],
+			],
+		]
+	],
+	'tx_xo_print_visibility' => [
+		'exclude' => true,
+		'l10n_mode' => 'exclude',
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.tx_xo_print_visibility',
+		'config' => [
+			'type' => 'select',
+			'renderType' => 'selectSingle',
+			'items' => [
+				['LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value', ''],
+				['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.tx_xo_print_visibility.hidden', 'hidden'],
+				['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.tx_xo_print_visibility.visible', 'visible'],
+			],
+		]
+	],
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tmpXoTtContentColumns);
@@ -153,6 +181,11 @@ $GLOBALS['TCA']['tt_content']['palettes']['xoFlash'] = [
 	'showitem' => 'tx_xo_flash,'
 ];
 
+$GLOBALS['TCA']['tt_content']['palettes']['xoPrint'] = [
+	'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.palette.print',
+	'showitem' => 'tx_xo_print_break, tx_xo_print_visibility,'
+];
+
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Header Modul
@@ -185,6 +218,7 @@ $GLOBALS['TCA']['tt_content']['types']['textpic']['showitem'] = '
 		--palette--;;xoImageGallery, --linebreak--, pi_flexform,
 	--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance, 
 		--palette--;;frames, 
+		--palette--;;xoPrint, 
 		--palette--;;appearanceLinks, 
 	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, 
 		--palette--;;language, 
