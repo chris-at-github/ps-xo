@@ -154,6 +154,7 @@ $tmpXoTtContentColumns = [
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'frames', 'tx_xo_variant', 'after:frame_class');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'headers', 'tx_xo_header_class', 'after:header_layout');
 
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', '--palette--;;xoPrint', '', 'after:space_after_class');
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Weitere Paletten in TT-Content
@@ -217,8 +218,8 @@ $GLOBALS['TCA']['tt_content']['types']['textpic']['showitem'] = '
 		--palette--;;xoImageAdjustment,
 		--palette--;;xoImageGallery, --linebreak--, pi_flexform,
 	--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance, 
-		--palette--;;frames, 
-		--palette--;;xoPrint, 
+		--palette--;;frames,
+		--palette--;;xoPrint,
 		--palette--;;appearanceLinks, 
 	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, 
 		--palette--;;language, 
