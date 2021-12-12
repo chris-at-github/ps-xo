@@ -14,10 +14,6 @@
 				layout: data.header_layout,
 				positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}',
 				default: settings.defaultHeaderType}" />
-
-			<f:render partial="Header/Date" arguments="{
-				date: data.date,
-				positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}'}" />
 		</header>
 	</f:if>
 </f:if>
