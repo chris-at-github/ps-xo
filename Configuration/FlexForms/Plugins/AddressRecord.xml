@@ -47,7 +47,7 @@
 								<renderType>selectSingle</renderType>
 								<items type="array">
 									<numIndex index="1" type="array">
-										<numIndex index="0" />
+										<numIndex index="0"></numIndex>
 										<numIndex index="1">default</numIndex>
 									</numIndex>
 									<numIndex index="2" type="array">
@@ -71,8 +71,9 @@
 							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.display.name</label>
 							<displayCond>
 								<OR>
-									<numIndex index="0">FIELD:settings.partial:=:default</numIndex>
-									<numIndex index="1">FIELD:settings.partial:=:imprint</numIndex>
+									<numIndex index="0">FIELD:settings.partial:=:</numIndex>
+									<numIndex index="1">FIELD:settings.partial:=:default</numIndex>
+									<numIndex index="2">FIELD:settings.partial:=:imprint</numIndex>
 								</OR>
 							</displayCond>
 							<config>
@@ -91,8 +92,9 @@
 							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.display.location</label>
 							<displayCond>
 								<OR>
-									<numIndex index="0">FIELD:settings.partial:=:default</numIndex>
-									<numIndex index="1">FIELD:settings.partial:=:imprint</numIndex>
+									<numIndex index="0">FIELD:settings.partial:=:</numIndex>
+									<numIndex index="1">FIELD:settings.partial:=:default</numIndex>
+									<numIndex index="2">FIELD:settings.partial:=:imprint</numIndex>
 								</OR>
 							</displayCond>
 							<config>
@@ -111,8 +113,9 @@
 							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.display.contact</label>
 							<displayCond>
 								<OR>
-									<numIndex index="0">FIELD:settings.partial:=:default</numIndex>
-									<numIndex index="1">FIELD:settings.partial:=:imprint</numIndex>
+									<numIndex index="0">FIELD:settings.partial:=:</numIndex>
+									<numIndex index="1">FIELD:settings.partial:=:default</numIndex>
+									<numIndex index="2">FIELD:settings.partial:=:imprint</numIndex>
 								</OR>
 							</displayCond>
 							<config>
@@ -131,8 +134,9 @@
 							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.display.openingHours</label>
 							<displayCond>
 								<OR>
-									<numIndex index="0">FIELD:settings.partial:=:default</numIndex>
-									<numIndex index="1">FIELD:settings.partial:=:imprint</numIndex>
+									<numIndex index="0">FIELD:settings.partial:=:</numIndex>
+									<numIndex index="1">FIELD:settings.partial:=:default</numIndex>
+									<numIndex index="2">FIELD:settings.partial:=:imprint</numIndex>
 								</OR>
 							</displayCond>
 							<config>
