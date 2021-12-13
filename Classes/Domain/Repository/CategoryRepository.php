@@ -16,7 +16,7 @@ class CategoryRepository extends Repository {
 		$matches = parent::getMatches($query, $options);
 
 		if(isset($options['parent']) === true) {
-			$matches[] = $query->equals('parent', (int) $options['parent']);
+			$matches['parent'] = $query->equals('parent', (int) $options['parent']);
 		}
 
 		return $matches;
