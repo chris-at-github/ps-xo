@@ -90,6 +90,7 @@ return [
 		],
 		'record_type' => [
 			'exclude' => 0,
+			'l10n_mode' => 'exclude',
 			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type',
 			'config' => [
 				'type' => 'select',
@@ -153,6 +154,7 @@ return [
 		],
 		'title_type' => [
 			'exclude' => true,
+			'l10n_mode' => 'exclude',
 			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.title_type',
 			'config' => [
 				'type' => 'select',

@@ -28,6 +28,10 @@ class LocalizeL10nExcludeHook {
 		if(isset($dataHandler->datamap['tt_content']) === true) {
 			$this->localizeRecords($dataHandler->datamap['tt_content'], 'tt_content', $dataHandler);
 		}
+
+		if(isset($dataHandler->datamap['tx_xo_domain_model_elements']) === true) {
+			$this->localizeRecords($dataHandler->datamap['tx_xo_domain_model_elements'], 'tx_xo_domain_model_elements', $dataHandler);
+		}
 	}
 
 	/**
