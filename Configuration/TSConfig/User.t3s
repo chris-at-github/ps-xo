@@ -3,6 +3,7 @@ options.clearCache.pages = 1
 options.clearCache.all = 1
 options.createFoldersInEB = 1
 options.defaultUploadFolder = 1:/
+options.file_list.uploader.defaultAction = Replace
 
 TCEMAIN {
 	# Besitzergruppe festlegen (ID der Gruppe „Seitenbaumrechte“):
@@ -17,3 +18,8 @@ TCEMAIN {
 	# Rechte "everybody" (kann ungesetzt bleiben):
 	permissions.everybody =
 }
+
+[backend.user.isAdmin]
+	options.pageTree.showPageIdWithTitle = 1
+[END]
+

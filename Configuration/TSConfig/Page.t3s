@@ -187,6 +187,21 @@ mod.web_layout.BackendLayouts {
 	}
 }
 
+// @see: https://docs.typo3.org/m/typo3/reference-tsconfig/main/en-us/PageTsconfig/Mod.html
+mod.web_layout {
+	localization.enableCopy = 0
+}
+
+TCEMAIN {
+	// @see: https://docs.typo3.org/m/typo3/reference-tsconfig/main/en-us/PageTsconfig/TceMain.html#translatetomessage
+	translateToMessage = %s
+
+	// @see: https://www.ophidia.net/typo3-verhindern-dass-eine-uebersetzung-beim-kopieren-auf-hidden-gesetzt-wird/
+	pages.tt_content.disableHideAtCopy = 1
+	table.tt_content.disableHideAtCopy = 1
+	tx_xo_domain_model_elements.tt_content.disableHideAtCopy = 1
+}
+
 [irre('parent') === 'tx_xo_domain_model_elements' && irre('field') === 'content']
 	TCAdefaults.tt_content {
 		space_before_class = small
