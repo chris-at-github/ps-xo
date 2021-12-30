@@ -106,11 +106,11 @@ class ContentElementProcessor implements DataProcessorInterface {
 		$printClass = '';
 
 		if(empty($processedData['data']['tx_xo_print_break']) === false) {
-			$printClass .= ' ce-frame--print-break-' .  $processedData['data']['tx_xo_print_break'];
+			$printClass .= ' print--break-' .  $processedData['data']['tx_xo_print_break'];
 		}
 
 		if(empty($processedData['data']['tx_xo_print_visibility']) === false) {
-			$printClass .= ' ce-frame--print-visibility-' .  $processedData['data']['tx_xo_print_visibility'];
+			$printClass .= ' print--visibility-' .  $processedData['data']['tx_xo_print_visibility'];
 		}
 
 		return trim($printClass);
