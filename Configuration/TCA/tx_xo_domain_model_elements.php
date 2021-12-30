@@ -25,10 +25,12 @@ return [
 	'types' => [
 		'0' => [
 			'showitem' => '
-				l10n_diffsource, record_type, --palette--;;header, link, description, media, thumbnail, files,
+					l10n_diffsource, record_type, --palette--;;header, link, description, media, thumbnail, files,
 				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
-				--palette--;;visibility,
-				--palette--;;access'
+					--palette--;;visibility,
+					--palette--;;access,
+				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+					--palette--;;print,'
 		],
 	],
 	'palettes' => [
@@ -39,7 +41,11 @@ return [
 			'showitem' => 'hidden,',
 		],
 		'access' => [
-			'showitem' => 'starttime,endtime,',
+			'showitem' => 'starttime, endtime,',
+		],
+		'print' => [
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_print.palette',
+			'showitem' => 'print_break, print_visibility,',
 		],
 	],
 	'columns' => [
@@ -307,6 +313,34 @@ return [
 			'config' => [
 				'type' => 'passthrough'
 			],
+		],
+		'print_break' => [
+			'exclude' => true,
+			'l10n_mode' => 'exclude',
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_print.break',
+			'config' => [
+				'type' => 'select',
+				'renderType' => 'selectSingle',
+				'items' => [
+					['LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value', ''],
+					['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_print.break.before', 'before'],
+					['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_print.break.after', 'after'],
+				],
+			]
+		],
+		'print_visibility' => [
+			'exclude' => true,
+			'l10n_mode' => 'exclude',
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_print.visibility',
+			'config' => [
+				'type' => 'select',
+				'renderType' => 'selectSingle',
+				'items' => [
+					['LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value', ''],
+					['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_print.visibility.hidden', 'hidden'],
+					['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_print.visibility.visible', 'visible'],
+				],
+			]
 		],
 	]
 ];

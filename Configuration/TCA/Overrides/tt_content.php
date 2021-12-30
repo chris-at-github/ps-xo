@@ -122,28 +122,28 @@ $tmpXoTtContentColumns = [
 	'tx_xo_print_break' => [
 		'exclude' => true,
 		'l10n_mode' => 'exclude',
-		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.tx_xo_print_break',
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_print.break',
 		'config' => [
 			'type' => 'select',
 			'renderType' => 'selectSingle',
 			'items' => [
 				['LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value', ''],
-				['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.tx_xo_print_break.before', 'before'],
-				['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.tx_xo_print_break.after', 'after'],
+				['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_print.break.before', 'before'],
+				['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_print.break.after', 'after'],
 			],
 		]
 	],
 	'tx_xo_print_visibility' => [
 		'exclude' => true,
 		'l10n_mode' => 'exclude',
-		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.tx_xo_print_visibility',
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_print.visibility',
 		'config' => [
 			'type' => 'select',
 			'renderType' => 'selectSingle',
 			'items' => [
 				['LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value', ''],
-				['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.tx_xo_print_visibility.hidden', 'hidden'],
-				['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.tx_xo_print_visibility.visible', 'visible'],
+				['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_print.visibility.hidden', 'hidden'],
+				['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_print.visibility.visible', 'visible'],
 			],
 		]
 	],
@@ -183,7 +183,7 @@ $GLOBALS['TCA']['tt_content']['palettes']['xoFlash'] = [
 ];
 
 $GLOBALS['TCA']['tt_content']['palettes']['xoPrint'] = [
-	'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.palette.print',
+	'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_print.palette',
 	'showitem' => 'tx_xo_print_break, tx_xo_print_visibility,'
 ];
 

@@ -105,27 +105,6 @@
 			<trans-unit id="tx_xo_tt_content.flash">
 				<source>Flash</source>
 			</trans-unit>
-			<trans-unit id="tx_xo_tt_content.palette.print">
-				<source>Print settings</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_tt_content.tx_xo_print_break">
-				<source>Page Break</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_tt_content.tx_xo_print_break.before">
-				<source>Before</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_tt_content.tx_xo_print_break.after">
-				<source>After</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_tt_content.tx_xo_print_visibility">
-				<source>Visibility</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_tt_content.tx_xo_print_visibility.hidden">
-				<source>Hidden for print</source>
-			</trans-unit>
-			<trans-unit id="tx_xo_tt_content.tx_xo_print_visibility.visible">
-				<source>Visible only for print</source>
-			</trans-unit>
 
 			<trans-unit id="tx_xo_tt_address.address">
 				<source>Address</source>
@@ -193,6 +172,28 @@
 			</trans-unit>
 			<trans-unit id="tx_xo_domain_model_openinghours.close_at">
 				<source>Close At</source>
+			</trans-unit>
+
+			<trans-unit id="tx_xo_print.palette">
+				<source>Print settings</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_print.break">
+				<source>Page Break</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_print.break.before">
+				<source>Before</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_print.break.after">
+				<source>After</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_print.visibility">
+				<source>Visibility</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_print.visibility.hidden">
+				<source>Hidden for print</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_print.visibility.visible">
+				<source>Visible only for print</source>
 			</trans-unit>
 
 			<trans-unit id="tx_xo_align.horizontal">
