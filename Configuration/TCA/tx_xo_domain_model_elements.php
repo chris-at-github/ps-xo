@@ -20,7 +20,8 @@ return [
 			'endtime' => 'endtime',
 		],
 		'searchFields' => 'title, description',
-		'iconfile' => 'EXT:xo/Resources/Public/Icons/xo-content-elements.svg'
+		'iconfile' => 'EXT:xo/Resources/Public/Icons/xo-content-elements.svg',
+		'hideTable' => true,
 	],
 	'types' => [
 		'0' => [
