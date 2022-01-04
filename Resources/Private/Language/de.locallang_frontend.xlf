@@ -21,6 +21,9 @@
 			<trans-unit id="tx_xo_search.close">
 				<target>Suche schließen</target>
 			</trans-unit>
+			<trans-unit id="tx_xo_search.reset">
+				<target>Suche zurücksetzen</target>
+			</trans-unit>
 			<trans-unit id="tx_xo_search.placeholder">
 				<target>Suchbegriff eingeben</target>
 			</trans-unit>

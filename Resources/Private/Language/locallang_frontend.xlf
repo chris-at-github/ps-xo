@@ -21,6 +21,9 @@
 			<trans-unit id="tx_xo_search.close">
 				<source>Close search</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_search.reset">
+				<source>Reset search</source>
+			</trans-unit>
 			<trans-unit id="tx_xo_search.placeholder">
 				<source>Enter search term</source>
 			</trans-unit>
