@@ -56,6 +56,9 @@ $tmpXoTtContentColumns = [
 					'appearance' => [
 						'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference'
 					],
+					'behaviour' => [
+						'allowLanguageSynchronization' => true
+					],
 					'maxitems' => 9999
 				]
 			),
