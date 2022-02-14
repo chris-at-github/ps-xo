@@ -263,7 +263,7 @@ $GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['imageorie
 
 // Ueberschreiben von Felddefinitionen
 $GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['image']['config']['maxitems'] = 2;
-$GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['image']['l10n_mode'] = 'exclude';
+//$GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['image']['l10n_mode'] = 'exclude';
 
 $GLOBALS['TCA']['tt_content']['types']['textpic']['columnsOverrides']['imagecols']['config']['default'] = 1;
 
@@ -560,6 +560,7 @@ $GLOBALS['TCA']['tt_content']['columns']['linkToTop']['l10n_mode'] = 'exclude';
 $GLOBALS['TCA']['tt_content']['columns']['imageorient']['l10n_mode'] = 'exclude';
 $GLOBALS['TCA']['tt_content']['columns']['imagewidth']['l10n_mode'] = 'exclude';
 $GLOBALS['TCA']['tt_content']['columns']['imageheight']['l10n_mode'] = 'exclude';
+$GLOBALS['TCA']['tt_content']['columns']['image']['config']['behaviour']['allowLanguageSynchronization'] = true;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Pi Flexform nachbearbeiten
