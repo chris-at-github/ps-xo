@@ -111,7 +111,7 @@
 				<target>%d. %B %Y</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_date.format.time">
-				<target>%k:%M</target>
+				<target>G:i</target>
 			</trans-unit>
 			<trans-unit id="tx_xo_date.monday">
 				<target>Montag</target>

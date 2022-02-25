@@ -111,7 +111,7 @@
 				<source>%d %m, %Y</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_date.format.time">
-				<source>%l:%M %p</source>
+				<source>g:i A</source>
 			</trans-unit>
 			<trans-unit id="tx_xo_date.monday">
 				<source>Monday</source>
