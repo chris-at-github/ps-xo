@@ -91,6 +91,7 @@ class CategoryDataProvider extends AbstractDataProvider {
 			$data['data'][] = [
 				'value' => $row['uid'],
 				'label' => $row['title'],
+				'description' => $row['description'],
 				'selected' => $selected,
 				'identifier' => 'fi' . md5($data['identifier'] . $row['uid']),
 				'sorting' => $sorting

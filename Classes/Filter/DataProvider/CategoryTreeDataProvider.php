@@ -130,6 +130,7 @@ class CategoryTreeDataProvider extends AbstractDataProvider {
 			$categories[] = [
 				'value' => $row['uid'],
 				'label' => $row['title'],
+				'description' => $row['description'],
 				'selected' => $selected,
 				'identifier' => $identifier,
 				'sorting' => $sorting,
