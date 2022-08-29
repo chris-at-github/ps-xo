@@ -200,6 +200,26 @@ $GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['colu
 	]
 ];
 
+$GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['columnsOverrides']['description'] = [
+	'config' => [
+		'richtextConfiguration' => 'xoDefault',
+	]
+];
+
+//'config' => [
+//	'type' => 'text',
+//	'enableRichtext' => true,
+//	'richtextConfiguration' => 'xoMinimal',
+//	'fieldControl' => [
+//		'fullScreenRichtext' => [
+//			'disabled' => false,
+//		],
+//	],
+//	'cols' => 40,
+//	'rows' => 15,
+//	'eval' => 'trim',
+//],
+
 $GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['columnsOverrides']['facebook'] = [
 	'config' => [
 		'size' => 40,
