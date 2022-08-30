@@ -22,6 +22,18 @@
 		</f:if>
 	</f:section>
 
+	<f:section name="Description">
+		<f:if condition="{address.description}">
+			<div class="address--item address--description"><f:format.html>{address.description}</f:format.html></div>
+		</f:if>
+	</f:section>
+
+	<f:section name="AdditionalDescription">
+		<f:if condition="{address.additionalDescription}">
+			<div class="address--item address--additional-description"><f:format.html>{address.additionalDescription}</f:format.html></div>
+		</f:if>
+	</f:section>
+
 	<f:section name="Location">
 		<f:if condition="{address.address}">
 			<div class="address--item address--street">{address.address}</div>

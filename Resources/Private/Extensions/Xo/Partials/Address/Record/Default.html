@@ -5,6 +5,10 @@
 			<f:render partial="Components/Address" section="Name" arguments="{_all}" />
 		</f:if>
 
+		<f:if condition="{settings.display.description} == 1">
+			<f:render partial="Components/Address" section="Description" arguments="{_all}" />
+		</f:if>
+
 		<f:if condition="{settings.display.location} == 1">
 			<div class="address--item-group">
 				<f:render partial="Components/Address" section="Location" arguments="{_all}" />
@@ -19,9 +23,15 @@
 			<f:render partial="Components/Address" section="OpeningHours" arguments="{_all}" />
 		</f:if>
 
+		<f:if condition="{settings.display.description} == 1">
+			<f:render partial="Components/Address" section="AdditionalDescription" arguments="{_all}" />
+		</f:if>
+
 		<f:if condition="{settings.structuredDataType} == 'localBusiness'">
 			<xo:jsonLd.localBusiness address="{address}" />
 		</f:if>
+
+		<f:debug>{_all}</f:debug>
 	</address>
 </f:section>
 </html>

@@ -127,6 +127,21 @@ $tmpXoTtAddressColumns = [
 			'eval' => 'trim',
 		],
 	],
+	'tx_xo_additional_description' => [
+		'exclude' => 1,
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.additional_description',
+		'config' => [
+			'type' => 'text',
+			'enableRichtext' => true,
+			'richtextConfiguration' => 'xoDefault',
+			'fieldControl' => [
+				'fullScreenRichtext' => [
+					'disabled' => false,
+				],
+			],
+			'eval' => 'trim',
+		],
+	],
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_address', $tmpXoTtAddressColumns);
@@ -174,7 +189,7 @@ $GLOBALS['TCA']['tt_address']['palettes']['xoOpeningHours'] = [
 ];
 
 $GLOBALS['TCA']['tt_address']['types'][\Ps\Xo\Domain\Model\Address::class]['showitem'] = '
-		--palette--;xoGeneral, record_type, name, description, image,
+		--palette--;xoGeneral, record_type, name, description, tx_xo_additional_description, image,
 		--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.address;xoAddress,
 		--palette--;LLL:EXT:tt_address/Resources/Private/Language/locallang_db.xlf:tt_address_palette.contact;xoContact,
 		--palette--;LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_address.palette.legal;xoLegal,

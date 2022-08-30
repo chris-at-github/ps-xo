@@ -87,6 +87,27 @@
 							</config>
 						</TCEforms>
 					</settings.display.name>
+					<settings.display.description type="array">
+						<TCEforms>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.display.description</label>
+							<displayCond>
+								<OR>
+									<numIndex index="0">FIELD:settings.partial:=:</numIndex>
+									<numIndex index="1">FIELD:settings.partial:=:default</numIndex>
+									<numIndex index="2">FIELD:settings.partial:=:imprint</numIndex>
+								</OR>
+							</displayCond>
+							<config>
+								<type>check</type>
+								<default>1</default>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.display.description>
 					<settings.display.location type="array">
 						<TCEforms>
 							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.display.location</label>

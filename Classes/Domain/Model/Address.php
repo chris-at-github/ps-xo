@@ -60,6 +60,11 @@ class Address extends \FriendsOfTYPO3\TtAddress\Domain\Model\Address {
 	protected $youtube;
 
 	/**
+	 * @var string
+	 */
+	protected $additionalDescription;
+
+	/**
 	 * __construct
 	 */
 	public function __construct() {
@@ -216,5 +221,19 @@ class Address extends \FriendsOfTYPO3\TtAddress\Domain\Model\Address {
 	 */
 	public function setYoutube(string $youtube): void {
 		$this->youtube = $youtube;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getAdditionalDescription(): string {
+		return $this->additionalDescription;
+	}
+
+	/**
+	 * @param string $additionalDescription
+	 */
+	public function setAdditionalDescription(string $additionalDescription): void {
+		$this->additionalDescription = $additionalDescription;
 	}
 }

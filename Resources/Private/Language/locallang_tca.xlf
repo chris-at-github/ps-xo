@@ -157,6 +157,9 @@
 			<trans-unit id="tx_xo_tt_address.tab.opening_hours">
 				<source>Opening Hours</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_tt_address.additional_description">
+				<source>Additional Description</source>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_domain_model_openinghours">
 				<source>Opening Hours</source>

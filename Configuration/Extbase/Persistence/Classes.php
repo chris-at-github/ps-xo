@@ -32,6 +32,9 @@ return [
 			'youtube' => [
 				'fieldName' => 'tx_xo_youtube'
 			],
+			'additionalDescription' => [
+				'fieldName' => 'tx_xo_additional_description'
+			],
 		]
 	],
 	\Ps\Xo\Domain\Model\Page::class => [

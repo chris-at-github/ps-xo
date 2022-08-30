@@ -52,6 +52,9 @@
 			<trans-unit id="tx_xo_address.display.openingHours">
 				<source>Display opening hours</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_address.display.description">
+				<source>Display description</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
