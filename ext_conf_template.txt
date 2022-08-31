@@ -1,2 +1,5 @@
 # cat=Middleware; type=int+; label=Html Polisher Middleware PageTypes
-htmlPolisherPageTypes = 0
+htmlPolisherPageTypes =
+
+# cat=Category; type=int+; label=Parent category (UID) for opening hours section; description=Child categories of master category are selectable
+openingHoursSectionCategory =
