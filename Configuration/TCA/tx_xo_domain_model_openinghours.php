@@ -5,7 +5,7 @@ $extensionConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\
 return [
 	'ctrl' => [
 		'title' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_openinghours',
-		'label' => 'section',
+		'label' => 'category',
 		'label_alt' => 'days',
 		'label_alt_force' => true,
 		'tstamp' => 'tstamp',
@@ -26,7 +26,7 @@ return [
 		'iconfile' => 'EXT:xo/Resources/Public/Icons/xo-opening-hours.svg'
 	],
 	'types' => [
-		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, days, days_title, open_at, close_at, section, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, days, days_title, open_at, close_at, category, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
 	],
 	'columns' => [
 		'sys_language_uid' => [
@@ -161,10 +161,10 @@ return [
 				'default' => null
 			]
 		],
-		'section' => [
+		'category' => [
 			'exclude' => true,
 			'l10n_mode' => 'exclude',
-			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_openinghours.section',
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_openinghours.category',
 			'config' => [
 				'type' => 'select',
 				'renderType' => 'selectSingle',
@@ -174,7 +174,7 @@ return [
 				'size' => 1,
 				'maxitems' => 1,
 				'foreign_table' => 'sys_category',
-				'foreign_table_where' => ' AND sys_category.sys_language_uid IN (-1, 0) and sys_category.parent = ' . (int) $extensionConfiguration['openingHoursSectionCategory'] . ' ORDER BY sys_category.sorting ASC',
+				'foreign_table_where' => ' AND sys_category.sys_language_uid IN (-1, 0) and sys_category.parent = ' . (int) $extensionConfiguration['openingHoursCategory'] . ' ORDER BY sys_category.sorting ASC',
 			],
 		],
 		'address' => [

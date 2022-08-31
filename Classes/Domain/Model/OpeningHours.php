@@ -37,6 +37,11 @@ class OpeningHours extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $closeAt = null;
 
 	/**
+	 * @var \Ps\Xo\Domain\Model\Category
+	 */
+	protected $category = null;
+
+	/**
 	 * @return string $days
 	 */
 	public function getDays() {
@@ -122,5 +127,19 @@ class OpeningHours extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setDaysTitle(string $daysTitle): void {
 		$this->daysTitle = $daysTitle;
+	}
+
+	/**
+	 * @return Category|null
+	 */
+	public function getCategory(): ?Category {
+		return $this->category;
+	}
+
+	/**
+	 * @param Category|null $category
+	 */
+	public function setCategory(?Category $category): void {
+		$this->category = $category;
 	}
 }

@@ -107,25 +107,42 @@
 			<div class="address--item-group address--opening-hours">
 				<header><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_address.openinghours" /></header>
 
-				<f:render section="OpeningHoursDays" arguments="{_all}" />
+				<f:render section="OpeningHoursDaysGrouped" arguments="{_all}" />
 				<f:render section="OpeningHoursDescription" arguments="{_all}" />
+
+				<f:comment>
+					<f:render section="OpeningHoursDays" arguments="{openingHours: address.openingHours}" />
+				</f:comment>
 			</div>
 		</f:if>
 	</f:section>
 
 	<f:section name="OpeningHoursDays">
-		<f:if condition="{address.openingHours}">
+		<f:if condition="{openingHours}">
 			<dl class="address--item address--opening-hours-days">
-				<f:for each="{address.openingHours}" as="openingHours">
+				<f:for each="{openingHours}" as="openingHour">
 					<dt>
-						<f:if condition="{openingHours.daysTitle}">
-							<f:then>{openingHours.daysTitle}</f:then>
-							<f:else>{openingHours.daysListing -> xo:iterable.implode(separator: ', ')}</f:else>
+						<f:if condition="{openingHour.daysTitle}">
+							<f:then>{openingHour.daysTitle}</f:then>
+							<f:else>{openingHour.daysListing -> xo:iterable.implode(separator: ', ')}</f:else>
 						</f:if>
 					</dt>
-					<dd><f:format.date format="H:i">{openingHours.openAt}</f:format.date> - <f:format.date format="H:i">{openingHours.closeAt}</f:format.date></dd>
+					<dd><f:format.date format="H:i">{openingHour.openAt}</f:format.date> - <f:format.date format="H:i">{openingHour.closeAt}</f:format.date></dd>
 				</f:for>
 			</dl>
+		</f:if>
+	</f:section>
+
+	<f:section name="OpeningHoursDaysGrouped">
+		<f:if condition="{address.openingHours}">
+			<ul class="address--item-group address--opening-hours-grouped">
+				<xo:grouped each="{address.openingHours}" groupBy="category" groupKey="category" as="openingHours">
+					<li>
+						<div class="address--opening-hours-grouped-title">{category.title}</div>
+						<f:render section="OpeningHoursDays" arguments="{openingHours: openingHours}" />
+					</li>
+				</xo:grouped>
+			</ul>
 		</f:if>
 	</f:section>
 
