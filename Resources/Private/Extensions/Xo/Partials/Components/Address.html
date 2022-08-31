@@ -45,6 +45,14 @@
 				<span class="address--item address--city">{address.city}</span>
 			</div>
 		</f:if>
+
+		<f:render section="GoogleMapsLink" arguments="{_all}" />
+	</f:section>
+
+	<f:section name="GoogleMapsLink">
+		<f:if condition="{address.latitude} && {address.longitude}">
+			<div class="address--item address--google-maps-link"><a href="https://www.google.com/maps/place/{address.latitude},{address.longitude}" target="_blank"><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_address.google-maps-link" /></a></div>
+		</f:if>
 	</f:section>
 
 	<f:section name="Contact">
