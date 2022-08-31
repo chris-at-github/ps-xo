@@ -36,6 +36,14 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 class LocalBusinessViewHelper extends AddressViewHelper {
 
 	/**
+	 * Initialize all arguments with their description and options.
+	 */
+	public function initializeArguments() {
+		parent::initializeArguments();
+		$this->registerArgument('mainOpeningHoursCategory', 'int', 'Main uid for category for opening hours', false, 0);
+	}
+
+	/**
 	 * @return string
 	 */
 	public function render() {
@@ -91,6 +99,16 @@ class LocalBusinessViewHelper extends AddressViewHelper {
 
 			/** @var OpeningHours $openingHours */
 			foreach($this->getAddress()->getOpeningHours() as $openingHours) {
+
+				$category = 0;
+				if($openingHours->getCategory() !== null) {
+					$category = $openingHours->getCategory()->getUid();
+				}
+
+				if((int) $this->arguments['mainOpeningHoursCategory'] !== $category) {
+					continue;
+				}
+
 				$specification = [
 					'@type' => 'OpeningHoursSpecification',
 					'opens' => $openingHours->getOpenAt()->format('H:i'),

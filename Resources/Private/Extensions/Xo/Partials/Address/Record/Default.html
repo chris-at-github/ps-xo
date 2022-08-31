@@ -28,8 +28,10 @@
 		</f:if>
 
 		<f:if condition="{settings.structuredDataType} == 'localBusiness'">
-			<xo:jsonLd.localBusiness address="{address}" />
+			<xo:jsonLd.localBusiness address="{address}" mainOpeningHoursCategory="{settings.modules.xo.mainOpeningHoursCategory}" />
 		</f:if>
+
+		<f:debug>{settings}</f:debug>
 	</address>
 </f:section>
 </html>

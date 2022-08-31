@@ -11,6 +11,10 @@ plugin.tx_xo.settings {
 	}
 
 	modules {
+		xo {
+			mainOpeningHoursCategory = {$addresses.mainOpeningHoursCategory}
+		}
+
 		textmedia {
 			options {
 				columns {
