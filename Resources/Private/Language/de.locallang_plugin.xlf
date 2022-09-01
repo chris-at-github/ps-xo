@@ -27,6 +27,9 @@
 			<trans-unit id="tx_xo_address.structuredDataType.localBusiness">
 				<target>Local Business</target>
 			</trans-unit>
+			<trans-unit id="tx_xo_address.structuredDataMainOpeningHoursCategory">
+				<target>Hauptkategorie Öffnungszeiten</target>
+			</trans-unit>
 			<trans-unit id="tx_xo_address.partial">
 				<target>Ansicht</target>
 			</trans-unit>

@@ -200,6 +200,26 @@
 							</config>
 						</TCEforms>
 					</settings.structuredDataType>
+					<settings.structuredDataMainOpeningHoursCategory>
+						<TCEforms>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.structuredDataMainOpeningHoursCategory</label>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<itemsProcFunc>Ps\Xo\Service\TcaService->getCategoriesByExtensionConfigurationIdentifier</itemsProcFunc>
+								<itemsProcConfig>
+									<identifier>openingHoursCategory</identifier>
+									<extension>xo</extension>
+								</itemsProcConfig>
+								<items type="array">
+									<numIndex index="1" type="array">
+										<numIndex index="0"></numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.structuredDataMainOpeningHoursCategory>
 				</el>
 			</ROOT>
 		</seo>

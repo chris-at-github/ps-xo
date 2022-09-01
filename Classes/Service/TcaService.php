@@ -2,8 +2,10 @@
 
 namespace Ps\Xo\Service;
 
+use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 class TcaService {
@@ -52,6 +54,34 @@ class TcaService {
 			}
 
 			$configuration['items'][] = [$label, $value];
+		}
+	}
+
+	/**
+	 * Liefert eine Kategorie-Liste (Unterkategorien) anhand eines Keys aus der Extension Konfiguration, in dem die UID
+	 * der Eltern-Kategorie hinterlegt ist
+	 *
+	 * @param array $configuration Current field configuration
+	 * @internal
+	 */
+	public function getCategoriesByExtensionConfigurationIdentifier(array &$configuration) {
+		$extensionConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class)->get($configuration['config']['itemsProcConfig']['extension']);
+		$parentCategoryUid = $extensionConfiguration[$configuration['config']['itemsProcConfig']['identifier']];
+
+		/** @var \TYPO3\CMS\Core\Database\Query\QueryBuilder  $queryBuilder */
+		$queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('sys_category')->createQueryBuilder();
+		$query = $queryBuilder->select('*')
+			->from('sys_category')
+			->where(
+				$queryBuilder->expr()->in('sys_language_uid', [0, -1]),
+				$queryBuilder->expr()->eq('parent', $queryBuilder->createNamedParameter($parentCategoryUid, \PDO::PARAM_INT))
+			)
+			->orderBy('sorting', 'asc');
+
+		$statement = $query->execute();
+
+		while($row = $statement->fetch()) {
+			$configuration['items'][] = [$row['title'], $row['uid']];
 		}
 	}
 }
