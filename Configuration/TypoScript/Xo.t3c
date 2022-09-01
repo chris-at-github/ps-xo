@@ -114,9 +114,6 @@ addresses {
 
 	# cat=addresses; type=string; label=ID of provider data record (tt_address)
 	provider = 14
-
-	# cat=addresses; type=string; label=Main uid for category for opening hours
-	mainOpeningHoursCategory = 196
 }
 
 styles.content.textmedia {
