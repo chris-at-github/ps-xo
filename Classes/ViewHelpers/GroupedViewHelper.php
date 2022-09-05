@@ -31,6 +31,8 @@ class GroupedViewHelper extends AbstractViewHelper {
 		$this->registerArgument('as', 'string', 'The name of the iteration variable', true);
 		$this->registerArgument('groupBy', 'string', 'Group by this property', true);
 		$this->registerArgument('groupKey', 'string', 'The name of the variable to store the current group', false, 'groupKey');
+		$this->registerArgument('iteration', 'string', 'The name of the variable to store iteration information (index, cycle, isFirst, isLast, isEven, isOdd)');
+		$this->registerArgument('removeEmpty', 'boolean', 'remove elements with empty group key', false, false);
 	}
 
 	/**
@@ -57,15 +59,38 @@ class GroupedViewHelper extends AbstractViewHelper {
 			$each = iterator_to_array($each);
 		}
 
-		$groups = static::groupElements($each, $groupBy);
+		$groups = static::groupElements($each, $groupBy, $arguments);
+
+		if (isset($arguments['iteration'])) {
+			$iterationData = [
+				'index' => 0,
+				'cycle' => 1,
+				'total' => count($arguments['each'])
+			];
+		}
 
 		$templateVariableContainer = $renderingContext->getVariableProvider();
 		foreach($groups['values'] as $currentGroupIndex => $group) {
 			$templateVariableContainer->add($groupKey, $groups['keys'][$currentGroupIndex]);
 			$templateVariableContainer->add($as, $group);
+
+			if(isset($arguments['iteration'])) {
+				$iterationData['isFirst'] = $iterationData['cycle'] === 1;
+				$iterationData['isLast'] = $iterationData['cycle'] === $iterationData['total'];
+				$iterationData['isEven'] = $iterationData['cycle'] % 2 === 0;
+				$iterationData['isOdd'] = !$iterationData['isEven'];
+				$templateVariableContainer->add($arguments['iteration'], $iterationData);
+				$iterationData['index']++;
+				$iterationData['cycle']++;
+			}
+
 			$output .= $renderChildrenClosure();
 			$templateVariableContainer->remove($groupKey);
 			$templateVariableContainer->remove($as);
+
+			if(isset($arguments['iteration'])) {
+				$templateVariableContainer->remove($arguments['iteration']);
+			}
 		}
 
 		return $output;
@@ -77,10 +102,11 @@ class GroupedViewHelper extends AbstractViewHelper {
 	 *
 	 * @param array|object $elements The array / traversable object to be grouped
 	 * @param string $groupBy Group by this property
+	 * @param array $arguments
 	 * @return array The grouped array in the form array('keys' => array('key1' => [key1value], 'key2' => [key2value], ...), 'values' => array('key1' => array([key1value] => [element1]), ...), ...)
 	 * @throws ViewHelper\Exception
 	 */
-	protected static function groupElements($elements, $groupBy) {
+	protected static function groupElements($elements, $groupBy, $arguments) {
 		$extractor = new VariableExtractor();
 		$groups = [
 			'keys' => [],
@@ -96,6 +122,10 @@ class GroupedViewHelper extends AbstractViewHelper {
 
 			} else {
 				throw new ViewHelper\Exception('GroupedForViewHelper only supports multi-dimensional arrays and objects', 1253120365);
+			}
+
+			if($arguments['removeEmpty'] === true && empty($currentGroupIndex) === true) {
+				continue;
 			}
 
 			$currentGroupKeyValue = $currentGroupIndex;
