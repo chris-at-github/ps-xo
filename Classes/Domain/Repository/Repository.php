@@ -102,10 +102,11 @@ class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 	/**
 	 * @param array $options
+	 * @param array $sorting
 	 * @return QueryResultInterface
 	 * @throws InvalidQueryException
 	 */
-	public function findAll($options = []) {
+	public function findAll($options = [], $sorting = []) {
 		$query = $this->createQuery();
 
 		if($this->querySettings !== null) {
@@ -114,6 +115,10 @@ class Repository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 		if(empty($matches = $this->getMatches($query, $options)) === false) {
 			$query->matching($query->logicalAnd($matches));
+		}
+
+		if(empty($sorting) === false) {
+			$query->setOrderings($sorting);
 		}
 
 //		$queryParser = $this->objectManager->get(\TYPO3\CMS\Extbase\Persistence\Generic\Storage\Typo3DbQueryParser::class);
