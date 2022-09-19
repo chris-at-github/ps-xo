@@ -150,12 +150,22 @@ $tmpXoTtContentColumns = [
 			],
 		]
 	],
+	'tx_xo_section_menu_title' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.tx_xo_section_menu_title',
+		'config' => [
+			'type' => 'input',
+			'size' => 30,
+			'eval' => 'trim',
+		],
+	],
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tmpXoTtContentColumns);
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'frames', 'tx_xo_no_frame, --linebreak--', 'before:layout');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'frames', 'tx_xo_variant', 'after:frame_class');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'headers', 'tx_xo_header_class', 'after:header_layout');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'appearanceLinks', 'tx_xo_section_menu_title, --linebreak--', 'after:sectionIndex');
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', '--palette--;;xoPrint', '', 'after:space_after_class');
 

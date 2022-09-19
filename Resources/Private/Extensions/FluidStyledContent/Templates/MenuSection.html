@@ -10,7 +10,12 @@
 						<f:if condition="{element.data.header}">
 							<li>
 								<a href="#c{element.data.uid}" {f:if(condition: page.target, then: 'target="{page.target}"')}>
-									<span>{element.data.header}</span>
+									<span>
+										<f:if condition="{element.data.tx_xo_section_menu_title}">
+											<f:then>{element.data.tx_xo_section_menu_title}</f:then>
+											<f:else>{element.data.header}</f:else>
+										</f:if>
+									</span>
 								</a>
 							</li>
 						</f:if>

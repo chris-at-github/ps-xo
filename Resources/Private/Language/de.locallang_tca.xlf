@@ -106,6 +106,9 @@
 			<trans-unit id="tx_xo_tt_content.flash">
 				<target>Flash</target>
 			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.tx_xo_section_menu_title">
+				<target>Section Menü Titel</target>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_tt_address.address">
 				<target>Adresse</target>
