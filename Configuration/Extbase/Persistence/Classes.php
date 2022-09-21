@@ -51,6 +51,9 @@ return [
 			'link' => [
 				'fieldName' => 'tx_xo_link'
 			],
+			'identifier' => [
+				'fieldName' => 'tx_xo_identifier'
+			],
 		]
 	],
 	\Ps\Xo\Domain\Model\Element::class => [

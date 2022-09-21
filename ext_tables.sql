@@ -2,7 +2,8 @@
 # Extend SysCategory
 #
 CREATE TABLE sys_category (
-	tx_xo_link varchar(1024) DEFAULT '' NOT NULL
+	tx_xo_link varchar(1024) DEFAULT '' NOT NULL,
+	tx_xo_identifier varchar(255) DEFAULT '' NOT NULL
 );
 
 #

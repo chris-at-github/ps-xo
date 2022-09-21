@@ -23,9 +23,19 @@ call_user_func(function($_EXTKEY) {
 				'softref' => 'typolink'
 			]
 		],
+		'tx_xo_identifier' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_sys_category.identifier',
+			'config' => [
+				'type' => 'input',
+				'size' => 50,
+				'eval' => 'trim',
+			],
+		],
 	];
 
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('sys_category', $tmpXoSysCategoryColumns);
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('sys_category', 'tx_xo_link', '', 'after:title');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('sys_category', 'tx_xo_identifier', '', 'after:title');
 
 }, 'xo');

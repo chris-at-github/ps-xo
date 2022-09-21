@@ -19,6 +19,11 @@ class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category {
 	protected $link;
 
 	/**
+	 * @var string
+	 */
+	protected $identifier;
+
+	/**
 	 * @return string
 	 */
 	public function getLink(): string {
@@ -30,6 +35,20 @@ class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category {
 	 */
 	public function setLink(string $link): void {
 		$this->link = $link;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getIdentifier(): string {
+		return $this->identifier;
+	}
+
+	/**
+	 * @param string $identifier
+	 */
+	public function setIdentifier(string $identifier): void {
+		$this->identifier = $identifier;
 	}
 
 	/**
