@@ -78,7 +78,7 @@ TCEFORM {
 
 TCAdefaults.tt_content {
 	header_layout = 2
-	space_before_class = small
+	space_before_class = auto
 	space_after_class = auto
 }
 
