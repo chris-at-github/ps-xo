@@ -227,7 +227,6 @@ TCEMAIN {
 	}
 
 	TCEFORM.tt_content {
-		categories.disabled = 1
 		linkToTop.disabled = 1
 		sectionIndex.disabled = 1
 		layout.disabled = 1

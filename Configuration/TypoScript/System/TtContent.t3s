@@ -19,14 +19,63 @@ lib.contentElement {
 		100 {
 		}
 
-		105 = Ps\Xo\DataProcessing\FlashContentProcessor
+#		105 = Ps\Xo\DataProcessing\FlashContentProcessor
+#		105 {
+#			if.isTrue.field = tx_xo_flash
+#			table = tt_content
+#			as = flash
+#			select {
+#				where.data = field:uid
+#				where.wrap = colPos = {$flash.colPos} AND tx_xo_parent = |
+#			}
+#
+#			dataProcessing {
+#				50 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+#				50 {
+#					if.isTrue.field = categories
+#					table = sys_category
+#					pidInList = root,-1
+#					selectFields = sys_category.*
+#					recursive = 99
+#					as = categories
+#				}
+#			}
+#		}
+
+		105 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
 		105 {
+			if.isTrue.field = tx_xo_flash
 			table = tt_content
 			as = flash
-			select {
-				where.data = field:uid
-				where.wrap = colPos = {$flash.colPos} AND tx_xo_parent = |
-			}
+			where.data = field:uid
+			where.wrap = colPos = {$flash.colPos} AND tx_xo_parent = |
+
+		  dataProcessing {
+				10 = Ps\Xo\DataProcessing\FlashContentProcessor
+				10 {
+					table = tt_content
+					as = content
+
+					select {
+						where.data = field:uid
+						where.wrap = uid = |
+					}
+				}
+
+				20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+				20 {
+					if.isTrue.field = categories
+					table = sys_category
+					selectFields = sys_category.*
+					pidInList = root,-1
+					recursive = 99
+					join = sys_category_record_mm ON sys_category.uid = sys_category_record_mm.uid_local
+					where.data = field:uid
+					where.wrap = sys_category_record_mm.tablenames = 'tt_content' and sys_category_record_mm.uid_foreign='|'
+					orderBy = sys_category.sorting
+					as = categories
+				}
+		  }
 		}
 	}
 }
