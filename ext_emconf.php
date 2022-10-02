@@ -18,9 +18,9 @@ $EM_CONF[$_EXTKEY] = [
 	'constraints' => [
 		'depends' => [
 			'typo3' => '10.4.0-10.4.99',
-			'tt_address' => '5.2.0-5.10.99',
-			'scriptmerger' => '7.1.0-7.10.99',
-			'container_columns' => '1.0.0-1.0.99',
+			'tt_address' => '6.0.0-6.10.99',
+			'scriptmerger' => '8.0.0-	8.0.99',
+			'container' => '2.0.0-2.0.99',
 		],
 		'conflicts' => [],
 		'suggests' => [],
