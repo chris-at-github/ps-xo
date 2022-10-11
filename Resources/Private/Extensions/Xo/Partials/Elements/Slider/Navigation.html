@@ -2,8 +2,8 @@
 	<f:layout name="Default" />
 
 	<f:section name="Main">
-		<div class="container-outer slider--navigation">
-			<div class="container-inner">
+		<div class="container slider--navigation">
+			<div class="container__inner">
 				<ul>
 					<f:for each="{elements}" as="item" iteration="iterator">
 						<li title="{iterator.cycle}{f:if(condition: item.data.title, then: ': {item.data.title}')}"><span>{iterator.cycle}<f:if condition="{item.data.title}">: {item.data.title}</f:if></span></li>
