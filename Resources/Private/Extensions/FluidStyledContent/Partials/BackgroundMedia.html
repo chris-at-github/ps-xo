@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:if condition="{background_media} && {background_media.0}">
+		<f:variable name="frameBackground">
+			.ce-frame__background--{background_media_data.identifier -> xo:format.trim()} {
+				background-image: url('{f:uri.image(image: background_media.0, cropVariant: "mobile", maxWidth: 900)}');
+			}
+
+			@media (min-width: 768px) {
+				.ce-frame__background--{background_media_data.identifier -> xo:format.trim()} {
+					background-image: url('{f:uri.image(image: background_media.0, cropVariant: "desktop", maxWidth: 1800)}');
+				}
+			}
+		</f:variable>
+
+		<xo:css.inlineCode name="frame__background--{background_media_data.identifier -> xo:format.trim()}" code="{frameBackground}" />
+
+		<div class="ce-frame__background ce-frame__background--{background_media_data.identifier -> xo:format.trim()} {background_media_data.css_class}"></div>
+	</f:if>
+</html>

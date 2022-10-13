@@ -15,6 +15,12 @@ lib.contentElement {
   }
 
 	dataProcessing {
+		95 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+		95 {
+			as = background_media
+			references.fieldName = tx_xo_background_media
+		}
+
 		100 = Ps\Xo\DataProcessing\ContentElementProcessor
 		100 {
 		}

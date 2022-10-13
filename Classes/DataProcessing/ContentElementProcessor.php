@@ -24,6 +24,7 @@ class ContentElementProcessor implements DataProcessorInterface {
 		$frameTypeClass = $this->getFrameTypeClass($processedData, $processorConfiguration, $cObject);
 		$frameOuterClass = $this->getFrameOuterClass($processedData, $processorConfiguration, $cObject);
 		$framePrintClass = $this->getFramePrintClass($processedData, $processorConfiguration, $cObject);
+		$frameBackgroundMediaClass = $this->getBackgroundMediaClass($processedData, $processorConfiguration, $cObject);
 
 		if(empty($frameTypeClass) === false) {
 			$frameClasses[] = $frameTypeClass;
@@ -35,6 +36,10 @@ class ContentElementProcessor implements DataProcessorInterface {
 
 		if(empty($framePrintClass) === false) {
 			$frameClasses[] = $framePrintClass;
+		}
+
+		if(empty($frameBackgroundMediaClass) === false) {
+			$frameClasses[] = $frameBackgroundMediaClass;
 		}
 
 		return $frameClasses;
@@ -120,6 +125,21 @@ class ContentElementProcessor implements DataProcessorInterface {
 		return trim($printClass);
 	}
 
+	/**
+	 * Liefert die Klassen fuer die BackgroundMedia Felder
+	 *
+	 * @param array $processedData Daten des Contentelements aus der Datenbank
+	 * @param array $processorConfiguration Konfiguration aus Typoscript
+	 * @param ContentObjectRenderer $cObject
+	 * @return string
+	 */
+	protected function getBackgroundMediaClass($processedData, $processorConfiguration, $cObject) {
+		if(empty($processedData['background_media']) === false) {
+			return 'ce-frame--background';
+		}
+
+		return '';
+	}
 
 	/**
 	 * Fuer die Einstellung none in das Abstandseinstellungen wird normalerweise nicht ausgegeben. Fuer die korrekte
@@ -158,6 +178,33 @@ class ContentElementProcessor implements DataProcessorInterface {
 	}
 
 	/**
+	 * Auswertung der Background Media Daten
+	 *
+	 * @param array
+	 * @return array
+	 */
+	protected function getBackgroundMediaData($processedData) {
+		$data = [];
+
+		if(empty($processedData['background_media']) === false) {
+			$data = [
+				'identifier' => md5($processedData['data']['uid']),
+				'css_class' => ''
+			];
+
+			if(empty($processedData['data']['tx_xo_background_media_vertical']) === false) {
+				$data['css_class'] = trim($data['css_class'] . ' ce-frame__background--vertical-' .  $processedData['data']['tx_xo_background_media_vertical']);
+			}
+
+			if(empty($processedData['data']['tx_xo_background_media_horizontal']) === false) {
+				$data['css_class'] = trim($data['css_class'] . ' ce-frame__background--horizontal-' .  $processedData['data']['tx_xo_background_media_horizontal']);
+			}
+		}
+
+		return $data;
+	}
+
+	/**
 	 * Parst die Inhalte aller verknupeften Inhaltselemente
 	 *
 	 * @param ContentObjectRenderer $cObject The data of the content element or page
@@ -176,6 +223,9 @@ class ContentElementProcessor implements DataProcessorInterface {
 
 		// Header Klasse
 		$processedData['data']['header_class'] = $this->getHeaderClass($processedData);
+
+		// Background Media Data
+		$processedData['background_media_data'] = $this->getBackgroundMediaData($processedData);
 
 		return $processedData;
 	}
