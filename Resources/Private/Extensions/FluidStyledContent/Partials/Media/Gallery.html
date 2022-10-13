@@ -32,7 +32,7 @@
 
 
 	<f:section name="Container">
-		<div class="ce-image--container {f:if(condition: flexform.image.align.horizontal, then: 'ce-image--container-horizontal-{flexform.image.align.horizontal}')} {f:if(condition: flexform.image.align.vertical, then: 'ce-image--container-vertical-{flexform.image.align.vertical}')}">
+		<div class="ce-image__container {f:if(condition: flexform.image.align.horizontal, then: 'ce-image__container--horizontal-{flexform.image.align.horizontal}')} {f:if(condition: flexform.image.align.vertical, then: 'ce-image__container--vertical-{flexform.image.align.vertical}')}">
 			<f:for each="{gallery.rows}" as="row">
 				<f:for each="{row.columns}" as="column">
 					<f:if condition="{column.media}">

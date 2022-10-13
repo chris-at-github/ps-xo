@@ -332,6 +332,7 @@ $GLOBALS['TCA']['tt_content']['types']['image']['columnsOverrides']['imageorient
 ];
 
 // Ueberschreiben von Felddefinitionen
+$GLOBALS['TCA']['tt_content']['types']['image']['columnsOverrides']['imageorient']['config']['default'] = 0;
 $GLOBALS['TCA']['tt_content']['types']['image']['columnsOverrides']['image']['config']['maxitems'] = 2;
 $GLOBALS['TCA']['tt_content']['types']['image']['columnsOverrides']['imagecols']['config']['default'] = 1;
 

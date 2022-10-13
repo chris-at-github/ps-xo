@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
 	<f:section name="Main">
-		<figure class="ce-image--item">
+		<figure class="ce-image__item image">
 			<f:if condition="{file.link}">
 				<f:then>
 					<f:link.typolink parameter="{file.link}" title="{file.title}">
@@ -21,7 +21,7 @@
 				</f:else>
 			</f:if>
 			<f:if condition="{file.description}">
-				<figcaption class="ce-image--item-caption">
+				<figcaption class="image__caption">
 					{file.description -> f:format.nl2br()}
 				</figcaption>
 			</f:if>
