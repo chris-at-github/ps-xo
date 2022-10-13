@@ -51,6 +51,7 @@ TCEFORM {
 				auto = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.space.auto
 				small = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.space.small
 				medium = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.space.medium
+				large = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.space.large
 			}
 		}
 
@@ -59,6 +60,7 @@ TCEFORM {
 				auto = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.space.auto
 				small = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.space.small
 				medium = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.space.medium
+				large = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.space.large
 			}
 		}
 	}
