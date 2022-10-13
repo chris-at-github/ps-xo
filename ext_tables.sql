@@ -35,7 +35,10 @@ CREATE TABLE tt_content (
 	tx_xo_parent int(11) unsigned DEFAULT '0' NOT NULL,
 	tx_xo_print_break varchar(50) DEFAULT '' NOT NULL,
 	tx_xo_print_visibility varchar(50) DEFAULT '' NOT NULL,
-	tx_xo_section_menu_title varchar(100) DEFAULT '' NOT NULL
+	tx_xo_section_menu_title varchar(100) DEFAULT '' NOT NULL,
+    tx_xo_background_media int(11) unsigned DEFAULT '0' NOT NULL,
+    tx_xo_background_media_vertical varchar(50) DEFAULT '' NOT NULL,
+    tx_xo_background_media_horizontal varchar(50) DEFAULT '' NOT NULL
 );
 
 #

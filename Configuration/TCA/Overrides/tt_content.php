@@ -159,6 +159,102 @@ $tmpXoTtContentColumns = [
 			'eval' => 'trim',
 		],
 	],
+	'tx_xo_background_media' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.background_media',
+		'config' =>
+			\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+				'tx_xo_background_media',
+				[
+					'appearance' => [
+						'collapseAll' => 1,
+						'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference'
+					],
+					'overrideChildTca' => [
+						'types' => [
+							'0' => [
+								'showitem' => '
+									--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+									--palette--;;filePalette'
+							],
+							\TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+								'showitem' => '
+									--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+									--palette--;;filePalette'
+							],
+						],
+						'columns' => [
+							'crop' => [
+								'config' => [
+									'cropVariants' => [
+										'mobile' => [
+											'title' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_crop_variant.mobile',
+											'allowedAspectRatios' => [
+												'16_9' => [
+													'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.16_9',
+													'value' => 16 / 9
+												],
+												'NaN' => [
+													'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
+													'value' => 0.0
+												],
+											],
+											'selectedRatio' => '16_9',
+										],
+										'desktop' => [
+											'title' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_crop_variant.desktop',
+											'allowedAspectRatios' => [
+												'16_9' => [
+													'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.16_9',
+													'value' => 16 / 9
+												],
+												'NaN' => [
+													'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
+													'value' => 0.0
+												],
+											],
+											'selectedRatio' => '16_9',
+										],
+									]
+								]
+							]
+						]
+					],
+					'maxitems' => 1
+				],
+				$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+			)
+	],
+	'tx_xo_background_media_vertical' => [
+		'exclude' => true,
+		'l10n_mode' => 'exclude',
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.background_media.vertical',
+		'config' => [
+			'type' => 'select',
+			'renderType' => 'selectSingle',
+			'items' => [
+				['LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value', ''],
+				['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.background_media.vertical.top', 'top'],
+				['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.background_media.vertical.bottom', 'bottom'],
+				['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.background_media.vertical.center', 'center'],
+			],
+		]
+	],
+	'tx_xo_background_media_horizontal' => [
+		'exclude' => true,
+		'l10n_mode' => 'exclude',
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.background_media.horizontal',
+		'config' => [
+			'type' => 'select',
+			'renderType' => 'selectSingle',
+			'items' => [
+				['LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value', ''],
+				['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.background_media.horizontal.left', 'left'],
+				['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.background_media.horizontal.right', 'right'],
+				['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.background_media.horizontal.center', 'center'],
+			],
+		]
+	],
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tmpXoTtContentColumns);
@@ -168,6 +264,7 @@ $tmpXoTtContentColumns = [
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'appearanceLinks', 'tx_xo_section_menu_title, --linebreak--', 'after:sectionIndex');
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', '--palette--;;xoPrint', '', 'after:space_after_class');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', '--palette--;;xoBackgroundMedia', '', 'after:space_after_class');
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Weitere Paletten in TT-Content
@@ -198,6 +295,11 @@ $GLOBALS['TCA']['tt_content']['palettes']['xoFlash'] = [
 $GLOBALS['TCA']['tt_content']['palettes']['xoPrint'] = [
 	'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_print.palette',
 	'showitem' => 'tx_xo_print_break, tx_xo_print_visibility,'
+];
+
+$GLOBALS['TCA']['tt_content']['palettes']['xoBackgroundMedia'] = [
+	'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tt_content.palette.background-media',
+	'showitem' => 'tx_xo_background_media, --linebreak--, tx_xo_background_media_vertical, tx_xo_background_media_horizontal,'
 ];
 
 
@@ -233,6 +335,7 @@ $GLOBALS['TCA']['tt_content']['types']['textpic']['showitem'] = '
 	--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance, 
 		--palette--;;frames,
 		--palette--;;xoPrint,
+		--palette--;;xoBackgroundMedia,
 		--palette--;;appearanceLinks, 
 	--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, 
 		--palette--;;language, 

@@ -112,6 +112,34 @@
 				<source>Section Menu Title</source>
 			</trans-unit>
 
+			<trans-unit id="tx_xo_tt_content.background_media">
+				<source>Background Image</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.background_media.vertical">
+				<source>Vertical Alignment</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.background_media.vertical.top">
+				<source>Top</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.background_media.vertical.bottom">
+				<source>Bottom</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.background_media.vertical.center">
+				<source>Center</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.background_media.horizontal">
+				<source>Horizontal Alignment</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.background_media.horizontal.left">
+				<source>Left</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.background_media.horizontal.right">
+				<source>Right</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.background_media.horizontal.center">
+				<source>Center</source>
+			</trans-unit>
+
 			<trans-unit id="tx_xo_tt_address.address">
 				<source>Address</source>
 			</trans-unit>
