@@ -483,14 +483,14 @@ $GLOBALS['TCA']['tt_content']['types']['xo_html'] = [
 //\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
 //	array(
 //		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_address.record.title',
-//		'xo_addressrecord',
+//		'xo_address',
 //		'xo-content-address'
 //	),
 //	'CType',
 //	'xo'
 //);
 //
-//$GLOBALS['TCA']['tt_content']['types']['xo_addressrecord'] = [
+//$GLOBALS['TCA']['tt_content']['types']['xo_address'] = [
 //	'showitem' => '
 //			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
 //			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,tx_xo_address,
@@ -502,130 +502,130 @@ $GLOBALS['TCA']['tt_content']['types']['xo_html'] = [
 //		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
 //	',
 //];
-
-// ---------------------------------------------------------------------------------------------------------------------
-// Teaser Module von TT-Content
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
-	array(
-		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_teaser.title',
-		'xo_teaser',
-		'content-menu-section'
-	),
-	'CType',
-	'xo_teaser'
-);
-
-$GLOBALS['TCA']['tt_content']['types']['xo_teaser'] = [
-	'showitem' => '
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,description,tx_xo_elements,
-		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
-		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
-		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
-	',
-];
-
-// ---------------------------------------------------------------------------------------------------------------------
-// Slider
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
-	array(
-		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_slider.title',
-		'xo_slider',
-		'content-textpic'
-	),
-	'CType',
-	'xo_slider'
-);
-
-$GLOBALS['TCA']['tt_content']['types']['xo_slider'] = [
-	'showitem' => '
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,description,tx_xo_elements,
-		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
-		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
-			--palette--;;hidden,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
-		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
-	',
-];
-
-$GLOBALS['TCA']['tt_content']['types']['xo_slider']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['columns']['record_type']['config']['items'] = [
-	['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type.slider', 'slider']
-];
-
-$GLOBALS['TCA']['tt_content']['types']['xo_slider']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['types'] = [
-	'slider' => [
-		'showitem' => '
-				l10n_diffsource, record_type, --palette--;;header, link, description, media,
-				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
-				--palette--;;visibility,
-				--palette--;;access'
-	],
-];
-
-
-
-// ---------------------------------------------------------------------------------------------------------------------
-// Media Wall
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
-	array(
-		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_media_wall.title',
-		'xo_media_wall',
-		'content-image'
-	),
-	'CType',
-	'tx_xo_media_wall'
-);
-
-$GLOBALS['TCA']['tt_content']['types']['xo_media_wall'] = [
-	'showitem' => '
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,bodytext,tx_xo_elements,
-		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
-		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
-			--palette--;;hidden,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
-			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
-		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
-	',
-];
-
-$GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['bodytext']['config'] = [
-	'enableRichtext' => true,
-	'richtextConfiguration' => 'xoDefault',
-];
-
-$GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['columns']['title']['config']['eval'] = 'trim';
-
-$GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['columns']['record_type']['config']['items'] = [
-	['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type.media_wall.image', 'media_wall_image'],
-	['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type.media_wall.video', 'media_wall_video']
-];
-
-$GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['columns']['record_type']['config']['default'] = 'media_wall_image';
-
-$GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['types'] = [
-	'media_wall_image' => [
-		'showitem' => '
-				l10n_diffsource, record_type, --palette--;;header, media,
-				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
-				--palette--;;visibility,
-				--palette--;;access',
-	],
-	'media_wall_video' => [
-		'showitem' => '
-				l10n_diffsource, record_type, --palette--;;header, media, thumbnail,
-				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
-				--palette--;;visibility,
-				--palette--;;access'
-	],
-];
+//
+//// ---------------------------------------------------------------------------------------------------------------------
+//// Teaser Module von TT-Content
+//\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+//	array(
+//		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_teaser.title',
+//		'xo_teaser',
+//		'content-menu-section'
+//	),
+//	'CType',
+//	'xo_teaser'
+//);
+//
+//$GLOBALS['TCA']['tt_content']['types']['xo_teaser'] = [
+//	'showitem' => '
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,description,tx_xo_elements,
+//		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
+//		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
+//		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
+//	',
+//];
+//
+//// ---------------------------------------------------------------------------------------------------------------------
+//// Slider
+//\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+//	array(
+//		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_slider.title',
+//		'xo_slider',
+//		'content-textpic'
+//	),
+//	'CType',
+//	'xo_slider'
+//);
+//
+//$GLOBALS['TCA']['tt_content']['types']['xo_slider'] = [
+//	'showitem' => '
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,description,tx_xo_elements,
+//		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
+//		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+//			--palette--;;hidden,
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
+//		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
+//	',
+//];
+//
+//$GLOBALS['TCA']['tt_content']['types']['xo_slider']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['columns']['record_type']['config']['items'] = [
+//	['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type.slider', 'slider']
+//];
+//
+//$GLOBALS['TCA']['tt_content']['types']['xo_slider']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['types'] = [
+//	'slider' => [
+//		'showitem' => '
+//				l10n_diffsource, record_type, --palette--;;header, link, description, media,
+//				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+//				--palette--;;visibility,
+//				--palette--;;access'
+//	],
+//];
+//
+//
+//
+//// ---------------------------------------------------------------------------------------------------------------------
+//// Media Wall
+//\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+//	array(
+//		'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_media_wall.title',
+//		'xo_media_wall',
+//		'content-image'
+//	),
+//	'CType',
+//	'tx_xo_media_wall'
+//);
+//
+//$GLOBALS['TCA']['tt_content']['types']['xo_media_wall'] = [
+//	'showitem' => '
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,bodytext,tx_xo_elements,
+//		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.appearance,
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.frames;frames,
+//		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+//			--palette--;;hidden,
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.visibility;visibility,
+//			--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.access;access,
+//		--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.extended
+//	',
+//];
+//
+//$GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['bodytext']['config'] = [
+//	'enableRichtext' => true,
+//	'richtextConfiguration' => 'xoDefault',
+//];
+//
+//$GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['columns']['title']['config']['eval'] = 'trim';
+//
+//$GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['columns']['record_type']['config']['items'] = [
+//	['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type.media_wall.image', 'media_wall_image'],
+//	['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type.media_wall.video', 'media_wall_video']
+//];
+//
+//$GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['columns']['record_type']['config']['default'] = 'media_wall_image';
+//
+//$GLOBALS['TCA']['tt_content']['types']['xo_media_wall']['columnsOverrides']['tx_xo_elements']['config']['overrideChildTca']['types'] = [
+//	'media_wall_image' => [
+//		'showitem' => '
+//				l10n_diffsource, record_type, --palette--;;header, media,
+//				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+//				--palette--;;visibility,
+//				--palette--;;access',
+//	],
+//	'media_wall_video' => [
+//		'showitem' => '
+//				l10n_diffsource, record_type, --palette--;;header, media, thumbnail,
+//				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
+//				--palette--;;visibility,
+//				--palette--;;access'
+//	],
+//];
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Media Wall
