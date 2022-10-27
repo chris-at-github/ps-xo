@@ -106,6 +106,12 @@
 			<trans-unit id="tx_xo_address.social">
 				<target>Folgen Sie uns auf</target>
 			</trans-unit>
+			<trans-unit id="tx_xo_address.google-maps-link">
+				<target>In Google Maps aufrufen</target>
+			</trans-unit>
+			<trans-unit id="tx_xo_address.link-to-imprint">
+				<target>Link zum Impressum</target>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_date.format.date">
 				<target>%d. %B %Y</target>

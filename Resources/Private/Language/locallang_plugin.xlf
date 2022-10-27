@@ -42,6 +42,9 @@
 			<trans-unit id="tx_xo_address.partial.imprint">
 				<source>Imprint</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_address.partial.data-protection">
+				<source>Data Protection</source>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_address.display.name">
 				<source>Display name</source>
@@ -57,6 +60,9 @@
 			</trans-unit>
 			<trans-unit id="tx_xo_address.display.description">
 				<source>Display description</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_address.display.imprint-target">
+				<source>Imprint page</source>
 			</trans-unit>
 		</body>
 	</file>

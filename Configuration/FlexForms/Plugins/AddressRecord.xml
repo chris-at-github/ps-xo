@@ -62,6 +62,10 @@
 										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.partial.imprint</numIndex>
 										<numIndex index="1">imprint</numIndex>
 									</numIndex>
+									<numIndex index="5" type="array">
+										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.partial.data-protection</numIndex>
+										<numIndex index="1">dataProtection</numIndex>
+									</numIndex>
 								</items>
 							</config>
 						</TCEforms>
@@ -74,6 +78,7 @@
 									<numIndex index="0">FIELD:settings.partial:=:</numIndex>
 									<numIndex index="1">FIELD:settings.partial:=:default</numIndex>
 									<numIndex index="2">FIELD:settings.partial:=:imprint</numIndex>
+									<numIndex index="2">FIELD:settings.partial:=:dataProtection</numIndex>
 								</OR>
 							</displayCond>
 							<config>
@@ -95,6 +100,7 @@
 									<numIndex index="0">FIELD:settings.partial:=:</numIndex>
 									<numIndex index="1">FIELD:settings.partial:=:default</numIndex>
 									<numIndex index="2">FIELD:settings.partial:=:imprint</numIndex>
+									<numIndex index="2">FIELD:settings.partial:=:dataProtection</numIndex>
 								</OR>
 							</displayCond>
 							<config>
@@ -116,6 +122,7 @@
 									<numIndex index="0">FIELD:settings.partial:=:</numIndex>
 									<numIndex index="1">FIELD:settings.partial:=:default</numIndex>
 									<numIndex index="2">FIELD:settings.partial:=:imprint</numIndex>
+									<numIndex index="2">FIELD:settings.partial:=:dataProtection</numIndex>
 								</OR>
 							</displayCond>
 							<config>
@@ -137,6 +144,7 @@
 									<numIndex index="0">FIELD:settings.partial:=:</numIndex>
 									<numIndex index="1">FIELD:settings.partial:=:default</numIndex>
 									<numIndex index="2">FIELD:settings.partial:=:imprint</numIndex>
+									<numIndex index="2">FIELD:settings.partial:=:dataProtection</numIndex>
 								</OR>
 							</displayCond>
 							<config>
@@ -158,6 +166,7 @@
 									<numIndex index="0">FIELD:settings.partial:=:</numIndex>
 									<numIndex index="1">FIELD:settings.partial:=:default</numIndex>
 									<numIndex index="2">FIELD:settings.partial:=:imprint</numIndex>
+									<numIndex index="2">FIELD:settings.partial:=:dataProtection</numIndex>
 								</OR>
 							</displayCond>
 							<config>
@@ -171,6 +180,15 @@
 							</config>
 						</TCEforms>
 					</settings.display.openingHours>
+					<settings.display.imprintTarget type="array">
+						<TCEforms>
+							<label>LLL:EXT:xo/Resources/Private/Language/locallang_plugin.xlf:tx_xo_address.display.imprint-target</label>
+							<displayCond>FIELD:settings.partial:=:dataProtection</displayCond>
+							<config>
+								<type>inputLink</type>
+							</config>
+						</TCEforms>
+					</settings.display.imprintTarget>
 				</el>
 			</ROOT>
 		</display>

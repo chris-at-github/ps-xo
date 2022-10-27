@@ -109,6 +109,9 @@
 			<trans-unit id="tx_xo_address.google-maps-link">
 				<source>In Google Maps aufrufen</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_address.link-to-imprint">
+				<source>Link to imprint</source>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_date.format.date">
 				<source>%d %m, %Y</source>

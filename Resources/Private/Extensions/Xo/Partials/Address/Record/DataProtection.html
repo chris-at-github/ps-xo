@@ -27,19 +27,10 @@
 			</div>
 		</f:if>
 
-		<f:if condition="{address.vatNumber} || {address.directors}">
-			<div class="address--item-group">
-				<f:render partial="Components/Address" section="Directors" arguments="{address: address}" />
-				<f:render partial="Components/Address" section="VatNumber" arguments="{address: address}" />
-			</div>
+		<f:if condition="{settings.display.imprintTarget}">
+			<f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_address.link-to-imprint" />: <f:link.typolink absolute="1" parameter="{settings.display.imprintTarget}">{f:uri.typolink(parameter: settings.display.imprintTarget)}</f:link.typolink>
 		</f:if>
 
-		<f:if condition="{address.registeredOffice} || {address.commercialRegister}">
-			<div class="address--item-group">
-				<f:render partial="Components/Address" section="CommercialRegister" arguments="{address: address}" />
-				<f:render partial="Components/Address" section="RegisteredOffice" arguments="{address: address}" />
-			</div>
-		</f:if>
 	</div>
 </f:section>
 </html>
