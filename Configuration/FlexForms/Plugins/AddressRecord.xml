@@ -78,7 +78,7 @@
 									<numIndex index="0">FIELD:settings.partial:=:</numIndex>
 									<numIndex index="1">FIELD:settings.partial:=:default</numIndex>
 									<numIndex index="2">FIELD:settings.partial:=:imprint</numIndex>
-									<numIndex index="2">FIELD:settings.partial:=:dataProtection</numIndex>
+									<numIndex index="3">FIELD:settings.partial:=:dataProtection</numIndex>
 								</OR>
 							</displayCond>
 							<config>
@@ -100,7 +100,7 @@
 									<numIndex index="0">FIELD:settings.partial:=:</numIndex>
 									<numIndex index="1">FIELD:settings.partial:=:default</numIndex>
 									<numIndex index="2">FIELD:settings.partial:=:imprint</numIndex>
-									<numIndex index="2">FIELD:settings.partial:=:dataProtection</numIndex>
+									<numIndex index="3">FIELD:settings.partial:=:dataProtection</numIndex>
 								</OR>
 							</displayCond>
 							<config>
@@ -122,7 +122,7 @@
 									<numIndex index="0">FIELD:settings.partial:=:</numIndex>
 									<numIndex index="1">FIELD:settings.partial:=:default</numIndex>
 									<numIndex index="2">FIELD:settings.partial:=:imprint</numIndex>
-									<numIndex index="2">FIELD:settings.partial:=:dataProtection</numIndex>
+									<numIndex index="3">FIELD:settings.partial:=:dataProtection</numIndex>
 								</OR>
 							</displayCond>
 							<config>
@@ -144,7 +144,7 @@
 									<numIndex index="0">FIELD:settings.partial:=:</numIndex>
 									<numIndex index="1">FIELD:settings.partial:=:default</numIndex>
 									<numIndex index="2">FIELD:settings.partial:=:imprint</numIndex>
-									<numIndex index="2">FIELD:settings.partial:=:dataProtection</numIndex>
+									<numIndex index="3">FIELD:settings.partial:=:dataProtection</numIndex>
 								</OR>
 							</displayCond>
 							<config>
@@ -166,7 +166,7 @@
 									<numIndex index="0">FIELD:settings.partial:=:</numIndex>
 									<numIndex index="1">FIELD:settings.partial:=:default</numIndex>
 									<numIndex index="2">FIELD:settings.partial:=:imprint</numIndex>
-									<numIndex index="2">FIELD:settings.partial:=:dataProtection</numIndex>
+									<numIndex index="3">FIELD:settings.partial:=:dataProtection</numIndex>
 								</OR>
 							</displayCond>
 							<config>
