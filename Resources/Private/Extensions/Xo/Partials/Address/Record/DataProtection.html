@@ -28,7 +28,7 @@
 		</f:if>
 
 		<f:if condition="{settings.display.imprintTarget}">
-			<f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_address.link-to-imprint" />: <f:link.typolink absolute="1" parameter="{settings.display.imprintTarget}">{f:uri.typolink(parameter: settings.display.imprintTarget)}</f:link.typolink>
+			<f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo_address.link-to-imprint" />: <f:link.typolink parameter="{settings.display.imprintTarget}">{f:uri.typolink(parameter: settings.display.imprintTarget, absolute: 1)}</f:link.typolink>
 		</f:if>
 
 	</div>
