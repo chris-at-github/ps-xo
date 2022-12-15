@@ -84,4 +84,29 @@ class TcaService {
 			$configuration['items'][] = [$row['title'], $row['uid']];
 		}
 	}
+
+	/**
+	 * @param $parameter
+	 * @return void
+	 */
+	public function getInlineLabel(&$parameter) {
+		$row = $parameter['row'];
+		$options = $parameter['options'];
+
+		if(isset($options['label']) === true && empty($row[$options['label']]) === false) {
+			$parameter['title'] = $row[$options['label']];
+		}
+
+		if(empty($parameter['title']) === true && isset($options['label_alt']) === true) {
+			$labelAlt = GeneralUtility::trimExplode(',', $options['label_alt']);
+
+			foreach($labelAlt as $field) {
+				if(empty($parameter['title']) === true && empty($row[$field]) === false) {
+					$parameter['title'] = $row[$field];
+				}
+			}
+
+			$parameter['title'] = strip_tags($parameter['title']);
+		}
+	}
 }
