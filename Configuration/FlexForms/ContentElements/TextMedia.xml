@@ -19,7 +19,7 @@
 								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
 								<itemsProcConfig>
 									<identifier>modules.textmedia.options.columns</identifier>
-									<extension>xo</extension>
+									<extension>Xo</extension>
 								</itemsProcConfig>
 							</config>
 						</TCEforms>
@@ -33,7 +33,7 @@
 								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
 								<itemsProcConfig>
 									<identifier>modules.textmedia.options.arrangement</identifier>
-									<extension>xo</extension>
+									<extension>Xo</extension>
 								</itemsProcConfig>
 							</config>
 						</TCEforms>
@@ -57,7 +57,7 @@
 								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
 								<itemsProcConfig>
 									<identifier>modules.textmedia.options.imageHorizontalAlignment</identifier>
-									<extension>xo</extension>
+									<extension>Xo</extension>
 								</itemsProcConfig>
 							</config>
 						</TCEforms>
@@ -71,7 +71,7 @@
 								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
 								<itemsProcConfig>
 									<identifier>modules.textmedia.options.imageVerticalAlignment</identifier>
-									<extension>xo</extension>
+									<extension>Xo</extension>
 								</itemsProcConfig>
 							</config>
 						</TCEforms>
@@ -111,7 +111,7 @@
 								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
 								<itemsProcConfig>
 									<identifier>modules.textmedia.options.textHeaderPosition</identifier>
-									<extension>xo</extension>
+									<extension>Xo</extension>
 								</itemsProcConfig>
 							</config>
 						</TCEforms>
