@@ -20,7 +20,9 @@
 			<div class="slider--navigation-inner">
 				<ul>
 					<f:for each="{elements}" as="item" iteration="iterator">
-						<li title="{iterator.cycle}{f:if(condition: item.data.title, then: ': {item.data.title}')}"><span>{iterator.cycle}<f:if condition="{item.data.title}">: {item.data.title}</f:if></span></li>
+						<li title="{iterator.cycle}{f:if(condition: item.data.title, then: ': {item.data.title}')}">
+							<button><span>{iterator.cycle}<f:if condition="{item.data.title}">: {item.data.title}</f:if></span></button>
+						</li>
 					</f:for>
 				</ul>
 			</div>
