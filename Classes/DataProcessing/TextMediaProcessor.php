@@ -9,6 +9,7 @@
 
 namespace Ps\Xo\DataProcessing;
 
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
@@ -36,6 +37,9 @@ class TextMediaProcessor extends ModuleProcessor implements DataProcessorInterfa
 			} else {
 				$mediaQuery = $processedData['settings']['modules']['textmedia']['pictureMediaQueries']['maximal'];
 			}
+
+			// nochmals sortieren -> TYPO3 liefert sie teilweise in der falschen Reihenfolge
+			krsort($mediaQuery);
 
 			foreach($processedData['gallery']['rows'] as &$row) {
 				foreach($row['columns'] as &$column) {
