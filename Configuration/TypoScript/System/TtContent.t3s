@@ -28,6 +28,19 @@ lib.contentElement {
 				where.wrap = colPos = {$flash.colPos} AND tx_xo_parent = |
 			}
 		}
+
+		115 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+		115 {
+			as = readmore
+			table = tx_xo_domain_model_readmore
+			pidInList.field = pid
+			where {
+				data = field:uid
+				intval = 1
+				wrap = foreign_uid=|
+			}
+			orderBy = sorting
+		}
 	}
 }
 

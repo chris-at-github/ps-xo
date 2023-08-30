@@ -1,0 +1,13 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:section name="Main">
+	<f:if condition="{readmore}">
+		<ul class="ce-readmore">
+			<f:for each="{readmore}" as="item">
+				<li class="ce-readmore__item">
+					<f:link.typolink parameter="{item.data.link}" class="button ce-readmore__link">{item.data.title}</f:link.typolink>
+				</li>
+			</f:for>
+		</ul>
+	</f:if>
+</f:section>
+</html>

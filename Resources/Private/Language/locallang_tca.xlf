@@ -111,6 +111,9 @@
 			<trans-unit id="tx_xo_tt_content.tx_xo_section_menu_title">
 				<source>Section Menu Title</source>
 			</trans-unit>
+			<trans-unit id="tx_xo_tt_content.tx_xo_readmore">
+				<source>Readmore</source>
+			</trans-unit>
 
 			<trans-unit id="tx_xo_tt_address.address">
 				<source>Address</source>
@@ -397,6 +400,16 @@
 			</trans-unit>
 			<trans-unit id="tx_xo_domain_model_elements.content">
 				<source>Content Elements</source>
+			</trans-unit>
+
+			<trans-unit id="tx_xo_domain_model_readmore">
+				<source>Readmore</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_domain_model_readmore.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_xo_domain_model_readmore.link">
+				<source>Link</source>
 			</trans-unit>
 		</body>
 	</file>

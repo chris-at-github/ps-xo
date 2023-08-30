@@ -14,6 +14,7 @@ call_user_func(function($_EXTKEY) {
 	);
 
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_xo_domain_model_elements');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_xo_domain_model_readmore');
 
 	// Neuen Seitentyp Typolink erstellen
 	$pageTypeTypolink = 120;

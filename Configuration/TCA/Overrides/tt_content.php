@@ -159,6 +159,27 @@ $tmpXoTtContentColumns = [
 			'eval' => 'trim',
 		],
 	],
+	'tx_xo_readmore' => [
+		'exclude' => true,
+		'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_tt_content.tx_xo_readmore',
+		'config' => [
+			'type' => 'inline',
+			'foreign_table' => 'tx_xo_domain_model_readmore',
+			'foreign_field' => 'foreign_uid',
+			'foreign_sortby' => 'sorting',
+			'foreign_label' => 'title',
+			'maxitems' => 999,
+			'appearance' => [
+				'collapseAll' => 1,
+				'expandSingle' => 1,
+				'showAllLocalizationLink' => 1,
+				'showSynchronizationLink' => 1,
+				'showPossibleLocalizationRecords' => 1,
+				'showRemovedLocalizationRecords' => 1,
+				'newRecordLinkAddTitle' => 1
+			],
+		]
+	],
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tmpXoTtContentColumns);
@@ -168,6 +189,9 @@ $tmpXoTtContentColumns = [
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'appearanceLinks', 'tx_xo_section_menu_title, --linebreak--', 'after:sectionIndex');
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', '--palette--;;xoPrint', '', 'after:space_after_class');
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, ', '');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', '--palette--;;xoReadmore,', '');
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Weitere Paletten in TT-Content
@@ -195,6 +219,10 @@ $GLOBALS['TCA']['tt_content']['palettes']['xoFlash'] = [
 	'showitem' => 'tx_xo_flash,'
 ];
 
+$GLOBALS['TCA']['tt_content']['palettes']['xoReadmore'] = [
+	'showitem' => 'tx_xo_readmore,'
+];
+
 $GLOBALS['TCA']['tt_content']['palettes']['xoPrint'] = [
 	'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_print.palette',
 	'showitem' => 'tx_xo_print_break, tx_xo_print_visibility,'
@@ -203,7 +231,7 @@ $GLOBALS['TCA']['tt_content']['palettes']['xoPrint'] = [
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Header Modul
-$GLOBALS['TCA']['tt_content']['types']['text']['showitem'] .= ', --palette--;;xoFlash,';
+//$GLOBALS['TCA']['tt_content']['types']['text']['showitem'] .= ', --palette--;;xoFlash,';
 $GLOBALS['TCA']['tt_content']['columns']['subheader']['config'] = [
 	'type' => 'text',
 	'cols' => 50,
