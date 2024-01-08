@@ -58,6 +58,9 @@
 			<trans-unit id="tx_xo.mail">
 				<target>E-Mail</target>
 			</trans-unit>
+			<trans-unit id="tx_xo.fax">
+				<target>Fax</target>
+			</trans-unit>
 
 			<trans-unit id="tx_xo.next">
 				<target>Weiter</target>

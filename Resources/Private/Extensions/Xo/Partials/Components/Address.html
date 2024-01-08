@@ -47,6 +47,12 @@
 		</f:if>
 	</f:section>
 
+	<f:section name="Fax">
+		<f:if condition="{address.fax}">
+			<div class="address--item address--fax"><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo.fax" />: {address.fax}</div>
+		</f:if>
+	</f:section>
+
 	<f:section name="Mail">
 		<f:if condition="{address.email}">
 			<div class="address--item address--mail"><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo.mail" />: <f:link.email class="link--mail" email="{address.email}" /></div>
