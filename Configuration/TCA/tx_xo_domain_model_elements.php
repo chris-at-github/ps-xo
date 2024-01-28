@@ -23,7 +23,7 @@ return [
 	'types' => [
 		'0' => [
 			'showitem' => '
-				l10n_diffsource, record_type, --palette--;;header, link, description, media, thumbnail,
+				l10n_diffsource, record_type, --palette--;;header, keyword, link, description, media, thumbnail,
 				--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,
 				--palette--;;visibility,
 				--palette--;;access'
@@ -261,6 +261,15 @@ return [
 				],
 				'softref' => 'typolink'
 			]
+		],
+		'keyword' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.keyword',
+			'config' => [
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim',
+			],
 		],
 	],
 ];

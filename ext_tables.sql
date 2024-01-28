@@ -53,6 +53,7 @@ CREATE TABLE tx_xo_domain_model_elements (
 
 	title varchar(255) DEFAULT '' NOT NULL,
 	title_type varchar(50) DEFAULT '' NOT NULL,
+	keyword varchar(255) DEFAULT '' NOT NULL,
 	description text,
 	link varchar(1024) DEFAULT '' NOT NULL,
   media int(11) unsigned DEFAULT '0',

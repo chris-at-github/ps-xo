@@ -316,6 +316,9 @@
 			<trans-unit id="tx_xo_domain_model_elements.thumbnail">
 				<target>Thumbnail</target>
 			</trans-unit>
+			<trans-unit id="tx_xo_domain_model_elements.keyword">
+				<target>Schlagwort</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
